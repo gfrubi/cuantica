@@ -1,0 +1,109 @@
+\documentclass[letterpaper,11pt]{report}
+\usepackage{graphicx}
+\usepackage{float,captdef,multicol,amssymb,amsmath,amsfonts,fancybox}
+\usepackage[activeacute,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\usepackage[right=4.5cm,left=2cm,top=2cm,bottom=2.0cm,headsep=0.7cm,footskip=1.0cm]{geometry}
+
+\spanishdecimal{.}
+
+\begin{document}
+\sffamily
+
+
+\thispagestyle{empty}
+\begin{center}
+
+\
+
+\vspace{6.5cm}
+
+\rule{15cm}{0.1cm}
+
+\vspace{1.5cm}
+
+{\huge \textsc{\textbf{Mec\'anica Cu\'antica}}}
+
+\vspace{1.5cm}
+
+\rule{15cm}{0.1cm}
+
+\vspace{1.5cm}
+
+Versi'on del \today
+
+\end{center}
+\newpage
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+\pagestyle{plain}
+\chapter*{Prefacio}
+\addcontentsline{toc}{chapter}{Prefacio}
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+
+
+\emph{Este apunte se confeccion'o a partir de las notas de M.
+Alid, F. Ar'evalo,  A. Delgado, F. Izaurieta, C. Paiva, E. Rodriguez, G.
+Rubilar, O. Valdivia, A. Zapata.}
+
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+
+Esta obra ha sido publicada bajo una \href{https://github.com/gfrubi/RG/blob/master/LICENSE}{licencia GPL v3}. El c'odigo fuente (pdf)\LaTeX, as'i como las figuras en formato editable est'an disponibles en el \href{https://github.com/gfrubi/cuantica}{repositorio GitHub del proyecto}.
+
+
+\bigskip
+\bigskip
+\bigskip
+
+\bigskip
+\bigskip
+\bigskip
+
+
+
+\emph{\textquotedblleft ...As\'i, nosotros los mortales, somos
+inmortales en lo que creamos en com\'un."}
+
+\begin{flushright}
+Albert Einstein.
+\end{flushright}
+\newpage
+
+\tableofcontents
+
+\part{Cuantizaci'on del campo electromagn'etico}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input {./00-Intro.tex}
+\input {./01-Sistemas_continuos.tex}
+\input {./02-Cuantizacion_Campo_Electromagnetico.tex}
+\input {./03-Interaccion_campo-materia.tex}
+\input {./04-Campo_de_Schroedinger.tex}
+
+\part{Mec'anica Cu'antica Relativista}
+%\input 50-Klein-Gordon.tex
+\input {./51-Dirac.tex}
+\part{Ap\'endice}
+\input {./99-Apendices.tex}
+
+
+\end{document}

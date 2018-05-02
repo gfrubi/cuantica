@@ -1,0 +1,2418 @@
+\appendix
+\chapter{Teor'ia de Campos Cl'asica}
+\section{Formulaci'on Funcional}
+
+Uno de los problemas m'as recurrentes en f'isica es el intentar minimizar una
+expresi'on que no s'olo depende de una variable continua sino que tambi'en de todos
+los valores de una funci'on sobre dicha variable y, posiblemente, de derivadas de
+dicha funci'on. Este tipo de problema jug'o un rol crucial en el desarrollo de la
+F'isica Cl'asica en los siglos XVIII y XIX y su importancia se vi'o reforzada con
+el advenimiento de las Teor'ias de Campo en el siglo pasado. La formulaci'on
+matem'atica de este problema corresponde al c'alculo de variaciones.
+
+Tres problemas famosos relacionados con el c'aculo de variaciones son:
+
+\begin{itemize}
+\item C'alculo de la curva de longitud m'as corta que une dos puntos.
+\item Dados dos puntos en el plano vertical encontrar la trayectoria de tiempo
+m'inimo que una part'icula sigue entre dichos puntos suponiendo que 
+su aceleraci'on es debida a la gravedad. 
+\item Encontrar la  superficie m'inima de revoluci'on que pasa por dos puntos
+dados.
+\end{itemize}
+
+\subsubsection{Definici'on de derivada funcional}
+
+Usualmente una funci'on $y(x)$ en F'isica asume valores reales sobre una variable
+$x$ cuyos valores est'an comprendidos en un intervalo $I=\left[ a,b\right] $.
+Consideremos ahora $N$ puntos en dicho intervalo y escojamos los puntos $x_n\in
+I$ de la forma $x_n=a+\epsilon b$, con $N\epsilon=b-a$. Podemos ahora
+representar la funci'on $y(x)$ por los valores de 'esta en los puntos $x_n$, es
+decir por la funci'on $y_n=y(x_n)=y(a+\epsilon b)$. En el l'imite
+$N\rightarrow\infty$, o equivalentemente $\epsilon\rightarrow 0 $, la funci'on
+$y_n$ entrega la misma informaci'on que la funci'on $y(x)$.
+
+Ahora, podemos definir una funci'on $F$ sobre todos los $y_n$, es decir
+$F(\left\lbrace y_n\right\rbrace)$. En el l'imite $N\rightarrow\infty$, $F$ es
+una funci'on de $y(x)$. \textit{Llamamos a $F$} funcional de $y(x)$ y lo
+denotamos por $F\left[ y\right] $. $F$ es una funci'on de todos los valores de
+$y(x)$ en el intervalo $\left[ a,b\right] $. Luego, $F$ depende de un n'umero
+infinito de variables independientes y su valor es un n'umero.
+
+Un ejemplo simple de funcional es aquel que selecciona el valor de una funci'on
+en un punto determinado, por ejemplo $F\left[ y\right]=y(x=3)$, de modo que
+$F\left[ y^3\right]=27 $ y $F\left[ y=\sin(\pi x)\right]=0 $. Otro ejemplo
+simple de funcional es $F\left[ y\right]=\int_0^1y(x)dx$, de modo que $F$
+depende de la forma completa de la funci'on $y(x)$. Obviamente, existen
+funcionales m'as interesantes.
+
+Veamos qu'e sucede con $F(\left\lbrace y_n\right\rbrace)$ si cambiamos el valor
+de los $y_n$ alrededor del set de valores $\left\lbrace y^0\right\rbrace$ . El
+cambio en $F$ est'a dado por 
+\begin{equation}
+dF=\sum_{n=1}^N\left( \frac{\partial F}{\partial y_n}\right)_{y^0} dy_n.
+\end{equation}
+Para ver c'omo se comporta el cambio en $F$ en el l'imite $\epsilon\rightarrow 0$
+reescribimos la expresi'on anterior en la forma
+\begin{equation}
+dF=\sum_{n=1}^N \epsilon\left(\frac{1}{\epsilon} \frac{\partial F}{\partial
+y_n}\right)_{y^0} dy_n,
+\end{equation}
+la cual claramente evoca la definici'on  de integral por Riemann, es decir,
+\begin{equation}
+\int_{a}^b f(x)dx=\lim_{\epsilon\rightarrow 0}\sum_{n=1}^N \epsilon f(x_n).
+\end{equation}
+Luego, tomando el l'imite $\epsilon\rightarrow 0$ con $x=a+n\epsilon $ y usando
+la notaci'on $dy_n=\delta y(x)$ obtenemos
+\begin{equation}
+dF=\int_a^b dx \left( \frac{\delta F}{\delta y(x)}\right)_{y^0(x)}\delta y(x),
+\end{equation}
+donde la $y^0(x)$ es la funci'on particular $y(x)$ que sirve como punto de
+partida para el cambio infinitesimal $\delta y(x)$, y el factor $1/\epsilon$ ha
+sido incluido en el t'ermino $\delta F/\delta y(x)$.
+
+El resultado anterior puede ser interpretado de la siguiente forma: El cambio en
+$F$ es una suma de t'erminos proporcionales a los cambios infinitesimales $\delta
+y(x)$, cuyas constantes de proporcionalidad son la derivada funcional $\delta
+F/\delta y(x)$. Para fines pr'acticos podemos considerar este resultado como la
+definici'on de derivada funcional.
+
+\subsubsection{Ejemplo simple de c'alculo de derivada funcional}
+
+Consideremos ahora el funcional $F$ definido como
+\begin{equation}
+F\left[ y\right]=\int_0^1y(x)^2dx.
+\end{equation}
+Para calcular la derivada funcional comenzamos calculando el cambio $dF$ debido
+a un cambio infinitesimal $\delta y(x)$ en las variables independientes, esto es
+\begin{eqnarray}
+F\left[ y+\delta y\right]&=&\int_0^1(y(x)+\delta y(x))^2 dx 
+\\
+&=&\int_0^1(y(x)^2+2y(x)\delta y(x)+\delta y(x)^2) dx.
+\end{eqnarray}
+Considerando que tomaremos el l'imite $\delta y(x)\rightarrow 0$ podemos eliminar
+el t'ermino cuadr'atico en $\delta y$, obteniendo de esta forma
+\begin{equation}
+F\left[ y+\delta y\right]=\int_0^1\delta y(x)^2 dx 
++\int_0^12y(x)\delta y(x) dx.
+\end{equation}
+De modo que tenemos
+\begin{equation}
+dF=F\left[ y+\delta y\right]-F\left[ y+\delta y\right]=\int_0^12y(x)\delta y(x)
+dx.
+\end{equation}
+Comparando con la definici'on de derivada funcional obtenemos finalmente que
+\begin{equation}
+\frac{\delta F}{\delta y(x)}=2y(x).
+\end{equation}
+
+En general, un funcional puede depender de m'as de una funci'on, por ejemplo
+\begin{equation}
+F\left[y(x), z(x)\right]=\int_0^1y(x)^2z(x)^3dx.
+\end{equation}
+En este caso tenemos que
+\begin{eqnarray}
+\frac{\delta F}{\delta y(x)}&=&2y(x)z(x)^3,
+\\
+\frac{\delta F}{\delta z(x)}&=&3y(x)^2z(x)^2.
+\end{eqnarray}
+Es posible tambi'en que la o las funciones dependan de m'as de una variable, por
+ejemplo
+\begin{equation}
+F\left[ f(x,y,z)\right]=\int_{V}dV \left[ f(x,y,z)\right] ^3, 
+\end{equation}
+de donde vemos que la derivada funcional
+\begin{equation}
+\frac{\delta F}{\delta f(x,y,z)}=3\left[ f(x,y,z)\right] ^2
+\end{equation}
+es tal como en el caso unidimensional.
+
+\subsubsection{Ecuaciones de Euler I}
+
+En algunos casos especiales es posible obtener expresiones simples para las
+derivadas de funcionales gen'ericos con dependencias simples. Consideremos por
+ejemplo el funcional
+\begin{equation}
+F\left[ y\right] = \int dx L(x, y(x)).
+\end{equation}
+Éste es una integral simple cuyo integrando es una funci'on de $x$ e $y(x)$.
+Variando $y(x)$ tenemos
+\begin{equation}
+F\left[ y+\delta y\right] = \int dx L(x, y+\delta y)=\int \left(
+L(x,y)+\frac{\partial L(x,y)}{\partial y}\delta y\right), 
+\end{equation}
+donde hemos omitido todos los t'erminos de orden superior a $\delta y$. Esto nos
+conduce a
+\begin{equation}
+F\left[ y+\delta y\right]-F\left[ y\right]=\int \frac{\partial L(x,y)}{\partial
+y}\delta y, 
+\end{equation}
+de donde obtenemos que
+\begin{equation}
+\frac{\delta F}{\delta y(x)}=\frac{\partial L(x,y(x))}{\partial y(x)}.
+\end{equation}
+
+Un caso un tanto m'as complicado es un funcional de la forma
+\begin{equation}
+F\left[ y\right] = \int dx L(x, y(x), y'(x)),
+\end{equation}
+donde $y'(x)=dy(x)/dx$. Una variaci'on de $y(x)$ nos conduce a
+\begin{equation}
+F\left[ y+\delta y\right] = \int dx L(x, y+\delta y, y'+\delta y'),
+\end{equation}
+donde $\delta y'$ corresponde a $d(\delta y)/dx$, es decir a la derivada de la
+variaci'on. Expandiendo a primer orden en la variaci'on y sus derivadas obtenemos
+\begin{equation}
+F\left[ y+\delta y\right]=\int dx\left( 
+L(x,y,y')+\frac{\partial L(x,y,y')}{\partial y}\delta y+\frac{\partial
+L(x,y,y')}{\partial y'}\delta y'
+\right).
+\end{equation}
+Para poder usar la definici'on de derivada funcional debemos escribir el 'ultimo
+t'ermino en funci'on de la variaci'on $\delta y$. Esto puede ser hecho por medio de
+una integraci'on por partes, es decir,
+\begin{equation}
+\int_a^b \frac{\partial L(x,y,y')}{\partial y'}\delta y'dx=
+\left[ \frac{\partial L(x,y,y')}{\partial y'}\delta y\right]_a^b-
+\int_a^b dx \frac{d}{dx}
+\left( 
+\frac{\partial L(x,y,y')}{\partial y'}
+\right)  \delta y(x).
+\end{equation} 
+Luego, obtenemos que
+\begin{equation}
+F\left[ y+\delta y\right]-F\left[ y\right]= 
+\int_a^b dx \frac{\partial L(x,y,y')}{\partial y}\delta y(x)
+-\int_a^b dx \frac{d}{dx}
+\left( 
+\frac{\partial L(x,y,y')}{\partial y'}
+\right)  \delta y(x)
++\left[ \frac{\partial L(x,y,y')}{\partial y'}\delta y\right]_a^b.
+\end{equation}
+Agrupando t'erminos la expresi'on anterior es
+\begin{equation}
+F\left[ y+\delta y\right]-F\left[ y\right]= 
+\int_a^b dx \left[ \frac{\partial L(x,y,y')}{\partial y}
+-\frac{d}{dx}
+\left( 
+\frac{\partial L(x,y,y')}{\partial y'}
+\right)\right]   \delta y(x)
++\left[ \frac{\partial L(x,y,y')}{\partial y'}\delta y(x)\right]_a^b.
+\end{equation}
+Asumiendo que el segundo t'ermino se anula, obtenemos que la derivada funcional
+est'a dada por
+\begin{equation}
+\frac{\delta F}{\delta y(x)}=\frac{\partial L(x,y,y')}{\partial y}
+-\frac{d}{dx}
+\left( 
+\frac{\partial L(x,y,y')}{\partial y'}
+\right).
+\end{equation}
+Éstas son las ecuaciones de Euler cuando la derivada funcional se iguala a cero.
+
+Otro conjunto util de ecuaciones tipo Euler es obtenido al considerar un
+funcional de la forma
+\begin{equation}
+F\left[ f(x,y,z)\right]=\int_Vdxdydz L(x, y, z, f, f_x, f_y, f_z),
+\end{equation}
+donde vemos que la funci'on $f$ depende ahora de tres variables independientes y
+$L$ depende de las primeras derivadas de $f$ con respecto a las variables
+independientes.
+La variaci'on de la funci'on $f$ nos lleva a
+\begin{equation}
+F\left[ f+\delta f\right]=\int_Vdxdydz
+L(x, y, z, f+\delta f, f_x+\delta f_x, f_y+\delta f_y, f_z+\delta f_z).
+\end{equation}
+Expandiendo hasta primer orden en las variaciones y las derivadas de las
+variaciones obtenemos
+\begin{equation}
+F\left[ f+\delta f\right]=\int_Vdxdydz
+\left( 
+L+
+\frac{\partial L}{\partial f}\delta f+
+\frac{\partial L}{\partial x}\delta f_x+
+\frac{\partial L}{\partial y}\delta f_y+
+\frac{\partial L}{\partial z}\delta f_z
+\right). 
+\end{equation}
+Los t'erminos proporcionales a las variaciones $\delta f_x$, $\delta f_y$ y
+$\delta f_z$ pueden ser relacionados con la variaci'on $\delta f$ por medio de
+integraci'on por partes,
+esto es
+\begin{equation}
+\int_Vdxdydz\frac{\partial L}{\partial x}\delta f_x=
+\left[ \frac{\partial L}{\partial f_x}\delta f\right]_{\partial V}-
+\int_V dxdydz \frac{\partial}{\partial x}
+\left( 
+\frac{\partial L}{\partial f_x}
+\right)  \delta f(x,y,z),
+\end{equation}
+\begin{equation}
+\int_Vdxdydz\frac{\partial L}{\partial y}\delta f_y=
+\left[ \frac{\partial L}{\partial f_y}\delta f\right]_{\partial V}-
+\int_V dxdydz \frac{\partial}{\partial y}
+\left( 
+\frac{\partial L}{\partial f_y}
+\right)  \delta f(x,y,z),
+\end{equation}
+y
+\begin{equation}
+\int_Vdxdydz\frac{\partial L}{\partial z}\delta f_z=
+\left[ \frac{\partial L}{\partial f_z}\delta f\right]_{\partial V}-
+\int_V dxdydz \frac{\partial}{\partial z}
+\left( 
+\frac{\partial L}{\partial f_z}
+\right)  \delta f(x,y,z).
+\end{equation}
+Usando las ecuaciones anteriores, el cambio en $F$ debido a la variaci'on en $f$
+puede ser escrito como
+\begin{eqnarray}
+F\left[ f+\delta f\right]-F\left[ f\right]&=&
+\int_Vdxdydz \frac{\partial L}{\partial f}\delta f
+\nonumber
+\\
+&+&
+\left[ \frac{\partial L}{\partial f_x}\delta f\right]_{\partial V}
+-
+\int_V dxdydz \frac{\partial}{\partial x}
+\left( 
+\frac{\partial L}{\partial f_x}
+\right)  \delta f(x,y,z)
+\nonumber
+\\
+&+&
+\left[ \frac{\partial L}{\partial f_y}\delta f\right]_{\partial V}
+-
+\int_V dxdydz \frac{\partial}{\partial y}
+\left( 
+\frac{\partial }{\partial f_y}
+\right)  \delta f(x,y,z)
+\nonumber
+\\
+&+&
+\left[ \frac{\partial L}{\partial f_z}\delta f\right]_{\partial V}
+-
+\int_V dxdydz \frac{\partial}{\partial z}
+\left( 
+\frac{\partial L}{\partial f_z}
+\right)  \delta f(x,y,z).
+\end{eqnarray}
+Agrupando t'erminos obtenemos
+\begin{eqnarray}
+F\left[ f+\delta f\right]-F\left[ f\right]&=&
+\int_Vdxdydz \frac{\partial L}{\partial f}\delta f
+-
+\int_V dxdydz \frac{\partial}{\partial x}
+\left( 
+\frac{\partial L}{\partial f_x}
+\right)  \delta f(x,y,z)
+\nonumber
+\\
+&-&
+\int_V dxdydz \frac{\partial}{\partial y}
+\left( 
+\frac{\partial }{\partial f_y}
+\right)  \delta f(x,y,z)
+-
+\int_V dxdydz \frac{\partial}{\partial z}
+\left( 
+\frac{\partial L}{\partial f_z}
+\right)  \delta f(x,y,z)
+\nonumber
+\\
+&+&\left[ \frac{\partial L}{\partial f_x}\delta f\right]_{\partial V}
+\nonumber
++\left[ \frac{\partial L}{\partial f_y}\delta f\right]_{\partial V}
++\left[ \frac{\partial L}{\partial f_z}\delta f\right]_{\partial V}.
+\end{eqnarray}
+Asumiendo que la variaci'on se anula en la frontera obtenemos finalmente que la
+derivada funcional de $F$ est'a dada por
+\begin{equation}
+\frac{\delta F}{\delta f}=\frac{\partial L}{\partial f}
+-\frac{\partial}{\partial x}\left( \frac{\partial L}{\partial f_x}\right)  
+-\frac{\partial}{\partial y}\left( \frac{\partial L}{\partial f_y}\right)
+-\frac{\partial}{\partial z}\left( \frac{\partial L}{\partial f_z}\right).
+\end{equation}
+
+\subsubsection{Ecuaciones de Euler II}
+
+En esta secci'on obtendremos las ecuaciones de Euler por un procedimiento
+ligeramente distinto. Nuestro objetivo es minimizar la integral
+\begin{equation}
+F=\int_{x_a}^{x_b} L(x,y,y')dx,
+\end{equation}
+donde $L$ es una funci'on fija de $x$, $y$ e $y'$. Los valores de $x_a$, $x_b$,
+$y(x_a)=y_a$ e $y(x_a)=y_a$ son dados (fijos). 
+
+Para resolver el problema presentado por la minimizaci'on de $F$ usaremos una
+familia de funciones $y(x,\epsilon)$. Dicha familia est'a parametrizada por medio
+de $\epsilon\in\left[0,1 \right] $ y sus miembros satisfacen las siguientes
+propiedades:
+\begin{itemize}
+\item $y(x_a,\epsilon)=y_a$ y $y(x_b,\epsilon)=y_b$ para todo valor de
+$\epsilon$.
+\item $y(x,\epsilon=0)=y(x)$ minimiza $F$.
+\item $y(x,\epsilon)$ y sus derivadas hasta el segundo orden son continuas en
+$x$ y $\epsilon$.
+\end{itemize}
+
+Usaremos el siguiente funci'on de $\epsilon$ para comparar con $F$
+\begin{equation}
+F(\epsilon)=\int_{x_a}^{x_b} L(x,y(x,\epsilon),y'(x,\epsilon))dx.
+\end{equation}
+Dado que $y(x,\epsilon=0)$ minimiza a $F(\epsilon)$ y siendo $F(\epsilon)$ una
+funci'on diferenciable y continua de $\epsilon$, podemos aplicar los m'etodos del
+c'alculo elemental para obtener el m'inimo. Una condici'on necesaria para obtener
+el m'inimo es
+\begin{equation}
+\left( \frac{dF}{d\epsilon}\right)_{\epsilon=0}=0. 
+\end{equation}
+Esta condici'on nos lleva a
+\begin{equation}
+\frac{dF}{d\epsilon}=\int_{x_a}^{x_b} 
+\left( 
+\frac{\partial L}{\partial y}\frac{dy}{d\epsilon}+
+\frac{\partial L}{\partial y'}\frac{dy'}{d\epsilon}
+\right)dx. 
+\end{equation}
+Esta expresi'on puede ser puesta en la forma
+\begin{equation}
+\frac{dF}{d\epsilon}=\int_{x_a}^{x_b} 
+\left( 
+\frac{\partial L}{\partial y}\frac{dy}{d\epsilon}+
+\frac{\partial L}{\partial y'}\frac{d}{dx}\left( \frac{dy}{d\epsilon}\right)
+\right)dx. 
+\end{equation}
+El segundo t'ermino puede ser integrado por partes, de modo que obtenemos
+\begin{equation}
+\frac{dF}{d\epsilon}=\int_{x_a}^{x_b}  
+\frac{\partial L}{\partial y}\frac{dy}{d\epsilon}dx
+-
+\int_{x_a}^{x_b}\frac{dy}{d\epsilon}\frac{d}{dx}\left( \frac{\partial L}{
+\partial y'}\right)dx
++
+\left[ 
+\frac{dy}{d\epsilon}\frac{\partial L}{\partial y'}
+\right]_{x_a}^{x_b}.  
+\end{equation}
+Puesto que los extremos de la variaci'on son fijos se cumple que 
+\begin{equation}
+\left( \frac{dy}{d\epsilon}\right)_{x=x_a}=\left(
+\frac{dy}{d\epsilon}\right)_{x=x_b}=0.
+\end{equation}
+Por lo tanto, obtenemos finalmente:
+\begin{equation}
+\frac{dF}{d\epsilon}=\int_{x_a}^{x_b}  
+\frac{\partial L}{\partial y}\frac{dy}{d\epsilon}dx
+-
+\int_{x_a}^{x_b}\frac{dy}{d\epsilon}\frac{d}{dx}\left( \frac{\partial L}{
+\partial y'}\right)dx.
+\end{equation}
+Aplicando la condici'on necesaria para obtener el m'inimo llegamos a
+\begin{equation}
+\int_{x_a}^{x_b} \left[  
+\frac{\partial L}{\partial y}
+-
+\frac{d}{dx}\left( \frac{\partial L}{ \partial y'}\right)\right] 
+\left( \frac{dy}{d\epsilon}\right)_{\epsilon=0} 
+dx=0.
+\end{equation}
+Puesto que la funci'on
+\begin{equation}
+\eta(x)=\left( \frac{dy}{d\epsilon}\right)_{\epsilon=0}
+\end{equation}
+es arbitraria tenemos que el resto del integrando debe anularse, luego
+\begin{equation}
+\frac{\partial L}{\partial y}
+-
+\frac{d}{dx}\left( \frac{\partial L}{ \partial y'}\right)=0.
+\end{equation}
+\subsubsection{Conexi'on con Mec'anica Cl'asica}
+
+En Mec'anica Cl'asica las trayectorias que sigue un sistema son soluciones de las
+ecuaciones de Lagrange, las que a su vez son obtenidas como una extremizaci'on de
+la acci'on. Ésta est'a definida de la siguiente forma:
+\begin{equation}
+S=\int_{t_1}^{t_2}dt L(t, x(t), x'(t)),
+\end{equation}
+donde $L(t, x(t), x'(t))$ es el Lagrangeano del sistema. Considerando las
+ecuaciones de Euler antes deducidas con las equivalencias $x\rightarrow t$,
+$y(x)\rightarrow x(t)$ e $y'(x)\rightarrow x'(t)$ obtenemos entonces que la
+derivada funcional de la acci'on est'a dada por
+\begin{equation}
+\frac{\delta S}{\delta x(t)}=
+\frac{\partial L(t,x(t),x'(t))}{\partial x}
+-\frac{d}{dt}
+\left( 
+\frac{\partial L(t,x(t),x'(t))}{\partial y'}
+\right).
+\end{equation}
+El principio (de m'inima acci'on) de Hamilton establece que las trayectorias
+f'isicas son aquellas que extreman la acci'on (pueden ser m'inimos o m'aximos), es
+decir aquellas que son soluciones de $\delta S/\delta x(t)$ o,equivalentemente,
+\begin{equation}
+\frac{\partial L(t,x(t),x'(t))}{\partial x}
+-\frac{d}{dt}
+\left( 
+\frac{\partial L(t,x(t),x'(t))}{\partial x'}
+\right)=0.
+\end{equation}
+N'otese que los extremos de la acci'on son obtenidos de la misma forma que cuando
+se extrema una funci'on. Este conjunto de ecuaciones es conocido como las
+ecuaciones de Euler-Lagrange. Dado que en el pricipio variacional de Hamilton
+las condiciones de frontera $x(t_1)$ y $x(t_2)$ est'an fijas, no es necesario
+considerar los t'erminos de frontera en la derivada funcional de la acci'on.
+
+\subsubsection{Conexi'on con Teor'ia Cl'asica de Campos}
+
+
+
+\chapter{Cuantizaci'on del oscilador arm'onico unidimensional.}
+
+Sabemos que el Hamiltoniano de un oscilador arm'onico unidimensional de
+masa $m$ y frcuencia $\omega$ tiene la forma:%
+\begin{equation}
+H=\frac{\hat{p}^{2}}{2m}+\frac{m}{2}\omega^{2}\hat{q}^{2},
+\end{equation}
+donde $\hat{p}$ y $\hat{q}$ son los operadores de momentum lineal y de posici'on, respectivamente.
+
+\section{Energ'ia m'inima y niveles de energ'ia.}
+
+Dos formas simples de estudiar al oscilador arm'onico y de encontrar sus
+niveles de energ'ia permitidos son usando el principio de
+indeterminaci'on de Heisenberg y la regla de cuantizaci'on de
+Bohr-Sommerfeld. A pesar de su simplicidad, no nos permiten un estudio
+completo del problema ya que no podemos por ejemplo obtener los estados
+correspondientes a cada energ'ia. Tampoco suministran un m'etodo que
+podamos utilizar para luego abordar problemas m'as complejos, como la
+cuantizaci'on del campo electromagn'etico, que son modelados mediante el
+oscilador arm'onico.
+
+\subsection{Principio de Indeterminaci'on.}
+
+En realidad este camino nos lleva directamente a encontrar s'olo la
+energ'ia minima que puede tener el oscilador.
+
+Para esto, resulta obvio calcular el valor esperado de la energ'ia
+ocupando el Hamiltoniano del sistema:%
+\begin{equation}
+\left\langle E\right> =\left\langle \hat{H}\right> =\frac{1}%
+{2m}\left\langle \hat{p}^{2}\right> +\frac{m}{2}\omega^{2}\left\langle
+\hat{q}^{2}\right> . \label{ValEspEa}
+\end{equation}
+
+
+Las expresiones $\left\langle \hat{p}^{2}\right> $ y $\left\langle
+\hat{q}^{2}\right> $ podemos obtenerlas de la relaci'on de
+desviaci'on cuadr'atica para un operador arbitrario $\hat{O}$ :
+\begin{equation}
+\left( \Delta\hat{O}\right) ^{2}=\left\langle \hat{O}^{2}\right>
+-\left\langle \hat{O}\right> ^{2} .
+\end{equation}
+luego, para nuestros operadores:%
+\begin{equation}
+\left\langle \hat{p}^{2}\right> =\left( \Delta\hat{p}\right)
+^{2}+\left\langle \hat{p}\right> ^{2},\label{DesCuaP2}
+\end{equation}
+\begin{equation}
+\left\langle \hat{q}^{2}\right> =\left( \Delta\hat{q}\right)
+^{2}+\left\langle \hat{q}\right> ^{2}.\label{DesCuaQ2}
+\end{equation}
+
+
+Sabemos que
+\begin{equation}
+\left\langle \hat{q}\right> =\left\langle \psi\right| \hat
+{q}\left| \psi\right>=\int_{-\infty}^{\infty}q\left| \psi\left( q\right) \right| ^{2}dq,
+\end{equation} 
+pero $q\left| \psi\left( q\right) \right| ^{2}$ es una funci'on
+antisim'etrica que est'a siendo integrada sobre un intervalo sim'etrico,
+y por lo tanto, su valor es cero.
+
+Por otro lado, para el operador momentum tenemo que
+\begin{equation}
+\left\langle \hat{p}\right>
+=\left\langle \psi\right| \hat{p}\left| \psi\right>
+=-i\hbar\int_{-\infty}^{\infty}dq\psi^{\ast}\left( q\right) \frac
+{\partial}{\partial q}\psi\left( q\right) .
+\end{equation} 
+Haciendo el cambio de variable $\zeta=\frac{\hat{q}}{\lambda}$ con
+\begin{equation}
+\lambda=\sqrt
+{\frac{\hbar}{m\omega}},\label{sust}
+\end{equation}
+obtenemos
+\begin{equation}
+\left\langle \hat{p}\right> =-i\hbar\int_{-\infty}^{\infty}d\zeta
+\psi^{\ast}\left( \zeta\right) \frac{\partial}{\partial\zeta}\psi\left(
+\zeta\right) .\label{p}
+\end{equation}
+Pero
+\begin{equation}
+\frac{\partial}{\partial\zeta}\psi\left( \zeta\right) =\frac{e^{-\frac
+{\zeta^{2}}{2}}}{N}\frac{\partial H\left( \zeta\right) }{\partial\zeta
+}+\zeta\psi\left( \zeta\right) ,\label{zeta}%
+\end{equation}
+donde la funci'on $H$ son los polinomios de Hermite y $N$ es una constante de
+normalizaci'on. La funci'on de onda $\psi\left( \zeta\right) $
+est'a relacionada con los polinomios de Hermite mediante%
+\begin{equation}
+\psi\left( \zeta\right) =H\left( \zeta\right) e^{-\frac{\zeta^{2}}{2}},
+\end{equation}
+que corresponde a la soluci'on de la ecuaci'on diferencial
+\begin{equation}
+\frac{\partial^{2}}{\partial\zeta^{2}}\psi\left( \zeta\right) -\zeta^{2}%
+\psi\left( \zeta\right) =0,
+\end{equation}
+que se deriva de la ecuaci'on de Schr\"{o}dinger para el oscilador
+arm'onico en la representaci'on de coordenadas
+\begin{eqnarray}
+\hat{H}\left| \psi\right> &=& E\left| \psi\right>  \\
+\frac{\hat{p}^{2}}{2m}+\frac{m}{2}\omega^{2}\hat{q}^{2}\left|
+\psi\right> & = &E\left| \psi\right>
+\end{eqnarray}
+de modo que
+\begin{equation}
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial q^{2}}\psi\left( q\right)
++\frac{m}{2}\omega^{2}q^{2}\psi\left( q\right) =E\psi\left( q\right).
+\end{equation}
+
+Cuando hacemos la sustituci'on dada por la ecuaci'on (\ref{sust}) donde
+\begin{eqnarray}
+\frac{\partial^{2}}{\partial q^{2}}\psi\left( q\right) & = &\frac{\partial
+}{\partial q}\left( \frac{\partial\psi\left( q\right) }{\partial q}\right)
+\\
+& = &\frac{\partial}{\partial q}\left( \frac{\partial\psi}{\partial\zeta}
+\frac{\partial\zeta}{\partial q}\right) \\
+& = &\frac{\partial}{\partial q}\left( \sqrt{\frac{m\omega}{\hbar}}
+\frac{\partial\psi}{\partial\zeta}\right) \\
+& = &\sqrt{\frac{m\omega}{\hbar}}\left( \frac{\partial}{\partial\zeta}
+\frac{\partial\zeta}{\partial q}\right) \left( \frac{\partial\psi}
+{\partial\zeta}\right) \\
+& = &\sqrt{\frac{m\omega}{\hbar}}\left( \sqrt{\frac{m\omega}{\hbar}}
+\frac{\partial}{\partial\zeta}\right) \left( \frac{\partial\psi}
+{\partial\zeta}\right) \\
+& = &\frac{m\omega}{\hbar}\frac{\partial^{2}\psi}{\partial\zeta^{2}},
+\end{eqnarray}
+entonces
+\begin{equation}
+-\frac{\hbar\omega}{2}\frac{\partial^{2}\psi\left( \zeta\right) }
+{\partial\zeta^{2}}+\frac{\hbar\omega}{2}\zeta^{2}\psi\left( \zeta\right)
+=E\psi\left( \zeta\right),
+\end{equation}
+o, equivalentemente,
+\begin{equation}
+\frac{\partial^{2}\psi\left( \zeta\right) }{\partial\zeta^{2}}+\left(
+\frac{2E}{\hbar\omega}-\zeta^{2}\right) \psi\left( \zeta\right) =0,
+\end{equation} 
+y considerando desplazamientos grandes, e.d., $\zeta$ $\gg\frac{2E}{\hbar\omega}$,
+\begin{equation}
+\frac{\partial^{2}\psi\left( \zeta\right) }{\partial\zeta^{2}}-\zeta^{2}%
+\psi\left( \zeta\right) =0.\label{EcDifZeta}%
+\end{equation}
+
+
+La soluci'on de esta ecuaci'on diferencial la asumimos como
+\begin{equation}
+\psi\left( \zeta\right) =H\left( \zeta\right) e^{-\frac{\zeta^{2}}{2}}.
+\end{equation}
+
+
+La ecuaci'on (\ref{zeta}) la obtenemos f'acilmente sustituyendo la soluci'on
+anterior en la ecuaci'on diferencial (\ref{EcDifZeta}) y luego integrando una vez
+con respecto a $\zeta.$
+
+Volviendo a lo nuestro, reemplazamos la ecuaci'on (\ref{zeta}) en la ecuaci'on (\ref{p}) del
+valor esperado del momentum $p$ obtenemos que este 'ultimo puede ser
+escrito como:%
+\begin{eqnarray}
+\left\langle \hat{p}\right> & = &-i\hbar\int_{-\infty}^{\infty}d\zeta
+\psi^{\ast}\left( \zeta\right) \left( \frac{e^{-\frac{\zeta^{2}}{2}}}%
+{N}\frac{\partial H\left( \zeta\right) }{\partial\zeta}+\zeta\psi\left(
+\zeta\right) \right) \\
+& = &-\frac{i\hbar}{N}\int_{-\infty}^{\infty}d\zeta\psi^{\ast}\left(
+\zeta\right) e^{-\frac{\zeta^{2}}{2}}\frac{\partial H\left( \zeta\right)
+}{\partial\zeta}-i\hbar\int_{-\infty}^{\infty}d\zeta\psi^{\ast}\left(
+\zeta\right) \zeta\psi\left( \zeta\right) \\
+& = &-\frac{i\hbar}{N}\int_{-\infty}^{\infty}\psi^{\ast}\left( \zeta\right)
+e^{-\frac{\zeta^{2}}{2}}\frac{\partial H\left( \zeta\right) }{\partial\zeta
+}d\zeta-i\hbar\int_{-\infty}^{\infty}\zeta\left| \psi\left( \zeta\right)
+\right| ^{2}d\zeta\\
+& = &-\frac{i\hbar}{N}\int_{-\infty}^{\infty}e^{-\zeta^{2}}H\left(
+\zeta\right) \frac{\partial H\left( \zeta\right) }{\partial\zeta}%
+d\zeta-i\hbar\int_{-\infty}^{\infty}\zeta\left| \psi\left( \zeta\right)
+\right| ^{2}d\zeta,
+\end{eqnarray}
+pero, como los polinomios de Hermite son sim'etricos o antisim'etricos en su argumento, el
+producto $H\left( \zeta\right) \frac{\partial H\left( \zeta\right)
+}{\partial\zeta}$ es siempre antisim'etrico. Por lo tanto, la integral se anula.
+Adem'as, la segunda integral tambi'en se anula por la misma raz'on que se
+anulaba la correspondiente a $\left\langle \hat{q}\right> .$
+
+Por lo tanto, podemos decir que por razones de simetr'ia en las integrales
+se cumple:%
+\begin{equation}
+\left\langle \hat{p}\right> =\left\langle \hat{q}\right> =0.
+\end{equation}
+
+
+Esto tiene sentido ya que en una oscilaci'on completa, el valor medio de la
+posici'on debe anularse al igual que su momentum.
+
+Finalmente, volviendo a las ecuaciones(\ref{DesCuaP2}) y (\ref{DesCuaQ2}) tenemos:%
+\begin{equation}
+\left\langle \hat{p}^{2}\right> =\left( \Delta\hat{p}\right)
+^{2},\label{DesCuaP2b}
+\end{equation}
+\begin{equation}
+\left\langle \hat{q}^{2}\right> =\left( \Delta\hat{q}\right)
+^{2}.
+\end{equation}
+
+
+Del principio de indeterminaci'on de Heisenberg tenemos que:%
+\begin{equation}
+\left( \Delta\hat{p}\right) ^{2}\left( \Delta\hat{q}\right) ^{2}\geq
+\frac{\hbar^{2}}{4},
+\end{equation}
+y, puesto que para el estado fundamental es v'alida la igualdad, de las
+ecuaciones (\ref{DesCuaP2}) y (\ref{DesCuaQ2}) obtenemos%
+\begin{equation}
+\left\langle \hat{p}^{2}\right> \left\langle \hat{q}^{2}\right>
+=\frac{\hbar^{2}}{4}.
+\end{equation}
+
+Reemplazando esta 'ultima ecuaci'on en la ecuaci'on (\ref{ValEspEa}) tenemos%
+\begin{eqnarray}
+\left\langle E\right> & = &\frac{1}{2m}\frac{\hbar^{2}}{4\left\langle
+\hat{q}^{2}\right> }+\frac{m}{2}\omega^{2}\left\langle \hat{q}%
+^{2}\right> \\
+& = &\frac{\hbar^{2}}{8m}\frac{1}{\left\langle \hat{q}^{2}\right> }%
++\frac{m}{2}\omega^{2}\left\langle \hat{q}^{2}\right> \label{ValEspEb}%
+\end{eqnarray}
+
+Ahora, minimizando $\left\langle E\right> $ con respecto a $\left\langle
+\hat{q}^{2}\right> $
+\begin{equation}
+\frac{d\left\langle E\right> }{d\left\langle \hat{q}^{2}\right>
+}=0,
+\end{equation}
+tenemos
+\begin{equation}
+-\frac{\hbar^{2}}{8m}\frac{1}{\left\langle \hat{q}^{2}\right> _{\min
+}^{2}}+\frac{m}{2}\omega^{2} =0,
+\end{equation}
+de modo que
+\begin{equation}
+\left\langle \hat{q}^{2}\right> _{\min} =\sqrt{\frac{\hbar^{2}%
+}{4m^{2}\omega^{2}}} =\frac{\hbar}{2m\omega}.
+\end{equation}
+
+Para terminar, s'olo queda reemplazar $\left\langle \hat{q}^{2}%
+\right> _{\min}$ en la ecuaci'on (\ref{ValEspEb}). Haciendo esto obtendremos
+que
+\begin{eqnarray}
+\left\langle E\right> _{\min} & = &\frac{\hbar^{2}}{8m}\frac{1}%
+{\frac{\hbar}{2m\omega}}+\frac{m}{2}\omega^{2}\frac{\hbar}{2m\omega}\\
+& = &\frac{1}{2}\hbar\omega .
+\end{eqnarray}
+que es la energ'ia m'inima posible del oscilador arm'onico.
+
+
+\section{Niveles de energ'ia y estados cu'anticos de energ'ia.}
+
+Ahora desarrollaremos un m'etodo que nos permitir'a encontrar; adem'as de
+los niveles de energ'ia, los estados cu'anticos del sistema
+correspondientes a esas energ'ias y nos dar'a directrices para poder
+estudiar sistemas m'as complicados.
+
+\subsection{Operadores de Creaci'on y de Destrucci'on.}
+
+Sabemos que el hamiltoniano cu'antico del oscilador arm'onico esta dado
+por
+\begin{equation}
+\hat{H} =\frac{\hat{p}^{2}}{2m}+\frac{m}{2}\omega^{2}\hat{q}^{2}
+=-\frac{\hbar^{2}}{2m}\frac{d^{2}}{dq^{2}}+\frac{m}{2}\omega^{2}q^{2},
+\end{equation}
+donde utilizamos la regla de cuantizaci'on%
+\begin{equation}
+\hat{p}\quad\rightarrow\quad-i\hbar\frac{d}{dq} ,
+\end{equation}
+para el operador de momentum lineal en la representaci'on de coordenadas.
+As'i, la ecuaci'on de Schr\"{o}dinger,
+\begin{equation}
+\hat{H}\left| \psi\right> =E\left| \psi\right> ,
+\end{equation}
+para el oscilador en esta representaci'on es%
+\begin{eqnarray}
+\hat{H}\left| \psi\right> & = &E\left| \psi\right> ,\\
+\left( \frac{\hat{p}^{2}}{2m}+\frac{m}{2}\omega^{2}\hat{q}^{2}\right) \left|
+\psi\right> & = &E\left| \psi\right> ,\\
+\left( -\frac{\hbar^{2}}{2m}\frac{d^{2}}{dq^{2}}+\frac{m}{2}\omega^{2}%
+q^{2}\right) \psi\left( q\right) & = &E\psi\left( q\right) .
+\end{eqnarray}
+Ahora introducimos el cambio de variable
+\begin{equation}
+q=\sqrt{\frac{\hbar}{m\omega}}\zeta ,
+\end{equation}
+que implica
+\begin{equation}
+\frac{d}{dq}=\frac{d}{d\zeta}\frac{d\zeta}{dq}=\sqrt{\frac{m\omega}{\hbar}}\frac{d}{d\zeta},
+\end{equation}
+\begin{equation}
+\frac{d^{2}}{dq^{2}}=\frac{d}{dq}\left( \frac{d}{dq}\right) =\frac{m\omega}{\hbar}\frac{d^{2}}{d\zeta^{2}}.
+\end{equation} 
+De este modo, $\zeta$ ser'a nuestra nueva coordenada adimensional. La ecuaci'on de Schrödinger toma la forma:%
+\begin{eqnarray}
+\left( -\frac{\hbar^{2}}{2m}\frac{m\omega}{\hbar}\frac{d^{2}}%
+{d\zeta^{2}}+\frac{m}{2}\omega^{2}\frac{\hbar}{m\omega}\zeta^{2}\right)
+\psi\left( \zeta\right) & = &E\psi\left( \zeta\right) ,\\
+\left( -\frac{\hbar}{2}\omega\frac{d^{2}}{d\zeta^{2}}+\frac{\hbar}%
+{2}\omega\zeta^{2}\right) \psi\left( \zeta\right) & = &E\psi\left(
+\zeta\right) ,\\
+\hbar\omega\left[ \frac{1}{2}\left( -\frac{d^{2}}{d\zeta^{2}}%
++\zeta^{2}\right) \right] \psi\left( \zeta\right) & = &E\psi\left(
+\zeta\right) ,\\
+\hbar\omega \hat{N}\psi\left( \zeta\right) & = &E\psi\left( \zeta\right) ,
+\end{eqnarray}
+donde
+\begin{equation}
+\hat{H}=\hbar\omega\hat{N}\label{H(N)} ,
+\end{equation}
+y%
+\begin{equation}
+\hat{N}=\frac{1}{2}\left( -\frac{d^{2}}{d\zeta^{2}}+\zeta%
+^{2}\right) \label{N1} ,
+\end{equation}
+es el operador Hamiltoniano en unidades de $\hbar\omega$, llamado operador de N'umero.
+
+Veamos qu'e podemos hacer con el t'ermino $-\frac{d^{2}}{d\zeta^{2}%
+}+\zeta^{2}$. Usando
+\begin{equation}
+[\zeta,\frac{d}{d\zeta}]  =-1 ,
+\end{equation}
+podemos escribir:%
+\begin{equation}
+-\frac{d^{2}}{d\zeta^{2}}+\zeta^{2}=\left( -\frac{d}%
+{d\zeta}+\zeta\right) \left( \frac{d}{d\zeta}+\hat{\zeta
+}\right) +1 ,
+\end{equation}
+o, de una manera m'as conveniente,
+\begin{equation}
+\hat{N}=\frac{1}{\sqrt{2}}\left( -\frac{d}{d\zeta}+\zeta\right)
+\frac{1}{\sqrt{2}}\left( \frac{d}{d\zeta}+\zeta\right) +\frac
+{1}{2}\label{N2}.
+\end{equation}
+En efecto:
+\begin{eqnarray}
+\hat{N} & = &\frac{1}{\sqrt{2}}\left( -\frac{d}{d\zeta}+\hat{\zeta
+}\right) \frac{1}{\sqrt{2}}\left( \frac{d}{d\zeta}+\zeta\right)
++\frac{1}{2}\\
+& = &-\frac{1}{2}\frac{d^{2}}{d\zeta^{2}}-\frac{1}{2}\frac{d}%
+{d\zeta}\zeta+\frac{1}{2}\zeta\frac{d}{d\zeta}+\frac{1}%
+{2}\zeta^{2}+\frac{1}{2}\\
+& = &-\frac{1}{2}\frac{d^{2}}{d\zeta^{2}}+\frac{1}{2}\left( \hat{\zeta
+}\frac{d}{d\zeta}-\frac{d}{d\zeta}\zeta\right) +\frac{1}%
+{2}\zeta^{2}+\frac{1}{2}\\
+& = &-\frac{1}{2}\frac{d^{2}}{d\zeta^{2}}+\frac{1}{2}[\zeta%
+,\frac{d}{d\zeta}]+\frac{1}{2}\zeta^{2}+\frac{1}{2}\\
+& = &-\frac{1}{2}\frac{d^{2}}{d\zeta^{2}}-\frac{1}{2}+\frac{1}{2}%
+\zeta^{2}+\frac{1}{2}\\
+& = &\frac{1}{2}\left( -\frac{d^{2}}{d\zeta^{2}}+\zeta^{2}\right) .
+\end{eqnarray}
+
+As'i, la ecuaci'on de Schr\"{o}dinger queda escrita como:%
+\begin{eqnarray}
+\hbar\omega\hat{N}\psi\left( \zeta\right) & = &E\psi\left( \zeta\right)\\
+\hbar\omega\left[ \frac{1}{\sqrt{2}}\left( -\frac{d}{d\zeta}%
++\zeta\right) \frac{1}{\sqrt{2}}\left( \frac{d}{d\zeta}%
++\zeta\right) +\frac{1}{2}\right] \psi\left( \zeta\right) &
+=&E\psi\left( \zeta\right) \\
+\hbar\omega\left[ \frac{1}{\sqrt{2}}\left( -\frac{d}{d\zeta}%
++\zeta\right) \right] \left[ \frac{1}{\sqrt{2}}\left( \frac{d%
+}{d\zeta}+\zeta\right) \right] \psi\left( \zeta\right) +\frac
+{\hbar\omega}{2}\psi\left( \zeta\right) & = &E\psi\left( \zeta\right)\\
+\hbar\omega\left[ \frac{1}{\sqrt{2}}\left( -\frac{d}{d\zeta}%
++\zeta\right) \right] \left[ \frac{1}{\sqrt{2}}\left( \frac{d%
+}{d\zeta}+\zeta\right) \right] \psi\left( \zeta\right) &
+=&E\psi\left( \zeta\right) -\frac{\hbar\omega}{2}\psi\left( \zeta\right)\\
+\hbar\omega\left[ \frac{1}{\sqrt{2}}\left( -\frac{d}{d\zeta}%
++\zeta\right) \right] \left[ \frac{1}{\sqrt{2}}\left( \frac{d%
+}{d\zeta}+\zeta\right) \right] \psi\left( \zeta\right) & = &\left(
+E-\frac{\hbar\omega}{2}\right) \psi\left( \zeta\right) \\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\psi\left( \zeta\right) & = &E'
+\psi\left( \zeta\right) \label{EcSchrodOscArmSimpUnid}%
+\end{eqnarray}
+donde hemos definido los nuevos operadores%
+\begin{eqnarray}
+\hat{b}^{\dagger} & = &\frac{1}{\sqrt{2}}\left( -\frac{d}{d\zeta}%
++\zeta\right) \label{bdag} ,\\
+\hat{b} & = &\frac{1}{\sqrt{2}}\left( \frac{d}{d\zeta}+\zeta\right) \label{b} ,
+\end{eqnarray}
+y redefinido la energ'ia al valor%
+\begin{equation}
+E'=E-\frac{\hbar}{2}\omega .
+\end{equation}
+
+Como se puede ver, hemos encontrado una forma alternativa de escribir la
+ecuaci'on de Schr\"{o}dinger para el oscilador arm'onico unidimensional
+en funci'on de los nuevos operadores $\hat{b}^{\dagger}$ y $\hat{b}$ que
+tienen relaciones de conmutaci'on%
+\begin{eqnarray}
+\lbrack\hat{b},\hat{b}^{\dagger}] & = &\hat{b}\hat{b}^{\dagger}-\hat
+{b}^{\dagger}\hat{b}\\
+& = &\frac{1}{\sqrt{2}}\left( \frac{d}{d\zeta}+\zeta\right)
+\frac{1}{\sqrt{2}}\left( -\frac{d}{d\zeta}+\zeta\right)
+-\frac{1}{\sqrt{2}}\left( -\frac{d}{d\zeta}+\zeta\right)
+\frac{1}{\sqrt{2}}\left( \frac{d}{d\zeta}+\zeta\right)\\
+& = &\frac{1}{2}\left( -\frac{d^{2}}{d\zeta^{2}}+\frac{d}{d\zeta
+}\zeta-\zeta\frac{d}{d\zeta}+\zeta^{2}\right)
+-\frac{1}{2}\left( -\frac{d^{2}}{d\zeta^{2}}-\frac{d}{d\zeta}%
+\zeta+\zeta\frac{d}{d\zeta}+\zeta^{2}\right)\\
+& = &-\frac{1}{2}\frac{d^{2}}{d\zeta^{2}}+\frac{1}{2}\frac{d}%
+{d\zeta}\zeta-\frac{1}{2}\zeta\frac{d}{d\zeta}+\frac{1}%
+{2}\zeta^{2}+\frac{1}{2}\frac{d^{2}}{d\zeta^{2}}+\frac{1}{2}%
+\frac{d}{d\zeta}\zeta-\frac{1}{2}\zeta\frac{d}{d\zeta
+}-\frac{1}{2}\zeta^{2}\\
+& = &\frac{d}{d\zeta}\zeta-\zeta\frac{d}{d\zeta
+}\\
+& = &[\frac{d}{d\zeta},\zeta]\\
+& = &1\label{[b,bdag]} ,
+\end{eqnarray}
+que corresponden a las relaciones de conmutaci'on bos'onicas. Por lo
+tanto, $\hat{b}$ y $\hat{b}^{\dagger}$ son operadores de Bose.
+
+Nos podemos preguntar c'omo es el operador N'umero en funci'on de los
+operadores $\hat{b}^{\dagger}$ y $\hat{b}.$ Esto se ve directamente de la
+ecuaci'on (\ref{N2}) ocupando las definiciones dadas por las ecuaciones(\ref{bdag}) y
+(\ref{b}), en efecto:%
+\begin{equation}
+\hat{N}=\hat{b}^{\dagger}\hat{b}+\frac{1}{2}\label{N3} .
+\end{equation}
+
+
+Por lo tanto, de la ecuaci'on (\ref{H(N)}) vemos que el Hamiltoniano del oscilador
+tambien puede ser escrito como funci'on de estos nuevos operadores:%
+\begin{equation}
+\hat{H}=\hbar\omega\hat{N}=\hbar\omega\left( \hat{b}^{\dagger}\hat{b}%
++\frac{1}{2}\right) =\hbar\omega\left( \hat{b}\hat{b}^{\dagger}-\frac{1}%
+{2}\right) \label{H(bdagb)} .
+\end{equation}
+
+
+\subsection{Eigenestados y Eigenenerg'ias.}
+
+Ahora, podemos empezar a construir los eigenestados del oscilador arm'onico
+simple unidimensional. Recordemos que la ecuaci'on de Schr\"{o}dinger est'a
+dada por%
+\begin{equation}
+\hat{H}\left| \psi\right> =E\left| \psi\right> ,
+\end{equation}
+lo que nos dice que $\left| \psi\right> $ es un estado cu'antico
+del sistema con energ'ia bien definida $E.$
+
+Usaremos el Hamiltoniano dado por la ecuaci'on (\ref{H(bdagb)}). Por lo tanto, es
+conveniente considerar a los estados cu'anticos $\left| \psi
+\right> $ del oscilador, como los eigenestados $\left|
+n\right> $ del operador N'umero $\hat{N}.$ Entonces:%
+\begin{eqnarray}
+\hat{H}\left| n\right> & = &E_{n}\left| n\right> \\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left| n\right> +\frac{\hbar}%
+{2}\omega\left| n\right> & = &E_{n}\left| n\right> \\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left| n\right> & = &E_{n}%
+\left| n\right> -\frac{\hbar}{2}\omega\left| n\right> \\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left| n\right> & = &\left(
+E_{n}-\frac{\hbar}{2}\omega\right) \left| n\right> \\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left| n\right> & = &E_{n}'
+\left| n\right> ,
+\end{eqnarray}
+donde  $n=0,1,2,3,\dots $, y
+\begin{equation}
+E_{n}\acute{}=E_{n}-\frac{1}{2}\hbar\omega .
+\end{equation}
+
+Partamos operando con $\hat{b}$ sobre el estado base $\left|
+0\right> .$ Para este estado tenemos%
+\begin{equation}
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left| 0\right> =E'
+_{0}\left| 0\right> , \qquad E_{0}'=E_{0}-\frac{1}{2}\hbar\omega .
+\end{equation}
+Ahora, aplicando el operador $\hat{b}$ obtenemos
+\begin{eqnarray}
+\hbar\omega\hat{b}\hat{b}^{\dagger}\hat{b}\left| 0\right> & = &E'
+_{0}\hat{b}\left| 0\right> \\
+\hbar\omega\left( \hat{b}\hat{b}^{\dagger}\right) \hat{b}\left|
+0\right> & = &E'
+_{0}\hat{b}\left| 0\right> \\
+\hbar\omega\left( 1+\hat{b}^{\dagger}\hat{b}\right) \hat{b}\left|
+0\right> & = &E'
+_{0}\hat{b}\left| 0\right> \\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\hat{b}\left| 0\right> & = &E'
+_{0}\hat{b}\left| 0\right> -\hbar\omega\hat{b}\left|
+0\right> \\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left( \hat{b}\left| 0\right>
+\right) & = &\left( E'
+_{0}-\hbar\omega\right) \left( \hat{b}\left| 0\right> \right) .
+\end{eqnarray}
+Esta ecuaci'on nos dice que $\hat{b}\left| 0\right> $ es un nuevo
+eigenvector del Hamiltoniano con eigenvalor $E'_{0}-\hbar\omega$.
+Al aplicar el operador $\hat{b}$ vemos que obtenemos otro
+estado con energ'ia $\hbar\omega$ veces menor$.$ Pero la suposici'on
+inicial fue que estabamos en el estado de m'as baja energ'ia, por lo
+tanto para evitar esta contradicci'on debe ocurrir que%
+\begin{equation}
+\hat{b}\left| 0\right> =0\label{EstadoFundamental} ,
+\end{equation}
+es decir, si el sistema est'a en el estado fundamental, no puede bajar a un
+estado de menor energ'ia. Por lo tanto, su energ'ia debe ser%
+\begin{equation}
+E'_{0}=0 ,
+\end{equation}
+de donde encontramos que:%
+\begin{equation}
+E_{0}-\frac{1}{2}\hbar\omega  =0 ,
+\end{equation}
+es decir,
+\begin{equation}
+E_{0}  =\frac{1}{2}\hbar\omega .
+\end{equation}
+Ésta, como sabemos, es la m'inima energ'ia en la cual se puede encontrar
+el oscilador arm'onico unidimensional.
+
+Ahora, apliquemos el operador $\hat{b}^{\dag}$ sobre el estado base:%
+\begin{eqnarray}
+\hbar\omega\hat{b}^{\dag}\left( \hat{b}^{\dagger}\hat{b}\right) \left|
+0\right> & = &E_{0}\hat{b}^{\dag}\left| 0\right> \\
+\hbar\omega\hat{b}^{\dag}\left( \hat{b}\hat{b}^{\dagger}-1\right) \left|
+0\right> & = &E_{0}\hat{b}^{\dag}\left| 0\right> \\
+\hbar\omega\hat{b}^{\dag}\hat{b}\left( \hat{b}^{\dagger}\left|
+0\right> \right) -\hbar\omega\left( \hat{b}^{\dag}\left|
+0\right> \right) & = &E_{0}\left( \hat{b}^{\dag}\left|
+0\right> \right) \\
+\hbar\omega\hat{b}^{\dag}\hat{b}\left( \hat{b}^{\dagger}\left|
+0\right> \right) & = &\left( E_{0}+\hbar\omega\right) \left( \hat
+{b}^{\dag}\left| 0\right> \right) \\
+\hbar\omega\hat{b}^{\dag}\hat{b}\left| 1\right> & = &E_{1}\left|
+1\right> .
+\end{eqnarray}
+Es decir, el estado $\left| 1\right> =\hat{b}^{\dagger}\left|
+0\right> $ es un eigenestado de $\hat{H}$ con eigenenerg'ia
+$E_{1}=E_{0}+\hbar\omega$.
+
+Ahora aplicamos $\hat{b}^{\dag}$ por la izquierda a la igualdad $\hbar\omega\hat{b}^{\dag}\hat{b}\left| 1\right>  =E_{1}\left|
+1\right>$. Obtenemos
+\begin{eqnarray}
+\hbar\omega\hat{b}^{\dagger}\left( \hat{b}^{\dag}\hat{b}\right) \left|
+1\right> & = &E_{1}\hat{b}^{\dagger}\left| 1\right> \\
+\hbar\omega\hat{b}^{\dagger}\left( \hat{b}\hat{b}^{\dagger}-1\right)
+\left| 1\right> & = &E_{1}\hat{b}^{\dagger}\left| 1\right>
+\\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left( \hat{b}^{\dagger}\left|
+1\right> \right) -\hbar\omega\left( \hat{b}^{\dagger}\left|
+1\right> \right) & = &E_{1}\left( \hat{b}^{\dagger}\left|
+1\right> \right) \\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left( \hat{b}^{\dagger}\left|
+1\right> \right) & = &\left( E_{1}+\hbar\omega\right) \left( \hat
+{b}^{\dagger}\left| 1\right> \right) \\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left| 2\right> & = &E_{2}%
+\left| 2\right> .
+\end{eqnarray}
+Es decir, el estado $\left| 2\right> :=\frac{1}{\sqrt{2}}\hat{b}^{\dagger}\left|
+1\right> =\frac{1}{\sqrt{2}}\left( \hat{b}^{\dagger}\right)
+^{2}\left| 0\right> $ es un eigenestado de $\hat{H}$ con
+eigenenerg'ia $E_{2}=E_{1}+\hbar\omega=E_{0}+2\hbar\omega$ . El factor $\frac{1}{\sqrt{2}}$ es introducido de modo que el estado $\left| 2\right>$ sea normalizado (ver m'as adelante).
+
+Si volvemos a aplicar $\hat{b}^{\dagger},$ obtendremos%
+\begin{eqnarray}
+\hbar\omega\hat{b}^{\dagger}\left( \hat{b}^{\dagger}\hat{b}\right)
+\left| 2\right> & = &E_{2}\hat{b}^{\dagger}\left| 2\right>
+\\
+\hbar\omega\hat{b}^{\dagger}\left( \hat{b}\hat{b}^{\dagger}-1\right)
+\left| 2\right> & = &E_{2}\hat{b}^{\dagger}\left| 2\right>
+\\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left( \hat{b}^{\dagger}\left|
+2\right> \right) -\hbar\omega\left( \hat{b}^{\dagger}\left|
+2\right> \right) & = &E_{2}\left( \hat{b}^{\dagger}\left|
+2\right> \right) \\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left( \hat{b}^{\dagger}\left|
+2\right> \right) & = &\left( E_{2}+\hbar\omega\right) \left( \hat
+{b}^{\dagger}\left| 2\right> \right) \\
+\hbar\omega\hat{b}^{\dagger}\hat{b}\left| 3\right> & = &\left(
+E_{2}+\hbar\omega\right) \left| 3\right> ,
+\end{eqnarray}
+resultado an'alogo a los dos casos anteriores.
+
+****** INSERTAR PRUEBA GENERAL! **********
+
+Por lo tanto, podemos concluir que:
+\begin{itemize}
+\item Cualquier estado $\left| n\right> $ puede se construido
+aplicando $n$ veces el operador de creaci'on $\hat{b}^{\dagger}$ sobre el
+estado fundamental:%
+\begin{equation}
+\left| n\right> =\frac{1}{\sqrt{n!}}\left( \hat{b}^{\dagger
+}\right) ^{n}\left| 0\right> \label{|n>} ,
+\end{equation}
+donde el factor $\frac{1}{\sqrt{n!}}$ es para que los estados $\left|
+n\right> $ sean ortonormales.
+
+\item El espectro de energ'ias esta dado por la expresi'on:%
+\begin{eqnarray}
+E_{n} & = &E_{0}+n\hbar\omega\\
+& = &\frac{1}{2}\hbar\omega+n\hbar\omega\\
+& = &\hbar\omega\left( n+\frac{1}{2}\right),\qquad n=0,1,2,3,\dots
+\end{eqnarray}
+es decir, cada vez que se aplica el operador de creaci'on sobre un estado,
+estamos creando un quantum de energ'ia $\hbar\omega.$
+
+\item La manera como operan $\hat{b}$ y $\hat{b}^{\dagger}$ sobre los estados
+$\left| n\right> $ es la siguiente%
+\begin{eqnarray}
+\hat{b}\left| n\right> & = &\sqrt{n}\left| n-1\right>
+\label{b|n>} ,\\
+\hat{b}^{\dagger}\left| n\right> & = &\sqrt{n+1}\left|
+n+1\right> \label{bdag|n>} ,\\
+\hat{b}^{\dagger}\hat{b}\left| n\right> & = &n\left|
+n\right> \label{bdagb|n>} .
+\end{eqnarray}
+
+\end{itemize}
+
+Demostrar el 'ultimo punto es f'acil. Para demostrar la relaci'on
+dada por (\ref{b|n>}), aplicamos $\hat{b}^{\dagger}$ sobre la ecuaci'on (\ref{|n>}):%
+\begin{eqnarray}
+\hat{b}^{\dagger}\left| n\right> & = &\frac{1}{\sqrt{n!}}\hat
+{b}^{\dagger}\left( \hat{b}^{\dagger}\right) ^{n}\left| 0\right>
+\\
+& = &\frac{1}{\sqrt{n!}}\frac{\sqrt{\left( n+1\right) !}}{\sqrt{\left(
+n+1\right) !}}\left( \hat{b}^{\dagger}\right) ^{n+1}\left|
+0\right> \\
+& = &\sqrt{\frac{n!\left( n+1\right) }{n!}}\left[ \frac{1}{\sqrt{\left(
+n+1\right) !}}\left( \hat{b}^{\dagger}\right) ^{n+1}\left|
+0\right> \right] \\
+& = &\sqrt{\left( n+1\right) }\left| n+1\right> .
+\end{eqnarray}
+
+Por otro lado sabemos que:%
+\begin{equation}
+\left| n-1\right> \propto\hat{b}\left| n\right>
+\qquad\Leftrightarrow\qquad\left| n-1\right> =c_{n-1}\hat{b}\left|
+n\right> .
+\end{equation}
+Luego, si multiplicamos por el bra $\left\langle n-1\right| $, podremos
+encontrar la constante de proporcionalidad $c_{n-1}.$ En efecto:
+\begin{eqnarray}
+\left\langle n-1\right| \left. n-1\right> & = &c_{n-1}\left\langle
+n-1\right| \hat{b}\left| n\right> \\
+& = &c_{n-1}\left[ \left\langle n\right| c_{n-1}^{\ast}\hat{b}^{\dag
+}\right] \hat{b}\left| n\right> \\
+& = &c_{n-1}c_{n-1}^{\ast}\left\langle n\right| \hat{b}^{\dag}\hat
+{b}\left| n\right> \\
+& = &c_{n-1}c_{n-1}^{\ast}\left\langle n\right| \hat{b}^{\dag}\left(
+\hat{b}\left| n\right> \right) \\
+& = &c_{n-1}c_{n-1}^{\ast}\left\langle n\right| \hat{b}^{\dag}\left(
+\frac{1}{c_{n-1}}\left| n-1\right> \right) \\
+& = &c_{n-1}c_{n-1}^{\ast}\frac{1}{c_{n-1}}\left\langle n\right| \hat
+{b}^{\dag}\left| n-1\right> \\
+& = &c_{n-1}^{\ast}\sqrt{n}\left\langle n\right| \left. n\right> \\
+& = &c_{n-1}^{\ast}\sqrt{n} ,
+\end{eqnarray}
+pero el lado izquierdo es igual a $1$, debido a que $\left\{ \left| n\right>
+\right\} $ es una base ortonormal. Por lo tanto,
+\begin{equation}
+c_{n-1}^{\ast}\sqrt{n}  =1, \qquad n=1,2,\dots .
+\end{equation}
+Ya que $n$ es real, tenemos que
+\begin{equation}
+c_{n-1}=c_{n-1}^{\ast}=\frac{1}{\sqrt{n}}, \qquad n=1,2,\dots ,
+\end{equation}
+con lo que demostramos la segunda relaci'on%
+\begin{eqnarray}
+\hat{b}\left| n\right> & = &\frac{1}{c_{n-1}}\left|
+n-1\right> \\
+& = &\sqrt{n}\left| n-1\right> .
+\end{eqnarray}
+Demostrar (\ref{bdagb|n>}) es trivial usando (\ref{b|n>}) y (\ref{bdag|n>}).
+En efecto:
+\begin{eqnarray}
+\hat{b}^{\dag}\left( \hat{b}\left| n\right> \right) & = &\hat
+{b}^{\dag}\left( \sqrt{n}\left| n-1\right> \right) \\
+& = &\sqrt{n}\left( \hat{b}^{\dag}\left| n-1\right> \right) \\
+& = &\sqrt{n}\sqrt{n}\left| n\right> \\
+& = &n\left| n\right> .
+\end{eqnarray}
+
+\section{Estados Coherentes}
+
+\section{Problemas.}
+
+\begin{enumerate}
+\item El campo de radiaci'on dentro de un recinto c'ubico, que no
+contiene cargas, es especificado por el estado 
+\begin{equation}
+\left| c\right> =\exp \left( -\frac{1}{2}\left| c\right| ^{2}\right)
+\sum_{n=0}^{\infty }\frac{c^{n}}{\sqrt{n!}}\left| n\right> 
+\end{equation}
+donde 
+\begin{equation}
+c=\left| c\right| e^{i\delta }
+\end{equation}
+es un n'umero complejo cualquiera, y $\left| n\right> $ es el
+estado 
+\begin{equation}
+\left| n_{r}\left( {\bf k}\right) \right> =\frac{\left[
+a_{r}^{\dagger }\left( {\bf k}\right) \right] ^{n_{r}\left( {\bf k}%
+\right) }}{\sqrt{n_{r}\left( k\right) !}}\left| 0\right> 
+\end{equation}
+em el cual hay $n$ fotones con vector de onda ${\bf k}$, y vector de
+polarizaci'on ${\bf \varepsilon }_{r}\left( {\bf k}\right) $
+presentes, y no otros. Derive las siguientes propiedades del estado $\left|
+c\right> $:
+
+\begin{enumerate}
+\item $\left| c\right> $ es normalizado: $\left\langle
+c|c\right> =1$.
+
+\textbf{Respuesta}: En efecto,
+\begin{eqnarray*}
+\left\langle c|c\right> &=&\sum_{m=0}^{\infty }\left\langle m\right| 
+\frac{c^{\ast m}}{\sqrt{m!}}\exp \left( -\frac{1}{2}\left| c\right|
+^{2}\right) \exp \left( -\frac{1}{2}\left| c\right| ^{2}\right)
+\sum_{n=0}^{\infty }\frac{c^{n}}{\sqrt{n!}}\left| n\right> \\
+&=&\exp \left( -\left| c\right| ^{2}\right) \sum_{m=0}^{\infty
+}\sum_{n=0}^{\infty }\left\langle m\right| \frac{c^{\ast m}}{\sqrt{m!}}\frac{%
+c^{n}}{\sqrt{n!}}\left| n\right> \\
+&=&\exp \left( -\left| c\right| ^{2}\right) \sum_{m=0}^{\infty
+}\sum_{n=0}^{\infty }\frac{c^{\ast m}}{\sqrt{m!}}\frac{c^{n}}{\sqrt{n!}}%
+\left\langle m|n\right> 
+\end{eqnarray*}
+pero 
+\begin{eqnarray*}
+\left\langle m|n\right> &=&\left\langle 0\right| \frac{\left[ a\left( 
+{\bf k}\right) \right] ^{m\left( {\bf k}\right) }}{\sqrt{m\left(
+k\right) !}}\frac{\left[ a^{\dagger }\left( {\bf k}\right) \right]
+^{n\left( {\bf k}\right) }}{\sqrt{n\left( k\right) !}}\left|
+0\right> \\
+&=&\frac{1}{\sqrt{m!n!}}\left\langle 0\right| a^{m}a^{\dagger n}\left|
+0\right> 
+\end{eqnarray*}
+y como 
+\begin{eqnarray*}
+a\left| n\right> &=&\sqrt{n}\left| n-1\right> \\
+a^{\dagger }\left| n\right> &=&\sqrt{n+1}\left| n+1\right> 
+\end{eqnarray*}
+entonces 
+\begin{eqnarray*}
+a^{\dagger }\left| 0\right> &=&\sqrt{1}\left| 1\right> \\
+a^{\dagger 2}\left| 0\right> &=&\sqrt{1}a^{\dagger }\left|
+1\right> =\sqrt{1}\sqrt{2}\left| 2\right> \\
+&&\vdots \\
+a^{\dagger n}\left| 0\right> &=&\sqrt{n!}\left| n\right> 
+\end{eqnarray*}
+y de la misma forma, 
+\begin{eqnarray*}
+a\left| n\right> &=&\sqrt{n}\left| n-1\right> \\
+a^{2}\left| n\right> &=&\sqrt{n}a\left| n-1\right> =\sqrt{n}%
+\sqrt{n-1}\left| n-2\right> \\
+&&\vdots \\
+a^{m}\left| n\right> &=&\sqrt{\frac{n!}{\left( n-m\right) !}}\left|
+n-m\right> {\rm , si }m\leq n \\
+a^{m}\left| n\right> &=&0{\rm , si }m>n
+\end{eqnarray*}
+y entonces, 
+\begin{eqnarray*}
+\left\langle m|n\right> &=&\frac{1}{\sqrt{m!n!}}\left\langle 0\right|
+a^{m}\sqrt{n!}\left| n\right> \\
+&=&\frac{1}{\sqrt{m!}}\left\langle 0\right| a^{m}\left| n\right> \\
+&=&\frac{1}{\sqrt{m!}}\left\langle 0\right| \sqrt{\frac{n!}{\left(
+n-m\right) !}}\left| n-m\right> \\
+&=&\frac{1}{\sqrt{m!}}\sqrt{\frac{n!}{\left( n-m\right) !}}\left\langle
+0|n-m\right> 
+\end{eqnarray*}
+Entonces 
+\begin{equation}
+\left\langle m|n\right> =\delta _{m}^{n}
+\end{equation}
+Entonces, 
+\begin{eqnarray*}
+\left\langle c|c\right> &=&\exp \left( -\left| c\right| ^{2}\right)
+\sum_{m=0}^{\infty }\sum_{n=0}^{\infty }\frac{c^{\ast m}}{\sqrt{m!}}\frac{%
+c^{n}}{\sqrt{n!}}\left\langle m|n\right> \\
+&=&\exp \left( -\left| c\right| ^{2}\right) \sum_{m=0}^{\infty
+}\sum_{n=0}^{\infty }\frac{c^{\ast m}}{\sqrt{m!}}\frac{c^{n}}{\sqrt{n!}}%
+\delta _{m}^{n} \\
+&=&\exp \left( -\left| c\right| ^{2}\right) \sum_{n=0}^{\infty }\frac{%
+c^{\ast n}c^{n}}{n!} \\
+&=&\exp \left( -\left| c\right| ^{2}\right) \sum_{n=0}^{\infty }\frac{\left|
+c\right| ^{n}}{n!} \\
+&=&\exp \left( -\left| c\right| ^{2}\right) \exp \left( +\left| c\right|
+^{2}\right) \\
+&=&1.\blacksquare 
+\end{eqnarray*}
+
+\item $\left| c\right> $ es un eigenestado del operador de destrucci%
+'on $a_{r}\left( {\bf k}\right) $ con el eigenvalor complejo $c$: 
+\begin{equation}
+a_{r}\left( {\bf k}\right) \left| c\right> =c\left| c\right> 
+\end{equation}
+
+\textbf{Respuesta}: En efecto, recordemos\footnote{%
+He preferido suprimir el sub'indice $r$ y la dependencia en ${\bf k}$
+de todas las variables que pone el libro, para hacer la notaci'on un poco
+m'as compacta y agradable.} que 
+\begin{equation}
+\left| c\right> =\exp \left( -\frac{1}{2}\left| c\right| ^{2}\right)
+\sum_{n=0}^{\infty }\frac{c^{n}}{\sqrt{n!}}\left| n\right> 
+\end{equation}
+y 
+\begin{equation}
+\left| n\right> =\frac{\left[ a^{\dagger }\right] ^{n}}{\sqrt{n!}}%
+\left| 0\right> 
+\end{equation}
+Primero que nada, sabemos que 
+\begin{equation}
+a\left| n\right> =\sqrt{n}\left| n-1\right> 
+\end{equation}
+as'i que 
+\begin{eqnarray*}
+a\left| c\right> &=&\exp \left( -\frac{1}{2}\left| c\right|
+^{2}\right) \sum_{n=0}^{\infty }\frac{c^{n}}{\sqrt{n!}}a\left|
+n\right> \\
+&=&\exp \left( -\frac{1}{2}\left| c\right| ^{2}\right) \sum_{n=1}^{\infty }%
+\frac{c^{n}}{\sqrt{n!}}\sqrt{n}\left| n-1\right> 
+\end{eqnarray*}
+pues 
+\begin{equation}
+a\left| 0\right> =0
+\end{equation}
+Y as'i, 
+\begin{eqnarray*}
+a\left| c\right> &=&\exp \left( -\frac{1}{2}\left| c\right|
+^{2}\right) \sum_{n=1}^{\infty }\frac{c^{n}}{\sqrt{\left( n-1\right) !}}%
+\left| n-1\right> \\
+&=&c\exp \left( -\frac{1}{2}\left| c\right| ^{2}\right) \sum_{n=1}^{\infty }%
+\frac{c^{n-1}}{\sqrt{\left( n-1\right) !}}\left| n-1\right> \\
+&=&c\exp \left( -\frac{1}{2}\left| c\right| ^{2}\right) \sum_{n=0}^{\infty }%
+\frac{c^{n}}{\sqrt{n!}}\left| n\right> \\
+&=&c\left| c\right> .\blacksquare 
+\end{eqnarray*}
+
+\item El n'umero medio $\bar{N}$ de fotones en el recinto en el estado $%
+\left| c\right> $, es dado por 
+\begin{equation}
+\bar{N}=\left\langle c\right| N\left| c\right> =\left| c\right| ^{2}
+\end{equation}
+donde $N$ es operador de n'umero total de fotones.
+
+\textbf{Respuesta}: En efecto, como
+\begin{equation}
+N\equiv a^{\dagger }a
+\end{equation}
+entonces 
+\begin{eqnarray*}
+\bar{N} &=&\left\langle c\right| N\left| c\right> \\
+&=&\left\langle c\right| a^{\dagger }a\left| c\right> 
+\end{eqnarray*}
+Como de la pregunta anterior 
+\begin{equation}
+a\left| c\right> =c\left| c\right> ,
+\end{equation}
+entonces 
+\begin{eqnarray*}
+\bar{N} &=&\left\langle c\right| c^{\ast }c\left| c\right> \\
+&=&\left| c\right| ^{2}\left\langle c|c\right> \\
+&=&\left| c\right| ^{2}.\blacksquare 
+\end{eqnarray*}
+
+\item La fluctuaci'on cuadr'atica media $\Delta N$ en el n'umero
+de fotones en el recinto, en el estado $\left| c\right> $, es dado por 
+\begin{equation}
+\left( \Delta N\right) ^{2}=\left\langle c\right| N^{2}\left| c\right>
+-\bar{N}^{2}=\left| c\right| ^{2} 
+\end{equation}
+
+\textbf{Respuesta}: En efecto,
+\begin{eqnarray*}
+\left( \Delta N\right) ^{2} &=&\left\langle c\right| N^{2}\left|
+c\right> -\bar{N}^{2} \\
+&=&\left\langle c\right| a^{\dagger }aa^{\dagger }a\left| c\right>
+-\left| c\right| ^{4} \\
+&=&\left\langle c\right| c^{\ast }aa^{\dagger }c\left| c\right>
+-\left| c\right| ^{4} \\
+&=&\left| c\right| ^{2}\left\langle c\right| aa^{\dagger }\left|
+c\right> -\left| c\right| ^{4}
+\end{eqnarray*}
+Como 
+\begin{eqnarray*}
+\left[ a,a^{\dagger }\right] &=&1 \\
+aa^{\dagger }-a^{\dagger }a &=&1 \\
+aa^{\dagger } &=&1+a^{\dagger }a
+\end{eqnarray*}
+entonces 
+\begin{eqnarray*}
+\left( \Delta N\right) ^{2} &=&\left| c\right| ^{2}\left\langle c\right|
+\left( 1+a^{\dagger }a\right) \left| c\right> -\left| c\right| ^{4} \\
+&=&\left| c\right| ^{2}\left[ \left\langle c|c\right> +\left\langle
+c\right| a^{\dagger }a\left| c\right> \right] -\left| c\right| ^{4} \\
+&=&\left| c\right| ^{2}\left[ 1+\left| c\right| ^{2}\right] -\left| c\right|
+^{4} \\
+&=&\left| c\right| ^{2}+\left| c\right| ^{4}-\left| c\right| ^{4} \\
+&=&\left| c\right| ^{2}.\blacksquare
+\end{eqnarray*}
+
+\item El valor de expectaci'on del campo el'ectrico $\vec{E}$, en
+el estado $\left| c\right> $, est'a dado por 
+\begin{equation}
+\left\langle c\right| \vec{E}\left| c\right> =-2{\bf \varepsilon 
+}_{r}\left( {\bf k}\right) \sqrt{\frac{\hbar \omega _{{\bf k}}}{2V}}%
+\left| c\right| \sin\left( {\bf k\cdot x}-\omega _{{\bf k}%
+}t+\delta \right) 
+\end{equation}
+donde $V$ es el volumen del recinto.
+
+\textbf{Respuesta}: En efecto, como
+\begin{equation}
+\vec{A}\left( \vec{x},t\right) =\sum_{{\bf k}}\sum_{r}\sqrt{\frac{%
+\hbar c^{2}}{2V\omega _{{\bf k}}}}{\bf \varepsilon }_{r}\left( {\bf %
+k}\right) \left[ a_{r}\left( {\bf k}\right) e^{i\left( {\bf k}\cdot 
+\vec{x}-\omega _{{\bf k}}t\right) }+a_{r}^{\dagger }\left( {\bf k}%
+\right) e^{-i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right) }%
+\right] 
+\end{equation}
+Como no hay fuentes, podemos usar 
+\begin{equation}
+\phi =0 
+\end{equation}
+y entonces, 
+\begin{equation}
+\vec{E}\left( \vec{x},t\right) =-\frac{1}{c}\frac{\partial \vec{A}%
+\left( \vec{x},t\right) }{\partial t}=\vec{E}_{T}\left( \vec{x}%
+,t\right) 
+\end{equation}
+As'i, 
+\begin{eqnarray*}
+\vec{E}\left( \vec{x},t\right) &=&-\frac{1}{c}\frac{\partial }{%
+\partial t}\sum_{{\bf k}}\sum_{r}\sqrt{\frac{\hbar c^{2}}{2V\omega _{%
+{\bf k}}}}{\bf \varepsilon }_{r}\left( {\bf k}\right) \left[
+a_{r}\left( {\bf k}\right) e^{i\left( {\bf k}\cdot \vec{x}-\omega _{%
+{\bf k}}t\right) }+a_{r}^{\dagger }\left( {\bf k}\right) e^{-i\left( 
+{\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right) }\right] \\
+&=&-\frac{1}{c}\sum_{{\bf k}}\sum_{r}\sqrt{\frac{\hbar c^{2}}{2V\omega _{%
+{\bf k}}}}{\bf \varepsilon }_{r}\left( {\bf k}\right) \left[
+a_{r}\left( {\bf k}\right) \frac{\partial }{\partial t}e^{i\left( {\bf %
+k}\cdot \vec{x}-\omega _{{\bf k}}t\right) }+a_{r}^{\dagger }\left( 
+{\bf k}\right) \frac{\partial }{\partial t}e^{-i\left( {\bf k}\cdot 
+\vec{x}-\omega _{{\bf k}}t\right) }\right] \\
+&=&-\frac{1}{c}\sum_{{\bf k}}\sum_{r}\sqrt{\frac{\hbar c^{2}}{2V\omega _{%
+{\bf k}}}}{\bf \varepsilon }_{r}\left( {\bf k}\right) \left[
+a_{r}\left( {\bf k}\right) \left( -i\omega _{{\bf k}}\right)
+e^{i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right)
+}+a_{r}^{\dagger }\left( {\bf k}\right) \left( i\omega _{{\bf k}%
+}\right) e^{-i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right)
+}\right] \\
+&=&-i\frac{1}{c}\sum_{{\bf k}}\sum_{r}\sqrt{\frac{\hbar c^{2}}{2V\omega _{%
+{\bf k}}}}{\bf \varepsilon }_{r}\left( {\bf k}\right) \omega _{%
+{\bf k}}\left[ a_{r}^{\dagger }\left( {\bf k}\right) e^{-i\left( 
+{\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right) }-a_{r}\left( 
+{\bf k}\right) e^{i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}%
+}t\right) }\right] \\
+&=&-i\sum_{{\bf k}}\sum_{r}\sqrt{\frac{\hbar \omega _{{\bf k}}}{2V}}%
+{\bf \varepsilon }_{r}\left( {\bf k}\right) \left[ a_{r}^{\dagger
+}\left( {\bf k}\right) e^{-i\left( {\bf k}\cdot \vec{x}-\omega _{%
+{\bf k}}t\right) }-a_{r}\left( {\bf k}\right) e^{i\left( {\bf k}%
+\cdot \vec{x}-\omega _{{\bf k}}t\right) }\right] \\
+&=&i\sum_{{\bf k}}\sum_{r}\sqrt{\frac{\hbar \omega _{{\bf k}}}{2V}}%
+{\bf \varepsilon }_{r}\left( {\bf k}\right) \left[ a_{r}\left( {\bf %
+k}\right) e^{i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right)
+}-a_{r}^{\dagger }\left( {\bf k}\right) e^{-i\left( {\bf k}\cdot 
+\vec{x}-\omega _{{\bf k}}t\right) }\right]
+\end{eqnarray*}
+\begin{equation}
+\vec{E}\left( \vec{x},t\right) =i\sum_{{\bf k}}\sum_{r}\sqrt{\frac{%
+\hbar \omega _{{\bf k}}}{2V}}{\bf \varepsilon }_{r}\left( {\bf k}%
+\right) \left[ a_{r}\left( {\bf k}\right) e^{i\left( {\bf k}\cdot 
+\vec{x}-\omega _{{\bf k}}t\right) }-a_{r}^{\dagger }\left( {\bf k}%
+\right) e^{-i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right) }%
+\right] 
+\end{equation}
+Como el estado $\left| c\right> $ s'olo contiene fotones con
+s'olo \textbf{un} vector de onda ${\bf k}$ y \textbf{un} vector $%
+{\bf \varepsilon }_{r}\left( {\bf k}\right) $, y no otros, entonces 
+\begin{eqnarray*}
+\left\langle c\right| \vec{E}\left| c\right> &=&\left\langle
+c\right| i\sum_{{\bf k}}\sum_{r}\sqrt{\frac{\hbar \omega _{{\bf k}}}{2V%
+}}{\bf \varepsilon }_{r}\left( {\bf k}\right) \left[ a_{r}\left( 
+{\bf k}\right) e^{i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}%
+}t\right) }-a_{r}^{\dagger }\left( {\bf k}\right) e^{-i\left( {\bf k}%
+\cdot \vec{x}-\omega _{{\bf k}}t\right) }\right] \left| c\right>
+\\
+&=&\left\langle c\right| i\sqrt{\frac{\hbar \omega _{{\bf k}}}{2V}}%
+{\bf \varepsilon }_{r}\left( {\bf k}\right) \left[ a_{r}\left( {\bf %
+k}\right) e^{i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right)
+}-a_{r}^{\dagger }\left( {\bf k}\right) e^{-i\left( {\bf k}\cdot 
+\vec{x}-\omega _{{\bf k}}t\right) }\right] \left| c\right>
+\end{eqnarray*}
+ya que los otros estados posibles no est'an en la cavidad. Entonces, 
+\begin{eqnarray*}
+\left\langle c\right| \vec{E}\left| c\right> &=&i\sqrt{\frac{\hbar
+\omega _{{\bf k}}}{2V}}{\bf \varepsilon }_{r}\left( {\bf k}\right)
+\left\langle c\right| \left[ a_{r}\left( {\bf k}\right) e^{i\left( 
+{\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right) }-a_{r}^{\dagger
+}\left( {\bf k}\right) e^{-i\left( {\bf k}\cdot \vec{x}-\omega _{%
+{\bf k}}t\right) }\right] \left| c\right> \\
+&=&i\sqrt{\frac{\hbar \omega _{{\bf k}}}{2V}}{\bf \varepsilon }%
+_{r}\left( {\bf k}\right) \left[ \left\langle c\right| a_{r}\left( 
+{\bf k}\right) \left| c\right> e^{i\left( {\bf k}\cdot \vec{x}%
+-\omega _{{\bf k}}t\right) }-\left\langle c\right| a_{r}^{\dagger }\left(
+{\bf k}\right) \left| c\right> e^{-i\left( {\bf k}\cdot {\bf x%
+}-\omega _{{\bf k}}t\right) }\right] \\
+&=&i\sqrt{\frac{\hbar \omega _{{\bf k}}}{2V}}{\bf \varepsilon }%
+_{r}\left( {\bf k}\right) \left[ \left\langle c\right| c\left|
+c\right> e^{i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}%
+}t\right) }-\left\langle c\right| c^{\ast }\left| c\right> e^{-i\left(
+{\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right) }\right] \\
+&=&i\sqrt{\frac{\hbar \omega _{{\bf k}}}{2V}}{\bf \varepsilon }%
+_{r}\left( {\bf k}\right) \left[ ce^{i\left( {\bf k}\cdot \vec{x}%
+-\omega _{{\bf k}}t\right) }-c^{\ast }e^{-i\left( {\bf k}\cdot {\bf %
+x}-\omega _{{\bf k}}t\right) }\right] \\
+&=&i\sqrt{\frac{\hbar \omega _{{\bf k}}}{2V}}{\bf \varepsilon }%
+_{r}\left( {\bf k}\right) \left[ ce^{i\left( {\bf k}\cdot \vec{x}%
+-\omega _{{\bf k}}t\right) }-\left( ce^{i\left( {\bf k}\cdot \vec{x}%
+-\omega _{{\bf k}}t\right) }\right) ^{\ast }\right]
+\end{eqnarray*}
+Si ahora escribimos 
+\begin{equation}
+c=\left| c\right| e^{i\delta } 
+\end{equation}
+entonces 
+\begin{equation}
+\left\langle c\right| \vec{E}\left| c\right> =i\sqrt{\frac{\hbar
+\omega _{{\bf k}}}{2V}}{\bf \varepsilon }_{r}\left( {\bf k}\right)
+\left| c\right| \left[ e^{i\left( {\bf k}\cdot \vec{x}-\omega _{%
+{\bf k}}t+\delta \right) }-\left( e^{i\left( {\bf k}\cdot \vec{x}%
+-\omega _{{\bf k}}t+\delta \right) }\right) ^{\ast }\right] 
+\end{equation}
+Como 
+\begin{eqnarray*}
+z &=&z_{R}+iz_{C} \\
+z-z^{\ast } &=&z_{R}+iz_{C}-z_{R}+iz_{C} \\
+&=&2iz_{C}
+\end{eqnarray*}
+entonces, 
+\begin{eqnarray*}
+\left\langle c\right| \vec{E}\left| c\right> &=&i\sqrt{\frac{\hbar
+\omega _{{\bf k}}}{2V}}{\bf \varepsilon }_{r}\left( {\bf k}\right)
+2i\left| c\right| \sin\left( {\bf k}\cdot \vec{x}-\omega _{%
+{\bf k}}t\right) \\
+&=&-2\sqrt{\frac{\hbar \omega _{{\bf k}}}{2V}}{\bf \varepsilon }%
+_{r}\left( {\bf k}\right) \left| c\right| \sin\left( {\bf k}%
+\cdot \vec{x}-\omega _{{\bf k}}t\right) .\blacksquare
+\end{eqnarray*}
+
+\item La fluctuaci'on cuadr'atica media del campo el'ectrico, $%
+\Delta E$ en el estado $\left| c\right> $ est'a dada por 
+\begin{equation}
+\left( \Delta E\right) ^{2}=\left\langle c\right| \vec{E}^{2}\left|
+c\right> -\left[ \left\langle c\right| \vec{E}\left| c\right> %
+\right] ^{2}=\frac{\hbar \omega _{{\bf k}}}{2V} 
+\end{equation}
+
+\textbf{Respuesta}: En nuestro caso, s'olo nos interesa el campo
+el'ectrico dado por 
+\begin{equation}
+\vec{E}=i\sqrt{\frac{\hbar \omega _{{\bf k}}}{2V}}{\bf \varepsilon }%
+_{r}\left( {\bf k}\right) \left[ a_{r}\left( {\bf k}\right) e^{i\left( 
+{\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right) }-a_{r}^{\dagger
+}\left( {\bf k}\right) e^{-i\left( {\bf k}\cdot \vec{x}-\omega _{%
+{\bf k}}t\right) }\right] 
+\end{equation}
+\begin{eqnarray*}
+\vec{E} &=&i\sqrt{\frac{\hbar \omega _{{\bf k}}}{2V}}{\bf %
+\varepsilon }\left[ ae^{i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k%
+}}t\right) }-a^{\dagger }e^{-i\left( {\bf k}\cdot \vec{x}-\omega _{%
+{\bf k}}t\right) }\right] \\
+\vec{E}^{2} &=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ ae^{i\left( 
+{\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right) }-a^{\dagger
+}e^{-i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right) }\right]
+\left[ ae^{i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right)
+}-a^{\dagger }e^{-i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}%
+}t\right) }\right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ a^{2}e^{2i\left( {\bf k}%
+\cdot \vec{x}-\omega _{{\bf k}}t\right) }+\left( a^{\dagger }\right)
+^{2}e^{-2i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right)
+}-aa^{\dagger }-a^{\dagger }a\right]
+\end{eqnarray*}
+como 
+\begin{eqnarray*}
+\left[ a,a^{\dagger }\right] &=&1 \\
+aa^{\dagger }-a^{\dagger }a &=&1 \\
+aa^{\dagger } &=&1+a^{\dagger }a
+\end{eqnarray*}
+\begin{eqnarray*}
+\vec{E}^{2} &=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[
+a^{2}e^{2i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right)
+}+\left( a^{\dagger }\right) ^{2}e^{-2i\left( {\bf k}\cdot \vec{x}%
+-\omega _{{\bf k}}t\right) }-aa^{\dagger }-a^{\dagger }a\right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ a^{2}e^{2i\left( {\bf k}%
+\cdot \vec{x}-\omega _{{\bf k}}t\right) }+\left( a^{\dagger }\right)
+^{2}e^{-2i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right)
+}-1-a^{\dagger }a-a^{\dagger }a\right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ a^{2}e^{2i\left( {\bf k}%
+\cdot \vec{x}-\omega _{{\bf k}}t\right) }+\left( a^{\dagger }\right)
+^{2}e^{-2i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right)
+}-1-2a^{\dagger }a\right]
+\end{eqnarray*}
+y entonces, 
+\begin{eqnarray*}
+\left\langle c\right| \vec{E}^{2}\left| c\right> &=&-\frac{\hbar
+\omega _{{\bf k}}}{2V}\left\langle c\right| \left[ a^{2}e^{2i\left( 
+{\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right) }+\left( a^{\dagger
+}\right) ^{2}e^{-2i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}%
+}t\right) }-1-2a^{\dagger }a\right] \left| c\right> \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ \left\langle c\right|
+a^{2}\left| c\right> e^{2i\left( {\bf k}\cdot \vec{x}-\omega _{%
+{\bf k}}t\right) }+\left\langle c\right| \left( a^{\dagger }\right)
+^{2}\left| c\right> e^{-2i\left( {\bf k}\cdot \vec{x}-\omega _{%
+{\bf k}}t\right) }-\left\langle c|c\right> -2\left\langle c\right|
+a^{\dagger }a\left| c\right> \right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ \left\langle c\right|
+cc\left| c\right> e^{2i\left( {\bf k}\cdot \vec{x}-\omega _{%
+{\bf k}}t\right) }+\left\langle c\right| c^{\ast }c^{\ast }\left|
+c\right> e^{-2i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}%
+}t\right) }-\left\langle c|c\right> -2\left\langle c\right| c^{\ast
+}c\left| c\right> \right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ c^{2}e^{2i\left( {\bf k}%
+\cdot \vec{x}-\omega _{{\bf k}}t\right) }+\left( c^{\ast }\right)
+^{2}e^{-2i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right)
+}-1-2\left| c\right| ^{2}\right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ \left| c\right|
+^{2}e^{2i\delta }e^{2i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}%
+}t\right) }+\left| c\right| ^{2}e^{-2i\delta }e^{-2i\left( {\bf k}\cdot 
+\vec{x}-\omega _{{\bf k}}t\right) }-1-2\left| c\right| ^{2}\right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ \left| c\right|
+^{2}e^{2i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t+\delta
+\right) }+\left| c\right| ^{2}e^{-2i\left( {\bf k}\cdot \vec{x}-\omega
+_{{\bf k}}t+\delta \right) }-1-2\left| c\right| ^{2}\right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ \left| c\right| ^{2}\left(
+e^{2i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t+\delta \right)
+}+e^{-2i\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t+\delta
+\right) }\right) -1-2\left| c\right| ^{2}\right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ 2\left| c\right| ^{2}\cos
+2\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t+\delta \right)
+-1-2\left| c\right| ^{2}\right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ 2\left| c\right| ^{2}\left(
+1-2\sin^{2}\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}%
+}t+\delta \right) \right) -1-2\left| c\right| ^{2}\right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ 2\left| c\right|
+^{2}-4\left| c\right| ^{2}\sin^{2}\left( {\bf k}\cdot \vec{x}%
+-\omega _{{\bf k}}t+\delta \right) -1-2\left| c\right| ^{2}\right] \\
+&=&-\frac{\hbar \omega _{{\bf k}}}{2V}\left[ -4\left| c\right| ^{2}\sin^{2}\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t+\delta
+\right) -1\right] \\
+&=&\frac{\hbar \omega _{{\bf k}}}{2V}\left[ 4\left| c\right| ^{2}\sin^{2}\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t+\delta \right)
++1\right]
+\end{eqnarray*}
+Por otra parte, 
+\begin{eqnarray*}
+\left\langle c\right| \vec{E}\left| c\right> &=&-2\sqrt{\frac{\hbar
+\omega _{{\bf k}}}{2V}}{\bf \varepsilon }_{r}\left( {\bf k}\right)
+\left| c\right| \sin\left( {\bf k}\cdot \vec{x}-\omega _{{\bf %
+k}}t\right) \\
+\left\langle c\right| \vec{E}\left| c\right> ^{2} &=&2\frac{\hbar
+\omega _{{\bf k}}}{V}\left| c\right| ^{2}\sin^{2}\left( {\bf k}%
+\cdot \vec{x}-\omega _{{\bf k}}t\right)
+\end{eqnarray*}
+As'i que 
+\begin{eqnarray*}
+\left( \Delta E\right) ^{2} &=&\left\langle c\right| \vec{E}^{2}\left|
+c\right> -\left[ \left\langle c\right| \vec{E}\left| c\right> %
+\right] ^{2} \\
+&=&\frac{\hbar \omega _{{\bf k}}}{2V}\left[ 4\left| c\right| ^{2}\sin^{2}\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t+\delta \right)
++1\right] -2\frac{\hbar \omega _{{\bf k}}}{V}\left| c\right| ^{2}\sin^{2}\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t\right) \\
+&=&2\frac{\hbar \omega _{{\bf k}}}{V}\left| c\right| ^{2}\sin%
+^{2}\left( {\bf k}\cdot \vec{x}-\omega _{{\bf k}}t+\delta \right) +%
+\frac{\hbar \omega _{{\bf k}}}{2V}-2\frac{\hbar \omega _{{\bf k}}}{V}%
+\left| c\right| ^{2}\sin^{2}\left( {\bf k}\cdot \vec{x}-\omega _{%
+{\bf k}}t\right) \\
+&=&\frac{\hbar \omega _{{\bf k}}}{2V}
+\end{eqnarray*}
+\end{enumerate}
+\end{enumerate}
+
+ Finalmente, consideramos el estado "localizado" $\left| x\right> :=\sqrt{\frac{4\pi\lambda\omega_{k'}}{\hbar}}\hat{\phi}(x) \left| 0\right> $
+\begin{eqnarray}
+\left\langle x|  x'\right> & = &\left\langle 0\right| \left[ \sqrt{\frac{4\pi\lambda
+\omega_{k}}{\hbar}}\hat{\phi}^{\dagger}(x) \right] \left[\sqrt{\frac{4\pi\lambda\omega_{k'}}{\hbar}}\hat{\phi}(x) \right] \left| 0\right> \\
+& = &\left\langle 0\right| \left[ \sqrt{\frac{\hbar}{4\pi\lambda}}\sum_k\sqrt{\frac{4\pi\lambda\omega_{k}}{\hbar}} \left( \omega_{k}\right)
+^{-\frac{1}{2}}\left\{ \hat{b}_{k}^{\dagger}e^{-ikx}+\hat{b}_{k}%
+e^{ikx}\right\} \right] \nonumber \\
+&&\qquad \left[ \sqrt{\frac{\hbar}{4\pi\lambda}}\sum_{k'}\sqrt{\frac{4\pi\lambda\omega_{k'}}{\hbar}}\left( \omega_{k'}\right) ^{-\frac{1}{2}}\left\{ \hat{b}_{k'}e^{ik'x'}+\hat{b}_{k'}^{\dagger}e^{-ik'x'}\right\} \right] \left| 0\right> \\
+& = &\left\langle 0\right| \left[ \sum_k\left\{ \hat{b}_{k}^{\dagger
+}e^{-ikx}+\hat{b}_{k}e^{ikx}\right\} \right] \left[ \sum_{k'}\left\{ \hat{b}_{k'}e^{ik'x'}+\hat{b}_{k'}^{\dagger}e^{-ik'x'}\right\} \right] \left| 0\right> \\
+& = &\sum_{kk'}\left\{\left\langle 0\right| \hat{b}_{k}^{\dagger}\hat{b}_{k'}\left| 0\right> e^{-ikx+ik'x'}+\left\langle 0\right| \hat{b}_{k}^{\dagger}\hat{b}_{k'}^{\dagger}\left| 0\right> e^{-ikx-ik'x'}\right. \nonumber \\
+&& \qquad \left.+\left\langle 0\right| \hat{b}_{k}\hat{b}_{k'}\left| 0\right> e^{ikx+ik'x'}
++\left\langle 0\right| \hat{b}_{k}\hat{b}_{k'}^{\dagger}\left| 0\right> e^{ikx-ik'x'}%
+\right\} \\
+& = &\sum_{kk'}\left\{\left\langle 0\right| \hat{b}_{k}^{\dagger}\left| 0,\dots,1_{k'},0,\dots\right> e^{-ikx-ik'x'} \right.\nonumber \\
+&&\qquad \left.+\left\langle 0\right| \left[ \delta(k-k') +\hat{b}_{k'}^{\dagger}\hat{b}_{k}\right] \left| 0\right> e^{ikx-ik'x'}\right\} \\
+& = &\sum_{kk'}\left\{\left\langle 0\right| \left. 0,\dots,1_{k},1_{k'},0,\dots\right> e^{-ikx-ik'x'}+\delta\left( k-k\right) \left\langle 0\right| \left. 0\right> e^{ikx-ik'x'}\right. \nonumber \\
+&&\qquad\left.+\left\langle 0\right| \hat{b}_{k'}^{\dagger}\hat{b}_{k}\left| 0\right> e^{ikx-ik'x'}\right\} \\
+& = &\sum_{kk'}e^{ikx-ik'x'}\delta(k-k') \\
+& = &\sum_k e^{i(x-x') k}\\
+& = &\delta(x-x') ,
+\end{eqnarray}
+\begin{eqnarray}
+\left\langle x\right| \left. k\right> & = &\left\langle 0\right|
+\left[ \sqrt{\frac{4\pi\lambda\omega_{k}}{\hbar}}\hat{\phi}^{\dagger}\left(
+x\right) \right] \hat{b}_{k}^{\dagger}\left| 0\right> \\
+& = &\left\langle 0\right| \left[ \sqrt{\frac{\hbar}{4\pi\lambda}}\sum_{k'}\sqrt{\frac{4\pi\lambda\omega_{k'}}{\hbar}}\left( \omega_{k'}\right) ^{-\frac{1}{2}}\left\{ \hat{b}_{k'}^{\dagger}e^{-ik'x}+\hat{b}_{k'}e^{ik'x}\right\} \right] \hat{b}_{k}^{\dagger}\left| 0\right> \\
+& = &\left\langle 0\right| \left[ \sum_{k'}\left\{ \hat{b}_{k'}^{\dagger}\hat{b}_{k}^{\dagger}e^{-ik'x}+\hat{b}_{k'}\hat{b}_{k}^{\dagger}e^{ik'x}\right\} \right] \left| 0\right> \\
+& = &\sum_{k'}\left\{ \left\langle 0\right| \hat{b}_{k'}^{\dagger}\hat{b}_{k}^{\dagger}\left| 0\right> e^{-ik'x}+\left\langle 0\right| \hat{b}_{k'}\hat{b}_{k}^{\dagger}\left| 0\right> e^{ik'x}\right\} \\
+& = &\sum_{k'}\left\{ \left\langle 0\right| \hat{b}_{k'}^{\dagger}\hat{b}_{k}^{\dagger}\left| 0\right> e^{-ik'x}+\left\langle 0\right| \left[ \hat{b}_{k}^{\dagger}\hat{b}_{k'}+\delta(k-k') \right] \left| 0\right> e^{ik'x}\right\} \\
+& = &\sum_{k'}\left\{ \left\langle 0\right| \hat{b}_{k'}^{\dagger}\hat{b}_{k}^{\dagger}\left| 0\right> e^{-ik'x}+\left\langle 0\right| \hat{b}_{k}^{\dagger}\hat{b}_{k'}\left| 0\right> e^{ik'x}+\left\langle 0\right| \delta(k-k') \left| 0\right> e^{ik'x}\right\} \\
+& = &\sum_{k'}\left\{ \left\langle 0\right| \hat{b}_{k'}^{\dagger}\left| 0,\dots,1_{k},0,\dots\right> e^{-ik'x}+\delta(k-k') \left\langle 0\right| \left. 0\right> e^{ik'x}\right\} \\
+& = &\sum_{k'}\left\{ \left\langle 0\right| \left. 0,\dots,1_{k},1_{k'},0,\dots\right> e^{-ik'x}+\delta(k-k') \left\langle 0\right| \left. 0\right> e^{ik'x}\right\} \\
+& = &\sum_{k'}\delta(k-k') e^{ik'x}\\
+& = &e^{ikx} .
+\end{eqnarray}
+
+
+\subsubsection{Interpretaci'on}
+Luego, hacemos el siguiente cambio de variables:%
+\begin{eqnarray}
+a_{\vec{k}\sigma} & = &\sqrt{\frac{\omega_{k}}{2\hbar}}\left( \hat{q}%
+_{\vec{k}\sigma}+i\frac{\hat{p}_{\vec{k}\sigma}}{\omega_{k}}\right)
+\label{variables 1}\\
+a_{\vec{k}\sigma}^{\dagger} & = &\sqrt{\frac{\omega_{k}}{2\hbar}}\left(
+\hat{q}_{\vec{k}\sigma}-i\frac{\hat{p}_{\vec{k}\sigma}}{\omega_{k}}\right)
+\label{variables 2}%
+\end{eqnarray}
+de manera que el Hamiltoniano se transforme en:%
+\begin{eqnarray}
+\hat{H} & = &\frac{\hbar}{2}\sum_{\vec{k}\sigma}\omega_{k}\frac{\omega
+_{k}}{2\hbar}\left\{ \left( \hat{q}_{\vec{k}\sigma}+i\frac{\hat{p}_{\vec
+{k}\sigma}}{\omega_{k}}\right) \left( \hat{q}_{\vec{k}\sigma}-i\frac
+{\hat{p}_{\vec{k}\sigma}}{\omega_{k}}\right) +\left( \hat{q}_{\vec{k}%
+\sigma}-i\frac{\hat{p}_{\vec{k}\sigma}}{\omega_{k}}\right) \left( \hat
+{q}_{\vec{k}\sigma}+i\frac{\hat{p}_{\vec{k}\sigma}}{\omega_{k}}\right)
+\right\} \\
+& = &\sum_{\vec{k}\sigma}\left\{ \frac{1}{2}\hat{p}_{\vec{k}\sigma}%
+^{2}+\frac{1}{2}\omega_{k}^{2}\hat{q}_{\vec{k}\sigma}^{2}\right\}
+\end{eqnarray}
+que corresponde al conocido Hamiltoniano de un conjunto de infinitos
+osciladores arm'onicos desacoplados con polarizaci'on $\sigma,$ cuyas
+variables "de campo" son.$\hat{p}_{\vec{k}\sigma}$ y $\hat{q}_{\vec{k}\sigma}%
+$. Las relaci'ones de conmutaci'on entre estas variables tambien es bien
+conocida, siendo:%
+\begin{eqnarray}
+\left[ \hat{q}_{\vec{k}\sigma},\hat{p}_{\vec{k}'\sigma '}\right] & = &i\hbar\delta_{\sigma\sigma '}\delta^{\left( 3\right) }\left( \vec{k}-\vec{k}'\right) \label{Conmutador Osciladores Desacoplados}\\
+\left[ \hat{q}_{\vec{k}\sigma},\hat{q}_{\vec{k}'\sigma '}\right] & = &\left[ \hat{p}_{\vec{k}\sigma},\hat{p}_{\vec{k}'\sigma '}\right] =0\nonumber
+\end{eqnarray}
+de la cual podemos finalmente obtener la relaci'on de conmutaci'on que
+tanto buscamos (la de nuestras nuevas variables del campo EM $\hat{a}_{\vec
+{k}\sigma}$ y $\hat{a}_{\vec{k}\sigma}^{\dagger}$) simplemente invirtiendo las
+ecuaciones(\ref{variables 1}), (\ref{variables 2}), y luego reemplazandolas en
+(\ref{Conmutador Osciladores Desacoplados}). En efecto, al invertir las ecuaciones
+mencionadas obtenemos:%
+\begin{eqnarray}
+\hat{q}_{\vec{k}\sigma} & = &\sqrt{\frac{\hbar}{2\omega_{k}}}\left(
+a_{\vec{k}\sigma}+a_{\vec{k}\sigma}^{\dagger}\right) \\
+\hat{p}_{\vec{k}\sigma} & = &-i\sqrt{\frac{\hbar \omega_{k}}{2}}\left(
+a_{\vec{k}\sigma}-a_{\vec{k}\sigma}^{\dagger}\right)
+\end{eqnarray}
+y luego ocupando sus conmutadores:%
+\begin{eqnarray}
+\left[ \hat{q}_{\vec{k}\sigma},\hat{p}_{\vec{k}'\sigma'}\right] & = &i\hbar\delta_{\sigma\sigma'}\delta^{\left( 3\right) }\left( \vec{k}-\vec{k}'\right) \\
+\left[ \sqrt{\frac{\hbar}{2\omega_{k}}}\left( a_{\vec{k}\sigma}+a_{\vec
+{k}\sigma}^{\dagger}\right) ,-i\sqrt{\frac{\hbar \omega_{k'}}{2}}\left( a_{\vec{k}'\sigma '}-a_{\vec{k}'\sigma '}^{\dagger}\right) \right] & = &i\hbar\delta_{\sigma\sigma '}\delta^{\left( 3\right) }\left( \vec{k}-\vec{k}'\right) \\
+-\frac{i\hbar}{2}\sqrt{\frac{\omega_{k'}}{\omega_{k}}}\left\{ -\left[ a_{\vec{k}\sigma},a_{\vec{k}'\sigma '}^{\dagger}\right] -\left[ a_{\vec{k}'\sigma '},a_{\vec{k}\sigma}^{\dagger}\right] \right\} & = &i\hbar\delta_{\sigma\sigma '}\delta^{\left( 3\right) }\left( \vec{k}-\vec{k}'\right)
+\end{eqnarray}
+pero, si calculamos%
+\begin{eqnarray}
+\left[ \hat{q}_{\vec{k}\sigma},\hat{q}_{\vec{k}'\sigma '}\right] & = &0\\
+\left[ \sqrt{\frac{\hbar}{2\omega_{k}}}\left( a_{\vec{k}\sigma}+a_{\vec
+{k}\sigma}^{\dagger}\right) ,\sqrt{\frac{\hbar}{2\omega_{k'}}}\left( a_{\vec{k}'\sigma '}+a_{\vec{k}'\sigma '}^{\dagger}\right) \right] & = &0\\
+\left[ a_{\vec{k}\sigma},a_{\vec{k}'\sigma '}^{\dagger}\right] & = &\left[ a_{\vec{k}'\sigma '},a_{\vec{k}\sigma}^{\dagger}\right]
+\end{eqnarray}
+resultado que se corrobora con%
+\begin{eqnarray}
+\left[ \hat{p}_{\vec{k}\sigma},\hat{p}_{\vec{k}'\sigma '}\right] & = &0\\
+\left[ -i\sqrt{\frac{\hbar \omega_{k}}{2}}\left( a_{\vec{k}\sigma}%
+-a_{\vec{k}\sigma}^{\dagger}\right) ,-i\sqrt{\frac{\hbar \omega_{k}'}{2}}\left( a_{\vec{k}'\sigma '}-a_{\vec{k}'\sigma '}^{\dagger}\right) \right] & = &0\\
+\left[ a_{\vec{k}'\sigma '},a_{\vec{k}\sigma}^{\dagger}\right] & = &\left[ a_{\vec{k}\sigma},a_{\vec{k}'\sigma '}^{\dagger}\right]
+\end{eqnarray}
+encontramos que:%
+\begin{eqnarray}
+-\frac{i\hbar}{2}\sqrt{\frac{\omega_{k'}}{\omega_{k}}}\left\{ -\left[ a_{\vec{k}\sigma},a_{\vec{k}'\sigma '}^{\dagger}\right] -\left[ a_{\vec{k}'\sigma '},a_{\vec{k}\sigma}^{\dagger}\right] \right\} & = &i\hbar\delta_{\sigma\sigma '}\delta^{\left( 3\right) }\left( \vec{k}-\vec{k}'\right) \\
+i\hbar\sqrt{\frac{\omega_{k'}}{\omega_{k}}}\left[ a_{\vec{k}\sigma},a_{\vec{k}'\sigma'}^{\dagger}\right] & = &i\hbar\delta_{\sigma\sigma '}\delta^{\left( 3\right) }\left( \vec{k}-\vec{k}'\right) \\
+\left[ a_{\vec{k}\sigma},a_{\vec{k}'\sigma'}^{\dagger}\right] & = &\sqrt{\frac{\omega_{k}}{\omega_{k'}}}\delta_{\sigma\sigma '}\delta^{\left( 3\right) }\left( \vec{k}-\vec{k}'\right)
+\end{eqnarray}
+
+
+Como estamos realizando la observaci'on (midiendo) en el mismo punto del
+espacio de los $\vec{k}$ (de lo contrario sabemos que los operadores
+conmutan), el resultado es no nulo solo cuando $\vec{k}=\vec{k}'$, por lo tanto $\omega_{k}=\omega_{k'}$ y:%
+\begin{equation}
+\left[ a_{\vec{k}\sigma},a_{\vec{k}'\sigma '}^{\dagger}\right] =\delta_{\sigma\sigma '}\delta^{\left( 3\right) }\left( \vec{k}-\vec{k}'\right)
+\end{equation}
+
+
+Los otros conmutadores son obvios:%
+\begin{equation}
+\left[ a_{\vec{k}\sigma},a_{\vec{k}'\sigma '}\right] =\left[ a_{\vec{k}\sigma}^{\dagger},a_{\vec{k}'\sigma '}^{\dagger}\right] =0
+\end{equation}
+por el razonamiento hecho anteriormente.
+
+ara obtener la energ'ia y el momentum lineal del campo electromagn'etico en funci'on de nuestras nuevas variables de las amplitudes $a_{\vec{k}\sigma}(t)$ usaremos las
+ecuaciones (\ref{Campo Electrico}), (\ref{Campo Magnetico}) para reemplazarlas en las
+expresiones (\ref{Energia del Campo EM2}) y (\ref{Momentum Lineal Total EM2}).
+En efecto\footnote{Otra manera alternativa, hubiese sido reemplazar
+directamente (\ref{Ai(aksigma)}) en las expresiones
+(\ref{Energia del Campo EM1}) y (\ref{Momentum Lineal Total EM1}). Pero la que
+seguimos aqui es m'as did'actica.}:%
+
+\begin{eqnarray} H & = &\frac{1}{2}\int_{V}\left( \varepsilon_{0}E^{2}+\frac{1}{\mu_{0}} B^{2}\right) dV\nonumber\\
+& = &-\frac{1}{2}\sum_{\sigma,\sigma ' }\int d^{3}x\int d^{3}k\int d^{3}k ' N_{k}N_{k ' }\left[
+\begin{array} [c]{c}
+ \varepsilon_{0}\omega_{k}\omega_{k ' }\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k} ' \sigma ' }\right) \\ +\frac{1}{\mu_{0}}\left( \vec{k}\times\hat{\varepsilon}_{\vec{k}\sigma }\right) \cdot\left( \vec{k} ' \times\hat{\varepsilon}_{k ' \sigma ' }\right) \end{array} \right] \left\{ a_{\vec{k}\sigma}e^{i\vec{k}\cdot\vec{x}}-a_{\vec{k}\sigma }^{\ast}e^{-i\vec{k}\cdot\vec{x}}\right\} \left\{ a_{\vec{k} ' \sigma ' }e^{i\vec{k} ' \cdot\vec{x}}-a_{\vec{k} ' \sigma ' }^{\ast}e^{-i\vec{k} ' \cdot\vec{x}}\right\} \nonumber\\ & = &-\frac{1}{2}\sum_{\sigma,\sigma ' }\int d^{3}x\int d^{3}k\int d^{3}k ' N_{k}N_{k ' }\left[ \begin{array} [c]{c}%
+ \varepsilon_{0}\omega_{k}\omega_{k ' }\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k} ' \sigma ' }\right) \\ +\frac{1}{\mu_{0}}\left\{ \left( \vec{k}\cdot\vec{k} ' \right) \left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k} ' \sigma ' }\right) -\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\vec{k} ' \right) \left( \hat{\varepsilon}_{\vec{k} ' \sigma ' }\cdot\vec{k}\right) \right\} \end{array} \right] \left\{ \begin{array} [c]{c}%
+ a_{\vec{k}\sigma}a_{\vec{k} ' \sigma ' }e^{i\left( \vec{k}-\left( -\vec{k} ' \right) \right) \cdot\vec{x}}-a_{\vec{k}\sigma}a_{\vec{k} ' \sigma ' }^{\ast}e^{i\left( \vec{k}-\vec{k} ' \right) \cdot\vec{x}}\\ -a_{\vec{k}\sigma}^{\ast}a_{\vec{k} ' \sigma ' }e^{-i\left( \vec{k}-\vec{k} ' \right) \cdot\vec{x}}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k} ' \sigma ' }^{\ast}e^{-i\left( \vec{k}-\left( -\vec{k} ' \right) \right) \cdot\vec{x}}%
+\end{array} \right\} \nonumber\\ & = &-\frac{\left( 2\pi\right) ^{3}}{2}\sum_{\sigma,\sigma ' }\int d^{3}k\int d^{3}k ' N_{k}N_{k ' }\left[ \begin{array} [c]{c}%
+\varepsilon_{0}\omega_{k}\omega_{k ' }\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k} ' \sigma ' }\right) \\ +\frac{1}{\mu_{0}}\left\{ \left( \vec{k}\cdot\vec{k} ' \right) \left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k} ' \sigma ' }\right) -\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\vec{k} ' \right) \left( \hat{\varepsilon}_{\vec{k} ' \sigma ' }\cdot\vec{k}\right) \right\} \end{array} \right] \left\{ \begin{array} [c]{c}%
+\left( a_{\vec{k}\sigma}a_{\vec{k} ' \sigma ' }+a_{\vec{k}\sigma}^{\ast}a_{\vec{k} ' \sigma ' }^{\ast}\right) \delta^{\left( 3\right) }\left( \vec{k}-\left( -\vec{k} ' \right) \right) \\ -\left( a_{\vec{k}\sigma}a_{\vec{k} ' \sigma ' }^{\ast}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k} ' \sigma ' }\right) \delta^{\left( 3\right) }\left( \vec{k}-\vec{k} ' \right) \end{array} \right\} \nonumber\\ & = &-\frac{\left( 2\pi\right) ^{3}}{2}\sum_{\sigma,\sigma ' }\int d^{3}kN_{k}^{2}\left[ \begin{array} [c]{c}%
+\varepsilon_{0}\omega_{k}^{2}\left\{ \left( \hat{\varepsilon}_{\vec{k}%
+\sigma}\cdot\hat{\varepsilon}_{-\vec{k}\sigma ' }\right) \left( a_{\vec{k}\sigma}a_{-\vec{k}\sigma ' }+a_{\vec{k}\sigma}^{\ast}a_{-\vec{k}\sigma ' }^{\ast}\right) -\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot \hat{\varepsilon}_{\vec{k}\sigma ' }\right) \left( a_{\vec{k}\sigma}a_{\vec{k}\sigma ' }^{\ast}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k}\sigma ' }\right) \right\} \\ +\frac{1}{\mu_{0}}\left\{ \left( \vec{k}\cdot-\vec{k}\right) \left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{-\vec{k}\sigma ' }\right) -\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot-\vec{k}\right) \left( \hat{\varepsilon}_{-\vec{k}\sigma ' }\cdot\vec{k}\right) \right\} \left( a_{\vec{k}\sigma}a_{-\vec{k}\sigma ' }+a_{\vec{k}\sigma}^{\ast}a_{-\vec{k}\sigma ' }^{\ast}\right) \\ -\frac{1}{\mu_{0}}\left\{ \left( \vec{k}\cdot\vec{k}\right) \left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k}\sigma ' }\right) -\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\vec{k}\right) \left( \hat{\varepsilon}_{\vec{k}\sigma ' }\cdot\vec{k}\right) \right\} \left( a_{\vec{k}\sigma}a_{\vec{k}\sigma ' }^{\ast}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k}\sigma ' }\right) \end{array} \right] \nonumber\\ & = &-\frac{\left( 2\pi\right) ^{3}}{2}\sum_{\sigma,\sigma ' }\int d^{3}kN_{k}^{2}\left[ \begin{array} [c]{c}%
+\varepsilon_{0}\omega_{k}^{2}\left\{ -\left( -1\right) ^{\sigma}\left( a_{\vec{k}\sigma}a_{-\vec{k}\sigma ' }+a_{\vec{k}\sigma}^{\ast}a_{-\vec{k}\sigma ' }^{\ast}\right) -\left( a_{\vec{k}\sigma}a_{\vec{k}\sigma ' }^{\ast}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k}\sigma ' }\right) \right\} \\ +\frac{k^{2}}{\mu_{0}}\left\{ \left( -1\right) ^{\sigma}\left( a_{\vec {k}\sigma}a_{-\vec{k}\sigma ' }+a_{\vec{k}\sigma}^{\ast}a_{-\vec{k}\sigma ' }^{\ast}\right) -\left( a_{\vec{k}\sigma}a_{\vec{k}\sigma ' }^{\ast}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k}\sigma ' }\right) \right\} \end{array} \right] \delta_{\sigma\sigma ' }\nonumber\\ & = &\frac{\left( 2\pi\right) ^{3}\left( 2\varepsilon_{0}\right) }{2}%
+\sum_{\sigma}\int d^{3}kN_{k}^{2}\omega_{k}^{2}\left\{ a_{\vec{k}\sigma }a_{\vec{k}\sigma}^{\ast}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k}\sigma}\right\} \nonumber\\ & = &\frac{\left( 2\pi\right) ^{3}\left( 2\varepsilon_{0}\right) }{2}%
+\sum_{\sigma}\int d^{3}k\left( \frac{\hbar}{\varepsilon_{0}\left( 2\pi\right) ^{3}2\omega_{k}}\right) \omega_{k}^{2}\left\{ a_{\vec{k}\sigma }a_{\vec{k}\sigma}^{\ast}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k}\sigma}\right\} \nonumber\\ & = &\frac{\hbar}{2}\sum_{\sigma}\int d^{3}k\omega_{k}\left\{ a_{\vec{k}\sigma }^{\ast}a_{\vec{k}\sigma}+a_{\vec{k}\sigma}a_{\vec{k}\sigma}^{\ast}\right\} \label{Energia Campo EM}%
+\end{eqnarray} donde ocupamos expl\'{\i}citamente que \begin{eqnarray} \left( \vec{k}\times\hat{\varepsilon}_{\vec{k}\sigma}\right) \cdot\left( \vec{k} ' \times\hat{\varepsilon}_{\vec{k} ' \sigma ' }\right) & = &\left( \vec{k}\cdot\vec{k} ' \right) \left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k} ' \sigma ' }\right) -\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\vec{k} ' \right) \left( \hat{\varepsilon}_{\vec{k} ' \sigma ' }\cdot\vec{k}\right) \label{rel1}\\ \omega_{-k} & = &\omega_{k}\label{rel2}\\ \hat{\varepsilon}_{\vec{k}\sigma}\cdot\vec{k} & = &\hat{\varepsilon}_{\vec {k}\sigma}\cdot\left( -\vec{k}\right) =0\label{rel3}\\ \vec{k}\cdot\vec{k} & = &k^{2}\label{rel4}\\ \vec{k}\cdot\left( -\vec{k}\right) & = &-k^{2}\label{rel5}\\ \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k}\sigma ' } & = &\delta_{\sigma\sigma ' }\label{rel6}\\ \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{-\vec{k}\sigma ' } & = &-\left( -1\right) ^{\sigma}\delta_{\sigma\sigma ' }\label{rel7}\\ k^{2} & = &c^{2}\omega_{k}^{2}=\varepsilon_{0}\mu_{0}\omega_{k}^{2}\label{rel8}%
+\end{eqnarray} y en especial, escogimos \begin{equation} N_{-k}=N_{k}=\sqrt{\frac{\hbar}{\varepsilon_{0}\left( 2\pi\right) ^{3}2\omega_{k}}}\qquad\qquad\left[ \frac{Nsm^{3/2}}{C}\right] \label{rel9}%
+\end{equation} de manera que la energ\'{\i}a nos diera de la misma forma que la de un conjunto de osciladores arm\'{o}nicos tridimensionales desacoplados. Notar que esta elecci\'{o}n para $N_{k}$ tambi\'{e}n nos asegura que las dimensiones de las cantidades f\'{\i}sicas en juego sean las correctas.
+
+As'i, cada modo normal del campo electromagn'etico, normalizado con
+(\ref{rel9}), se comporta como un oscilador arm'onico cl'asico con
+energ'ia $\hbar\omega_{k}$.
+
+Analogamente, para el momentum lineal obtenemos\footnote{Nuevamente ocupamos
+las relaciones (\ref{rel1})-(\ref{rel9}).}:%
+\begin{eqnarray}
+\vec{P} & = &\varepsilon_{0}\int_{V}\left( \vec{E}\times\vec{B}\right) dV\\
+& = &-\varepsilon_{0}\sum_{\sigma,\sigma'}\int d^{3}x\int d^{3}k\int d^{3}k'N_{k}N_{k'}\omega_{k}\left\{ \hat{\varepsilon}_{\vec{k}\sigma}\times\left( \vec{k}'\times\hat{\varepsilon}_{\vec{k}'\sigma'}\right) \right\} \left\{ a_{\vec{k}\sigma}e^{i\vec{k}\cdot\vec{x}}%
+-a_{\vec{k}\sigma}^{\ast}e^{-i\vec{k}\cdot\vec{x}}\right\} \left\{
+a_{\vec{k}'\sigma'}e^{i\vec{k}'\cdot\vec{x}}-a_{\vec{k}'\sigma'}^{\ast}e^{-i\vec{k}'\cdot\vec{x}}\right\} \\
+& = &-\varepsilon_{0}\sum_{\sigma,\sigma'}\int d^{3}x\int d^{3}k\int d^{3}k'N_{k}N_{k'}\omega_{k}\left\{ \vec{k}'\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k}'\sigma'}\right) -\hat{\varepsilon}_{\vec{k}'\sigma'}\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\vec{k}'\right) \right\} \left\{
+\begin{array}
+[c]{c}%
+a_{\vec{k}\sigma}a_{\vec{k}'\sigma'}e^{i\left( \vec{k}-\left( -\vec{k}'\right) \right) \cdot\vec{x}}-a_{\vec{k}\sigma}a_{\vec{k}'\sigma'}^{\ast}e^{i\left( \vec{k}-\vec{k}'\right) \cdot\vec{x}}\\
+-a_{\vec{k}\sigma}^{\ast}a_{\vec{k}'\sigma'}e^{-i\left( \vec{k}-\vec{k}'\right) \cdot\vec{x}}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k}'\sigma'}^{\ast}e^{-i\left( \vec{k}-\left( -\vec{k}'\right) \right) \cdot\vec{x}}%
+\end{array}
+\right\} \\
+& = &-\left( 2\pi\right) ^{3}\varepsilon_{0}\sum_{\sigma,\sigma'}\int d^{3}k\int d^{3}k'N_{k}N_{k'}\omega_{k}\left\{ \vec{k}'\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k}'\sigma'}\right) -\hat{\varepsilon}_{\vec{k}'\sigma'}\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\vec{k}'\right) \right\} \left\{
+\begin{array}
+[c]{c}%
+\left( a_{\vec{k}\sigma}a_{\vec{k}'\sigma'}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k}'\sigma'}^{\ast}\right) \delta^{\left( 3\right) }\left( \vec{k}-\left( -\vec{k}'\right) \right) \\
+-\left( a_{\vec{k}\sigma}^{\ast}a_{\vec{k}'\sigma'}+a_{\vec{k}\sigma}a_{\vec{k}'\sigma'}^{\ast}\right) \delta^{\left( 3\right) }\left( \vec{k}-\vec{k}'\right)
+\end{array}
+\right\} \\
+& = &\left( 2\pi\right) ^{3}\varepsilon_{0}\sum_{\sigma,\sigma'}\int d^{3}kN_{k}^{2}\omega_{k}\vec{k}\left\{
+\begin{array}
+[c]{c}%
+\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{-\vec{k}\sigma'}\right) \left( a_{\vec{k}\sigma}a_{-\vec{k}\sigma'}+a_{\vec{k}\sigma}^{\ast}a_{-\vec{k}\sigma'}^{\ast}\right) \\
++\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k}\sigma'}\right) \left( a_{\vec{k}\sigma}^{\ast}a_{\vec{k}\sigma'}+a_{\vec{k}\sigma}a_{\vec{k}\sigma'}^{\ast}\right)
+\end{array}
+\right\} \\
+& = &\left( 2\pi\right) ^{3}\varepsilon_{0}\sum_{\sigma,\sigma'}\int d^{3}k\left( \frac{\hbar}{\varepsilon_{0}\left( 2\pi\right)^{3}2\omega_{k}}\right) \omega_{k}\vec{k}\left\{ -\left( -1\right)
+^{\sigma}\left( a_{\vec{k}\sigma}a_{-\vec{k}\sigma'}+a_{\vec{k}\sigma}^{\ast}a_{-\vec{k}\sigma'}^{\ast}\right) +a_{\vec{k}\sigma}^{\ast}a_{\vec{k}\sigma'}+a_{\vec{k}\sigma}a_{\vec{k}\sigma'}^{\ast}\right\} \delta_{\sigma\sigma'}\\
+& = &\frac{\hbar}{2}\sum_{\sigma}\int d^{3}k\vec{k}\left\{ a_{\vec{k}\sigma
+}a_{\vec{k}\sigma}^{\ast}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k}\sigma}\right\}
+-2\pi\varepsilon_{0}\sum_{\sigma}\left( -1\right) ^{\sigma}\int d^{3}%
+kN_{k}^{2}\omega_{k}\vec{k}\left\{ a_{\vec{k}\sigma}a_{-\vec{k}\sigma
+}+a_{\vec{k}\sigma}^{\ast}a_{-\vec{k}\sigma}^{\ast}\right\}
+\end{eqnarray}
+pero analizemos un poco mejor la primera integral del segundo t'ermino:%
+\begin{eqnarray}
+\int d^{3}kN_{k}^{2}\omega_{k}\vec{k}a_{\vec{k}\sigma}a_{-\vec{k}\sigma} &
+=\int d^{3}kN_{k}^{2}\omega_{k}\vec{k}a_{\vec{k}\sigma}a_{-\vec{k}\sigma}\\
+& = &\int_{-\infty}^{\infty}d^{3}kN_{k}^{2}\omega_{k}\vec{k}a_{\vec{k}\sigma
+}a_{-\vec{k}\sigma}\\
+& = &\int_{-\infty}^{0}d^{3}kN_{k}^{2}\omega_{k}\vec{k}a_{\vec{k}\sigma}%
+a_{-\vec{k}\sigma}+\int_{0}^{\infty}d^{3}kN_{k}^{2}\omega_{k}\vec{k}a_{\vec
+{k}\sigma}a_{-\vec{k}\sigma}\\
+& = &\int_{-\infty}^{0}d^{3}kN_{k}^{2}\omega_{k}\vec{k}a_{\vec{k}\sigma}%
+a_{-\vec{k}\sigma}+\int_{0}^{-\infty}d^{3}( -k) N_{-k}^{2}%
+\omega_{-k}\left( -\vec{k}\right) a_{-\vec{k}\sigma}a_{\vec{k}\sigma}\\
+& = &\int_{-\infty}^{0}d^{3}kN_{k}^{2}\omega_{k}\vec{k}a_{\vec{k}\sigma}%
+a_{-\vec{k}\sigma}+\int_{0}^{-\infty}d^{3}kN_{k}^{2}\omega_{k}\vec{k}%
+a_{\vec{k}\sigma}a_{-\vec{k}\sigma}\\
+& = &\int_{-\infty}^{0}d^{3}kN_{k}^{2}\omega_{k}\vec{k}a_{\vec{k}\sigma}%
+a_{-\vec{k}\sigma}-\int_{-\infty}^{0}d^{3}kN_{k}^{2}\omega_{k}\vec{k}%
+a_{\vec{k}\sigma}a_{-\vec{k}\sigma}\\
+& = &0
+\end{eqnarray}
+y an'alogamente sucede con la segunda integral: $\int d^{3}kN_{k}^{2}%
+\omega_{k}\vec{k}a_{\vec{k}\sigma}^{\ast}a_{-\vec{k}\sigma}^{\ast}$ del
+segundo t'ermino. Por lo tanto, el momentum lineal del campo
+electromagn'etico es:%
+\begin{equation}
+\vec{P}=\frac{\hbar}{2}\sum_{\sigma}\int d^{3}k\vec{k}\left\{ a_{\vec
+{k}\sigma}a_{\vec{k}\sigma}^{\ast}+a_{\vec{k}\sigma}^{\ast}a_{\vec{k}\sigma
+}\right\} \label{Momentum Lineal EM}%
+\end{equation}
+que siguiendo con la analog'ia del sistema de osciladores arm'onicos
+tridimensionales desacoplados, tiene la misma forma matem'atica.
+
+Finalmente, gracias a las relaciones de conmutaci'on encontradas, podemos
+modificar la forma de los operadores Hamiltoniano y momentum lineal, de modo
+que nos sean m'as 'utiles en los futuros c'alculos. Entonces:%
+\begin{eqnarray}
+\hat{H} & = &\frac{\hbar}{2}\sum_{\sigma}\int d^{3}k\omega_{k}\left\{ \hat
+{a}_{\vec{k}\sigma}^{\dagger}\hat{a}_{\vec{k}\sigma}+\hat{a}_{\vec{k}\sigma
+}\hat{a}_{\vec{k}\sigma}^{\dagger}\right\} \nonumber\\
+& = &\frac{\hbar}{2}\sum_{\sigma}\int d^{3}k\omega_{k}\left\{ \hat{a}_{\vec
+{k}\sigma}^{\dagger}\hat{a}_{\vec{k}\sigma}+\left[ \hat{a}_{\vec{k}\sigma
+},\hat{a}_{\vec{k}\sigma}^{\dagger}\right] +\hat{a}_{\vec{k}\sigma}^{\dagger
+}\hat{a}_{\vec{k}\sigma}\right\} \nonumber\\
+& = &\hbar\sum_{\sigma}\int d^{3}k\omega_{k}\left\{ \hat{a}_{\vec{k}\sigma
+}^{\dagger}\hat{a}_{\vec{k}\sigma}+\frac{1}{2}\delta^{\left( 3\right)
+}(0) \right\} \label{Operador Hamiltoniano EM}%
+\end{eqnarray}
+y de (\ref{Momentum Lineal EM}):%
+\begin{eqnarray}
+\overrightarrow{\hat{P}} & = &\frac{\hbar}{2}\sum_{\sigma}\int d^{3}k\vec
+{k}\left\{ \hat{a}_{\vec{k}\sigma}^{\dagger}\hat{a}_{\vec{k}\sigma}+\hat
+{a}_{\vec{k}\sigma}\hat{a}_{\vec{k}\sigma}^{\dagger}\right\} \nonumber\\
+& = &\frac{\hbar}{2}\sum_{\sigma}\int d^{3}k\vec{k}\left\{ \hat{a}_{\vec
+{k}\sigma}^{\dagger}\hat{a}_{\vec{k}\sigma}+\left[ \hat{a}_{\vec{k}\sigma
+},\hat{a}_{\vec{k}\sigma}^{\dagger}\right] +\hat{a}_{\vec{k}\sigma}^{\dagger
+}\hat{a}_{\vec{k}\sigma}\right\} \nonumber\\
+& = &\hbar\sum_{\sigma}\int d^{3}k\vec{k}\hat{a}_{\vec{k}\sigma}^{\dagger}%
+\hat{a}_{\vec{k}\sigma}+\frac{\hbar}{2}\delta^{\left( 3\right) }\left(
+0\right) \sum_{\sigma}\int\limits_{-\infty}^{\infty}d^{3}k\vec{k}\nonumber\\
+& = &\hbar\sum_{\sigma}\int d^{3}k\vec{k}\hat{a}_{\vec{k}\sigma}^{\dagger}%
+\hat{a}_{\vec{k}\sigma}\label{Operador Momentum Lineal EM}%
+\end{eqnarray}
+ya que la segunda integral del lado derecho se anula por que el integrando es
+una funci'on impar integrada sobre un intervalo sim'etrico.
+
+
+\subsection{Estados de Glauber: Estados Coherentes del Campo
+Electromagn'etico.}
+
+Sabemos que el operador campo el'ectrico est'a determinado por:%
+\begin{equation}
+\overrightarrow{\hat{E}}=i\sqrt{\frac{\hbar}{2\varepsilon_{0}\left(
+2\pi\right) ^{3}}}\sum_{\sigma}\int d^{3}k\left( \omega_{k}\right)
+^{\frac{1}{2}}\check{\varepsilon}_{\vec{k}\sigma}\left\{ \hat{a}_{\vec
+{k}\sigma}(t) e^{i\vec{k}\cdot\vec{x}}-\hat{a}_{\vec{k}\sigma
+}^{\dagger}(t) e^{-i\vec{k}\cdot\vec{x}}\right\}
+\end{equation}
+
+
+Generalmente el campo electromagn'etico contiene muchos fotones, y est'a
+caracterizado por el estado cu'antico de $n$-fot'ones $\left|
+\dots,n_{\vec{k}\sigma},\dots,n_{\vec{k}'\sigma '},\dots\right> .$ Si s'olamente est'an presentes los fotones
+correspondientes al modo $k$ y polarizaci'on $\sigma,$ sabemos que el
+estado cu'antico queda como $\left| n_{\vec{k}\sigma}\right>
+=\left| 0_{11},0_{12},\dots,n_{\vec{k}\sigma},0_{\vec{k}\sigma'},\dots\right> .$ Para determinar el valor cl'asico del campo $\vec
+{E},$ calculamos el valor de expectaci'on del operdaor $\overrightarrow
+{\hat{E}}$ en el estado de polarizaci'on $\left| n_{\vec{k}\sigma
+}\right> .$ En efecto:%
+\begin{eqnarray}
+\left\langle n_{\vec{k}\sigma}\right| \overrightarrow{\hat{E}}\left|
+n_{\vec{k}\sigma}\right> & = &\left\langle n_{\vec{k}\sigma}\right|
+\left[ i\sqrt{\frac{\hbar}{2\varepsilon_{0}\left( 2\pi\right) ^{3}}}%
+\sum_{\sigma}\int d^{3}k\left( \omega_{k}\right) ^{\frac{1}{2}}%
+\check{\varepsilon}_{\vec{k}\sigma}\left\{ \hat{a}_{\vec{k}\sigma}\left(
+t\right) e^{i\vec{k}\cdot\vec{x}}-\hat{a}_{\vec{k}\sigma}^{\dagger}\left(
+t\right) e^{-i\vec{k}\cdot\vec{x}}\right\} \right] \left| n_{\vec
+{k}\sigma}\right> \\
+& = &i\sqrt{\frac{\hbar}{2\varepsilon_{0}\left( 2\pi\right) ^{3}}}\sum
+_{\sigma}\int d^{3}k\left( \omega_{k}\right) ^{\frac{1}{2}}\check
+{\varepsilon}_{\vec{k}\sigma}\left\{ \left\langle n_{\vec{k}\sigma
+}\right| \hat{a}_{\vec{k}\sigma}\left| n_{\vec{k}\sigma}\right>
+e^{i\vec{k}\cdot\vec{x}}-\left\langle n_{\vec{k}\sigma}\right| \hat
+{a}_{\vec{k}\sigma}^{\dagger}\left| n_{\vec{k}\sigma}\right>
+e^{-i\vec{k}\cdot\vec{x}}\right\} \\
+& = &i\sqrt{\frac{\hbar}{2\varepsilon_{0}\left( 2\pi\right) ^{3}}}\sum
+_{\sigma}\int d^{3}k\left( \omega_{k}\right) ^{\frac{1}{2}}\check
+{\varepsilon}_{\vec{k}\sigma}\left\{ \sqrt{n_{\vec{k}\sigma}}\left\langle
+n_{\vec{k}\sigma}\right| \left. n_{\vec{k}\sigma}-1\right>
+e^{i\vec{k}\cdot\vec{x}}-\sqrt{n_{\vec{k}\sigma}+1}\left\langle n_{\vec
+{k}\sigma}\right| \left. n_{\vec{k}\sigma}+1\right> e^{-i\vec
+{k}\cdot\vec{x}}\right\} \\
+& = &0
+\end{eqnarray}
+debido a la ortogonalidad de los estados $\left\{ \left| n_{\vec{k}%
+\sigma}\right> \right\} .$ Por otro lado, el valor esperado de la
+densidad de energ'ia del campo $\vec{E}$ est'a dado por:%
+\begin{eqnarray}
+\frac{\varepsilon_{0}}{2V}\left\langle n_{\vec{k}\sigma}\right|
+\overrightarrow{\hat{E}}\cdot\overrightarrow{\hat{E}}^{\dagger}\left|
+n_{\vec{k}\sigma}\right> & = &\frac{\varepsilon_{0}}{2V}\left\langle
+n_{\vec{k}\sigma}\right| \left[ i\sqrt{\frac{\hbar}{2\varepsilon
+_{0}\left( 2\pi\right) ^{3}}}\sum_{\sigma}\int d^{3}k\hat{\varepsilon}%
+_{\vec{k}\sigma}\left( \omega_{k}\right) ^{\frac{1}{2}}\left\{ \hat
+{a}_{\vec{k}\sigma}(t) e^{i\vec{k}\cdot\vec{x}}-\hat{a}_{\vec
+{k}\sigma}^{\dagger}(t) e^{-i\vec{k}\cdot\vec{x}}\right\}
+\right] \left[ -i\sqrt{\frac{\hbar}{2\varepsilon_{0}\left( 2\pi\right)
+^{3}}}\sum_{\sigma'}\int d^{3}k'\left( \omega_{k'}\right) ^{\frac{1}{2}}\hat{\varepsilon}_{\vec{k}'\sigma '}\left\{ \hat{a}_{\vec{k}'\sigma '}^{\dagger}(t) e^{-i\vec{k}'\cdot\vec{x}}-\hat{a}_{\vec{k}' \sigma '}(t) e^{i\vec{k}'\cdot\vec{x}}\right\} \right] \left| n_{\vec{k}\sigma}\right> \\
+& = &\frac{\hbar}{4V\left( 2\pi\right) ^{3}}\sum_{\sigma}\sum_{\sigma '}\int d^{3}k\int d^{3}k'\left( \omega_{k}\right) ^{\frac{1}{2}}\left( \omega_{k'}\right) ^{\frac{1}{2}}\left( \hat{\varepsilon}_{\vec{k}\sigma}\cdot\hat{\varepsilon}_{\vec{k}'\sigma '}\right) \left\{
+\begin{array}
+[c]{c}%
+\left\langle n_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}\hat{a}_{\vec{k}'\sigma '}^{\dagger}\left| n_{\vec{k}\sigma}\right> e^{i\left( \vec{k}-\vec{k}'\right) \cdot\vec{x}}-\left\langle n_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}\hat{a}_{\vec{k}'\sigma '}\left| n_{\vec{k}\sigma}\right> e^{i\left( \vec{k}-\left( -\vec{k}'\right) \right) \cdot\vec{x}}\\
+-\left\langle n_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}^{\dagger}\hat{a}_{\vec{k}'\sigma '}^{\dagger}\left| n_{\vec{k}\sigma}\right> e^{-i\left( \vec{k}-\left( -\vec{k}'\right) \right) \cdot\vec{x}}+\left\langle n_{\vec{k}\sigma}\right|\hat{a}_{\vec{k}\sigma}^{\dagger}\hat{a}_{\vec{k}'\sigma '}\left| n_{\vec{k}\sigma}\right> e^{-i\left( \vec{k}-\vec{k}'\right) \cdot\vec{x}}%
+\end{array}
+\right\} \\
+& = &\frac{\hbar}{4V\left( 2\pi\right) ^{3}}\sum_{\sigma}\sum_{\sigma '}\int d^{3}k\int d^{3}k'\left( \omega_{k}\right) ^{\frac{1}{2}}\left( \omega_{k'}\right) ^{\frac{1}{2}}\left[ \delta_{\sigma\sigma '}\delta^{\left( 3\right) }\left( \vec{k}-\vec{k}'\right) \right] \left\{
+\begin{array}
+[c]{c}%
+\left\langle n_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}\hat{a}_{\vec{k}'\sigma'}^{\dagger}\left| n_{\vec{k}\sigma}\right> e^{i\left( \vec{k}-\vec{k}'\right) \cdot\vec{x}}-\left\langle n_{\vec{k}\sigma}\right| \hat{a}%
+_{\vec{k}\sigma}\hat{a}_{\vec{k}'\sigma '}\left| n_{\vec{k}\sigma}\right> e^{i\left( \vec{k}-\left(
+-\vec{k}'\right) \right) \cdot\vec{x}}\\
+-\left\langle n_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}^{\dagger
+}\hat{a}_{\vec{k}'\sigma '}^{\dagger}\left| n_{\vec{k}\sigma}\right> e^{-i\left( \vec
+{k}-\left( -\vec{k}'\right) \right) \cdot\vec{x}}+\left\langle n_{\vec{k}\sigma}\right|
+\hat{a}_{\vec{k}\sigma}^{\dagger}\hat{a}_{\vec{k}'\sigma '}\left| n_{\vec{k}\sigma}\right> e^{-i\left( \vec{k}-\vec{k}'\right) \cdot\vec{x}}%
+\end{array}
+\right\} \\
+& = &\frac{\hbar}{4V\left( 2\pi\right) ^{3}}\sum_{\sigma}\int d^{3}k\omega
+_{k}\left\{
+\begin{array}
+[c]{c}%
+\left\langle n_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}\hat{a}%
+_{\vec{k}\sigma}^{\dagger}\left| n_{\vec{k}\sigma}\right>
+-\left\langle n_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}\hat
+{a}_{\vec{k}\sigma}\left| n_{\vec{k}\sigma}\right> e^{i2\vec{k}%
+\cdot\vec{x}}\\
+-\left\langle n_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}^{\dagger
+}\hat{a}_{\vec{k}\sigma}^{\dagger}\left| n_{\vec{k}\sigma}\right>
+e^{-i2\vec{k}\cdot\vec{x}}+\left\langle n_{\vec{k}\sigma}\right| \hat
+{a}_{\vec{k}\sigma}^{\dagger}\hat{a}_{\vec{k}\sigma}\left| n_{\vec
+{k}\sigma}\right>
+\end{array}
+\right\} \\
+& = &\frac{\hbar}{4V\left( 2\pi\right) ^{3}}\sum_{\sigma}\int d^{3}k\omega
+_{k}\left\{
+\begin{array}
+[c]{c}%
+\sqrt{n_{\vec{k}\sigma}+1}\left\langle n_{\vec{k}\sigma}\right| \hat
+{a}_{\vec{k}\sigma}\left| n_{\vec{k}\sigma}+1\right> -\sqrt
+{n_{\vec{k}\sigma}}\left\langle n_{\vec{k}\sigma}\right| \hat{a}_{\vec
+{k}\sigma}\left| n_{\vec{k}\sigma}-1\right> e^{i2\vec{k}\cdot\vec
+{x}}\\
+-\sqrt{n_{\vec{k}\sigma}+1}\left\langle n_{\vec{k}\sigma}\right| \hat
+{a}_{\vec{k}\sigma}^{\dagger}\left| n_{\vec{k}\sigma}+1\right>
+e^{-i2\vec{k}\cdot\vec{x}}+\sqrt{n_{\vec{k}\sigma}}\left\langle n_{\vec
+{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}^{\dagger}\left| n_{\vec
+{k}\sigma}-1\right>
+\end{array}
+\right\} \\
+& = &\frac{\hbar}{4V\left( 2\pi\right) ^{3}}\sum_{\sigma}\int d^{3}k\omega
+_{k}\left\{
+\begin{array}
+[c]{c}%
+\left( n_{\vec{k}\sigma}+1\right) \left\langle n_{\vec{k}\sigma}\right|
+\left. n_{\vec{k}\sigma}\right> -\sqrt{n_{\vec{k}\sigma}\left(
+n_{\vec{k}\sigma}-1\right) }\left\langle n_{\vec{k}\sigma}\right| \left.
+n_{\vec{k}\sigma}-2\right> e^{i2\vec{k}\cdot\vec{x}}\\
+-\sqrt{\left( n_{\vec{k}\sigma}+1\right) \left( n_{\vec{k}\sigma}+2\right)
+}\left\langle n_{\vec{k}\sigma}\right| \left. n_{\vec{k}\sigma
+}+2\right> e^{-i2\vec{k}\cdot\vec{x}}+n_{\vec{k}\sigma}\left\langle
+n_{\vec{k}\sigma}\right| \left. n_{\vec{k}\sigma}\right>
+\end{array}
+\right\} \\
+& = &\frac{\hbar}{2V\left( 2\pi\right) ^{3}}\sum_{\sigma}\int d^{3}k\omega
+_{k}\left\{ n_{\vec{k}\sigma}+\frac{1}{2}\right\}
+\end{eqnarray}
+
+
+Estos son resultados sorpresivos ya que el valor esperado del campo
+el'ectrico en un estado de $n$ fotones es nulo, mientras que la densidad de
+energ'ia es, como era de esperar, igual a la mitad de $n$ fotones cada uno
+con energ'ia $\hbar\omega_{k}$ por unidad de volumen. La otra mitad
+proviene de la contribuci'on del campo magn'etico: $\frac{1}{2\mu_{0}%
+}B^{2}.$ La 'unica manera de entender esto es que los $n$ fotones del campo
+poseen fases y que ellas est'an distribuidas estad'isticamente, de
+manera que el promedio sobre las fases del valor esperado de $\vec{E}$ se
+anule. En la construcci'on de la densidad de energ'ia, las fases quedan
+fuera: la densidad de energ'ia es, en cada punto del espacio-tiempo, un
+n'umero real y positivo.
+
+Fu'e Glauber el que resolvi'o el problema introduciendo nuevos estados
+del campo electromagn'etico, para los cuales el valor de expectaci'on
+del operador $\overrightarrow{\hat{E}}$ coincide con el campo el'ectrico
+cl'asico $\vec{E}.$ El precio que se paga es que se introduce una incerteza
+absoluta en el n'umero de fotones que tiene el campo, pero esto nos permite
+definir la fase del campo de manera mas precisa.
+
+Los estados de Glauber, o llamados tambi'en estados coherentes, se escogen
+como los estados base del operador $\hat{a}_{\vec{k}\sigma}:$%
+\begin{equation}
+\hat{a}_{\vec{k}\sigma}\left| c_{\vec{k}\sigma}\right> =c_{\vec
+{k}\sigma}\left| c_{\vec{k}\sigma}\right>
+\label{eigenecuacion de aksigma}%
+\end{equation}
+donde $\left| c_{\vec{k}\sigma}\right> =\left| 0_{11}%
+,0_{12},\dots,c_{\vec{k}\sigma},0_{\vec{k}\sigma'},\dots\right> ,$ o sea, el estado de $\hat{a}_{\vec{k}\sigma}$ donde
+s'olo el eigenvalor de $\hat{a}_{\vec{k}\sigma}$ no es nulo.
+
+Estos estados, los podemos escribir en la base de estados del operador
+n'umero para un modo y una polorizaci'on en particular\footnote{S'olo
+cambia el n'umero de fotones presentes en ese modo y polarizaci'on
+escogiga.}: $\left| n_{\vec{k}\sigma}\right> ,$ de la siguiente
+manera:%
+\begin{eqnarray}
+\left| c_{\vec{k}\sigma}\right> & = &\left( \sum_{n_{\vec{k}\sigma
+}=0}^{\infty}\left| n_{\vec{k}\sigma}\right> \left\langle n_{\vec
+{k}\sigma}\right| \right) \left| c_{\vec{k}\sigma}\right>
+\nonumber\\
+& = &\sum_{n_{\vec{k}\sigma}=0}^{\infty}c_{n_{_{\vec{k}\sigma}}}\left|
+n_{\vec{k}\sigma}\right> \label{glauber en |n>}%
+\end{eqnarray}
+donde $c_{n_{_{\vec{k}\sigma}}}$ son los coeficientes de la expansi'on, y
+que todav'ia hay que determinarlos. Para eso, exigimos que los
+coeficientes satisfagan (\ref{eigenecuacion de aksigma}), es decir:%
+\begin{eqnarray}
+\hat{a}_{\vec{k}\sigma}\left| c_{\vec{k}\sigma}\right> &
+=\sum_{n_{\vec{k}\sigma}=0}^{\infty}c_{n_{_{\vec{k}\sigma}}}\hat{a}_{\vec
+{k}\sigma}\left| n_{\vec{k}\sigma}\right> \label{glauber 1}\\
+& = &c_{0}\hat{a}_{\vec{k}\sigma}\left| 0\right> +\sum_{n_{\vec
+{k}\sigma}=0}^{\infty}c_{n_{_{\vec{k}\sigma}}}\hat{a}_{\vec{k}\sigma
+}\left| n_{\vec{k}\sigma}\right> \nonumber\\
+& = &\sum_{n_{\vec{k}\sigma}=0}^{\infty}c_{n_{_{\vec{k}\sigma}}}\hat{a}_{\vec
+{k}\sigma}\left| n_{\vec{k}\sigma}\right> \nonumber\\
+& = &\sum_{n_{\vec{k}\sigma}=0}^{\infty}c_{n_{_{\vec{k}\sigma}}}\sqrt{n_{\vec
+{k}\sigma}}\left| n_{\vec{k}\sigma}-1\right> \nonumber
+\end{eqnarray}
+ya que $\hat{a}_{\vec{k}\sigma}\left| 0\right> =0$. Tener en cuenta
+que en el t'ermino que qued'o, s'olo estan presentes los estados
+$\left| n_{\vec{k}\sigma}\right> $ distintos al del vac'io, es
+decir, para $n_{\vec{k}\sigma}=1,2,\dots$
+
+Ahora, cambiando $n_{\vec{k}\sigma}-1\rightarrow n_{\vec{k}\sigma}$ de manera
+que est'e presente nuevamente el estado del vac'io:%
+\begin{equation}
+\hat{a}_{\vec{k}\sigma}\left| c_{\vec{k}\sigma}\right>
+=\sum_{n_{\vec{k}\sigma}=0}^{\infty}c_{n_{_{\vec{k}\sigma}}+1}\sqrt{n_{\vec
+{k}\sigma}+1}\left| n_{\vec{k}\sigma}\right>
+\end{equation}
+e igualando con (\ref{eigenecuacion de aksigma}), obtenemos:%
+\begin{equation}
+c_{\vec{k}\sigma}\left| c_{\vec{k}\sigma}\right> =\sum_{n_{\vec
+{k}\sigma}=0}^{\infty}c_{n_{_{\vec{k}\sigma}}+1}\sqrt{n_{\vec{k}\sigma}%
++1}\left| n_{\vec{k}\sigma}\right>
+\end{equation}
+pero $\left| c_{\vec{k}\sigma}\right> $ est'a dado por
+(\ref{glauber en |n>}), entonces:%
+\begin{equation}
+c_{\vec{k}\sigma}\sum_{n_{\vec{k}\sigma}=0}^{\infty}c_{n_{_{\vec{k}\sigma}}%
+}\left| n_{\vec{k}\sigma}\right> =\sum_{n_{\vec{k}\sigma}=0}%
+^{\infty}c_{n_{_{\vec{k}\sigma}}+1}\sqrt{n_{\vec{k}\sigma}+1}\left|
+n_{\vec{k}\sigma}\right>
+\end{equation}
+de donde se obtiene la ecuaci'on de recurrencia para los coeficientes:%
+\begin{equation}
+c_{n_{_{\vec{k}\sigma}}+1}=\frac{c_{\vec{k}\sigma}c_{n_{_{\vec{k}\sigma}}}%
+}{\sqrt{n_{\vec{k}\sigma}+1}}\qquad\qquad,n_{_{\vec{k}\sigma}}=0,1,2,\dots
+\end{equation}
+
+
+Para:%
+\begin{eqnarray}
+n_{_{\vec{k}\sigma}} & = &0\qquad\rightarrow\qquad c_{1}=\frac{c_{\vec{k}%
+\sigma}c_{0}}{\sqrt{1}}\\
+n_{_{\vec{k}\sigma}} & = &1\qquad\rightarrow\qquad c_{2}=\frac{c_{\vec{k}%
+\sigma}c_{1}}{\sqrt{2}}=\frac{c_{\vec{k}\sigma}^{2}c_{0}}{\sqrt{1\cdot2}}\\
+n_{_{\vec{k}\sigma}} & = &2\qquad\rightarrow\qquad c_{3}=\frac{c_{\vec{k}%
+\sigma}c_{2}}{\sqrt{3}}=\frac{c_{\vec{k}\sigma}^{3}c_{0}}{\sqrt{1\cdot2\cdot
+3}}\\
+& \vdots\\
+n_{_{\vec{k}\sigma}} & = &n_{\vec{k}\sigma}\qquad\rightarrow\qquad
+c_{n_{\vec{k}\sigma}}=\frac{c_{\vec{k}\sigma}^{n_{\vec{k}\sigma}}c_{0}}%
+{\sqrt{n_{\vec{k}\sigma}!}}%
+\end{eqnarray}
+por lo tanto:%
+\begin{eqnarray}
+\left| c_{\vec{k}\sigma}\right> & = &\sum_{n_{\vec{k}\sigma}%
+=0}^{\infty}c_{n_{_{\vec{k}\sigma}}}\left| n_{\vec{k}\sigma}\right>
+\\
+& = &c_{0}\sum_{n_{\vec{k}\sigma}=0}^{\infty}\frac{c_{\vec{k}\sigma}^{n_{\vec
+{k}\sigma}}}{\sqrt{n_{\vec{k}\sigma}!}}\left| n_{\vec{k}\sigma
+}\right> \qquad\qquad,%
+\genfrac{.}{.}{0pt}{}{c\in\protect\rule{0.1in}{0.1in} }{c_{0}\in
+\protect\rule{0.1in}{0.1in} }%
+\end{eqnarray}
+
+
+Para determinar el valor de $c_{0}$ ocupamos la relaci'on de
+normalizaci'on:%
+\begin{eqnarray}
+\left\langle c_{\vec{k}\sigma}\right| \left. c_{\vec{k}\sigma
+}\right> & = &\left| c_{0}\right| ^{2}\sum_{n_{\vec{k}\sigma
+},m_{\vec{k}\sigma}=0}^{\infty}\frac{\left( c_{\vec{k}\sigma}\right)
+^{n_{\vec{k}\sigma}}\left( c_{\vec{k}\sigma}^{\ast}\right) ^{m_{\vec
+{k}\sigma}}}{\sqrt{n_{\vec{k}\sigma}!m_{\vec{k}\sigma}!}}\left\langle
+m_{\vec{k}\sigma}\right| \left. n_{\vec{k}\sigma}\right> \\
+& = &\left| c_{0}\right| ^{2}\sum_{n,m=0}^{\infty}\frac{\left(
+c_{\vec{k}\sigma}\right) ^{n_{\vec{k}\sigma}}\left( c_{\vec{k}\sigma}^{\ast
+}\right) ^{m_{\vec{k}\sigma}}}{\sqrt{n_{\vec{k}\sigma}!m_{\vec{k}\sigma}!}%
+}\delta_{m_{\vec{k}\sigma},n_{\vec{k}\sigma}}\\
+& = &\left| c_{0}\right| ^{2}\sum_{n_{\vec{k}\sigma}=0}^{\infty}%
+\frac{\left( \left| c_{\vec{k}\sigma}\right| ^{2}\right)
+^{n_{\vec{k}\sigma}}}{n_{\vec{k}\sigma}!}\\
+& = &\left| c_{0}\right| ^{2}e^{\left| c_{\vec{k}\sigma}\right|^{2}}\equiv 1
+\end{eqnarray}
+
+
+Elegimos%
+\begin{equation}
+c_{0}=e^{-\frac{\left| c_{\vec{k}\sigma}\right| ^{2}}{2}}%
+\end{equation}
+por lo tanto:%
+\begin{equation}
+\left| c_{\vec{k}\sigma}\right> =e^{-\frac{\left| c_{\vec
+{k}\sigma}\right| ^{2}}{2}}\sum_{n_{\vec{k}\sigma}=0}^{\infty}%
+\frac{\left( c_{\vec{k}\sigma}\right) ^{n_{\vec{k}\sigma}}}{\sqrt{n_{\vec
+{k}\sigma}!}}\left| n_{\vec{k}\sigma}\right>
+\label{Estado de Glauber}%
+\end{equation}
+
+
+De la expansi'on en estados de n'umero de fotones para un modo y
+polarizaci'on determinada, vemos claramente que los estados $\left|
+c_{\vec{k}\sigma}\right> $ no tienen un n'umero definido de fotones.
+
+El valor esperado de $\hat{a}_{\vec{k}\sigma}$ en los estados de Glauber es:%
+\begin{eqnarray}
+\left\langle c_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}\left|
+c_{\vec{k}\sigma}\right> & = &e^{-\left| c_{\vec{k}\sigma}\right|
+^{2}}\sum_{n_{\vec{k}\sigma},m_{\vec{k}\sigma}=0}^{\infty}\frac{\left(
+c_{\vec{k}\sigma}^{\ast}\right) ^{m_{\vec{k}\sigma}}\left( c_{\vec{k}\sigma
+}\right) ^{n_{\vec{k}\sigma}}}{\sqrt{m_{\vec{k}\sigma}!n_{\vec{k}\sigma}!}%
+}\left\langle m_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}\left|
+n_{\vec{k}\sigma}\right> \\
+& = &e^{-\left| c_{\vec{k}\sigma}\right| ^{2}}\sum_{n_{\vec{k}\sigma
+},m_{\vec{k}\sigma}=0}^{\infty}\frac{\left( c_{\vec{k}\sigma}^{\ast}\right)
+^{m_{\vec{k}\sigma}}\left( c_{\vec{k}\sigma}\right) ^{n_{\vec{k}\sigma}}%
+}{\sqrt{m_{\vec{k}\sigma}!n_{\vec{k}\sigma}!}}\sqrt{n_{\vec{k}\sigma}%
+}\left\langle m_{\vec{k}\sigma}\right| \left. n_{\vec{k}\sigma
+}-1\right> \\
+& = &e^{-\left| c_{\vec{k}\sigma}\right| ^{2}}\sum_{n_{\vec{k}\sigma
+},m_{\vec{k}\sigma}=0}^{\infty}\frac{\left( c_{\vec{k}\sigma}^{\ast}\right)
+^{m_{\vec{k}\sigma}}\left( c_{\vec{k}\sigma}\right) ^{n_{\vec{k}\sigma}}%
+}{\sqrt{m_{\vec{k}\sigma}!n_{\vec{k}\sigma}!}}\sqrt{n_{\vec{k}\sigma}}%
+\delta_{m_{\vec{k}\sigma},n_{\vec{k}\sigma}-1}\\
+& = &e^{-\left| c_{\vec{k}\sigma}\right| ^{2}}\sum_{m_{\vec{k}\sigma}%
+=0}^{\infty}\frac{\left( c_{\vec{k}\sigma}^{\ast}\right) ^{m_{\vec{k}\sigma
+}}\left( c_{\vec{k}\sigma}\right) ^{m_{\vec{k}\sigma}+1}}{\sqrt{m_{\vec
+{k}\sigma}!\left( m_{\vec{k}\sigma}+1\right) !}}\sqrt{m_{\vec{k}\sigma}+1}\\
+& = &c_{\vec{k}\sigma}e^{-\left| c_{\vec{k}\sigma}\right| ^{2}}%
+\sum_{m_{\vec{k}\sigma}=0}^{\infty}\frac{\left( c_{\vec{k}\sigma}^{\ast
+}\right) ^{m_{\vec{k}\sigma}}\left( c_{\vec{k}\sigma}\right) ^{m_{\vec
+{k}\sigma}}}{\sqrt{m_{\vec{k}\sigma}!m_{\vec{k}\sigma}!\left( m_{\vec
+{k}\sigma}+1\right) }}\sqrt{m_{\vec{k}\sigma}+1}\\
+& = &c_{\vec{k}\sigma}e^{-\left| c_{\vec{k}\sigma}\right| ^{2}}%
+\sum_{m_{\vec{k}\sigma}=0}^{\infty}\frac{\left( \left| c_{\vec{k}\sigma
+}\right| ^{2}\right) ^{m_{\vec{k}\sigma}}}{m_{\vec{k}\sigma}!}\\
+& = &c_{\vec{k}\sigma}e^{-\left| c_{\vec{k}\sigma}\right| ^{2}%
+}e^{\left| c_{\vec{k}\sigma}\right| ^{2}}\\
+& = &c_{\vec{k}\sigma}%
+\end{eqnarray}
+mientras que para $\hat{a}_{\vec{k}\sigma}^{\dagger}$ se tiene:%
+\begin{eqnarray}
+\left\langle c_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}^{\dagger
+}\left| c_{\vec{k}\sigma}\right> & = &e^{-\left| c_{\vec{k}%
+\sigma}\right| ^{2}}\sum_{n_{\vec{k}\sigma},m_{\vec{k}\sigma}=0}^{\infty
+}\frac{\left( c_{\vec{k}\sigma}^{\ast}\right) ^{m_{\vec{k}\sigma}}\left(
+c_{\vec{k}\sigma}\right) ^{n_{\vec{k}\sigma}}}{\sqrt{m_{\vec{k}\sigma
+}!n_{\vec{k}\sigma}!}}\left\langle m_{\vec{k}\sigma}\right| \hat{a}%
+_{\vec{k}\sigma}^{\dagger}\left| n_{\vec{k}\sigma}\right> \\
+& = &e^{-\left| c_{\vec{k}\sigma}\right| ^{2}}\sum_{n_{\vec{k}\sigma
+},m_{\vec{k}\sigma}=0}^{\infty}\frac{\left( c_{\vec{k}\sigma}^{\ast}\right)
+^{m_{\vec{k}\sigma}}\left( c_{\vec{k}\sigma}\right) ^{n_{\vec{k}\sigma}}%
+}{\sqrt{m_{\vec{k}\sigma}!n_{\vec{k}\sigma}!}}\sqrt{n_{\vec{k}\sigma}%
++1}\left\langle m_{\vec{k}\sigma}\right| \left. n_{\vec{k}\sigma
+}+1\right> \\
+& = &e^{-\left| c_{\vec{k}\sigma}\right| ^{2}}\sum_{n_{\vec{k}\sigma
+},m_{\vec{k}\sigma}=0}^{\infty}\frac{\left( c_{\vec{k}\sigma}^{\ast}\right)
+^{m_{\vec{k}\sigma}}\left( c_{\vec{k}\sigma}\right) ^{n_{\vec{k}\sigma}}%
+}{\sqrt{m_{\vec{k}\sigma}!n_{\vec{k}\sigma}!}}\sqrt{n_{\vec{k}\sigma}+1}%
+\delta_{m_{\vec{k}\sigma},n_{\vec{k}\sigma}+1}\\
+& = &e^{-\left| c_{\vec{k}\sigma}\right| ^{2}}\sum_{n_{\vec{k}\sigma}%
+=0}^{\infty}\frac{\left( c_{\vec{k}\sigma}^{\ast}\right) ^{n_{\vec{k}\sigma
+}+1}\left( c_{\vec{k}\sigma}\right) ^{n_{\vec{k}\sigma}}}{\sqrt{\left(
+n_{\vec{k}\sigma}+1\right) !n_{\vec{k}\sigma}!}}\sqrt{n_{\vec{k}\sigma}+1}\\
+& = &c_{\vec{k}\sigma}^{\ast}e^{-\left| c_{\vec{k}\sigma}\right| ^{2}%
+}\sum_{n_{\vec{k}\sigma}=0}^{\infty}\frac{\left( c_{\vec{k}\sigma}^{\ast
+}\right) ^{n_{\vec{k}\sigma}}\left( c_{\vec{k}\sigma}\right) ^{n_{\vec
+{k}\sigma}}}{\sqrt{n_{\vec{k}\sigma}!\left( n_{\vec{k}\sigma}+1\right)
+n_{\vec{k}\sigma}!}}\sqrt{n_{\vec{k}\sigma}+1}\\
+& = &c_{\vec{k}\sigma}^{\ast}e^{-\left| c_{\vec{k}\sigma}\right| ^{2}%
+}\sum_{n_{\vec{k}\sigma}=0}^{\infty}\frac{\left( \left| c_{\vec{k}\sigma
+}\right| ^{2}\right) ^{n_{\vec{k}\sigma}}}{n_{\vec{k}\sigma}!}\\
+& = &c_{\vec{k}\sigma}^{\ast}e^{-\left| c_{\vec{k}\sigma}\right| ^{2}%
+}e^{\left| c_{\vec{k}\sigma}\right| ^{2}}\\
+& = &c_{\vec{k}\sigma}^{\ast}%
+\end{eqnarray}
+
+
+Ahora, si calculamos el valor esperado de un modo del campo $\vec{E}$ con
+polarizaci'on fijada en el estado de Glauber respectivo, obtenemos el
+resultado esperado:%
+\begin{eqnarray}
+\left\langle c_{\vec{k}\sigma}\right| \overrightarrow{\hat{E}}\left|
+c_{\vec{k}\sigma}\right> & = &\left\langle c_{\vec{k}\sigma}\right|
+\left[ i\sqrt{\frac{\hbar}{2\varepsilon_{0}\left( 2\pi\right) ^{3}}}%
+\sum_{\sigma}\int d^{3}k\left( \omega_{k}\right) ^{\frac{1}{2}}%
+\check{\varepsilon}_{\vec{k}\sigma}\left\{ \frac{1}{V}a_{\vec{k}^{\prime
+}\sigma^{\prime}}\delta_{\sigma\sigma^{\prime}}\delta^{\left( 3\right)
+}\left( \vec{k}-\vec{k}^{\prime}\right) e^{i\vec{k}\cdot\vec{x}}-\frac{1}%
+{V}a_{\vec{k}^{\prime}\sigma^{\prime}}\delta_{\sigma\sigma^{\prime}}%
+\delta^{\left( 3\right) }\left( \vec{k}-\vec{k}^{\prime}\right)
+e^{-i\vec{k}\cdot\vec{x}}\right\} \right] \left| c_{\vec{k}\sigma
+}\right> \\
+& = &\left\langle c_{\vec{k}\sigma}\right| \left[ \frac{i}{V}\sqrt
+{\frac{\hbar\omega_{k}}{2\varepsilon_{0}\left( 2\pi\right) ^{3}}}%
+\check{\varepsilon}_{\vec{k}\sigma}\left\{ a_{\vec{k}\sigma}e^{i\vec{k}%
+\cdot\vec{x}}-a_{\vec{k}\sigma}e^{-i\vec{k}\cdot\vec{x}}\right\} \right]
+\left| c_{\vec{k}\sigma}\right> \\
+& = &\frac{i}{V}\sqrt{\frac{\hbar\omega_{k}}{2\varepsilon_{0}\left(
+2\pi\right) ^{3}}}\check{\varepsilon}_{\vec{k}\sigma}\left\{ \left\langle
+c_{\vec{k}\sigma}\right| \hat{a}_{\vec{k}\sigma}\left| c_{\vec
+{k}\sigma}\right> e^{i\vec{k}\cdot\vec{x}}-\left\langle c_{\vec{k}%
+\sigma}\right| \hat{a}_{\vec{k}\sigma}^{\dagger}\left| c_{\vec
+{k}\sigma}\right> e^{-i\vec{k}\cdot\vec{x}}\right\} \\
+& = &-\frac{2}{V}\sqrt{\frac{\hbar\omega_{k}}{2\varepsilon_{0}\left(
+2\pi\right) ^{3}}}\check{\varepsilon}_{\vec{k}\sigma}\left\{ \frac
+{c_{\vec{k}\sigma}e^{i\vec{k}\cdot\vec{x}}-c_{\vec{k}\sigma}^{\ast}%
+e^{-i\vec{k}\cdot\vec{x}}}{2i}\right\} \qquad\qquad,c_{\vec{k}\sigma
+}=\left| c_{\vec{k}\sigma}\right| e^{i\theta_{\vec{k}\sigma}}\\
+& = &-\frac{2}{V}\left| c_{\vec{k}\sigma}\right| \sqrt{\frac{\hbar
+\omega_{k}}{2\varepsilon_{0}\left( 2\pi\right) ^{3}}}\check{\varepsilon
+}_{\vec{k}\sigma}\left\{ \frac{e^{i\left( \vec{k}\cdot\vec{x}+\theta
+_{\vec{k}\sigma}\right) }-e^{-i\left( \vec{k}\cdot\vec{x}+\theta_{\vec
+{k}\sigma}\right) }}{2i}\right\} \\
+& = &-\frac{2}{V}\left| c_{\vec{k}\sigma}\right| \sqrt{\frac{\hbar
+\omega_{k}}{2\varepsilon_{0}\left( 2\pi\right) ^{3}}}\check{\varepsilon
+}_{\vec{k}\sigma}\sin\left\{ \vec{k}\cdot\vec{x}+\theta_{\vec{k}\sigma
+}\right\}
+\end{eqnarray}
+
+
+Esta es la forma de una onda electromagn'etica cl'asica, cuya amplitud
+es dada por $|c_{\vec{k}\sigma}|$ y cuya fase es determinada por la fase de
+$c_{\vec{k}\sigma}=|c_{\vec{k}\sigma}|e^{i\theta_{\vec{k}\sigma}}.$
+
+Definimos\footnote{Es necesario bajar a la normalizaci'on en una caja, para
+evitar la poca claridad que puede provocar al considerar la delta de Dirac en
+el conmutador:%
+\begin{equation}
+\left[ a_{\vec{k}\sigma},a_{\vec{k}'\sigma '}^{\dagger}\right] =\delta_{\sigma\sigma '}\delta^{\left( 3\right) }\left( \vec{k}-\vec{k}'\right)
+\end{equation}
+} la indeterminaci'on del n'umero de fotones en el estado coherente
+$\left| c_{\vec{k}\sigma}\right> ,$ para un modo y una
+polarizaci'on espec'ifica, por:%
+\begin{eqnarray}
+\Delta n_{\vec{k}\sigma} & = &\sqrt{\left\langle c_{\vec{k}\sigma}\right|
+\left( \hat{N}_{_{\vec{k}\sigma}}-\left\langle \hat{N}_{_{\vec{k}\sigma}%
+}\right> \right) ^{2}\left| c_{\vec{k}\sigma}\right> }\\
+& = &\sqrt{\left\langle c_{\vec{k}\sigma}\right| \left( \hat{N}_{_{\vec
+{k}\sigma}}^{2}-2\hat{N}_{_{\vec{k}\sigma}}\left\langle \hat{N}_{_{\vec
+{k}\sigma}}\right> -\left\langle \hat{N}_{_{\vec{k}\sigma}}\right>
+^{2}\right) \left| c_{\vec{k}\sigma}\right> }\\
+& = &\sqrt{\left\langle c_{\vec{k}\sigma}\right| \hat{N}_{_{\vec{k}\sigma}%
+}^{2}\left| c_{\vec{k}\sigma}\right> -2\left\langle c_{\vec{k}%
+\sigma}\right| \hat{N}_{_{\vec{k}\sigma}}\left| c_{\vec{k}\sigma
+}\right> \left\langle \hat{N}_{_{\vec{k}\sigma}}\right>
+-\left\langle \hat{N}_{_{\vec{k}\sigma}}\right> ^{2}\left\langle
+c_{\vec{k}\sigma}\right| \left. c_{\vec{k}\sigma}\right> }\\
+& = &\sqrt{\left\langle \hat{N}_{_{\vec{k}\sigma}}^{2}\right>
+-2\left\langle \hat{N}_{_{\vec{k}\sigma}}\right> \left\langle \hat
+{N}_{_{\vec{k}\sigma}}\right> -\left\langle \hat{N}_{_{\vec{k}\sigma}%
+}\right> ^{2}}\\
+& = &\sqrt{\left\langle \hat{N}_{_{\vec{k}\sigma}}^{2}\right>
+-2\left\langle \hat{N}_{_{\vec{k}\sigma}}\right> ^{2}-\left\langle
+\hat{N}_{_{\vec{k}\sigma}}\right> ^{2}}\\
+& = &\sqrt{\left\langle \hat{N}_{_{\vec{k}\sigma}}^{2}\right>
+-\left\langle \hat{N}_{_{\vec{k}\sigma}}\right> ^{2}}%
+\end{eqnarray}
+donde:%
+\begin{eqnarray}
+\left\langle \hat{N}_{_{\vec{k}\sigma}}\right> & = &\left\langle
+c_{\vec{k}\sigma}\right| \hat{N}_{_{\vec{k}\sigma}}\left| c_{\vec
+{k}\sigma}\right> \\
+& = &\left\langle c_{\vec{k}\sigma}\right| \hat{a}_{_{\vec{k}\sigma}%
+}^{\dagger}\hat{a}_{\vec{k}\sigma}\left| c_{\vec{k}\sigma}\right> \\
+& = &\left( \left\langle c_{\vec{k}\sigma}\right| \hat{a}_{_{\vec{k}\sigma
+}}^{\dagger}\right) \left( \hat{a}_{_{\vec{k}\sigma}}\left| c_{\vec
+{k}\sigma}\right> \right) \\
+& = &\left( \hat{a}_{_{\vec{k}\sigma}}\left| c_{\vec{k}\sigma}\right>
+\right) ^{\dagger}\left( \hat{a}_{_{\vec{k}\sigma}}\left| c_{\vec
+{k}\sigma}\right> \right) \\
+& = &\left( c_{_{\vec{k}\sigma}}\left| c_{\vec{k}\sigma}\right>
+\right) ^{\dagger}\left( c_{_{\vec{k}\sigma}}\left| c_{\vec{k}\sigma
+}\right> \right) \\
+& = &\left( \left\langle c_{\vec{k}\sigma}\right| c_{_{\vec{k}\sigma}%
+}^{\ast}\right) \left( c_{_{\vec{k}\sigma}}\left| c_{\vec{k}\sigma
+}\right> \right) \\
+& = &c_{_{\vec{k}\sigma}}^{\ast}c_{_{\vec{k}\sigma}}\left\langle c_{\vec
+{k}\sigma}\right| \left. c_{\vec{k}\sigma}\right> \\
+& = &|c_{_{\vec{k}\sigma}}|^{2}%
+\end{eqnarray}
+
+
+Por otro lado:%
+\begin{eqnarray}
+\left\langle \hat{N}_{_{\vec{k}\sigma}}^{2}\right> & = &\left\langle
+c_{\vec{k}\sigma}\right| \hat{N}_{_{\vec{k}\sigma}}^{2}\left|
+c_{\vec{k}\sigma}\right> \\
+& = &\left\langle c_{\vec{k}\sigma}\right| \hat{a}_{_{\vec{k}\sigma}%
+}^{\dagger}\hat{a}_{\vec{k}\sigma}^{\dagger}\hat{a}_{\vec{k}\sigma}\hat
+{a}_{\vec{k}\sigma}\left| c_{\vec{k}\sigma}\right> \\
+& = &\left\langle c_{\vec{k}\sigma}\right| \hat{a}_{_{\vec{k}\sigma}%
+}^{\dagger}\left( \hat{a}_{_{\vec{k}\sigma}}^{\dagger}\hat{a}_{\vec{k}\sigma
+}+[\hat{a}_{_{\vec{k}\sigma}},\hat{a}_{_{\vec{k}\sigma}}^{\dagger}]\right)
+\hat{a}_{_{\vec{k}\sigma}}\left| c_{\vec{k}\sigma}\right> \\
+& = &\left\langle c_{\vec{k}\sigma}\right| \hat{a}_{_{\vec{k}\sigma}%
+}^{\dagger}\left( \hat{a}_{_{\vec{k}\sigma}}^{\dagger}\hat{a}_{\vec{k}\sigma
+}+1\right) \hat{a}_{_{\vec{k}\sigma}}\left| c_{\vec{k}\sigma
+}\right> \\
+& = &\left( \left\langle c_{\vec{k}\sigma}\right| \hat{a}_{_{\vec{k}\sigma
+}}^{\dagger}\hat{a}_{_{\vec{k}\sigma}}^{\dagger}\right) \left( \hat
+{a}_{_{\vec{k}\sigma}}\hat{a}_{_{\vec{k}\sigma}}\left| c_{\vec{k}\sigma
+}\right> \right) +\left( \left\langle c_{\vec{k}\sigma}\right|
+\hat{a}_{_{\vec{k}\sigma}}^{\dagger}\right) \left( \hat{a}_{_{\vec{k}\sigma
+}}\left| c_{\vec{k}\sigma}\right> \right) \\
+& = &c_{_{\vec{k}\sigma}}^{\ast}c_{_{\vec{k}\sigma}}^{\ast}c_{_{\vec{k}\sigma}%
+}c_{_{\vec{k}\sigma}}\left\langle c_{\vec{k}\sigma}\right| \left.
+c_{\vec{k}\sigma}\right> +c_{_{\vec{k}\sigma}}^{\ast}c_{_{\vec{k}\sigma
+}}\left\langle c_{\vec{k}\sigma}\right| \left. c_{\vec{k}\sigma
+}\right> \\
+& = &|c_{_{\vec{k}\sigma}}|^{4}+|c_{_{\vec{k}\sigma}}|^{2}%
+\end{eqnarray}
+por lo tanto:%
+\begin{eqnarray}
+\Delta n_{\vec{k}\sigma} & = &\sqrt{\left\langle \hat{N}_{_{\vec{k}\sigma}}%
+^{2}\right> -\left\langle \hat{N}_{_{\vec{k}\sigma}}\right> ^{2}%
+}\\
+& = &\sqrt{|c_{_{\vec{k}\sigma}}|^{4}+|c_{_{\vec{k}\sigma}}|^{2}-|c_{_{\vec
+{k}\sigma}}|^{4}}\\
+& = &|c_{_{\vec{k}\sigma}}|\\
+& = &\sqrt{\left\langle \hat{N}_{_{\vec{k}\sigma}}\right> }%
+\end{eqnarray}
+es decir, la incertidumbre aumenta al aumentar el valor de $c_{_{\vec{k}%
+\sigma}},$ o tambi'en, al aumentar el n'umero de fotones presentes en el campo.
+
+Es conveniente calcular la incertidumbre relativa;%
+\begin{eqnarray}
+\frac{\Delta n_{\vec{k}\sigma}}{\left\langle \hat{N}_{_{\vec{k}\sigma}%
+}\right> } & = &\frac{|c_{_{\vec{k}\sigma}}|}{|c_{_{\vec{k}\sigma}}|^{2}%
+}\\
+& = &\frac{1}{|c_{_{\vec{k}\sigma}}|}%
+\end{eqnarray}
+la que se hace peque\~{n}a a medida que el promedio del n'umero de fotones
+aumenta en los estados de Glauber. Entonces, para estados coherentes con
+muchos fotones presentes, el campo el'ectrico cu'antico se comporta como
+el campo cl'asico. Los estados coherentes son estados con
+indeterminaci'on m'inima, donde es v'alido el signo de la igualdad
+en la relaci'on de incertidumbre de Heisenberg.
+ 

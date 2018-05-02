@@ -1,0 +1,1874 @@
+\chapter{La ecuaci'on de Dirac}
+
+Deseamos obtener una ecuaci'on de onda relativista covariante de la forma
+de la ecuaci'on de Schr\"{o}dinger 
+\begin{equation}
+i\hbar \frac{\partial \psi }{\partial t}=\hat{H}\psi,
+\label{Schro}
+\end{equation}
+que adem'as tenga densidad de probabilidad definida positiva. Consideraremos una
+ecuaci'on de la forma:
+\begin{eqnarray}
+i\hbar \frac{\partial \psi }{\partial t}&=&\left[ \frac{\hbar c}{i} 
+\hat{\alpha}^i\partial_i +\hat{\beta}mc^2\right] \psi \label{Dirac1}\\
+&=&\left[ \frac{\hbar c}{i}\left( 
+\hat{\alpha}^1\partial_1+\hat{\alpha}^2\partial_2+\hat{\alpha}^{3}
+\partial_3\right) +\hat{\beta}mc^2\right] \psi \\
+&=& \hat{H}\psi .
+\label{Dirac01}
+\end{eqnarray}
+Dado que la ecuaci'on (\ref{Schro}) es de primer orden en el tiempo, asumiremos
+que tambi'en lo es en las derivadas espaciales. De esta forma la ecuaci'on
+(\ref{Dirac01}) tiene posibilidades de ser covariante bajo transformaciones de
+Lorentz, las cuales combinan \textit{linealmente} las coordenadas
+espaciotemporales al pasar de un sistema de referencia inercial a otro.
+
+Como veremos, los coeficientes (a'un desconocidos) $\hat{\alpha}^i$ no pueden
+ser simples n'umeros. Consideraremos a los $\hat{\alpha}^i$ como matrices de
+orden
+$N$ arbitrario. Luego, las soluciones $\psi$ de la ecuaci'on (\ref{Dirac01})
+ser'an vectores columna de orden $N$, esto es 
+\begin{equation}
+\psi (x) =\left[ 
+\begin{array}{c}
+\psi^1\left( \vec{x},t\right) \\ 
+\psi^2\left( \vec{x},t\right) \\ 
+\vdots \\ 
+\psi^{N}\left( \vec{x},t\right)
+\end{array}
+\right].
+\end{equation}
+Llamaremos a dichas soluciones \textit{spinores}, en aluci'on directa a las
+soluciones de la ecuaci'on de Pauli. En notaci'on indicial tenemos $\psi^\sigma
+(x)$ con $\sigma=1,\ldots,N$, de modo que la ecuaci'on (\ref{Dirac01}) adopta la
+forma 
+\begin{equation}
+i\hbar \frac{\partial \psi^{\sigma }}{\partial t}=\hat{H}^\sigma_{\ \tau}
+\psi^{\tau }.
+\end{equation}
+De esta forma $\hat{H}^\sigma_{\ \tau}$ es una matriz de orden $N\times N$ cuyos
+coeficientes son las derivadas con respecto a las coordenadas espaciales.
+
+A continuaci'on buscaremos condiciones que aseguren que las ondas planas de la
+forma
+\begin{equation}\label{plana01}
+\psi=\psi_0\, e^{-\frac{i}{\hbar}p_\mu x^\mu}=\psi_0\,
+e^{-\frac{i}{\hbar}(Et-\vec{p}\cdot\vec{x})},
+\end{equation} 
+sean soluciones de la ecuaci'on (\ref{Dirac01}) y adem'as satisfagan la
+relaci'on relativista entre energ'ia y momentum para una part'icula libre, esto
+es
+\begin{equation}\label{emrel}
+E^2=\vec{p}^2c^2+m^2c^{4}.
+\end{equation}
+
+Para determinar dichas condiciones introducimos en la ecuaci'on (\ref{Dirac01})
+las ondas planas (\ref{plana01}), obteniendo
+\begin{equation}\label{Diracplana}
+E\psi=\left[ -c\hat{\alpha}^i p_i+\hat{\beta}mc^2\right] \psi.
+\end{equation}
+De este resultado calculamos $E^2\psi$ encontrando que
+\begin{eqnarray}\label{Diracplana}
+E^2\psi&=&\left[ -c\hat{\alpha}^i p_i+\hat{\beta}mc^2\right]\left[
+-c\hat{\alpha}^ip_i
++\hat{\beta}mc^2\right] \psi 
+\nonumber\\
+&=&\left[ c^2 \hat{\alpha}^i \hat{\alpha}^j p_i p_j -mc^3\left(\hat{\alpha}^i
+\hat{\beta}+\hat{\beta}\hat{\alpha}^i \right)p_i+m^2c^4\hat{\beta}^2 \right]
+\psi .
+\end{eqnarray}
+De esta relaci'on vemos que es posible que cada una de las componentes del
+spinor $\psi$ satisfaga la relaci'on (\ref{emrel}), bajo la condici'on que
+las matrices $\hat{\alpha}^i$ y $\hat\beta$ satisfagan
+\begin{eqnarray}
+\hat{\alpha}^i\hat{\alpha}^{j}+\hat{\alpha}^{j}\hat{\alpha}^i
+&=&2\delta^{ij}\hat{1} , \label{alfalgebra1} \\
+\hat{\alpha}^i\hat{\beta}+\hat{\beta}\hat{\alpha}^i &=&0,
+\label{alfalgebra2} \\
+\hat{\beta}^2 &=&\hat{1},
+\label{alfalgebra3}
+\end{eqnarray}
+donde $\hat{1}$ es la matriz identidad de orden $N$.
+
+Analizemos las tres condiciones anteriores. La primera de estas relaciones, con
+$i=j$, nos dice que debe cumplirse
+tambi'en 
+\begin{equation}
+(\hat{\alpha}^i)^2=\hat{1}=\hat{\beta}^2. \label{alfa2=1}
+\end{equation}
+Adem'as, para garantizar que los valores propios del Hamiltoniano $\hat{H}$ en
+(\ref{Dirac01}) sean reales exigimos que 'este sea herm'itico. Luego, es
+necesario que las matrices $\hat{\alpha}_i$ y $\hat{\beta}$ tambi'en sean
+herm'iticas, esto es
+\begin{equation}
+\hat{\alpha}^{i\dagger }=\hat{\alpha}^i,\qquad \hat{\beta}^{\dagger }=
+\hat{\beta}.
+\end{equation}
+Por lo tanto, los valores propios de estas matrices tambi'en deben ser reales.
+Dado que, de
+acuerdo a (\ref{alfa2=1}), tenemos que $(\hat{\alpha}^i)^2=\hat{\beta}^2=
+\hat{1}$, se sigue que los respectivos eigenvalores s'olo pueden tener
+los valores $+1$ y $-1$. De las relaciones de anticonmutaci'on
+(\ref{alfalgebra1})-(\ref{alfalgebra3}) se sigue que
+\begin{equation}
+\hat{\alpha}^i=-\hat{\beta}\hat{\alpha}^i\hat{\beta},
+\end{equation}
+y, por lo tanto, 
+\begin{equation}
+{Tr}\left( \hat{\alpha}^i\right) =-{Tr}\left( \hat{\beta}%
+\hat{\alpha}^i\hat{\beta}\right).
+\end{equation}
+Utilizando la propiedad c'iclica de la traza, esto es, ${Tr}\left( ABC\right)
+={Tr}\left( CAB\right) $, encontramos que
+\begin{equation}
+{Tr}\left( \hat{\alpha}^i\right) =-{Tr}\left(
+\hat{\beta}\hat{\beta}\hat{\alpha}^i\right) =-{Tr}\left(
+\hat{\beta}^2\hat{\alpha}^i\right) =-{Tr}\left( \hat{\alpha}^i\right) ,
+\end{equation}
+lo cual nos conduce a 
+\begin{equation}
+{Tr}\left( \hat{\alpha}^i\right) =0.
+\end{equation}
+Entonces, la traza de cada una de las matrices $\hat{\alpha}^i$ y
+$\hat{\beta}$ debe ser cero. Dado que la traza de una matriz es igual a la suma
+de sus valores propios y puesto que como vimos anteriormente los valores propios
+de $\hat{\alpha}^i$ y $\hat{\beta}$ son $\pm 1$, se sigue que cada una de
+estas matrices debe poseer tantos valores propios positivos como negativos. Esto
+implica que las matrices $\hat{\alpha}^i$ y $\hat{\beta}$ deben, por
+lo tanto, ser de \textit{dimensi'on par}. La dimensi'on par m'as peque\~{n}a,
+$N=2$, s'olo admite una soluci'on trivial de las condiciones
+(\ref{alfalgebra1})-(\ref{alfalgebra3}), dado que s'olo existen tres matrices
+linealmente independientes de orden $N=2$ que anticonmutan (las matrices de
+Pauli $\hat{\sigma}^i$). Luego, la dimensi'on m'as peque~na para la cual las
+condiciones (\ref{alfalgebra1})-(\ref{alfalgebra3}) pueden ser satisfechos de
+forma no trivial es $N=4$.
+
+Una representaci'on expl'icita de las matrices de Dirac $\hat{\alpha}^i$ y
+$\hat{\beta}$ en el caso $N=4$ es la siguiente 
+\begin{equation}
+\hat{\alpha}^i=\left[ 
+\begin{array}{cc}
+0 & \hat{\sigma}^i \\ 
+\hat{\sigma}^i & 0
+\end{array}
+\right] ,\qquad \hat{\beta}=\left[ 
+\begin{array}{cc}
+\hat{1} & 0 \\ 
+0 & -\hat{1}
+\end{array}
+\right] , 
+\label{DiracMatPauli}
+\end{equation}
+donde $\hat{\sigma}^i$\ son las matrices de Pauli de $2\times 2$ y $\hat{1}$
+es la matriz identidad de orden $2$. Con la forma expl'icita de las matrices de
+Pauli 
+\begin{equation}
+\hat{\sigma}^1=\left[ 
+\begin{array}{cc}
+0 & 1 \\ 
+1 & 0
+\end{array}
+\right] ,\qquad \hat{\sigma}^2=\left[ 
+\begin{array}{cc}
+0 & -i \\ 
+i & 0
+\end{array}
+\right] ,\qquad \hat{\sigma}^{3}=\left[ 
+\begin{array}{cc}
+1 & 0 \\ 
+0 & -1
+\end{array}
+\right] ,
+\end{equation}
+tenemos que las matrices $\hat{\alpha}^i$ y $\hat{\beta}$ est'an dadas por
+\begin{eqnarray}
+\hat{\alpha}^1 &=&\left[ 
+\begin{array}{cccc}
+0 & 0 & 0 & 1 \\ 
+0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 \\ 
+1 & 0 & 0 & 0
+\end{array}
+\right] ,\qquad \hat{\alpha}^2=\left[ 
+\begin{array}{cccc}
+0 & 0 & 0 & -i \\ 
+0 & 0 & i & 0 \\ 
+0 & -i & 0 & 0 \\ 
+i & 0 & 0 & 0
+\end{array}
+\right] , \notag \\
+\hat{\alpha}^{3} &=&\left[ 
+\begin{array}{cccc}
+0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & -1 \\ 
+1 & 0 & 0 & 0 \\ 
+0 & -1 & 0 & 0
+\end{array}
+\right] ,\qquad \hat{\beta}=\left[ 
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0 \\ 
+0 & 0 & -1 & 0 \\ 
+0 & 0 & 0 & -1
+\end{array}
+\right] . \label{DiracMat}
+\end{eqnarray}
+Es directo comprobar, usando la propiedad
+$\hat{\sigma}^i\hat{\sigma}^{j}+\hat{\sigma}^{j}\hat{\sigma}^i
+=2\delta^{ij}\hat{1}_2$ de las matrices de Pauli, que todas las condiciones
+(\ref{alfalgebra1}) se satisfacen para estas cuatro matrices. Esta es una
+representaci'on particular de las matrices de Dirac. Debemos notar que cualquier
+set de matrices $\hat{\alpha}^i\prime$ y $\hat{\beta}\prime$, construido
+unitariamente a partir de las matrices $\hat{\alpha}^i$ y $\hat{\beta}$ que
+satisfacen las condiciones (\ref{alfalgebra1}), tambi'en satisface las
+condiciones (\ref{alfalgebra1}). 
+% Luego, los fen'omenos descritos por la
+% ecuaci'on de Dirac no dependen de la representaci'on particular escogida para
+% las matrices de Dirac, aunque pueden hacer su descripci'on m'as sencilla.
+
+\section{Cuadricorriente conservada}
+Ahora construiremos la densidad de 4-corriente y la ecuaci'on de continuidad
+para la ecuaci'on de Dirac. Para ello multiplicamos la ecuaci'on de Dirac,
+por la izquierda por (la ``matrix de $1\times N$") $\psi^{\dagger
+}=(\psi^{1*},\dots,\psi^{4*})$, para obtener 
+\begin{equation}
+i\hbar \psi^{\dagger }\partial_t \psi=\frac{\hbar c}{i}\psi
+^{\dagger}\hat{\alpha}^i\partial_i \psi+mc^2\psi^{\dagger }\hat{\beta}\psi
+. \label{psi*D}
+\end{equation}
+A'un m'as, tomando el conjugado herm'itico de (\ref{Dirac1}) y multiplicando a
+la derecha por $\psi $, obtenemos
+\begin{equation}
+-i\hbar (\partial_t\psi^{\dagger })\psi =-\frac{\hbar
+c}{i}\partial_i\psi^{\dagger }\hat{\alpha}^{i\dagger }\psi +mc^2\psi^{\dagger
+}\hat{\beta}^{\dagger }\psi ,
+\end{equation}
+o bien, recordando que las matrices de Dirac son herm'iticas, 
+\begin{equation}
+-i\hbar (\partial_t\psi^{\dagger })\psi =-\frac{\hbar
+c}{i}\partial_i\psi^{\dagger }\hat{\alpha}^i\psi +mc^2\psi^{\dagger
+}\hat{\beta}\psi. \label{D*psi}
+\end{equation}
+Sustrayendo (\ref{D*psi}) de (\ref{psi*D}) encontramos 
+\begin{eqnarray*}
+i\hbar \partial_t(\psi^{\dagger }\psi)&=&\frac{\hbar
+c}{i}\partial_i(\psi^{\dagger }\hat{\alpha}^i\psi) ,
+\end{eqnarray*}
+o bien, 
+\begin{equation}
+\frac{\partial \rho }{\partial t}+\partial _ij^i=0, \label{cont1}
+\end{equation}
+con
+\begin{equation}
+\rho :=\psi^{\dagger }\psi .\label{rho}
+\end{equation}
+Ya que $\rho$ es una cantidad definida positiva, intentaremos
+interpretarla interpretaremos como la \emph{densidad de probabilidad}. Como
+consecuencia,
+\begin{equation}
+j^i:=c\psi^{\dagger }\hat{\alpha}^i\psi, \label{jota}
+\end{equation}
+ser'a interpretada como la correspondiente \emph{densidad de corriente de
+probabilidad}. 
+
+A'un tenemos que demostrar que $\left( c\rho ,j^i\right) $ forma un
+4-vector bajo transformaciones de Lorentz, y que la ecuaci'on de Dirac es
+covariante bajo estas transformaciones, antes de aceptarla como una
+leg'itima ecuaci'on de onda relativista.
+
+\section{Soluciones de la ecuaci'on de Dirac libre}
+
+Consideremos ahora las soluciones de la ecuaci'on de Dirac (\ref{Diracplana})
+libre, es decir en ausencia de potenciales, para ondas planas de la forma
+\begin{equation}
+\psi=\left( \begin{array}{c}\varphi \\ \chi\end{array}\right)=\psi_0\,
+e^{-\frac{i}{\hbar}p_\mu x^\mu}=\left( \begin{array}{c}\varphi_0 \\
+\chi_0\end{array}\right) e^{-\frac{i}{\hbar}p_\mu x^\mu}.
+\end{equation} 
+Insertando 'esta en la ecuaci'on de Dirac obtenemos
+\begin{equation}\label{Diracplana2}
+E\psi=\left[ +c\,\hat{\vec{\alpha}}\cdot\vec{p}+\hat{\beta}mc^2\right] \psi ,
+\end{equation}
+donde a continuaci'on consideraremos la representaci'on
+\begin{equation}
+\hat{\alpha}^i=\left(
+\begin{array}[c]{cc} 0 & \hat{\sigma}^i\\
+\hat{\sigma}^i & 0
+\end{array}\right), \qquad 
+\hat{\beta}=\left(
+\begin{array}
+[c]{cc}%
+\hat{1} & 0\\
+0 & -\hat{1}
+\end{array}
+\right) .
+\end{equation} 
+
+De esta forma, obtenemos para los vectores $\varphi_0$ y $\chi_0$ de dos
+componentes (o \textit{bi-spinores}) las siguientes ecuaciones
+\begin{align}
+E\varphi_0 & =c\,\hat{\vec{\sigma}}\cdot\vec{p}\chi_0+mc^2\varphi_0,
+\label{s1}\\
+E\chi_0 & =c\,\hat{\vec{\sigma}}\cdot\vec{p}\varphi_0-mc^2\chi_0 
+\label{s2}.
+\end{align}
+Este es un sistema homogeneo de ecuaciones lineales para $\varphi_0$ y $\chi_0$,
+que s'olo tiene soluci'on no trivial si el correspondiente determinate es nulo,
+es decir, si
+\begin{equation}
+\left|
+\begin{array}
+[c]{cc}%
+\left( E-mc^2\right) \hat{1} & -c\hat{\vec{\sigma}}\cdot\vec{p}\\
+-c\hat{\vec{\sigma}}\cdot\vec{p} & \left( E+mc^2\right) \hat{1}%
+\end{array}
+\right|  =0 .
+\end{equation} 
+Es simple verificar que esta condici'on es equivalente a
+\begin{equation}
+\left( E^2-m^2c^{4}\right) \hat{1}-c^2\left(
+\vec{\sigma}\cdot\vec{p}\right)^2 =0.
+\end{equation} 
+Usando la identidad
+\begin{equation}\label{idsigma}
+\left( \hat{\sigma}^iA^i\right) \left( \hat{\sigma}^{j}B^{j}\right)
+=A^iB^i\hat{1}+i\varepsilon^{ijk}\,\hat{\sigma}^iA^{j}B^{k},
+\end{equation} 
+podemos reescribir las ecuaciones anteriores como
+\begin{equation}
+\left( E^2-m^2c^{4}\right) \hat{1}-c^2 \vec{p}^2\hat{1}  =0,
+\end{equation} 
+es decir, 
+\begin{equation}
+E=\pm E_{p}=:\lambda E_p, \qquad \lambda=\pm 1,
+\end{equation}
+con
+\begin{equation}
+E_{p}:=c\sqrt{{\vec p}^2+m^2c^2}.
+\end{equation} 
+De esta forma, hemos recobrado la condici'on que la relaci'on relativista entre
+energ'ia y momentum debe ser satisfecha. Adem'as, vemos que la ecuaci'on de
+Dirac admite dos tipos de soluciones de ondas planas, distinguidas por el valor
+de $\lambda$. Se denomina a dichas soluciones \textit{positivas} y
+\textit{negativas}.
+
+Volviendo al sistema (\ref{s1})-(\ref{s2}), podemos despejar $\varphi_0$ de
+(\ref{s2}), obteniendo
+\begin{equation}
+\chi_0=\left( \frac{c\vec{\sigma}\cdot\vec{p}}{mc^2+\lambda E_p}\right)
+\varphi_0 .
+\end{equation} 
+Si consideramos que el bi-spinor $\varphi_0$ es de la forma
+\begin{equation}
+\varphi_0=U=\left(
+\begin{array}
+[c]{c}
+U^1\\
+U^2
+\end{array}
+\right),
+\end{equation} 
+con la normalizaci'on
+\begin{equation}
+U^{\dagger}U=U^{1\ast}U^1+U^{2\ast}U^2=1,
+\end{equation} 
+entonces, la soluci'on general de onda plana para la ecuaci'on de Dirac libre
+puede ser escrita en la forma 
+\begin{equation}\label{sol01}
+\psi_{p\lambda}(\vec{x},t) =N\left(
+\begin{array}
+[c]{c}%
+U\\
+\frac{c\vec{\sigma}\cdot\vec{p}}{mc^2+\lambda E_{p}}U
+\end{array}
+\right) \frac{1}{\sqrt{2\pi}\hbar^{3}}\exp\left( 
+-\frac{i}{\hbar}\left(+\lambda E_{p}t-\vec{p}\cdot\vec{x}	\right) 
+\right),
+\end{equation}
+con $\lambda=\pm1$. La constante $N$ puede fijarse imponiendo la condici'on de
+normalizaci'on
+\begin{equation}
+\int\psi_{p\lambda}^{\dagger}(\vec{x},t) \psi_{p'%
+\lambda'}(\vec{x},t) d^{3}x=\delta_{\lambda\lambda'%
+}\delta\left( \vec{p}-\vec{p}'\right).
+\end{equation}
+Para la soluci'on (\ref{sol01}) esto implica que
+\begin{equation}
+N^2\left( U^{\dagger}U+U^{\dagger}\frac{c^2\left(
+\vec{\sigma}\cdot\vec{p}\right)^2}{\left( mc^2+\lambda E_{p}\right) 
+^2}U\right)=1.
+\end{equation}
+Usando nuevamente la identidad (\ref{idsigma}), encontramos
+\begin{equation}
+N=\sqrt{\frac{mc^2+\lambda E_{p}}{2\lambda E_{p}}},
+\end{equation}
+de modo que nuestra soluci'on tiene la forma
+\begin{equation}\label{sol02}
+\psi_{p\lambda}(\vec{x},t) =\sqrt{\frac{mc^2+\lambda E_{p}}{2\lambda
+E_{p}}}\left(
+\begin{array}
+[c]{c}%
+U\\
+\frac{c\vec{\sigma}\cdot\vec{p}}{mc^2+\lambda E_{p}}U
+\end{array}
+\right) \frac{1}{\sqrt{2\pi}\hbar^{3}}\exp\left( 
+-\frac{i}{\hbar}\left(+\lambda E_{p}t-\vec{p}\cdot\vec{x}	\right) 
+\right).
+\end{equation}
+Es interesante notar que el espectro de la ecuaci'on de Dirac para la part'icula
+libre, como en el caso de la ecuaci'on de Klein-Gordon, no es acotado. Es decir,
+tiene energ'ias tanto positivas como negativas que se extienden en ambos
+sentidos indefinidamente. Existe adem'as un gap en el espectro de energ'ia de
+valor $2mc^2$.
+
+\section{Helicidad}
+
+Las soluciones para la part'icula libre de la ecuaci'on de Dirac
+$\psi_{p\lambda}(\vec{x},t)$ presentan degeneraci'on con respecto del momentum.
+Para cada valor de $\lambda=\pm 1$, las soluciones $\psi_{p\lambda}(\vec{x},t)$
+son funciones propias del momentum, 
+\begin{equation}
+\hat{p}^i\psi_{p\lambda}(\vec{x},t) =p^i\psi_{p\lambda}(\vec{x},t),
+\end{equation}
+con $\hat{p}^i=-\hat{p}_i:=-i\hbar \partial_i$. Ya que $\psi$ es un spinor
+de 4 componentes, entonces para cada $\lambda=\pm 1$ existen dos
+estados con el mismo momentum. Estos estados degenerados en el momentum pueden
+ser distinguidos usando otro n'umero cu'antico, que llamaremos
+\textit{helicidad}. Primero, definimos el operador ``vectorial'' de spin:
+\begin{equation}
+\hat{S}^i:=\frac{\hbar}{2}\hat{\Sigma}^i:=\frac{\hbar}{2}\left(
+\begin{array}
+[c]{cc}%
+\hat{\sigma}^i & 0\\
+0 & \hat{\sigma}^i%
+\end{array}
+\right).
+\end{equation}
+Es f'acil verficar que este operador no conmuta con el hamiltoniano de Dirac.
+Sin embargo, 
+\begin{equation}
+\left[ \hat{H},\hat{\vec{S}}\cdot\hat{\vec{p}}\right] =0,
+\end{equation}
+de modo que $\hat{H}$ y $\hat{\vec{S}}\cdot\hat{\vec{p}}$ pueden ser
+diagonalizados en una base com\'{u}n. Lo mismo ocurre para el operador de
+helicidad (definido para estados de \textit{part'icula libre}):
+\begin{equation}
+\hat{\Lambda}_{S}:=\frac{\hat{\vec{S}}\cdot\hat{\vec{p}}}{|\vec{p}|}=\frac{\hbar
+}{2}\,\hat {\vec{\Sigma}}\cdot\frac{\hat{\vec{p}}}{|\vec{p}|}.
+\end{equation}
+Este puede ser entendido como la proyecci'on del spin en la direcci'on del
+momentum. Por ejemplo, si tenemos un electr'on propag'andose en la direcci'on
+del eje $z$, es decir con un vector momentum dado por
+\begin{equation}
+\vec{p}=\left( 0,0,p\right),
+\end{equation}
+tenemos que
+\begin{equation}
+\hat{\Lambda}_{S}=\frac{\hbar}{2}\hat{\Sigma}_{z}=\frac{\hbar}{2}\left(
+\begin{array}
+[c]{cccc}%
+1 & 0 & 0 & 0\\
+0 & -1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & -1
+\end{array}
+\right),
+\end{equation}
+y por lo tanto, los vectores propios de $\hat{\Lambda}_{S}$ son, con eigenvalor
+$\frac{\hbar}{2}$,
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+u_{1}\\
+0
+\end{array}
+\right) ,\quad
+\left(
+\begin{array}
+[c]{c}%
+0\\
+u_{1}%
+\end{array}
+\right),
+\end{equation}
+y con eigenvalor $-\frac{\hbar}{2}$,
+\begin{equation}
+\left(\begin{array}[c]{c}u_{-1}\\ 0 \end{array}\right) ,\quad
+\left(\begin{array}[c]{c} 0\\u_{-1}\end{array}\right),
+\end{equation}
+donde
+\begin{equation}
+u_{1}:=\left(\begin{array}[c]{c} 1\\ 0 \end{array}\right) , \quad 
+u_{-1}:=\left(\begin{array}[c]{c} 0\\ 1 \end{array}\right).
+\end{equation}
+Luego, con respecto a la helicidad podemos clasificar las soluciones de la
+ecuaci'on de Dirac para una part'icula libre propag'andose en el eje $z$ como
+\begin{equation}
+\psi_{p\lambda,+1/2} 
+=N\left(\begin{array}[c]{c}\left(\begin{array}[c]{c} 1\\ 0 \end{array}\right) \\
+\frac{c\hat{\sigma}_{z}p}{mc^2+\lambda E_{p}}\left(
+\begin{array}
+[c]{c}%
+1\\
+0
+\end{array}
+\right)
+\end{array}
+\right) e^{\frac{i}{\hbar}\left( pz-\lambda E_{p}t\right) },
+\end{equation}
+y
+\begin{equation}
+\psi_{p\lambda,-1/2}=N\left(\begin{array}[c]{c}
+\left(\begin{array}[c]{c}
+0\\
+1
+\end{array}
+\right) \\
+\frac{c\hat{\sigma}_{z}p}{mc^2+\lambda E_{p}}\left(
+\begin{array}
+[c]{c}
+0\\
+1
+\end{array}
+\right)
+\end{array}
+\right) e^{\frac{i}{\hbar}\left( pz-\lambda E_{p}t\right) }.
+\end{equation}
+Podemos verificar que se cumple la siguiente relaci'on de ortonormalidad
+\begin{equation}
+\int\psi_{p,\lambda,S_{z}}^{\dagger}(\vec{x},t) \psi_{p^{\prime
+},\lambda',S_{z}'}(\vec{x},t) d^{3}x=\delta
+_{\lambda\lambda'}\delta_{S_{z}S_{z}'}\delta\left(
+p_{z}-p_{z}'\right).
+\end{equation}
+
+\section{Campo de Dirac interactuando con el campo electrom'agn'etico}
+
+Para modelar la interacci'on del electr'on, descrito por la ecuaci'on de Dirac,
+con el campo electromagn'etico recurrimos al \textit{acoplamiento minimal} del
+campo de Dirac con el cuadripotencial electromagn'etico
+$A_\mu=(\phi,-\vec{A})$, que consiste en sustituir $\partial_t$ por $\partial_t+(ie/\hbar)\phi$ y $\vec{\nabla}$ por $\vec{\nabla}-(ie/\hbar c)\vec{A}$. En notaci'on
+relativista, el \textit{acoplamiento minimal} adopta la forma
+\begin{equation}
+\partial_\mu \quad \rightarrow\quad
+\nabla_\mu:=\partial_\mu+i(e/\hbar c)A_\mu 
+\end{equation}
+o, en t'erminos del operador de mom'entum can'onico 
+\begin{equation}
+\hat{\Pi}_\mu:=i\hbar\nabla_\mu=i\hbar\left(\partial_\mu+i(e/\hbar c)A_\mu \right)
+= \hat{p}_\mu-(e/c)A_\mu.
+\end{equation}
+Con esto, la ecuaci'on de Dirac acoplada minimalmente al campo electromagn'etico
+adopta la forma
+\begin{equation}
+\left( i\hbar\partial_{t}-e\phi\right) \psi  =\left[ 
+-c\hat{\alpha}^i\left(i\hbar\partial_i-\frac{e}{c}A_i\right)
++\hat{\beta}mc^2\right]  \psi,
+\end{equation} 
+o bien,
+\begin{eqnarray}
+ i\hbar\partial_{t} \psi &=&\left[ -c\hat{\alpha}^i\left(i\hbar
+\partial_i-\frac{e}{c}A_i\right) +\hat{\beta}mc^2+e\phi \right]  \psi \\
+ &=&\left[\hat{H}_{\rm libre}+\hat{H}_{\rm int}\right] \psi,
+\end{eqnarray} 
+con
+\begin{equation}
+\hat{H}_{\rm int}:=e\hat{\alpha}^iA_i +e\phi =-e\,\hat{\vec{\alpha}}\cdot
+\vec{A} +e\phi 
+\end{equation} 
+como hamiltoniano de interacci'on. Note que este hamiltoniano, a diferencia del an'alogo no-relativista \eqref{Hintnorel}, depende \textit{linealmente} de los potenciales electromagn'eticos.
+
+
+\section{L'imite no-relativista de la Ecuaci'on de Dirac.}
+
+Consideremos las soluciones para part'iculas en reposo ($\vec{p}=\vec{0}$):
+\begin{align}
+\psi^{(1)} & =\left(
+\begin{array}
+[c]{c}%
+1\\
+0\\
+0\\
+0
+\end{array}
+\right) e^{-i\frac{mc^2}{\hbar}t}, \qquad
+\psi^{\left(
+2\right)}=\left(
+\begin{array}
+[c]{c}%
+0\\
+1\\
+0\\
+0
+\end{array}
+\right) e^{-i\frac{mc^2}{\hbar}t} , \label{Solrep1}\\
+\psi^{(3) } & =\left(
+\begin{array}
+[c]{c}%
+0\\
+0\\
+1\\
+0
+\end{array}
+\right) e^{i\frac{mc^2}{\hbar}t},\qquad
+\psi^{\left(
+4\right) }=\left(
+\begin{array}
+[c]{c}%
+0\\
+0\\
+0\\
+1
+\end{array}
+\right) e^{i\frac{mc^2}{\hbar}t}. \label{Solrep2}
+\end{align}
+Las dos primeras funciones corresponden a estados de ``energ'ia positiva'' y los
+dos 'ultimos a ``energ'ia negativa". Nos concentraremos en (superposiciones de) los estados de energ'ia positiva $\psi^{(1)}$ y $\psi^{(2)}$. Vemos que en este caso s'olo las dos primeras componentes del
+spinor de Dirac (en la representaci'on standard) son no nulas. En el caso en que el campo de Dirac interact'ua con el campo electromagn'etico, las cuatro componentes est'an acopladas, por lo que en general son todas no nulas. Sin embargo, podemos considerar consistentemente que, bajo ciertas condiciones, las primeras dos componentes del spinor de Dirac (e.d., $\varphi$) son mucho mayores que las componentes 3 y 4 (e.d., $\chi$).
+
+Usando 
+\begin{equation}
+\psi=\left(
+\begin{array}
+[c]{c}%
+\tilde{\varphi}\\
+\tilde{\chi}%
+\end{array}
+\right) ,\quad 
+\hat{\alpha}^i=\left(
+\begin{array}
+[c]{cc}%
+0 & \hat{\sigma}^i\\
+\hat{\sigma}^i & 0
+\end{array}
+\right) ,\quad
+\hat{\beta}=\left(
+\begin{array}
+[c]{cc}%
+\hat{1} & 0\\
+0 & -\hat{1}%
+\end{array}
+\right),
+\end{equation}
+podemos escribir la ecuaci'on de Dirac como
+\begin{eqnarray}
+i\hbar\partial_{t}\left(
+\begin{array}
+[c]{c}%
+\tilde{\varphi}\\
+\tilde{\chi}%
+\end{array}
+\right) &=&c\left(
+\begin{array}
+[c]{cc}%
+0 & \hat{\sigma}^i\hat{\Pi}^i\\
+\hat{\sigma}^i\hat{\Pi}^i & 0
+\end{array}
+\right) \left(
+\begin{array}
+[c]{c}%
+\tilde{\varphi}\\
+\tilde{\chi}%
+\end{array}
+\right) +mc^2\left(
+\begin{array}
+[c]{cc}%
+\hat{1} & 0\\
+0 & -\hat{1}%
+\end{array}
+\right) \left(
+\begin{array}
+[c]{c}%
+\tilde{\varphi}\\
+\tilde{\chi}%
+\end{array}
+\right) +e\phi\left(
+\begin{array}
+[c]{c}%
+\tilde{\varphi}\\
+\tilde{\chi}%
+\end{array}
+\right)\\
+ &=&c\left(
+\begin{array}
+[c]{c}%
+\hat{\sigma}^i\hat{\Pi}^i\tilde{\chi}\\
+\hat{\sigma}^i\hat{\Pi}^i\tilde{\varphi}%
+\end{array}
+\right) +mc^2\left(
+\begin{array}
+[c]{c}%
+\tilde{\varphi}\\
+-\tilde{\chi}%
+\end{array}
+\right) +e\phi\left(
+\begin{array}
+[c]{c}%
+\tilde{\varphi}\\
+\tilde{\chi}%
+\end{array}
+\right).
+\end{eqnarray}
+Si ahora hacemos el anzats
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\tilde{\varphi}\\
+\tilde{\chi}%
+\end{array}
+\right) =\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right) e^{-i\frac{mc^2}{\hbar}t},
+\end{equation}
+pues suponemos que la energ'ia predominante del sistema es la energ'ia
+de reposo, entonces
+\begin{equation}
+\partial_{t}\left(
+\begin{array}
+[c]{c}%
+\tilde{\varphi}\\
+\tilde{\chi}%
+\end{array}
+\right) =-i\frac{mc^2}{\hbar}\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right) e^{-i\frac{mc^2}{\hbar}t}+e^{-i\frac{mc^2}{\hbar}%
+t}\partial_{t}\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right).
+\end{equation}
+Con esto, obtenemos que
+\begin{equation}
+i\hbar e^{-i\frac{mc^2}{\hbar}t}\left\{ -i\frac{mc^2}{\hbar}\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right)+\partial_{t}\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right) \right\} =e^{-i\frac{mc^2}{\hbar}t}\left\{c\left(
+\begin{array}
+[c]{c}%
+\hat{\sigma}_i\hat{\Pi}^i\chi\\
+\hat{\sigma}_i\hat{\Pi}^i\varphi
+\end{array}
+\right) +mc^2\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+-\chi
+\end{array}
+\right) +e\phi\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right)\right\},
+\end{equation}
+y por lo tanto,
+\begin{equation}
+i\hbar\partial_{t}\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right) =c\left(
+\begin{array}
+[c]{c}%
+\hat{\sigma}^i\hat{\Pi}^i\chi\\
+\hat{\sigma}^i\hat{\Pi}^i\varphi
+\end{array}
+\right) -2mc^2\left(
+\begin{array}
+[c]{c}%
+0\\
+\chi
+\end{array}
+\right) +e\phi\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right).
+\end{equation}
+Consideremos por ahora el segundo t\'{e}rmino de la igualdad anterior:
+\begin{equation}
+i\hbar\partial_{t}\chi=c\hat{\sigma}^i\hat{\Pi}^i\varphi-2mc^2%
+\chi+e\phi\chi .
+\end{equation}
+Si imponemos las condiciones
+\begin{align}
+\left| i\hbar\frac{\partial\chi}{\partial t}\right|  & \ll\left| mc^2\chi\right|
+\qquad \text{ (energ'ia cin\'{e}tica }\ll\text{energ'ia de reposo)},\\
+\left| e\phi\right|  & \ll\left| mc^2\right| \qquad\ \ 
+\text{(energ'ia potencial}\ll\text{energ'ia de reposo)},
+\end{align}
+obtenemos
+\begin{equation}
+\chi\approx\frac{\hat{\sigma}^i\hat{\Pi}^i}{2mc}\varphi
+\end{equation}
+Si reemplazamos esto en la ecuaci'on para la primera componente,
+\begin{equation}
+i\hbar\partial_{t}\varphi  =c\hat{\sigma}^i\hat{\Pi}^i\chi+e\phi\varphi,
+\end{equation} 
+obtenemos
+\begin{equation}
+i\hbar\partial_{t}\varphi  \approx\frac{1}{2m}\hat{\sigma}^i\hat{\Pi}^i%
+\hat{\sigma}^{j}\hat{\Pi}^{j}\varphi+e\phi\varphi .
+\end{equation} 
+Usando las propiedades de las matrices de Pauli, podemos escribir:
+\begin{align}
+\left( \hat{\sigma}^i\hat{\Pi}^i\right) \left( \hat{\sigma}^{j}\hat
+{\Pi}^{j}\right)  &
+=-\hat{\Pi}^i\hat{\Pi}^i\hat{1}+i\hat{\sigma}^i\varepsilon^{ijk}\hat{\Pi}^
+{j}\hat{\Pi}^{k}\\
+& =\hat{\vec{\Pi}}^2+i\hat{\sigma}^i\varepsilon^{ijk}\left(
+i\hbar\partial^{j}-\frac{e}{c}A^{j}\right) \left( 
+i\hbar\partial^{k}-\frac{e}{c}A^{k}\right) \\
+& =\left( \hat{p}^i-\frac{e}{c}A^i\right)
+^2+i\hat{\sigma}^i\varepsilon^{ijk}\left( i\hbar
+i\hbar\partial^{j}\partial^{k}-\frac{e}{c}i\hbar\partial^{j}A^{k}-\frac{e}{c}A^{
+j}i\hbar\partial^{k}-\frac{e}{c}A^{j}\frac{e}{c}A^{k}\right) \\
+& =\left( 
+\hat{p}^i-\frac{e}{c}A^i\right)^2+i\hat{\sigma}^i\varepsilon^{ijk}\left(
+ -\frac{e}{c}i\hbar\partial^{j}A^{k}-\frac{e}{c}A^{j}i\hbar\partial^{k}\right) 
+\\
+& =\left( \hat{p}^i-\frac{e}{c}A^i\right)^2+\frac{e}{c}\hbar
+\hat{\sigma}^i\varepsilon^{ijk}\partial^{j}A^{k}\\
+& =\left( \hat{p}^i-\frac{e}{c}A^i\right)^2-\frac{e}{c}\hbar
+\hat{\sigma}^i\varepsilon^{ijk}\partial^{j}A^{k}\\
+& =\left( 
+\hat{p}^i-\frac{e}{c}A^i\right)^2-\frac{e}{c}\hbar\hat{\sigma}^iB^i.
+\end{align}
+De esta forma, obtenemos que la ecuaci'on que gobierna las componentes de
+``energ'ia positiva'', e.d. el 2-spinor $\varphi$, en el l'imite no
+relativista es:
+\begin{equation}
+i\hbar\,\partial_{t}\varphi=\frac{1}{2m}\left( \left( \vec{p}-\frac
+{e}{c}\vec{A}\right)^2-\frac{e}{c}\hbar\,\hat{\vec{\sigma}}\cdot\vec{B}\right)
+\varphi+e\phi\varphi .
+\end{equation}
+Vemos entonces que en el l'imite no relativista la ecuaci'on de Dirac acoplada
+minimalmente al campo electromagn'etico reproduce la ecuaci'on de Pauli,
+que describe la interacci'on de una part'icula no-relativista de sp'in $1/2$ con
+un campo electromagn'etico externo. 
+
+\begin{center}
+AGREGAR CASO $\vec{B}=$cte
+\end{center}
+
+\section{Formulaci'on covariante de la Ecuaci'on de Dirac.}
+
+Comenzemos escribiendo la ecuaci'on de Dirac en una forma m'as compacta.
+Si multiplicamos la ecuaci'on de Dirac (\ref{Dirac1}) por la izquierda
+con la matriz de Dirac $\hat\beta$, y usando (\ref{alfa2=1}), obtenemos
+\begin{equation}
+i\hbar\left(\hat{\beta}\partial_0\psi+\hat{\beta}\hat{\alpha}^i\partial_i
+\psi\right)-mc\psi = 0.
+\end{equation}
+Definiendo las matrices $\gamma^\mu$ como
+\begin{align}
+\gamma^0 & :=\hat{\beta},\\
+\gamma^i & :=\hat{\alpha}^i,
+\end{align}
+la ecuaci'on de Dirac puede ser escrita en la forma:
+\begin{equation}
+\left[ i\hbar\gamma^\mu\partial_\mu -mc\right] \psi =0.
+\end{equation}
+La propiedad fundamental de las matrices $\gamma^\mu$ es
+\begin{equation}
+\gamma^\mu\gamma^\mu+\gamma^\mu\gamma^\mu
+=2\eta^{\mu\nu}\hat{1}
+\label{gammaanticom},
+\end{equation}
+que puede ser derivada del 'algebra de las matrices de Dirac $\hat\alpha^i$
+y $\hat\beta$. Las matrices $\gamma^i$ (con $i=1,2,3$) son unitarias y
+antiherm'iticas, 
+\begin{equation}
+\left( \gamma^i\right)^{\dagger }=\left( \gamma^i\right)^{-1},\qquad
+\left( \gamma^i\right)^{\dagger }=-\gamma^i,
+\end{equation}
+en tanto que $\gamma^0$ es unitaria y herm'itica: 
+\begin{equation}
+\left( \gamma^0\right)^{\dagger }=\left( \gamma^0\right)^{-1},\qquad
+\left( \gamma^0\right)^{\dagger }=\gamma^0.
+\end{equation}
+
+La covariancia de la ecuaci'on de Dirac significa dos cosas diferentes:
+
+\begin{enumerate}
+\item Debe haber una regla expl'icita que permita a un observador $B$
+calcular su $\psi' (x') $ si $\psi \left(
+x\right) $ de un observador $A$ es dada. As'i, $\psi' \left(
+x' \right) $ de $B$ describe el mismo estado f'isico que $\psi
+(x) $ de $A$.
+
+\item De acuerdo al Principio de la Relatividad, el cual establece que todos
+los sistemas de referencia inerciales son equivalentes (indistinguibles) y,
+como consecuencia, las ecuaciones que gobiernan un sistema f'isico
+deben tener la misma forma en todos los sistemas inerciales. En nuestro caso,
+esto implica que el 2-spinor $\psi' (x')$, en el
+sistema $B$, debe ser una soluci'on de una ecuaci'on de Dirac que tiene la
+forma 
+\begin{equation}
+\left( i\hbar \gamma^{\prime \mu }\partial'_\mu-mc\right) \psi' (x') =0.
+\label{Digam}
+\end{equation}
+\end{enumerate}
+
+Adicionalmente los $\gamma^{\prime\mu}$ deben tambi'en tener los mismos
+valores (constantes) que en el sistema $A$, e.d. $\gamma^{\prime
+\mu}=\gamma^\mu$. Este tambi'en es un
+requerimiento del Principio de Relatividad, ya que de otro modo
+observadores podr'ian distinguir si se encuentran en los sistemas inerciales 
+$A$ o $B$.
+Por lo tanto, en el sistema inercial $B$ debemos tener:
+\begin{equation}
+\left( i\hbar \gamma^{\mu }\partial'_\mu-mc\right) \psi' (x') =0. 
+\label{diracprima}
+\end{equation}
+
+\subsection{La transformaci'on $\hat{S}$}
+
+Ahora construiremos expl'icitamente la transformaci'on entre $\psi(x) $ y
+$\psi' (x') $. Asumiremos que esta transformaci'on
+sea lineal, dado que tanto la ecuaci'on de Dirac como la transformaci'on de
+Lorentz $x^{\prime \mu }=\Lambda^{\mu}_{\ \nu}x^\nu $ son lineales. Con esto,
+consideraremos que existe una matriz ($4\times 4$) $\hat{S}(\Lambda)$, asociada
+a cada transformaci'on de Lorentz $\Lambda$, tal que
+\begin{equation}
+\psi' (x') =\psi' (\Lambda x)
+=\hat{S}(\Lambda) \psi (x) =\hat{S}(\hat{a}) \psi \left(
+\Lambda^{-1}x' \right) . \label{psi'}
+\end{equation}
+ 
+Considere ahora un nuevo sistema de referencia inertial, $C$. En este sistema
+la part'icula es descrita por un spinor de Dirac $\psi''$. Si la
+transformaci'on de Lorentz que relaciona $B$ con $C$ es $\Lambda'$, entonces
+\begin{equation}
+\psi'' =\hat{S}(\Lambda') \psi'. \label{psi''}
+\end{equation}
+Usando (\ref{psi'}) podemos escribir
+\begin{equation}
+ \psi'' =\hat{S}(\Lambda') \hat{S}(\Lambda)\psi. \label{psi''2}
+\end{equation} 
+Por otro lado, los sistemas $A$ y $C$ pueden ser directamente conectados por la
+transformaci'on de Lorentz $\Lambda''=\Lambda'\Lambda$, y por lo tanto debemos
+tener adicionalment que
+\begin{equation}
+\psi'' =\hat{S}(\Lambda'') \psi. \label{psi''3}
+\end{equation}
+Comparando (\ref{psi''3}) y (\ref{psi''2}) obtenemos que las matrices de
+transformaci'on $\hat{S}$ deben satisfacer la siguiente condici'on:
+\begin{equation}
+ \hat{S}(\Lambda'\Lambda)=\hat{S}(\Lambda')\hat{S}(\Lambda). \label{compS}
+\end{equation} 
+Adicionalmente, es natural requerir que la matrix $\hat{S}$
+correspondiente a la transformaci'on de Lorentz trivial ($\Lambda^\mu_{\
+\nu}=\delta^\mu_\nu$) sea la matriz identidad (de $4\times 4$), de modo que el
+spinor de Dirac no sea transformado en este caso. Esta condici'on, junto con
+(\ref{compS}) requieren que el conjunto de todas las matrices $\hat{S}(\Lambda)$
+constituya una \textit{representaci'on del grupo de Lorentz}\footnote{En rigor,
+debido a que dos spinores son equivalentes si se diferencian s'olo por una fase
+global, en suficiente que las matrices $\hat{S}(\Lambda)$ definan una
+\textit{representaci'on proyectiva} del grupo de Lorentz, e.d. que satisfagan
+$\hat{S}(\Lambda')\hat{S}(\Lambda)=e^{i\varphi}\hat{S}(\Lambda'\Lambda)$, donde
+$e^{i\varphi}$ es una fase arbitraria.}
+
+En particular, si elegimos $\Lambda'=\Lambda^{-1}$ en (\ref{compS}), obtenemos
+\begin{equation}
+\hat{S}(\Lambda^{-1})=\hat{S}^{-1}(\Lambda). \label{Sinv}
+\end{equation}
+
+Ahora impondremos la condici'on que la ecuaci'on de Dirac sea covariante bajo
+transformaciones de Lorentz. A partir de (\ref{Digam}), (\ref{psi'}) y
+(\ref{Sinv}) podemos escribir
+\begin{eqnarray}
+0&=& \left( i\hbar \gamma^\mu\partial_\mu-mc\right) \psi \\
+&=&  \left[ i\hbar\gamma^\mu\left((\Lambda^{-1})^\nu_{\
+\mu}\partial'_\nu\right)-mc\right] \left(\hat{S}^{-1}\psi'\right) \\
+&=&  \hat{S}^{-1}\left[ i\hbar\left(\hat{S}\gamma^\mu
+\hat{S}^{-1}(\Lambda^{-1})^\nu_{\
+\mu}\right)\partial'_\nu-mc\right] \psi' . \label{covD}
+\end{eqnarray} 
+Queremos $\psi'$ satisfaga la ecuaci'on (\ref{diracprima}), de modo que podemos
+reemplazar $mc\psi'=i\hbar \gamma^\mu\partial'_\mu\psi'$ en (\ref{covD}). Con
+esto, obtenemos
+\begin{eqnarray}
+0&=& \hat{S}^{-1}\left[ i\hbar\left(\hat{S}\gamma^\mu
+\hat{S}^{-1}(\Lambda^{-1})^\nu_{\ \mu}\right)\partial'_\nu-mc\right] \psi' \\
+&=& \hat{S}^{-1}\left[ i\hbar\left(\hat{S}\gamma^\mu
+\hat{S}^{-1}(\Lambda^{-1})^\nu_{\ \mu}-\gamma^\nu\right)\partial'_\nu\right]
+\psi' .
+\end{eqnarray} 
+Vemos entonces que la condici'on de covariancia ser'a satisfecha si
+\begin{equation}
+\hat{S}(\Lambda) \gamma^{\mu }\hat{S}^{-1}(\Lambda)
+(\Lambda^{-1})^\nu_{\ \mu}=\gamma^\nu , \label{gtrans}
+\end{equation}
+o equivalentemente, 
+\begin{equation}
+\hat{S}(\Lambda) \gamma^\mu \hat{S}^{-1}(\Lambda)
+=(\Lambda)^\mu_{\ \nu}\gamma^{\nu }. \label{Sfund}
+\end{equation}
+Esta es la relaci'on fundamental para determinar el operador $\hat{S}$:
+encontrar $\hat{S}$ significa resolver (\ref{Sfund}). Una vez que
+hallamos demostrado que existe una soluci'on $\hat{S}\left( \Lambda %
+\right) $\ de (\ref{Sfund}) y la hallamos encontrado, habremos probado la
+covariancia de la ecuaci'on de Dirac. Podemos ahora especificar m'as
+precisamente la definici'on de un spinor: en general, una funci'on de
+onda es llamada un spinor de Lorentz de 4 componentes si transforma de
+acuerdo a (\ref{psi'}) por medio de la relaci'on fundamental (\ref
+{Sfund}). 
+
+Usando las leyes de transformaci'on (\ref{psi'}) y la condici'on (\ref{Sfund})
+es posible verificar que  $J^\mu:=\left( c\rho ,j^i\right) $, con $\rho$ y
+$j^i$ definidos en (\ref{rho}) y (\ref{jota}), transforma efectivamente como un
+vector bajo transformaciones de Lorentz.
+
+
+\subsection{Construcci'on de $\hat{S}$ para transformaciones de Lorentz
+infinitesimales.}
+
+En general es m'as f'acil generar una
+transformaci'on de un grupo continuo construyendo los operadores del
+grupo para transformaciones infinitesimales y luego componiendo estas 
+trasformaciones infinitesimales. Siguiendo el mismo patr'on en nuestro
+caso de transformaciones de Lorentz, primero construimos el operador
+$\hat{S}\left( 
+\Lambda \right) $ para \emph{transformaciones de Lorentz propias
+infinitesimales} dadas por 
+\begin{equation}
+\Lambda^\mu_{\ \nu }=\delta^\mu_\nu +\Delta \omega^\mu_{\ \nu }.
+\label{LorInf}
+\end{equation}
+Aqu'i los par'ametros infinitesimales $\Delta \omega^{\mu\nu}:=\Delta
+\omega^\mu_{\ \lambda}\eta^{\lambda\nu}$ son antisim'etricos, $\Delta
+\omega^{\nu \mu }=-\Delta \omega^{\mu \nu }$ y hay, por lo tanto, seis de ellos.
+
+
+Determinaremos ahora el operador $\hat{S}(\Lambda) =\hat{S}%
+\left( \Delta \omega^{\mu \nu }\right) $ expandiendo $\hat{S}$ en potencias
+de $\Delta \omega^{\mu \nu }$ y manteniendo s'olo los t'erminos
+lineales de los generadores infinitesimales; as'i escribimos 
+\begin{eqnarray}
+\hat{S}\left( \Delta \omega^{\mu \nu }\right) &=&\hat{1}-\frac{i}{4}\hat{%
+\sigma}_{\mu \nu }\Delta \omega^{\mu \nu }, \label{S} \\
+\hat{S}^{-1}\left( \Delta \omega^{\mu \nu }\right) &=&\hat{1}+\frac{i}{4}%
+\hat{\sigma}_{\mu \nu }\Delta \omega^{\mu \nu }. \label{S-1}
+\end{eqnarray}
+Cada uno de los seis $\left( \hat{\sigma}_{\mu \nu }=-\hat{\sigma}_{\nu \mu
+}\right) $ coeficientes $\hat{\sigma}_{\mu \nu }$ es una matriz de $4\times
+4 $. Encontrando los $\hat{\sigma%
+}_{\mu \nu }$, podemos determinar el operador $\hat{S}$. Insertando
+(\ref{S}), (\ref{S-1}) y (\ref{LorInf}) en (\ref{Sfund}), encontramos 
+\begin{equation}
+\left( \hat{1}-\frac{i}{4}\hat{\sigma}_{\alpha \beta }\Delta
+\omega^{\alpha \beta }\right) \gamma^\mu \left( \hat{1}+\frac{i}{4}%
+\hat{\sigma}_{\rho \sigma }\Delta \omega^{\rho \sigma }\right) 
+=\left( \delta^\mu_\nu +\Delta \omega^\mu_{\ \nu }\right) \gamma^{\nu }.
+\end{equation}
+Desarrollando y omitiendo t'erminos cuadr'aticos en
+$\Delta\omega^{\alpha\beta}$, obtenemos  
+% \begin{eqnarray}
+% \gamma^\nu +\Delta \omega _{\mu }^{\;\nu }\gamma^{\mu } &=&\left( 
+% \hat{1}-\frac{i}{4}\hat{\sigma}_{\alpha \beta }\Delta \omega^{\alpha
+% \beta }\right) \left( \gamma^\nu +\frac{i}{4}\gamma^\nu \hat{\sigma}%
+% _{\rho \sigma }\Delta \omega^{\rho \sigma }\right) , \notag \\
+% \gamma^\nu +\Delta \omega _{\mu }^{\;\nu }\gamma^{\mu } &=&\gamma^{\nu
+% }+\frac{i}{4}\gamma^\nu \hat{\sigma}_{\alpha \beta }\Delta \omega
+% ^{\alpha \beta }-\frac{i}{4}\hat{\sigma}_{\alpha \beta }\Delta \omega
+% ^{\alpha \beta }\left( \gamma^\nu +\frac{i}{4}\gamma^\nu \hat{\sigma}%
+% _{\rho \sigma }\Delta \omega^{\rho \sigma }\right) , \notag \\
+% \Delta \omega _{\mu }^{\;\nu }\gamma^{\mu } &=&\frac{i}{4}\gamma^\nu %
+% \hat{\sigma}_{\alpha \beta }\Delta \omega^{\alpha \beta }-\frac{i}{4}\hat{%
+% \sigma}_{\alpha \beta }\Delta \omega^{\alpha \beta }\gamma^\nu , \notag
+% \\
+% \Delta \omega _{\mu }^{\;\nu }\gamma^{\mu } &=&-\frac{i}{4}\left( \hat{%
+% \sigma}_{\alpha \beta }\gamma^\nu -\gamma^\nu \hat{\sigma}_{\alpha
+% \beta }\right) \Delta \omega^{\alpha \beta }. \label{dwG}
+% \end{eqnarray}
+% Introduciendo la delta de Kronecker $\delta _{\sigma }^\nu \equiv
+% g_{\;\sigma }^\nu $\ y la m'etrica $g_{\mu \beta }$\ en el lado
+% izquierdo de esta expresi'on, 
+% \begin{eqnarray*}
+% g_{\;\alpha }^\nu \Delta \omega _{\mu }^{\;\alpha }\gamma^{\mu } &=&-%
+% \frac{i}{4}\left( \hat{\sigma}_{\alpha \beta }\gamma^\nu -\gamma^\nu %
+% \hat{\sigma}_{\alpha \beta }\right) \Delta \omega^{\alpha \beta }, \\
+% g_{\;\alpha }^\nu g_{\mu \beta }\Delta \omega^{\beta \alpha }\gamma^{\mu
+% } &=&-\frac{i}{4}\left( \hat{\sigma}_{\alpha \beta }\gamma^\nu -\gamma
+% ^\nu \hat{\sigma}_{\alpha \beta }\right) \Delta \omega^{\alpha \beta }, \\
+% g_{\;\alpha }^\nu g_{\mu \beta }\Delta \omega^{\beta \alpha }\gamma^{\mu
+% } &=&-\frac{i}{4}\left( \hat{\sigma}_{\alpha \beta }\gamma^\nu -\gamma
+% ^\nu \hat{\sigma}_{\alpha \beta }\right) \Delta \omega^{\alpha \beta }, \\
+% g_{\;\alpha }^\nu \Delta \omega^{\beta \alpha }\gamma _{\beta } &=&-\frac{%
+% i}{4}\left( \hat{\sigma}_{\alpha \beta }\gamma^\nu -\gamma^\nu \hat{%
+% \sigma}_{\alpha \beta }\right) \Delta \omega^{\alpha \beta },
+% \end{eqnarray*}
+% e invocando la antisimetr'ia de $\Delta \omega^{\alpha \beta }$,
+% llegamos a 
+% \begin{eqnarray*}
+% \frac{1}{2}Y_{\;\alpha }^\nu \gamma _{\beta }\Delta \omega^{\beta \alpha
+% }+\frac{1}{2}Y_{\;\alpha }^\nu \gamma _{\beta }\Delta \omega^{\beta
+% \alpha } &=&-\frac{i}{4}\left( \hat{\sigma}_{\alpha \beta }\gamma^{\nu
+% }-\gamma^\nu \hat{\sigma}_{\alpha \beta }\right) \Delta \omega^{\alpha
+% \beta }, \\
+% \frac{1}{2}Y_{\;\alpha }^\nu \gamma _{\beta }\Delta \omega^{\beta \alpha
+% }+\frac{1}{2}Y_{\;\beta }^\nu \gamma _{\alpha }\Delta \omega^{\alpha
+% \beta } &=&-\frac{i}{4}\left( \hat{\sigma}_{\alpha \beta }\gamma^{\nu
+% }-\gamma^\nu \hat{\sigma}_{\alpha \beta }\right) \Delta \omega^{\alpha
+% \beta }, \\
+% \frac{1}{2}Y_{\;\alpha }^\nu \gamma _{\beta }\Delta \omega^{\beta \alpha
+% }-\frac{1}{2}Y_{\;\beta }^\nu \gamma _{\alpha }\Delta \omega^{\beta
+% \alpha } &=&-\frac{i}{4}\left( \hat{\sigma}_{\alpha \beta }\gamma^{\nu
+% }-\gamma^\nu \hat{\sigma}_{\alpha \beta }\right) \Delta \omega^{\alpha
+% \beta }, \\
+% -\frac{1}{2}\left( g_{\;\alpha }^\nu \gamma _{\beta }-g_{\;\beta }^{\nu
+% }\gamma _{\alpha }\right) \Delta \omega^{\alpha \beta } &=&-\frac{i}{4}%
+% \left( \hat{\sigma}_{\alpha \beta }\gamma^\nu -\gamma^\nu \hat{\sigma}%
+% _{\alpha \beta }\right) \Delta \omega^{\alpha \beta }.
+% \end{eqnarray*}
+% As'i, terminamos con una relaci'on del tipo 
+\begin{equation}
+ \left( \hat{\sigma}_{\alpha \beta }\gamma^\nu -\gamma^\nu \hat{\sigma}_{\alpha
+\beta }\right) =-2i\left( \delta_\alpha^\nu \gamma _{\beta}-\delta_\beta^\nu
+\gamma _{\alpha }\right) , 
+\end{equation} 
+es decir,
+\begin{equation}
+ \left[ \hat{\sigma}_{\alpha \beta },\gamma^\nu \right]=-2i\left(
+\delta_\alpha^\nu \gamma _{\beta }-\delta_\beta^\nu \gamma _{\alpha}\right) .
+\label{[s,g]}
+\end{equation} 
+
+El problema de construir $\hat{S}$ de acuerdo a la relaci'on fundamental (%
+\ref{Sfund}) se reduce a hora a determinar las seis matrices $\hat{\sigma}%
+_{\alpha \beta }$. Dado que $\hat{\sigma}_{\alpha \beta }$\ tiene que ser
+antisim'etrico en ambos 'indices, es natural tratar con un producto
+antisim'etrico de matrices: 
+\begin{equation}
+\hat{\sigma}_{\alpha \beta }=\frac{i}{2}\left[ \gamma _{\alpha },\gamma
+_{\beta }\right] . \label{sab}
+\end{equation}
+Esta forma cumple con el requerimiento (\ref{[s,g]}), lo que puede ser
+verificado tomando en consideraci'on las relaciones de conmutaci'on (%
+\ref{gammaanticom}). 
+
+
+Con esta soluci'on, ell operador $\hat{S}\left( \Delta \omega
+^{\mu \nu }\right) $ para transformaciones de Lorentz propias
+infinitesimales viene dado por
+\begin{equation}
+\hat{S}\left( \Delta \omega^{\mu \nu }\right) =\hat{1}-\frac{i}{4}\hat{%
+\sigma}_{\mu \nu }\Delta \omega^{\mu \nu }=\hat{1}+\frac{1}{8}\left[
+\gamma _{\mu },\gamma _\nu \right] \Delta \omega^{\mu \nu }.
+\label{S(dw)}
+\end{equation}
+
+\subsection{El Operador $\hat{S}$ para transformaciones de Lorentz propias}
+
+A partir de las matrices $\hat{S}(\Lambda)$ correspondientes a
+transformaciones de Lorentz infinitesimales podemos construir 
+las matrices finitas. Para esto, consideramos la composici'on de $N$
+transformaciones infinitesimales, cada una con par'ametros $\Delta \omega^{\mu
+\nu }/N$, donde ahora $\Delta \omega^{\mu \nu }=-\Delta \omega^{\nu\mu}$ son
+6 par'ametros \textit{finitos}, y $N\rightarrow\infty$. Entonces
+\begin{equation}
+\hat{S}(\Lambda) =\lim_{N\rightarrow \infty }\left[ \hat{1}-\frac{i}{4N}\hat{%
+\sigma}_{\mu \nu }\Delta \omega^{\mu \nu }\right]^{N}
+=\exp\left[-\frac{i}{4}\hat{\sigma}_{\mu \nu }\Delta \omega^{\mu \nu }\right].
+\label{Sfin}
+\end{equation}
+Esta matriz $\hat{S}$ corresponde a la transformaci'on de Lorentz dada por
+\begin{equation}
+\Lambda^\mu_{\ \nu}=\lim_{N\rightarrow \infty }\left[\left(1-\frac{\Delta
+\omega}{N}\right)^{N}\right]^\mu_{\ \nu}
+=\left[\exp(-\Delta\omega)\right]^\mu_{\ \nu}.
+\end{equation}
+
+
+\subsection{Spinor adjunto}
+
+Para consideraciones posteriores es 'util introducir la abreviaci'on 
+\begin{equation}
+\bar{\psi}:=\psi^{\dagger }\gamma^0.
+\end{equation}
+Las cuatro componentes de $\bar{\psi}=(\bar{\psi}^0,\cdots,\bar{\psi}^4)$
+forman el llamado \textit{spinor adjunto}. 'Este transforma, bajo transformacion
+es de Lorentz, de acuerdo a
+\begin{eqnarray*}
+\bar{\psi}' (x') &=&\psi^{\prime \dagger
+}(x') \gamma^0 \\
+&=&\left[ \hat{S}\psi (x) \right]^{\dagger }\gamma^0 \\
+&=&\psi^{\dagger }(x) \hat{S}^{\dagger }\gamma^0 \\
+&=&\psi^{\dagger }(x) \gamma^0\hat{S}^{-1},
+\end{eqnarray*}
+es decir, 
+\begin{equation}
+\bar{\psi}' (x') =\bar{\psi}(x) 
+\hat{S}^{-1}.
+\end{equation}
+Aquí hemos usado la identidad
+\begin{equation}
+ \gamma^0\hat{S}^\dagger\gamma^0=\hat{S}^{-1},
+\end{equation} 
+que puede ser verificada a partir de (\ref{Sfin}).
+
+\subsection{Spinores bajo Reflexiones Espaciales: Paridad}
+
+La transformaci'on de paridad $t\rightarrow t$, $\vec{x}\rightarrow -\vec{x}$
+corresponde a la transformaci'on de Lorentz
+\begin{equation}
+\Lambda_{\ \nu}^{\mu}=\left(
+\begin{array}
+[c]{cccc}%
+1 & 0 & 0 & 0\\
+0 & -1 & 0 & 0\\
+0 & 0 & -1 & 0\\
+0 & 0 & 0 & -1
+\end{array}
+\right) .
+\end{equation}
+En este caso, la correspondiente matriz $\hat{S}$ que opera sobre un
+spinor es denotada por $\hat{P}$. 
+
+De la condici'on (\ref{Sfund}) obtenemos que $\hat{P}$ debe satisfacer
+\begin{equation}
+ \hat{P}\gamma^\lambda\hat{P}^{-1} =\Lambda^\mu_{\ \nu}\gamma^\nu,
+\end{equation} 
+que, para $\mu=0$ implica
+\begin{equation}
+\left[\hat{P},\gamma^0\right]=0
+\end{equation} 
+y, para $\mu=i$, 
+\begin{equation}
+\left\{\hat{P},\gamma^i\right\}=0
+\end{equation} 
+De las relaciones (\ref{gammaanticom}) vemos que estan condiciones son
+satisfechas si
+\begin{equation}
+ \hat{P}=\alpha \gamma^0.
+\end{equation} 
+Para que $\hat{P}$ satisfaga la ley de composici'on es necesario que
+$\alpha=e^{i\varphi}$, de modo que
+\begin{equation}
+\hat{P} =e^{i\varphi}\gamma^0, \qquad 
+\hat{P}^{-1}  =e^{-i\varphi}\gamma^0=\hat{P}^\dagger ,
+\end{equation}
+donde $e^{i\varphi}$ es una fase arbitraria no observable.
+
+\subsubsection{L'imite No-Relativista.}
+En general, para un spinor $\psi=(\psi^{(1)},\cdots,\psi^{(4)})$ tendremos que
+\begin{align}
+\hat{P}\psi^{(1)} & =e^{i\varphi}\psi^{(1)},\\
+\hat{P}\psi^{(2)} & =e^{i\varphi}\psi^{(2) },\\
+\hat{P}\psi^{(3)} & =-e^{i\varphi}\psi^{(3) },\\
+\hat{P}\psi^{(4)} & =-e^{i\varphi}\psi^{(4) }.%
+\end{align}
+En el l'imite no-relativista, el spinor se reduce b'asicamente a dos componentes
+no nulas:
+\begin{equation}
+\psi\left( x\right) \approx\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+0
+\end{array}
+\right),
+\end{equation}
+de modo que el spinor $\varphi$ (de ``energ'ia positiva'') son vectores propios
+del operador paridad, con autonvalor (``paridad interna'') $+1$, opuesta a la de
+los de ``energ'ia negativa''.
+
+
+\subsection{Construcci'on de soluciones de la ecuaci'on libre de Dirac
+mediante transformaciones de Lorentz.}
+
+Las soluciones de la ecuaci'on de Dirac para un electr'on en reposo est'an
+dadas por las expresiones (\ref{Solrep1}) y (\ref{Solrep2}), que 
+escribiremos en forma m\'{a}s compacta como
+\begin{equation}
+\psi^{(r)}=\omega^{(r)}(0) e^{-\frac{i}{\hbar}\varepsilon_{r}mc^2t}%
+\end{equation}
+con
+\begin{equation}
+\varepsilon_{r}:=\left\{
+\begin{array}
+[c]{c}%
++1,\quad\text{para }r=1,2\\
+-1,\quad\text{para }r=3,4
+\end{array}
+\right.
+\end{equation}
+y
+\begin{equation}
+\omega^{(1)}(0) :=\left(
+\begin{array}
+[c]{c}%
+1\\
+0\\
+0\\
+0
+\end{array}
+\right),
+\quad \omega^{(2)}(0) :=\left(
+\begin{array}
+[c]{c}%
+0\\
+1\\
+0\\
+0
+\end{array}
+\right),
+\quad\omega^{(3)}(0) :=\left(
+\begin{array}
+[c]{c}%
+0\\
+0\\
+1\\
+0
+\end{array}
+\right),
+\quad\omega^{(4)}(0) :=\left(
+\begin{array}
+[c]{c}%
+0\\
+0\\
+0\\
+1
+\end{array}
+\right).
+\end{equation}
+
+Estas cuatro soluciones de la ecuaci'on de Dirac son tambi'en estados propios de
+
+\begin{equation}
+\hat{S}_{z}=\frac{\hbar}{2}\hat{\Sigma}_{z}=\frac{\hbar}{2}\left(
+\begin{array}
+[c]{cccc}%
+1 & 0 & 0 & 0\\
+0 & -1 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & -1
+\end{array}
+\right),
+\end{equation}
+es decir
+\begin{equation}
+\hat{\Sigma}_{z}\psi^{(r)}\left( x\right) =\pm\psi^{(r)}\left( x\right),
+\end{equation}
+donde los eigenvalores $+1$ son para $r=1,3$ y $-1$ para $r=2,4$.
+
+Anteriormente obtuvimos las soluciones de la ecuaci'on de Dirac para la
+part'icula libre resolvi'endola directamente. Ahora usaremos un m'etodo
+distinto: aplicaremos una transformaci'on de Lorentz a un sistema que
+se mueve con velocidad $-v^i$ con respecto al sistema en donde el electr'on
+est\'{a} en reposo. Para ello usamos la forma invariante de la soluci'on en el
+sistema en reposo:
+\begin{equation}
+e^{-\frac{i}{\hbar}\varepsilon_{r}mc^2t}=e^{-i\varepsilon_{r}%
+\frac{p_\mu x^\mu}{\hbar}}=e^{-i\varepsilon_{r}\frac{p'_\mu x'^\mu}{\hbar}},
+\end{equation}
+donde 
+\begin{align}
+x'^\mu & =\Lambda^\mu_{\ \nu}x^\nu ,\\
+p'^\mu & =\Lambda^\mu_{\ \nu}p^\nu,
+\end{align}
+y
+\begin{equation}
+p^\mu=\left[ mc,0,0,0\right] =\left[ \frac{E}{c},0,0,0\right].
+\end{equation}
+
+Comenzemos notando que \emph{las soluciones para energ'ia negativa, y para
+energ'ia positiva, no se mezclan bajo transformaciones de Lorentz propias ni
+bajo reflexiones espaciales}. El 4-momentum de una part'icula libre es siempre
+tipo tiempo, e.d. $p^\mu p_\mu=m^2c^2>0$, de modo que siempre est'an contenidas
+dentro del cono de luz. El 4-momentum de las soluciones con ``energ'ias
+positivas'', $p^0>0$ est'a contenido dentro del cono de luz futuro, mientras
+aquellas con $p^0<0$ en el cono de luz pasado. Las transformaciones de Lorentz
+propias y la transformaci'on de paridad preservan la orientaci'on de los
+cuadrivectores tipo tiempo en los conos de luz futuro y pasado.
+
+Para el caso particular de un boost a lo largo del eje $x$ tenemos
+\begin{equation}
+\hat{S}\left( w^{01}\right) =\exp\left( -\frac{i}{4}\left[
+\hat{\sigma}_{\mu\nu}\right]w^{01}\left[ I_{01}\right]
+^{\mu\nu}\right)
+\end{equation}
+con
+\begin{equation}
+\left[ I_{01}\right]^{\mu\nu}=\left(
+\begin{tabular}
+[c]{l|lll}%
+$0$ & $1$ & $0$ & $0$\\\hline
+$1$ & $0$ & $0$ & $0$\\
+$0$ & $0$ & $0$ & $0$\\
+$0$ & $0$ & $0$ & $0$%
+\end{tabular}
+\right) .
+\end{equation}
+Luego,
+\begin{align}
+\hat{S}\left( w^{01}\right)  & =\exp\left( -\frac{i}{2}\left[
+\hat{\sigma}_{01}\right]  w^{01}\left[
+I_{01}\right]^{01}\right) \\
+& =\exp\left( -\frac{i}{2}\left[ \hat{\sigma}_{01}\right] w^{01}\right),
+\end{align}
+donde el par'ametro de la transformaci'on est'a dado por
+\begin{equation}
+w^{01}=-\arctan\left( \frac{v_{x}}{c}\right)=-\arctan(\beta). \label{param}
+\end{equation}
+Esto nos conduce a las usuales transformaciones de Lorentz
+\begin{align}
+x'^0 & =\cosh(\omega^{01})\left( x^0-x^1\tanh w^{01}\right)
+=\frac{1}{\sqrt{1-\beta^2}}\left( x^0+\beta x^1\right) ,\\
+x'^1 & =\cosh(\omega^{01})\left( x^1-x^0\tanh w^{01}\right)
+=\frac{1}{\sqrt{1-\beta^2}}\left( x^1+\beta x^0\right)
+\end{align}
+y considerando que
+\begin{equation}
+\hat{\sigma}_{01}=\frac{i}{2}\left( \gamma_0\gamma_{1}-\gamma_{1}\gamma
+_0\right) =i\gamma_0\gamma_{1}=-i\gamma^0\gamma^1=-i\hat{\alpha}^1,
+\end{equation}
+y la transformaci'on $\hat{S}$ con la forma reducida
+\begin{align}
+\hat{S} \left( w^{01}\right)  & =\exp\left( -\frac{1}%
+{2}\omega\,\hat{\alpha}^1  \right) \\
+& = \cosh\frac{\omega}{2}\,\hat{1}- \senh\frac{\omega}{2}\,\hat{\alpha}^1.
+\end{align}
+Definimos
+\begin{equation}
+\omega^{(r)}\left( p_{x}\right) :=\hat{S} \omega^{(r)}(0),
+\end{equation}
+de modo que
+\begin{align}
+\omega^1\left( p_{x}\right)  & =\cosh\frac{\omega}{2}\left(
+\begin{array}
+[c]{c}%
+1\\
+0\\
+0\\
+-\tanh\frac{\omega}{2}%
+\end{array}
+\right) \text{, \ \ }\omega^2\left( p_{x}\right) =\cosh\frac{\omega}%
+{2}\left(
+\begin{array}
+[c]{c}%
+0\\
+1\\
+-\tanh\frac{\omega}{2}\\
+0
+\end{array}
+\right) \text{,}\\
+\omega^{3}\left( p_{x}\right)  & =\cosh\frac{\omega}{2}\left(
+\begin{array}
+[c]{c}%
+0\\
+-\tanh\frac{\omega}{2}\\
+1\\
+0
+\end{array}
+\right) \text{, \ \ }\omega^{4}\left( p_{x}\right) =\cosh\frac{\omega}%
+{2}\left(
+\begin{array}
+[c]{c}%
+-\tanh\frac{\omega}{2}\\
+0\\
+0\\
+1
+\end{array}
+\right) \text{.}%
+\end{align}
+Es posible demostrar, a partir de (\ref{param}), que
+\begin{align}
+-\tanh\frac{\omega}{2} & =\frac{p_{x}c}{E+mc^2},\\
+\cosh\frac{\omega}{2} & =\sqrt{\frac{E+mc^2}{2mc^2}}.
+\end{align}
+Usando esto, obtenemos:
+\begin{equation}
+\hat{S}(w^{01}) 
+ =\sqrt{\frac{E+mc^2}{2mc^2}}\left(
+\begin{array}
+[c]{cccc}%
+1 & 0 & 0 & \frac{p_xc}{E+mc^2}\\
+0 & 1 & \frac{p_xc}{E+mc^2} & 0\\
+0 & \frac{p_xc}{E+mc^2} & 1 & 0\\
+\frac{p_xc}{E+mc^2} & -0 & 0 & 1
+\end{array}
+\right) .
+\end{equation} 
+
+
+An'alogamente, se puede demostrar que para una transformaci'on de Lorentz con
+boost general,
+\begin{align}
+\hat{S}\left( -v^i\right)  & =\hat{S}\left( -\frac{p^i}{E}\right)
+=\exp\left( -\frac{1}{2}\omega\,\hat{\vec{\alpha}}\cdot\check{v}\right) \\
+& =\sqrt{\frac{E+mc^2}{2mc^2}}\left(
+\begin{array}
+[c]{cccc}%
+1 & 0 & \frac{cp_{z}}{E+mc^2} & \frac{cp_{-}}{E+mc^2}\\
+0 & 1 & \frac{cp_{+}}{E+mc^2} & -\frac{cp_{z}}{E+mc^2}\\
+\frac{cp_{z}}{E+mc^2} & \frac{cp_{-}}{E+mc^2} & 1 & 0\\
+\frac{cp_{+}}{E+mc^2} & -\frac{cp_{z}}{E+mc^2} & 0 & 1
+\end{array}
+\right),
+\end{align}
+con
+\begin{equation}
+p_{\pm}=:p_{x}\pm ip_{y}.
+\end{equation}
+Por lo tanto,
+\begin{equation}
+\psi^{r}=\hat{S}\left( -v^i\right) \omega^{r}(0)
+e^{-i\varepsilon_{r}\frac{p_\mu x^\mu}{\hbar}}.
+\end{equation}
+Es un buen ejercicio verificar que esta forma es equivalente a aquella dada por
+las relaciones (\ref{sol02}).
+
+\subsection{Covariantes Bilineares de los Spinores de Dirac.}
+
+Deben existir $16$ matrices linealmente independientes de orden $N=4$.
+Denotaremos estas matrices por
+\begin{equation}
+\left( \hat{\Gamma}^{n}\right) _{\beta}^{\alpha}\text{, }n=1,...,16.
+\end{equation}
+Las matrices $\hat{\Gamma}^{n}$ pueden ser construidas, a partir de las matrices
+$\gamma_\mu$ de Dirac, de la siguiente forma
+\begin{equation}
+\begin{array}
+[c]{ll}%
+\hat{\Gamma}^{S}=1 & 1\text{ matriz}\\
+\hat{\Gamma}_\mu^{V}=\gamma_\mu  & 4\text{ matrices}\\
+\hat{\Gamma}_{\mu\nu}^{T}=\hat{\sigma}_{\mu\nu}=\hat{\sigma}_{\nu\mu} &
+6\text{ matrices}\\
+\hat{\Gamma}^{P}=i\gamma_0\gamma_{1}\gamma_{2}\gamma_{3}=\gamma_{5}
+=\gamma^{5} & 1\text{ matriz}\\
+\hat{\Gamma}_\mu^{A}=\gamma_{5}\gamma_\mu  & 4\text{ matrices}
+\end{array}.
+\end{equation}
+Las letras \textbf{S, V, T, P} y \textbf{A} se refieren a sus propiedades de
+transformaci'on, indicando escalares, vectores, tensores, pseudovectores y
+pseudotensores respectivamente.
+
+Algunas propiedades de estas matrices son:
+
+\begin{itemize}
+\item $(\Gamma^n)^2=\pm 1_{4\times 4}$.
+\item Para cada $\Gamma^n$, exceptuando $\Gamma^S$, existe al menos un
+$\Gamma^m$ tal que
+\begin{equation}
+\Gamma^n\Gamma^m=-\Gamma^m\Gamma^n
+\end{equation}
+Esta propiedad implica que todas las matrices $\Gamma^n$, excepto $\Gamma^S$,
+tienen traza nula.
+\item Para $\Gamma^a$ y $\Gamma^b$ dados, con $a\ne b$, existe un
+$\Gamma^n\ne\Gamma^S$ tal que
+\begin{equation}
+\Gamma^a\Gamma^b=f_{ab}^n\Gamma^n,
+\end{equation}
+con $f_{ab}^n$ complejo.
+\end{itemize}
+Estas propiedades nos permiten probar la independencia lineal de las matrices
+$\Gamma^n$, es decir que
+\begin{equation}
+\sum_n a_n\Gamma^n=0\iff a_n=0~~~\forall n.
+\end{equation}
+Consideremos la expresi'on
+\begin{equation}
+\sum_n a_n\Gamma^n=0
+\end{equation}
+y multipliquemosla por la derecha con $\Gamma^m\ne\Gamma^s$. Obtenemos
+\begin{equation}
+\sum_n a_n\Gamma^n\Gamma^m=0.
+\end{equation}
+La traza de la expresi'on anterior es
+\begin{equation}
+a_mTr((\Gamma^m)^2)+\sum_{n\ne m} a_nTr(\Gamma^n\Gamma^n)=0.
+\end{equation}
+Esta expresi'on puede ser escrita en la forma
+\begin{equation}
+a_mTr((\Gamma^m)^2)+\sum_{n\ne m} a_nTr(f_{nm}^\nu\Gamma^nu)=0.
+\end{equation}
+En el segundo t'ermino del lado derecho no aparece la matriz $\Gamma^s$. Luege
+'este se anula. Adem'as, $Tr((\Gamma^m)^2)=Tr(\pm 1)=\pm4$. Luego,
+\begin{equation}
+a_m=0~~~\forall m\ne s.
+\end{equation}
+En el caso en que multipliquemos por la matriz $\Gamma^s$ tenemos
+\begin{equation}
+a_sTr((\Gamma^s)^2)+\sum_{n\ne s} a_nTr(\Gamma^n)=0,
+\end{equation}
+expresi'on que se reduce a
+\begin{equation}
+a_s=0.
+\end{equation}
+Luego, las matrices $\Gamma$ son linealmente independientes.
+
+Ahora examinaremos el comportamiento de expresiones bilineares dela forma
+$\bar{\psi}(x)\Gamma^n\psi(x)$ bajo transformasiones de Lorentz.
+
+Comenzemos por estudiar como transforma la cantidad $\bar{\psi}(x)\psi(x)$. En
+el sistema de referencia primado tenemos que esta cantidad es
+$\bar{\psi}'(x')\psi'(x')$, o equivalentemente
+\begin{equation}
+\bar{\psi}'(x')\psi'(x')=\psi'^\dagger(x')\gamma^0\psi'(x').
+\end{equation}
+Dado que el spinor $\psi(x)$ transforma como $\psi'(x')=\hat S\psi(x)$ tenemos
+\begin{equation}
+\bar{\psi}'(x')\psi'(x')=\psi'^\dagger(x')\hat S^\dagger\gamma^0\hat S\psi(x).
+\end{equation}
+Si consideramos ademas que $\hat S^{-1}=\gamma^0\hat S^\dagger\gamma^0$ o
+equivalentemente $\hat S^\dagger\gamma^0=\gamma^0S^{-1}$ tenemos que la
+expresi'on anterior es
+\begin{equation}
+\bar{\psi}'(x')\psi'(x')=\psi'^\dagger(x')\gamma^0\hat S^{-1}\hat S\psi(x),
+\end{equation}
+de la cual se obtiene que la forma bilinear
+\begin{equation}
+\bar{\psi}'(x')\psi'(x')=\bar{\psi}
+'(x')\psi'(x')=\psi'^\dagger(x')\gamma^0\psi(x)=\bar{\psi}(x)\psi(x)
+\end{equation}
+tiene el mismo valor en cualquier sistema de referencia. La combinaci'on
+bilineal $\bar{\psi}(x)\Gamma^s\psi(x)$ es por lo tanto un escalar de Lorentz.
+
+Consideremos ahora la forma bilinear $\bar{\psi}(x)\gamma^\mu\psi(x)$. Esta
+forma en el sistema primado es
+\begin{equation}
+\bar{\psi'}(x')\gamma^\mu\psi'(x')=\bar{\psi}(x)\hat S^{-1}\gamma^\mu\hat
+S\psi(x).
+\end{equation}
+Recordando que las transformaciones spinoriales transforman como
+\begin{equation}
+\hat S^{-1}\gamma^\mu\hat S=a^\mu_\nu\gamma^\nu,
+\end{equation}
+tenemos que
+\begin{equation}
+\bar{\psi'}(x')\gamma^\mu\psi'(x')=\bar{\psi}(x)a^\mu_\nu\gamma^\nu\psi(x)=
+a^\mu_\nu\bar{\psi}(x)\gamma^\nu\psi(x).
+\end{equation}
+Luego $\bar{\psi}(x)\gamma^\mu\psi(x)$ transforma como un vector de Lorentz.
+
+Una forma bilinear un poco m'as interesante es $\bar{\psi}(x)\gamma_5\psi(x)$.
+Esta en el sistema primado es
+\begin{equation}
+\bar{\psi'}(x')\gamma_5\psi'(x')=\bar{\psi}(x)\hat S^{-1}\gamma_5\hat S\psi(x).
+\end{equation}
+Para resolver el lado derecho de la expresi'on anterior basta con hacer uso de
+las propiedades
+\begin{equation}
+[\hat S,\gamma_5]=0\qquad\{\hat P,\gamma_5\}=0,
+\end{equation}
+donde $\hat P=e^{i\phi}\gamma^0$ es el operador de inversi'on espacial de los
+espinores. Ambas expresiones pueden ser resumidas como
+\begin{equation}
+\hat S\gamma_5=det|a|\gamma_5\hat S,
+\end{equation} 
+expresi'on que nos permite escribir
+\begin{equation}
+\bar{\psi'}(x')\gamma_5\psi'(x')=det|a|\bar{\psi}(x)\gamma_5\psi(x),
+\end{equation}
+de modo que la forma bilineal $\bar{\psi}(x)\gamma_5\psi(x)$ transforma como un
+pseudoescalar, puesto que el signo de la trasnformaci'on depende del tipo
+(propia o impropia) de transformaci'on de Lorentz.
+
+Similarmente, podemos mostrar que la forma bilinear
+$\bar{\psi}(x)\gamma_5\gamma^\mu\psi(x)$ transforma como un pseudovector. En
+efecto
+\begin{eqnarray}
+\bar{\psi}'(x')\gamma_5\gamma^\mu\psi'(x')&=&\bar{\psi}(x)\hat
+S^{-1}\gamma_5\gamma^\mu\hat S\psi(x),
+\nonumber\\
+&=&\bar{\psi}(x)det|a|\gamma_5 \hat S^{-1}\gamma^\mu\hat S\psi(x),
+\nonumber\\
+&=&\bar{\psi}(x)det|a|\gamma_5 a^\mu_\nu\gamma^\nu\psi(x),
+\nonumber\\
+&=&det|a|a^\mu_\nu\bar{\psi}(x)\gamma_5\gamma^\nu\psi(x).
+\end{eqnarray}
+
+Finalmente, mostraremos que la forma bilineal
+$\bar{\psi}(x)\hat\sigma^{\mu\nu}\psi(x)$ transforma como un tensor de segundo
+rango, esto es
+\begin{eqnarray}
+\bar{\psi}'(x')\hat\sigma^{\mu\nu}\psi'(x')&=&\bar{\psi}(x)\hat
+S^{-1}\hat\sigma^{\mu\nu}\hat S\psi(x),
+\nonumber\\
+&=&\frac{i}{2}\bar{\psi}(x)\hat
+S^{-1}(\gamma^\mu\gamma^\nu-\gamma^\nu\gamma^\mu)\hat S\psi(x),
+\nonumber\\
+&=&\frac{i}{2}\bar{\psi}(x)\hat S^{-1}(\gamma^\mu\hat S\hat
+S^{-1}\gamma^\nu-\gamma^\nu\hat S\hat S^{-1}\gamma^\mu)\hat S\psi(x),
+\nonumber\\
+&=&\frac{i}{2}\bar{\psi}(x)(\hat S^{-1}\gamma^\mu\hat S\hat S^{-1}\gamma^\nu\hat
+S-\hat S^{-1}\gamma^\nu\hat S\hat S^{-1}\gamma^\mu\hat S)\psi(x),
+\nonumber\\
+&=&\frac{i}{2}\bar{\psi}(x)(a^\mu_\eta\gamma^\eta
+a^\nu_\xi\gamma^\xi-a^\nu_\xi\gamma^\xi a^\mu_\eta\gamma^\eta)\psi(x),
+\nonumber\\
+&=&a^\mu_\eta
+a^\nu_\xi\bar{\psi}(x)\frac{i}{2}
+(\gamma^\eta\gamma^\xi-\gamma^\xi\gamma^\eta)\psi(x),
+\nonumber\\
+&=&a^\mu_\eta a^\nu_\xi\bar{\psi}(x)\hat\sigma^{\eta\xi}\psi(x).
+\end{eqnarray}
+
+
+
+\section{Part'iculas de Dirac en campos externos: Ejemplos y problemas}
+
+
+
+
+\section{Densidad Lagrangeana y Tensor de Mom'entum-Energ'ia de la
+ecuaci'on libre de Dirac}
+
+La densidad lagrangeana libre de Dirac tiene la forma 
+\begin{equation}
+\mathcal{L}=\bar{\psi}\left( i\hbar c\gamma^{\mu }\partial _{\mu
+}-mc^2\right) \psi ,
+\end{equation}
+en donde $\bar{\psi}\equiv \psi^{\dagger }\gamma^0$ es llamado el spinor
+adjunto a $\psi $ y la abreviaci'on $\gamma^{\mu }$ representa $\gamma
+^0=\hat{\beta},\gamma^i=\hat{\beta}\hat{\alpha}_i$. Tambi'en
+usamos la abreviaci'on $\partial _{\mu }\equiv \partial /\partial x^{\mu
+} $. Ahora realizamos la variaci'on con respecto a $\bar{\psi}$, o sea,
+aplicaremos las ecuaciones de Euler-Lagrange para $\bar{\psi}$: 
+\begin{equation}
+\frac{\partial \mathcal{L}}{\partial \bar{\psi}}-\frac{\partial }{\partial
+x^\nu }\frac{\partial \mathcal{L}}{\partial \bar{\psi}_{,\nu }}=0.
+\end{equation}
+Para ello, como de costumbre calculamos las derivadas necesarias: 
+\begin{eqnarray*}
+\frac{\partial \mathcal{L}}{\partial \bar{\psi}} &=&\left( i\hbar c\gamma
+^{\mu }\partial _{\mu }-mc^2\right) \psi , \\
+\frac{\partial \mathcal{L}}{\partial \bar{\psi}_{,\nu }} &=&0.
+\end{eqnarray*}
+Luego, 
+\begin{equation}
+\left( i\hbar c\gamma^{\mu }\partial _{\mu }-mc^2\right) \psi =0,
+\label{Dirac2}
+\end{equation}
+o bien 
+\begin{equation}
+\left( \gamma^{\mu }\partial _{\mu }+i\frac{mc}{\hbar }\right) \psi =0.
+\end{equation}
+Aqu'i la combinaci'on $\lambda \equiv \hbar /mc$ es la longitud de
+onda de Compton de la part'icula de masa $m$.
+
+Ahora calculamos el tensor mom'entum energ'ia a partir de la
+expresi'on 
+\begin{equation}
+T_{\;\nu }^{\mu }=\frac{\partial \mathcal{L}}{\partial \psi _{,\mu }}%
+\partial _\nu \psi +\frac{\partial \mathcal{L}}{\partial \bar{\psi}_{,\mu }%
+}\partial _\nu \bar{\psi}-\delta _{\;\nu }^{\mu }\mathcal{L}.
+\end{equation}
+Tenemos: 
+\begin{eqnarray*}
+\frac{\partial \mathcal{L}}{\partial \psi _{,\mu }} &=&\frac{\partial }{%
+\partial \psi _{,\mu }}\left( i\hbar c\bar{\psi}\gamma^\nu \psi _{,\nu
+}-mc^2\bar{\psi}\psi \right) , \\
+\frac{\partial \mathcal{L}}{\partial \psi _{,\mu }} &=&i\hbar c\bar{\psi}%
+\gamma^{\mu },
+\end{eqnarray*}
+por lo que 
+\begin{equation}
+T_{\;\nu }^{\mu }=i\hbar c\bar{\psi}\gamma^{\mu }\partial _\nu \psi
+-\delta _{\;\nu }^{\mu }\bar{\psi}\left( i\hbar c\gamma^{\lambda
+}\partial _{\lambda }\psi -mc^2\psi \right) ,
+\end{equation}
+o bien, 
+\begin{equation}
+T_{\;\nu }^{\mu }=mc^2\left[ \frac{i\hbar }{mc}\bar{\psi}\left( \gamma
+^{\mu }\partial _\nu -\delta _{\;\nu }^{\mu }\gamma^{\lambda }\partial
+_{\lambda }\right) \psi +\delta _{\;\nu }^{\mu }\bar{\psi}\psi \right] ,
+\label{MomEnDirac}
+\end{equation}
+es la expresi'on para el tensor de mom'entum-energ'ia de la
+ecuaci'on libre de Dirac. Si $\psi $\ es una soluci'on a la
+ecuaci'on de Dirac (\ref{Dirac2}), entonces (\ref{MomEnDirac}) se reduce
+a 
+\begin{equation}
+T_{\;\nu }^{\mu }=i\hbar c\bar{\psi}\gamma^{\mu }\partial _\nu \psi .
+\label{MomEnDirac2}
+\end{equation}
+De aqu'i obtenemos la densidad de energ'ia $T_{\;0}^0$: 
+\begin{eqnarray*}
+T_{\;0}^0 &=&mc^2\left[ \frac{i\hbar }{mc}\bar{\psi}\left( \gamma
+^0\partial _0-\delta _{\;0}^0\gamma^{\lambda }\partial _{\lambda
+}\right) \psi +\delta _{\;0}^0\bar{\psi}\psi \right] , \\
+T_{\;0}^0 &=&mc^2\left[ \frac{i\hbar }{mc}\bar{\psi}\left( \gamma
+^0\partial _0-\gamma^{\lambda }\partial _{\lambda }\right) \psi +\bar{%
+\psi}\psi \right] , \\
+T_{\;0}^0 &=&mc^2\left[ -\frac{i\hbar }{mc}\bar{\psi}\left( {\bf %
+\gamma }\cdot \nabla \right) \psi +\bar{\psi}\psi \right] ,
+\end{eqnarray*}
+en donde hemos usado $\gamma^{\mu }=\left( \gamma^0,{\bf \gamma }%
+\right) $. Introduciendo ${\bf \hat{p}}=-i\hbar \nabla $, nos queda 
+\begin{eqnarray*}
+T_{\;0}^0 &=&c\bar{\psi}\left( {\bf \gamma }\cdot {\bf \hat{p}}%
+\right) \psi +mc^2\bar{\psi}\psi , \\
+T_{\;0}^0 &=&\bar{\psi}\left[ c\left( {\bf \gamma }\cdot {\bf \hat{p}%
+}\right) +mc^2\right] \psi \\
+T_{\;0}^0 &=&\psi^{\dagger }\hat{H}_{f}\psi ,
+\end{eqnarray*}
+ya que 
+\begin{equation}
+\hat{H}_{f}\equiv c\left( {\bf \hat{\alpha}}\cdot {\bf \hat{p}}\right)
++\hat{\beta}mc^2=\hat{\beta}\left[ c\left( \hat{\beta}{\bf \hat{\alpha}}%
+\cdot {\bf \hat{p}}\right) +mc^2\right] =\gamma^0\left[ c\left( 
+{\bf \gamma }\cdot {\bf \hat{p}}\right) +mc^2\right] ,
+\end{equation}
+y $\bar{\psi}=\psi^{\dagger }\gamma^0$. Luego, $\int T_{\;0}^0d^{3}x$
+no es m'as que el valor de expectaci'on del hamiltoniando $\hat{H}_{f}$
+en el estado $\psi $. Otra forma de ver esto es partir directamente de (\ref
+{MomEnDirac2}) y hacer 
+\begin{eqnarray*}
+T_{\;0}^0 &=&i\hbar c\bar{\psi}\gamma^0\partial _0\psi , \\
+T_{\;0}^0 &=&\bar{\psi}\gamma^0i\hbar \frac{\partial \psi }{\partial t%
+}, \\
+T_{\;0}^0 &=&\psi^{\dagger }\hat{H}_{f}\psi ,
+\end{eqnarray*}
+en virtud de la ecuaci'on de Schr\"{o}dinger $\hat{H}_{f}\psi =i\hbar
+\partial \psi /\partial t$. Aqu'i ocupamos $\bar{\psi}\gamma^0=\psi
+^{\dagger }$, relaci'on que es tambi'en v'alida dado que $\gamma
+^0\gamma^0=\hat{1}$.
+
+La traza $T$ del tensor mom'entum-energ'ia es 
+\begin{eqnarray}
+T &\equiv &T_{\;\mu }^{\mu }=i\hbar c\bar{\psi}\gamma^{\mu }\partial
+_{\mu }\psi \notag \\
+T &=&i\hbar c\bar{\psi}\frac{mc}{i\hbar }\psi , \notag \\
+T &=&mc^2\bar{\psi}\psi . \label{Traza(Tmn)}
+\end{eqnarray}
+Uno debe notar que esto no es proporcional a la densidad de carga, la cual
+est'a dada por 
+\begin{equation}
+\rho =e\bar{\psi}\gamma^0\psi =e\psi^{\dagger }\psi .
+\end{equation}
+
+
+
+\section{Part'iculas de Dirac en campos externos: Ejemplos y problemas}
+
+

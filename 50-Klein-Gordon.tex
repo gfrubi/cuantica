@@ -1,0 +1,2742 @@
+\chapter{Ecuaci'on de onda relativista para part'iculas de spin 0. La
+ecuaci'on de Klein-Gordon y sus aplicaciones}
+
+La descripci'on de fen'omenos a altas energ'ias requiere la
+investigaci'on de ecuaciones de onda relativistas. Esto significa
+ecuaciones de onda que sean invariantes bajo transformaciones de Lorentz. La
+transici'on de una descripci'on no-relativista a una relativista
+implica que varios conceptos de la teor'ia no-relativista tienen que ser
+reinvestigados, en particular:
+
+\begin{enumerate}
+\item Coordenadas espaciales y temporales deben ser tratadas igualmente en
+la teor'ia.
+
+\item A energ'ias altas (relativistas, $E>2mc^2$) ocurren procesos de creaci'on
+y aniquilaci'on de pares, usualmente en la forma de creaci'on de pares
+part'icula-antipart'icula. Luego, a energ'ias relativistas la
+conservaci'on del n'umero de part'iculas no es m'as una
+suposici'on v'alida
+\item Desde un punto de vista m'as pr'actico, se espera que la inclusi'on de
+efectos relativistas en la descripci'on cu'antica de las part'iculas implique
+correcciones a las predicciones obtenidas con la teor'ia norelativista. Por
+ejemplo a los niveles de energ'ia del 'atomo de Hidr'ogeno. En este
+caso, la rapidez del electr'on en el estado fundamental puede ser
+estimado como
+\begin{align}
+v  & =\sqrt{\frac{Ke^{2}}{mr}}\\
+& =\sqrt{K\left(  \frac{e}{m}\right)  ^{2}\frac{m}{r}}\\
+& =\sqrt{9\times10^{9}\times\left(  1.7\times10^{11}\right)  ^{2}\times
+\frac{9.1\times10^{-31}}{0.5\times10^{-10}}}\\
+& =2.\,\allowbreak175\,7\times10^{6}\left(  \frac{m}{s}\right)  ,
+\end{align}
+de modo que
+\begin{equation}
+\frac{v}{c}=\frac{2.\,\allowbreak175\,7\times10^{6}}{3\times10^{8}}\sim
+10^{-3}.
+\end{equation}
+
+A partir de esta estimaci'on es posible esperar que las correcciones
+relativistas sean del orden de $0,1\%$.
+
+
+\end{enumerate}
+
+\section{Notaci'on}
+
+Introducimos el tensor m'etrico $g_{\mu \nu }$ (componentes covariantes)
+como 
+\begin{equation}
+g_{\mu \nu }=\left[ 
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\ 
+0 & -1 & 0 & 0 \\ 
+0 & 0 & -1 & 0 \\ 
+0 & 0 & 0 & -1
+\end{array}
+\right] .
+\end{equation}
+Las componentes contravariantes surgen de la relaci'on $g^{\mu \sigma
+}g_{\sigma \nu }=\delta _{\nu }^{\mu }$, en donde $\delta _{\nu }^{\mu }$\
+es la delta de Kronecker. Para relatividad especial, 
+\begin{equation}
+g^{\mu \nu }=\left[ 
+\begin{array}{cccc}
+1 & 0 & 0 & 0 \\ 
+0 & -1 & 0 & 0 \\ 
+0 & 0 & -1 & 0 \\ 
+0 & 0 & 0 & -1
+\end{array}
+\right] .
+\end{equation}
+Las coordenadas se denotan por $x^{\mu }=\left(
+x^{0},x^{1},x^{2},x^{3}\right) =\left( ct,x,y,z\right) $, en tanto que el
+vector (cuadrivector) momentum es $p^{\mu }=\left(
+p^{0},p^{1},p^{2},p^{3}\right) =\left( E/c,p_{x},p_{y},p_{z}\right) $.
+Letras griegas indican 'indices desde 0 a 3, en tanto que letras latinas
+denotan 'indices de 1 a 3.
+
+El \emph{operador momentum} se define por 
+\begin{equation}
+\hat{p}_{\mu }\equiv i\hbar \partial _{\mu }=i\hbar \left( \frac{%
+\partial }{c\partial t},\frac{\partial }{\partial x},\frac{\partial }{%
+\partial y},\frac{\partial }{\partial z}\right) =i\hbar \left( \frac{%
+\partial }{c\partial t},\nabla \right) .
+\end{equation}
+Sus componentes contravariantes son $\hat{p}^{\mu }=i\hbar \partial ^{\mu
+}=i\hbar g^{\mu \nu }\partial _{\nu }=i\hbar \left( \partial /c\partial
+t,-\nabla \right) $, de modo que podemos escribir 
+\begin{eqnarray}
+\hat{p}^{\mu }\hat{p}_{\mu } &=&-\hbar ^{2}g^{\mu \nu }\partial _{\mu
+}\partial _{\nu }=-\hbar ^{2}\partial ^{\mu }\partial _{\mu } \notag \\
+&=&-\hbar ^{2}\square =-\hbar ^{2}\left( \frac{\partial ^{2}}{%
+c^{2}\partial t^{2}}-\nabla ^{2}\right) . \label{Mom-Operator}
+\end{eqnarray}
+
+Finalmente, la relaci'on de conmutaci'on entre momentum y
+posici'on est'a ahora dada por 
+\begin{equation}
+\left[ \hat{p}^{\mu },x^{\nu }\right] _{-}=i\hbar g^{\mu \nu }.
+\label{conmuta}
+\end{equation}
+
+\section{La ecuaci'on de Klein-Gordon}
+
+De la Mec'anica Cu'antica elemental sabemos que la ecuaci'on de
+Schr\"{o}dinger 
+\begin{equation}
+i\hbar \frac{\partial \psi }{\partial t}=\left[ -\frac{\hbar ^{2}}{2m}%
+\nabla ^{2}+V\left( \vec{x}\right) \right] \psi \left( \vec{x},t\right)
+\end{equation}
+corresponde a la relaci'on no-relativista de energ'ia en forma
+operacional, 
+\begin{equation}
+\hat{E}=\frac{\hat{p}^{2}}{2m}+\hat{V}\left( \vec{x}\right) ,
+\end{equation}
+en donde 
+\begin{equation}
+\hat{E}=i\hbar \frac{\partial }{\partial t},\qquad \hat{p}=-i\hbar \nabla
+\end{equation}
+son los operadores de energ'ia y momentum, respectivamente. En orden
+de obtener una ecuaci'on de onda relativista, comenzamos considerando
+part'iculas libres con la relaci'on relativista entre momentum y
+energ'ia 
+\begin{equation}
+p^{\mu }p_{\mu }=\frac{E^{2}}{c^{2}}-\vec{p}\cdot \vec{p}=m^{2}c^{2}.
+\end{equation}
+Ahora reemplazamos el momentum $p^{\mu }$\ por el operador momentum $%
+\hat{p}^{\mu }=i\hbar \partial ^{\mu }=i\hbar \left( \hat{p}^{0},{\bf %
+\hat{p}}\right) $. Obtenemos as'i la \emph{ecuaci'on de Klein-Gordon}
+para part'iculas libres, 
+\begin{equation}
+\hat{p}^{\mu }\hat{p}_{\mu }\psi =m^{2}c^{2}\psi . \label{KG1}
+\end{equation}
+Aqu'i $m$ es la masa (de reposo) de la part'icula y $c$ la velocidad
+de la luz en el vac'io. Con la ayuda de (\ref{Mom-Operator}), podemos
+escribir esta ecuaci'on en la forma 
+\begin{equation}
+\left( \square +\frac{m^{2}c^{2}}{\hbar ^{2}}\right) \psi =0, \label{KG2}
+\end{equation}
+o bien, 
+\begin{equation}
+\left( \frac{\partial ^{2}}{c^{2}\partial t^{2}}-\nabla ^{2}+\frac{m^{2}c^{2}%
+}{\hbar ^{2}}\right) \psi =0.
+\end{equation}
+Verificamos inmediatamente la covariancia de Lorentz de la ecuaci'on de
+Klein-Gordon, dado que $\hat{p}^{\mu }\hat{p}_{\mu }$\ es invariante de
+Lorentz. Tambi'en reconocemos a (\ref{KG2}) como la ecuaci'on de onda
+cl'asica incluyendo el \emph{t'ermino de masa} $m^{2}c^{2}/\hbar
+^{2} $. Soluciones libres son de la forma 
+\begin{equation}
+\psi =\psi _{0}\exp \left( -\frac{i}{\hbar }p_{\mu }x^{\mu }\right) =\psi
+_{0}\exp \left[ \frac{i}{\hbar }\left( \vec{p}\cdot \vec{x}%
+-Et\right) \right] . \label{FreeSol}
+\end{equation}
+De hecho, insertando (\ref{FreeSol}) en (\ref{KG1}) nos lleva a la
+condici'on 
+\begin{equation}
+E=\pm c\sqrt{m^{2}c^{2}+p^{2}}.
+\end{equation}
+Luego, existen soluciones tanto para $E=+c\sqrt{m^{2}c^{2}+p^{2}}$ positivo
+como negativo, $E=-c\sqrt{m^{2}c^{2}+p^{2}}$. Veremos m'as adelante que
+las soluciones con energ'ia negativa est'an f'isicamente conectadas
+con antipart'iculas. Dado que las antipart'iculas pueden de hecho ser
+observadas en la naturaleza, hemos ya obtenido una indicaci'on del valor
+de extender la teor'ia no-relativista.
+
+A continuaci'on construimos la cuadricorriente $j_{\mu }$ conectada con (%
+\ref{KG1}). En analog'ia a nuestras consideraciones concernientes a la
+ecuaci'on de Schr\"{o}dinger, esperamos una ley de conservaci'on para $%
+j_{\mu }$. Partimos de (\ref{KG1}), escrita en la forma 
+\begin{equation}
+\left( \hat{p}^{\mu }\hat{p}_{\mu }-m^{2}c^{2}\right) \psi =0
+\end{equation}
+y tomamos el conjugado complejo de esta ecuaci'on, esto es, 
+\begin{equation}
+\left( \hat{p}^{\mu }\hat{p}_{\mu }-m^{2}c^{2}\right) \psi ^{\ast }=0.
+\end{equation}
+Multiplicando ambas ecuaciones por la izquierda, la primera por $\psi ^{\ast
+}$ y la segunda por $\psi $, y calculando la diferencia de las dos
+ecuaciones resultantes encontramos 
+\begin{equation}
+\psi ^{\ast }\left( \hat{p}^{\mu }\hat{p}_{\mu }-m^{2}c^{2}\right) \psi
+-\psi \left( \hat{p}^{\mu }\hat{p}_{\mu }-m^{2}c^{2}\right) \psi ^{\ast }=0,
+\end{equation}
+o bien, 
+\begin{equation}
+\psi ^{\ast }\left( \hbar ^{2}\partial ^{\mu }\partial _{\mu
+}+m^{2}c^{2}\right) \psi -\psi \left( \hbar ^{2}\partial ^{\mu }\partial
+_{\mu }+m^{2}c^{2}\right) \psi ^{\ast }=0.
+\end{equation}
+
+
+
+\section{El tensor momentum-energ'ia del campo de Klein-Gordon}
+
+Demostraremos ahora el procedimiento del formalismo de Lagrange para el
+campo de Klein-Gordon. En este caso tratamos con dos campos de onda $\psi $
+y $\psi ^{\ast }$ (para part'iculas cargadas). Ahora, la \emph{densidad
+lagrangeana para el campo de Klein-Gordon} es de la forma 
+\begin{equation}
+\mathcal{L}\left( \psi ,\psi ^{\ast },\partial _{\mu }\psi ,\partial _{\mu
+}\psi ^{\ast }\right) =\frac{\hbar ^{2}}{2m}\left( g^{\mu \nu }\partial
+_{\mu }\psi ^{\ast }\partial _{\nu }\psi -\frac{m^{2}c^{2}}{\hbar ^{2}}%
+\psi ^{\ast }\psi \right) . \label{LagKG}
+\end{equation}
+La constante $\hbar ^{2}/2m$ se escoge de manera que $\int \mathcal{L}%
+d^{3}x$ tenga dimensiones de energ'ia. La demostraci'on de que esta
+expresi'on es la densidad lagrangeana correcta para el campo de
+Klein-Gordon est'a dada al mostrar que, con ayuda de las ecuaciones de
+Euler-Lagrange 
+\begin{equation}
+\frac{\partial }{\partial x^{\mu }}\frac{\partial \mathcal{L}}{\partial \psi
+_{\sigma ,\mu }}-\frac{\partial \mathcal{L}}{\partial \psi _{\sigma }}=0,
+\end{equation}
+uno obtiene las ecuaciones de Klein-Gordon para $\psi $ y $\psi ^{\ast }$.
+Calculamos: 
+\begin{eqnarray*}
+\frac{\partial \mathcal{L}}{\partial \psi _{,\alpha }} &=&\frac{\hbar ^{2}%
+}{2m}g^{\mu \nu }\psi _{,\mu }^{\ast }\frac{\partial \psi _{,\nu }}{\partial
+\psi _{,\alpha }}=\frac{\hbar ^{2}}{2m}g^{\mu \nu }\psi _{,\mu }^{\ast
+}\delta _{\nu }^{\alpha }, \\
+\frac{\partial \mathcal{L}}{\partial \psi _{,\alpha }} &=&\frac{\hbar ^{2}%
+}{2m}g^{\mu \alpha }\psi _{,\mu }^{\ast }=\frac{\hbar ^{2}}{2m}\partial
+^{\alpha }\psi ^{\ast },
+\end{eqnarray*}
+\begin{equation}
+\frac{\partial \mathcal{L}}{\partial \psi }=-\frac{mc^{2}}{2}\psi ^{\ast }.
+\end{equation}
+Luego, 
+\begin{eqnarray*}
+\frac{\hbar ^{2}}{2m}\partial _{\alpha }\partial ^{\alpha }\psi ^{\ast }+%
+\frac{mc^{2}}{2}\psi ^{\ast } &=&0, \\
+\partial ^{\alpha }\partial _{\alpha }\psi ^{\ast }+\frac{m^{2}c^{2}}{%
+\hbar ^{2}}\psi ^{\ast } &=&0
+\end{eqnarray*}
+
+
+\subsection{Densidad Lagrangeana y tensor de momentum-energ'ia
+para una part'icula de Klein-Gordon en un campo electromagn'etico}
+
+Una extensi'on natural de la densidad lagrangeana (\ref{LagKG}) para el
+sistema acoplado del campo de Maxwell y el campo de Klein-Gordon es 
+\begin{equation}
+\mathcal{L}=-\frac{1}{4}F_{\mu \nu }F^{\mu \nu }+\frac{1}{2m}\left[ g^{\mu
+\nu }\left( -i\hbar \partial _{\mu }-\frac{e}{c}A_{\mu }\right) \psi
+^{\ast }\left( i\hbar \partial _{\nu }-\frac{e}{c}A_{\nu }\right) \psi
+-m^{2}c^{2}\psi ^{\ast }\psi \right] , \label{LagKGM}
+\end{equation}
+con $F_{\mu \nu }\equiv \partial _{\mu }A_{\nu }-\partial _{\nu }A_{\mu }$.
+Para aplicar las ecuaciones de Euler-Lagrange, primero escribimos (\ref
+{LagKGM}) en una forma m'as conveniente para el c'alculo de las
+derivadas necesarias: 
+\begin{eqnarray*}
+\mathcal{L} &=&-\frac{1}{4}\left( \partial _{\mu }A_{\nu }-\partial _{\nu
+}A_{\mu }\right) \left( \partial ^{\mu }A^{\nu }-\partial ^{\nu }A^{\mu
+}\right) +\frac{1}{2m}g^{\mu \nu }\left[ \left( -i\hbar \partial _{\mu
+}\psi ^{\ast }-\frac{e}{c}A_{\mu }\psi ^{\ast }\right) \right. \\
+&&\times \left. \left( i\hbar \partial _{\nu }\psi -\frac{e}{c}A_{\nu
+}\psi \right) -\frac{1}{4}g_{\mu \nu }m^{2}c^{2}\psi ^{\ast }\psi \right] ,
+\\
+\mathcal{L} &=&-\frac{1}{4}\left[ \left( \partial _{\mu }A_{\nu }\right)
+\partial ^{\mu }A^{\nu }-\left( \partial _{\mu }A_{\nu }\right) \partial
+^{\nu }A^{\mu }-\left( \partial _{\nu }A_{\mu }\right) \partial ^{\mu
+}A^{\nu }+\left( \partial _{\nu }A_{\mu }\right) \partial ^{\nu }A^{\mu }%
+\right] +\frac{1}{2m}g^{\mu \nu }\times \\
+&&\times \left[ -i\hbar \left( \partial _{\mu }\psi ^{\ast }\right) \left(
+i\hbar \partial _{\nu }\psi -\frac{e}{c}A_{\nu }\psi \right) -\frac{e}{c}%
+A_{\mu }\psi ^{\ast }\left( i\hbar \partial _{\nu }\psi -\frac{e}{c}A_{\nu
+}\psi \right) -\frac{1}{4}g_{\mu \nu }m^{2}c^{2}\psi ^{\ast }\psi \right] ,
+\\
+\mathcal{L} &=&-\frac{1}{2}\left[ \left( \partial _{\mu }A_{\nu }\right)
+\partial ^{\mu }A^{\nu }-\left( \partial _{\nu }A_{\mu }\right) \partial
+^{\mu }A^{\nu }\right] +\frac{1}{2m}g^{\mu \nu }\left[ \hbar ^{2}\left(
+\partial _{\mu }\psi ^{\ast }\right) \partial _{\nu }\psi +i\frac{e\hbar }{%
+c}\left( \partial _{\mu }\psi ^{\ast }\right) A_{\nu }\psi \right. \\
+&&\left. -i\frac{e\hbar }{c}A_{\mu }\psi ^{\ast }\partial _{\nu }\psi
++\left( \frac{e}{c}\right) ^{2}A_{\mu }\psi ^{\ast }A_{\nu }\psi -\frac{1}{4}%
+g_{\mu \nu }m^{2}c^{2}\psi ^{\ast }\psi \right] ,
+\end{eqnarray*}
+o bien, 
+\begin{eqnarray}
+\mathcal{L} &=&-\frac{1}{2}Y^{\nu \rho }g^{\mu \sigma }A_{\rho ,\sigma
+}\left( A_{\nu ,\mu }-A_{\mu ,\nu }\right) +\frac{1}{2m}g^{\mu \nu }\left[
+\hbar ^{2}\psi _{,\mu }^{\ast }\psi _{,\nu }+i\frac{e\hbar }{c}\psi
+_{,\mu }^{\ast }A_{\nu }\psi +\right. \notag \\
+&&\left. -i\frac{e\hbar }{c}A_{\mu }\psi ^{\ast }\psi _{,\nu }+\left( 
+\frac{e}{c}\right) ^{2}A_{\mu }A_{\nu }\psi ^{\ast }\psi -\frac{1}{4}g_{\mu
+\nu }m^{2}c^{2}\psi ^{\ast }\psi \right] . \label{LagKGM2}
+\end{eqnarray}
+Calculamos ahora las derivadas: 
+\begin{eqnarray*}
+\frac{\partial \mathcal{L}}{\partial \psi ^{\ast }} &=&\frac{1}{2m}g^{\alpha
+\beta }\left[ -i\frac{e\hbar }{c}A_{\alpha }\psi _{,\beta }+\left( \frac{e%
+}{c}\right) ^{2}A_{\alpha }A_{\beta }\psi -\frac{1}{4}g_{\alpha \beta
+}m^{2}c^{2}\psi \right] , \\
+\frac{\partial \mathcal{L}}{\partial \psi _{,\alpha }^{\ast }} &=&\frac{1}{2m%
+}g^{\alpha \beta }\left( \hbar ^{2}\psi _{,\beta }+i\frac{e\hbar }{c}%
+A_{\beta }\psi \right) , \\
+\frac{\partial }{\partial x^{\alpha }}\frac{\partial \mathcal{L}}{\partial
+\psi _{,\alpha }^{\ast }} &=&\frac{1}{2m}g^{\alpha \beta }\left[ \hbar
+^{2}\psi _{,\beta ,\alpha }+i\frac{e\hbar }{c}\partial _{\alpha }\left(
+A_{\beta }\psi \right) \right] ,
+\end{eqnarray*}
+y las insertamos en las ecuaciones de Euler-Lagrange (\ref{Eu-La}): 
+\begin{eqnarray*}
+-i\frac{e\hbar }{c}g^{\alpha \beta }A_{\alpha }\psi _{,\beta }+\left( 
+\frac{e}{c}\right) ^{2}g^{\alpha \beta }A_{\alpha }A_{\beta }\psi
+-m^{2}c^{2}\psi -\hbar ^{2}g^{\alpha \beta }\psi _{,\beta ,\alpha }-i\frac{%
+e\hbar }{c}g^{\alpha \beta }\partial _{\alpha }\left( A_{\beta }\psi
+\right) &=&0, \\
+-\hbar ^{2}g^{\alpha \beta }\psi _{,\beta ,\alpha }-i\frac{e\hbar }{c}%
+g^{\alpha \beta }\partial _{\alpha }\left( A_{\beta }\psi \right) -i\frac{%
+e\hbar }{c}g^{\alpha \beta }A_{\alpha }\psi _{,\beta }+\left( \frac{e}{c}%
+\right) ^{2}g^{\alpha \beta }A_{\alpha }A_{\beta }\psi -m^{2}c^{2}\psi &=&0,
+\\
+-\hbar ^{2}\partial ^{\alpha }\partial _{\alpha }\psi -i\frac{e\hbar }{c}%
+\partial ^{\alpha }\left( A_{\alpha }\psi \right) -i\frac{e\hbar }{c}%
+A^{\alpha }\partial _{\alpha }\psi +\left( \frac{e}{c}\right) ^{2}A^{\alpha
+}A_{\alpha }\psi -m^{2}c^{2}\psi &=&0,
+\end{eqnarray*}
+para obtener 
+\begin{equation}
+\left( i\hbar \partial ^{\alpha }-\frac{e}{c}A^{\alpha }\right) \left(
+i\hbar \partial _{\alpha }-\frac{e}{c}A_{\alpha }\right) \psi
+-m^{2}c^{2}\psi =0.
+\end{equation}
+De (\ref{LagKGM2}) podemos obtener de manera an'aloga las ecuaciones de
+Maxwell: 
+\begin{eqnarray*}
+\frac{\partial \mathcal{L}}{\partial A_{\alpha }} &=&\frac{1}{2m}g^{\mu \nu }%
+\left[ i\frac{e\hbar }{c}\psi _{,\mu }^{\ast }\delta _{\nu }^{\alpha }\psi
+-i\frac{e\hbar }{c}\delta _{\mu }^{\alpha }\psi ^{\ast }\psi _{,\nu
+}+\left( \frac{e}{c}\right) ^{2}\left( \delta _{\mu }^{\alpha }A_{\nu
+}+A_{\mu }\delta _{\nu }^{\alpha }\right) \psi ^{\ast }\psi \right] , \\
+\frac{\partial \mathcal{L}}{\partial A_{\alpha }} &=&\frac{1}{2m}\left[ i%
+\frac{e\hbar }{c}g^{\mu \alpha }\psi _{,\mu }^{\ast }\psi -i\frac{e\hbar 
+}{c}g^{\alpha \nu }\psi ^{\ast }\psi _{,\nu }+\left( \frac{e}{c}\right)
+^{2}\left( g^{\alpha \nu }A_{\nu }+g^{\mu \alpha }A_{\mu }\right) \psi
+^{\ast }\psi \right] , \\
+\frac{\partial \mathcal{L}}{\partial A_{\alpha }} &=&\frac{1}{2m}\left[ i%
+\frac{e\hbar }{c}\psi \partial ^{\alpha }\psi ^{\ast }-i\frac{e\hbar }{c}%
+\psi ^{\ast }\partial ^{\alpha }\psi +2\left( \frac{e}{c}\right)
+^{2}A^{\alpha }\psi ^{\ast }\psi \right]
+\end{eqnarray*}
+\begin{eqnarray*}
+\frac{\partial \mathcal{L}}{\partial A_{\alpha ,\beta }} &=&-\frac{1}{2}%
+g^{\nu \rho }g^{\mu \sigma }\frac{\partial A_{\rho ,\sigma }}{\partial
+A_{\alpha ,\beta }}\left( A_{\nu ,\mu }-A_{\mu ,\nu }\right) -\frac{1}{2}%
+g^{\nu \rho }g^{\mu \sigma }A_{\rho ,\sigma }\left( \frac{\partial A_{\nu
+,\mu }}{\partial A_{\alpha ,\beta }}-\frac{\partial A_{\mu ,\nu }}{\partial
+A_{\alpha ,\beta }}\right) , \\
+\frac{\partial \mathcal{L}}{\partial A_{\alpha ,\beta }} &=&-\frac{1}{2}%
+g^{\nu \rho }g^{\mu \sigma }\delta _{\rho }^{\alpha }\delta _{\sigma
+}^{\beta }\left( A_{\nu ,\mu }-A_{\mu ,\nu }\right) -\frac{1}{2}Y^{\nu \rho
+}g^{\mu \sigma }A_{\rho ,\sigma }\left( \delta _{\nu }^{\alpha }\delta _{\mu
+}^{\beta }-\delta _{\mu }^{\alpha }\delta _{\nu }^{\beta }\right) , \\
+\frac{\partial \mathcal{L}}{\partial A_{\alpha ,\beta }} &=&-\frac{1}{2}%
+g^{\nu \alpha }g^{\mu \beta }\left( A_{\nu ,\mu }-A_{\mu ,\nu }\right) -%
+\frac{1}{2}A_{\rho ,\sigma }\left( g^{\alpha \rho }g^{\beta \sigma
+}-g^{\beta \rho }g^{\alpha \sigma }\right) , \\
+\frac{\partial \mathcal{L}}{\partial A_{\alpha ,\beta }} &=&-\frac{1}{2}%
+\left( g^{\nu \alpha }g^{\mu \beta }A_{\nu ,\mu }-g^{\nu \alpha }g^{\mu
+\beta }A_{\mu ,\nu }\right) -\frac{1}{2}\left( g^{\alpha \rho }g^{\beta
+\sigma }A_{\rho ,\sigma }-g^{\beta \rho }g^{\alpha \sigma }A_{\rho ,\sigma
+}\right) , \\
+\frac{\partial \mathcal{L}}{\partial A_{\alpha ,\beta }} &=&-\frac{1}{2}%
+\left( \partial ^{\beta }A^{\alpha }-\partial ^{\alpha }A^{\beta }\right) -%
+\frac{1}{2}\left( \partial ^{\beta }A^{\alpha }-\partial ^{\alpha }A^{\beta
+}\right) , \\
+\frac{\partial \mathcal{L}}{\partial A_{\alpha ,\beta }} &=&\partial
+^{\alpha }A^{\beta }-\partial ^{\beta }A^{\alpha }.
+\end{eqnarray*}
+Finalmente, encontramos 
+\begin{equation}
+\frac{1}{2m}\left[ i\frac{e\hbar }{c}\psi \partial ^{\alpha }\psi ^{\ast
+}-i\frac{e\hbar }{c}\psi ^{\ast }\partial ^{\alpha }\psi +2\left( \frac{e}{%
+c}\right) ^{2}A^{\alpha }\psi ^{\ast }\psi \right] -\partial _{\beta }\left(
+\partial ^{\alpha }A^{\beta }-\partial ^{\beta }A^{\alpha }\right) =0,
+\end{equation}
+o bien, 
+\begin{eqnarray*}
+\partial _{\mu }\left( \partial ^{\mu }A^{\nu }-\partial ^{\nu }A^{\mu
+}\right) &=&\frac{1}{2m}\left[ i\frac{e\hbar }{c}\psi ^{\ast }\partial
+^{\nu }\psi -i\frac{e\hbar }{c}\psi \partial ^{\nu }\psi ^{\ast }-2\left( 
+\frac{e}{c}\right) ^{2}A^{\nu }\psi ^{\ast }\psi \right] , \\
+\partial _{\mu }\left( \partial ^{\mu }A^{\nu }-\partial ^{\nu }A^{\mu
+}\right) &=&i\frac{e\hbar }{2mc}\left( \psi ^{\ast }\partial ^{\nu }\psi
+-\psi \partial ^{\nu }\psi ^{\ast }\right) -\frac{e^{2}}{mc^{2}}A^{\nu }\psi
+^{\ast }\psi .
+\end{eqnarray*}
+Definiendo 
+\begin{equation}
+j^{\nu }\equiv \frac{1}{4\pi }\left[ \frac{ie\hbar }{2m}\left( \psi ^{\ast
+}\partial ^{\nu }\psi -\psi \partial ^{\nu }\psi ^{\ast }\right) -\frac{e^{2}%
+}{mc}A^{\nu }\psi ^{\ast }\psi \right] , \label{JotaNu}
+\end{equation}
+podemos escribir las ecuaciones de Maxwell en su forma usual, 
+\begin{equation}
+\partial _{\mu }F^{\mu \nu }=\frac{4\pi }{c}j^{\nu }. \label{Maxwell}
+\end{equation}
+
+
+\section{Energ'ia, Momentum y Carga Total del Campo de Klein-Gordon.}
+
+\begin{equation}
+\psi =\sum_{\vec{p}_{n}}\left\{ a_{\vec{p}_{n}}\varphi _{\vec{p}_{n}\left(
++\right) }+b_{\vec{p}_{n}}^{\ast }\varphi _{\vec{p}_{n}\left( +\right)
+}^{\ast }\right\}   \label{Solucion General}
+\end{equation}%
+es la soluci'on general de la ecuaci'on de campo. Las funciones $%
+\varphi _{\vec{p}_{n}\left( \pm \right) }$ sabemos est'an dadas por:%
+\begin{eqnarray}
+\varphi _{\vec{p}_{n}\left( +\right) } &=&\sqrt{\frac{mc^{2}}{L^{3}E_{p_{n}}}%
+}e^{\frac{i}{\hbar }\left( \vec{p}_{n}\cdot \vec{x}-E_{p_{n}}t\right) }
+\label{Phi(+-)} \\
+\varphi _{\vec{p}_{n}\left( +\right) }^{\ast } &=&\varphi _{\vec{p}%
+_{n}\left( -\right) }=\sqrt{\frac{mc^{2}}{L^{3}E_{p_{n}}}}e^{\frac{i}{\hbar }%
+\left( -\vec{p}_{n}\cdot \vec{x}+E_{p_{n}}t\right) },
+\end{eqnarray}%
+con:%
+\begin{equation}
+E_{p_{n}}=c\sqrt{\vec{p}_{n}^{2}+m^{2}c^{2}}.  \label{Epn}
+\end{equation}
+
+
+En general, sabemos que en la teor'ia de campos relativista la energ%
+'ia y el momentum total del campo en consideraci'on est'an dados
+respectivamente por:%
+\begin{equation}
+H=\int T_{0}^{\quad 0}d^{3}x,  \label{Energia Total}
+\end{equation}%
+y:%
+\begin{equation}
+p_{i}=-\frac{1}{c}\int T_{i}^{\quad 0}d^{3}x,  \label{Momentum Total}
+\end{equation}%
+donde:%
+\begin{equation}
+T_{\mu }^{\quad \nu }=\frac{\partial \psi }{\partial x^{\mu }}\frac{\partial
+{\cal L}}{\partial \left( \partial \psi /\partial x^{\nu }\right) }+\frac{%
+\partial \psi ^{\ast }}{\partial x^{\mu }}\frac{\partial {\cal L}}{\partial
+\left( \partial \psi ^{\ast }/\partial x^{\nu }\right) }-{\cal L}g_{\mu
+}^{\quad \nu }  \label{Tensor Energia-Momentum}
+\end{equation}%
+es el tensor de energ'ia-momentum, y ${\cal L}$ es la densidad
+Lagrangeana del campo.
+
+Para el campo de K-G, la densidad Lagrangeana viene dada por:%
+\begin{eqnarray}
+{\cal L}\left( \psi ,\psi ^{\ast },\frac{\partial \psi }{\partial x^{\mu }},%
+\frac{\partial \psi ^{\ast }}{\partial x^{\nu }}\right) &=&\frac{\hbar ^{2}}{%
+2m}\left\{ g^{\mu \nu }\frac{\partial \psi ^{\ast }}{\partial x^{\mu }}\frac{%
+\partial \psi }{\partial x^{\nu }}-\frac{m^{2}c^{2}}{\hbar ^{2}}\psi ^{\ast
+}\psi \right\}  \notag \\
+&=&\frac{\hbar ^{2}}{2m}\left\{ g^{0\nu }\frac{\partial \psi ^{\ast }}{%
+\partial x^{0}}\frac{\partial \psi }{\partial x^{\nu }}+g^{i\nu }\frac{%
+\partial \psi ^{\ast }}{\partial x^{i}}\frac{\partial \psi }{\partial x^{\nu
+}}-\frac{m^{2}c^{2}}{\hbar ^{2}}\psi ^{\ast }\psi \right\}  \notag \\
+&=&\frac{\hbar ^{2}}{2m}\left\{ g^{00}\frac{\partial \psi ^{\ast }}{\partial
+x^{0}}\frac{\partial \psi }{\partial x^{0}}+g^{ii}\frac{\partial \psi ^{\ast
+}}{\partial x^{i}}\frac{\partial \psi }{\partial x^{i}}-\frac{m^{2}c^{2}}{%
+\hbar ^{2}}\psi ^{\ast }\psi \right\}  \notag \\
+&=&\frac{\hbar ^{2}}{2m}\left\{ \frac{1}{c^{2}}\frac{\partial \psi ^{\ast }}{%
+\partial t}\frac{\partial \psi }{\partial t}-\frac{\partial \psi ^{\ast }}{%
+\partial x^{i}}\frac{\partial \psi }{\partial x^{i}}-\frac{m^{2}c^{2}}{\hbar
+^{2}}\psi ^{\ast }\psi \right\}  \notag \\
+&=&\frac{\hbar ^{2}}{2m}\left\{ \frac{1}{c^{2}}\dot{\psi}^{\ast }\dot{\psi}%
+-\partial _{i}\psi ^{\ast }\partial _{i}\psi -\frac{m^{2}c^{2}}{\hbar ^{2}}%
+\psi ^{\ast }\psi \right\} ,  \label{Densidad Lagrangeana Campo K-G}
+\end{eqnarray}%
+as'i, reemplazando las componentes adecuadas del tensor de energ'i%
+a-momentum en (\ref{Energia Total}) y (\ref{Momentum Total}); y usando (\ref%
+{Densidad Lagrangeana Campo K-G}), se obtiene que:%
+\begin{eqnarray}
+H &=&\int \left\{ \frac{\partial \psi }{\partial x^{0}}\frac{\partial 
+{\cal L}}{\partial \left( \partial \psi /\partial x^{0}\right) }+\frac{%
+\partial \psi ^{\ast }}{\partial x^{0}}\frac{\partial {\cal L}}{\partial
+\left( \partial \psi ^{\ast }/\partial x^{0}\right) }-{\cal L}g_{0}^{\quad
+0}\right\} d^{3}x  \notag \\
+&=&\int \left\{ \dot{\psi}\frac{\partial {\cal L}}{\partial \dot{\psi}}+\dot{%
+\psi}^{\ast }\frac{\partial {\cal L}}{\partial \dot{\psi}^{\ast }}-{\cal L}%
+\right\} d^{3}x  \notag \\
+&=&\int \left\{ \dot{\psi}\left( \frac{\hbar ^{2}}{2mc^{2}}\dot{\psi}^{\ast
+}\right) +\dot{\psi}^{\ast }\left( \frac{\hbar ^{2}}{2mc^{2}}\dot{\psi}%
+\right) -\frac{\hbar ^{2}}{2m}\left( \frac{1}{c^{2}}\dot{\psi}^{\ast }\dot{%
+\psi}-\partial _{i}\psi ^{\ast }\partial _{i}\psi -\frac{m^{2}c^{2}}{\hbar
+^{2}}\psi ^{\ast }\psi \right) \right\} d^{3}x  \notag \\
+&=&\int \left\{ \frac{\hbar ^{2}}{2mc^{2}}\dot{\psi}^{\ast }\dot{\psi}+\frac{%
+\hbar ^{2}}{2mc^{2}}\dot{\psi}^{\ast }\dot{\psi}-\frac{\hbar ^{2}}{2mc^{2}}%
+\dot{\psi}^{\ast }\dot{\psi}+\frac{\hbar ^{2}}{2m}\partial _{i}\psi ^{\ast
+}\partial _{i}\psi +\frac{\hbar ^{2}}{2m}\frac{m^{2}c^{2}}{\hbar ^{2}}\psi
+^{\ast }\psi \right\} d^{3}x  \notag \\
+&=&\frac{\hbar ^{2}}{2m}\int \left\{ \frac{1}{c^{2}}\dot{\psi}^{\ast }\dot{%
+\psi}+\partial _{i}\psi ^{\ast }\partial _{i}\psi +\frac{m^{2}c^{2}}{\hbar
+^{2}}\psi ^{\ast }\psi \right\} d^{3}x,  \label{Energia Total Campo K-G}
+\end{eqnarray}%
+y:%
+\begin{eqnarray}
+p_{i} &=&-\frac{1}{c}\int \left\{ \frac{\partial \psi }{\partial x^{i}}\frac{%
+\partial {\cal L}}{\partial \left( \partial \psi /\partial x^{0}\right) }+%
+\frac{\partial \psi ^{\ast }}{\partial x^{i}}\frac{\partial {\cal L}}{%
+\partial \left( \partial \psi ^{\ast }/\partial x^{0}\right) }-{\cal L}%
+g_{i}^{\quad 0}\right\} d^{3}x  \notag \\
+&=&-\frac{1}{c^{2}}\int \left\{ \frac{\partial \psi }{\partial x^{i}}\frac{%
+\partial {\cal L}}{\partial \dot{\psi}}+\frac{\partial \psi ^{\ast }}{%
+\partial x^{i}}\frac{\partial {\cal L}}{\partial \dot{\psi}^{\ast }}\right\}
+d^{3}x  \notag \\
+&=&-\frac{\hbar ^{2}}{2mc^{2}}\int \left\{ \left( \partial _{i}\psi \right)
+\dot{\psi}^{\ast }+\left( \partial _{i}\psi ^{\ast }\right) \dot{\psi}%
+\right\} d^{3}x  \label{Momentum Total Campo K-G}
+\end{eqnarray}%
+son respectivamente la energ'ia y el momentum total del campo de
+Klein-Gordon.
+
+Por otro lado, la carga total se obtiene integrando la densidad de carga
+definida por:%
+\begin{equation}
+\rho =i\frac{\hbar e}{2mc^{2}}\left( \psi ^{\ast }\frac{\partial \psi }{%
+\partial t}-\psi \frac{\partial \psi ^{\ast }}{\partial t}\right)
+\label{Densida de Carga Campo K-G}
+\end{equation}%
+sobre todo el volumen de la caja. Es decir:%
+\begin{eqnarray}
+Q &=&\int \rho d^{3}x  \notag \\
+&=&i\frac{\hbar e}{2mc^{2}}\int \left\{ \psi ^{\ast }\dot{\psi}-\psi \dot{%
+\psi}^{\ast }\right\} d^{3}x.  \label{Carga Total Campo K-G}
+\end{eqnarray}
+
+Ahora, reemplazando (\ref{Phi(+-)}) en la soluci'on general (\ref%
+{Solucion General}), encontramos:%
+\begin{eqnarray*}
+\psi &=&\sum_{\vec{p}_{n}}\left( \frac{mc^{2}}{L^{3}E_{p_{n}}}\right) ^{%
+\frac{1}{2}}\left\{ a_{\vec{p}_{n}}e^{\frac{i}{\hbar }\left( \vec{p}%
+_{n}\cdot \vec{x}-E_{p_{n}}t\right) }+b_{\vec{p}_{n}}^{\ast }e^{\frac{i}{%
+\hbar }\left( -\vec{p}_{n}\cdot \vec{x}+E_{p_{n}}t\right) }\right\} \\
+&=&\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}}\sum_{\vec{p}_{n}}\left(
+E_{p_{n}}\right) ^{-\frac{1}{2}}\left\{ a_{\vec{p}_{n}}e^{\frac{i}{\hbar }%
+\vec{p}_{n}\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}}t}+b_{\vec{p}%
+_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{\frac{i}{\hbar }%
+E_{p_{n}}t}\right\} .
+\end{eqnarray*}%
+Es directo que:%
+\begin{equation}
+\psi ^{\ast }=\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}}\sum_{\vec{p}%
+_{n}}\left( E_{p_{n}}\right) ^{-\frac{1}{2}}\left\{ a_{\vec{p}_{n}}^{\ast
+}e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{\frac{i}{\hbar }%
+E_{p_{n}}t}+b_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{-%
+\frac{i}{\hbar }E_{p_{n}}t}\right\} .
+\end{equation}
+
+Ahora, calcularemos las respectivas derivadas involucradas en (\ref{Energia
+Total Campo K-G}), (\ref{Momentum Total Campo K-G}) y (\ref{Carga Total
+Campo K-G}). Estas son respectivamente:%
+\begin{eqnarray*}
+\dot{\psi} &=&\frac{\partial }{\partial t}\left[ \left( \frac{mc^{2}}{L^{3}}%
+\right) ^{\frac{1}{2}}\sum_{\vec{p}_{n}}\left( E_{p_{n}}\right) ^{-\frac{1}{2%
+}}\left\{ a_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{-%
+\frac{i}{\hbar }E_{p_{n}}t}+b_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p%
+}_{n}\cdot \vec{x}}e^{\frac{i}{\hbar }E_{p_{n}}t}\right\} \right]  \\
+&=&\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}}\sum_{\vec{p}_{n}}\left(
+E_{p_{n}}\right) ^{-\frac{1}{2}}\left\{ a_{\vec{p}_{n}}e^{\frac{i}{\hbar }%
+\vec{p}_{n}\cdot \vec{x}}\frac{\partial }{\partial t}\left( e^{-\frac{i}{%
+\hbar }E_{p_{n}}t}\right) +b_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}%
+_{n}\cdot \vec{x}}\frac{\partial }{\partial t}\left( e^{\frac{i}{\hbar }%
+E_{p_{n}}t}\right) \right\}  \\
+&=&\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}}\sum_{\vec{p}_{n}}\left(
+E_{p_{n}}\right) ^{-\frac{1}{2}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}%
+}\left\{ a_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}\left( -%
+\frac{i}{\hbar }E_{p_{n}}\right) e^{-\frac{i}{\hbar }E_{p_{n}}t}+b_{\vec{p}%
+_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}\left( \frac{i}{%
+\hbar }E_{p_{n}}\right) e^{\frac{i}{\hbar }E_{p_{n}}t}\right\}  \\
+&=&-\frac{i}{\hbar }\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}}\sum_{%
+\vec{p}_{n}}\left( E_{p_{n}}\right) ^{\frac{1}{2}}\left\{ a_{\vec{p}_{n}}e^{%
+\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}}t}-b_{%
+\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{\frac{i}{%
+\hbar }E_{p_{n}}t}\right\} ,
+\end{eqnarray*}%
+\begin{eqnarray*}
+\dot{\psi}^{\ast } &=&\left( \dot{\psi}\right) ^{\ast } \\
+&=&\left( -\frac{i}{\hbar }\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}%
+}\sum_{\vec{p}_{n}}\left( E_{p_{n}}\right) ^{\frac{1}{2}}\left\{ a_{\vec{p}%
+_{n}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{-\frac{i}{\hbar }%
+E_{p_{n}}t}-b_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{%
+x}}e^{\frac{i}{\hbar }E_{p_{n}}t}\right\} \right) ^{\ast } \\
+&=&\frac{i}{\hbar }\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}}\sum_{%
+\vec{p}_{n}}\left( E_{p_{n}}\right) ^{\frac{1}{2}}\left\{ a_{\vec{p}%
+_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{\frac{i}{\hbar }%
+E_{p_{n}}t}-b_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{-%
+\frac{i}{\hbar }E_{p_{n}}t}\right\} ,
+\end{eqnarray*}%
+\begin{eqnarray*}
+\partial _{i}\psi  &=&\partial _{i}\left[ \left( \frac{mc^{2}}{L^{3}}\right)
+^{\frac{1}{2}}\sum_{\vec{p}_{n}}\left( E_{p_{n}}\right) ^{-\frac{1}{2}%
+}\left\{ a_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{-%
+\frac{i}{\hbar }E_{p_{n}}t}+b_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p%
+}_{n}\cdot \vec{x}}e^{\frac{i}{\hbar }E_{p_{n}}t}\right\} \right]  \\
+&=&\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}}\sum_{\vec{p}_{n}}\left(
+E_{p_{n}}\right) ^{-\frac{1}{2}}\left\{ a_{\vec{p}_{n}}\partial _{i}\left(
+e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}\right) e^{-\frac{i}{\hbar }%
+E_{p_{n}}t}+b_{\vec{p}_{n}}^{\ast }\partial _{i}\left( e^{-\frac{i}{\hbar }%
+\vec{p}_{n}\cdot \vec{x}}\right) e^{\frac{i}{\hbar }E_{p_{n}}t}\right\}  \\
+&=&\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}}\sum_{\vec{p}_{n}}\left(
+E_{p_{n}}\right) ^{-\frac{1}{2}}\left\{ a_{\vec{p}_{n}}\left( \frac{i}{\hbar 
+}\vec{p}_{n}\right) e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{-\frac{i}{%
+\hbar }E_{p_{n}}t}+b_{\vec{p}_{n}}^{\ast }\left( -\frac{i}{\hbar }\vec{p}%
+_{n}\right) e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{\frac{i}{\hbar }%
+E_{p_{n}}t}\right\}  \\
+&=&\frac{i}{\hbar }\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}}\sum_{%
+\vec{p}_{n}}\left( E_{p_{n}}\right) ^{-\frac{1}{2}}\vec{p}_{n}\left\{ a_{%
+\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{-\frac{i}{\hbar }%
+E_{p_{n}}t}-b_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{%
+x}}e^{\frac{i}{\hbar }E_{p_{n}}t}\right\} ,
+\end{eqnarray*}%
+\begin{eqnarray*}
+\partial _{i}\psi ^{\ast } &=&\left( \partial _{i}\psi \right) ^{\ast } \\
+&=&\left( \frac{i}{\hbar }\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}%
+}\sum_{\vec{p}_{n}}\left( E_{p_{n}}\right) ^{-\frac{1}{2}}\vec{p}_{n}\left\{
+a_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{-\frac{i}{%
+\hbar }E_{p_{n}}t}-b_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}%
+_{n}\cdot \vec{x}}e^{\frac{i}{\hbar }E_{p_{n}}t}\right\} \right) ^{\ast } \\
+&=&-\frac{i}{\hbar }\left( \frac{mc^{2}}{L^{3}}\right) ^{\frac{1}{2}}\sum_{%
+\vec{p}_{n}}\left( E_{p_{n}}\right) ^{-\frac{1}{2}}\vec{p}_{n}\left\{ a_{%
+\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{\frac{i}{%
+\hbar }E_{p_{n}}t}-b_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}%
+}e^{-\frac{i}{\hbar }E_{p_{n}}t}\right\} .
+\end{eqnarray*}%
+Finalmente, reemplazando los resultados anteriores (donde corresponda) en (%
+\ref{Energia Total Campo K-G}), (\ref{Momentum Total Campo K-G}) y (\ref%
+{Carga Total Campo K-G}), obtenemos:%
+\begin{eqnarray*}
+H &=&\frac{\hbar ^{2}}{2m}\int \left\{ \frac{1}{c^{2}}\dot{\psi}^{\ast }\dot{%
+\psi}+\partial _{i}\psi ^{\ast }\partial _{i}\psi +\frac{m^{2}c^{2}}{\hbar
+^{2}}\psi ^{\ast }\psi \right\} d^{3}x \\
+&=&\frac{\hbar ^{2}}{2m}\int d^{3}x\left\{ 
+\begin{array}{c}
+\frac{m}{\hbar ^{2}L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\left(
+E_{p_{n}}E_{p_{n}^{\prime }}\right) ^{\frac{1}{2}}\left[ 
+\begin{array}{c}
+\left( a_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}%
+}e^{\frac{i}{\hbar }E_{p_{n}}t}-b_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}%
+_{n}\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}}t}\right)  \\ 
+\times \left( a_{\vec{p}_{n}^{\prime }}e^{\frac{i}{\hbar }\vec{p}%
+_{n}^{\prime }\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}^{\prime }}t}-b_{%
+\vec{p}_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}^{\prime }\cdot 
+\vec{x}}e^{\frac{i}{\hbar }E_{p_{n}^{\prime }}t}\right) 
+\end{array}%
+\right]  \\ 
++\frac{mc^{2}}{\hbar ^{2}L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime
+}}\left( E_{p_{n}}E_{p_{n}^{\prime }}\right) ^{-\frac{1}{2}}\left( \vec{p}%
+_{n}\cdot \vec{p}_{n}^{\prime }\right) \left[ 
+\begin{array}{c}
+\left( a_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}%
+}e^{\frac{i}{\hbar }E_{p_{n}}t}-b_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}%
+_{n}\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}}t}\right)  \\ 
+\times \left( a_{\vec{p}_{n}^{\prime }}e^{\frac{i}{\hbar }\vec{p}%
+_{n}^{\prime }\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}^{\prime }}t}-b_{%
+\vec{p}_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}^{\prime }\cdot 
+\vec{x}}e^{\frac{i}{\hbar }E_{p_{n}^{\prime }}t}\right) 
+\end{array}%
+\right]  \\ 
++\frac{m^{3}c^{4}}{\hbar ^{2}L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime
+}}\left( E_{p_{n}}E_{p_{n}^{\prime }}\right) ^{-\frac{1}{2}}\left[ 
+\begin{array}{c}
+\left( a_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}%
+}e^{\frac{i}{\hbar }E_{p_{n}}t}+b_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}%
+_{n}\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}}t}\right)  \\ 
+\times \left( a_{\vec{p}_{n}^{\prime }}e^{\frac{i}{\hbar }\vec{p}%
+_{n}^{\prime }\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}^{\prime }}t}+b_{%
+\vec{p}_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}^{\prime }\cdot 
+\vec{x}}e^{\frac{i}{\hbar }E_{p_{n}^{\prime }}t}\right) 
+\end{array}%
+\right] 
+\end{array}%
+\right\}  \\
+&=&\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\frac{\left(
+E_{p_{n}}E_{p_{n}^{\prime }}\right) ^{-\frac{1}{2}}}{2L^{3}}\int
+d^{3}x\left\{ 
+\begin{array}{c}
+E_{p_{n}}E_{p_{n}^{\prime }}\left( 
+\begin{array}{c}
+a_{\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}^{\prime }}e^{-\frac{i}{\hbar }\left( 
+\vec{p}_{n}-\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}-a_{\vec{p}_{n}}^{\ast }b_{%
+\vec{p}_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\left( \vec{p}_{n}+\vec{p}%
+_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t} \\ 
+-b_{\vec{p}_{n}}a_{\vec{p}_{n}^{\prime }}e^{\frac{i}{\hbar }\left( \vec{p}%
+_{n}+\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}+b_{\vec{p}_{n}}b_{\vec{p}%
+_{n}^{\prime }}^{\ast }e^{\frac{i}{\hbar }\left( \vec{p}_{n}-\vec{p}%
+_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}%
+\end{array}%
+\right)  \\ 
++\frac{\vec{p}_{n}\cdot \vec{p}_{n}^{\prime }}{c^{-2}}\left( 
+\begin{array}{c}
+a_{\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}^{\prime }}e^{-\frac{i}{\hbar }\left( 
+\vec{p}_{n}-\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}-a_{\vec{p}_{n}}^{\ast }b_{%
+\vec{p}_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\left( \vec{p}_{n}+\vec{p}%
+_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t} \\ 
+-b_{\vec{p}_{n}}a_{\vec{p}_{n}^{\prime }}e^{\frac{i}{\hbar }\left( \vec{p}%
+_{n}+\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}+b_{\vec{p}_{n}}b_{\vec{p}%
+_{n}^{\prime }}^{\ast }e^{\frac{i}{\hbar }\left( \vec{p}_{n}-\vec{p}%
+_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}%
+\end{array}%
+\right)  \\ 
++m^{2}c^{4}\left( 
+\begin{array}{c}
+a_{\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}^{\prime }}e^{-\frac{i}{\hbar }\left( 
+\vec{p}_{n}-\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}+a_{\vec{p}_{n}}^{\ast }b_{%
+\vec{p}_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\left( \vec{p}_{n}+\vec{p}%
+_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t} \\ 
++b_{\vec{p}_{n}}a_{\vec{p}_{n}^{\prime }}e^{\frac{i}{\hbar }\left( \vec{p}%
+_{n}+\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}+b_{\vec{p}_{n}}b_{\vec{p}%
+_{n}^{\prime }}^{\ast }e^{\frac{i}{\hbar }\left( \vec{p}_{n}-\vec{p}%
+_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}%
+\end{array}%
+\right) 
+\end{array}%
+\right\}  \\
+&=&\frac{1}{2L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\left(
+E_{p_{n}}E_{p_{n}^{\prime }}\right) ^{-\frac{1}{2}}\int d^{3}x\left\{ 
+\begin{array}{c}
+\left[ E_{p_{n}}E_{p_{n}^{\prime }}+c^{2}\left( \vec{p}_{n}\cdot \vec{p}%
+_{n}^{\prime }\right) +m^{2}c^{4}\right] a_{\vec{p}_{n}}^{\ast }a_{\vec{p}%
+_{n}^{\prime }}e^{\frac{i}{\hbar }\left( E_{p_{n}}-E_{p_{n}^{\prime
+}}\right) t}e^{-\frac{i}{\hbar }\left( \vec{p}_{n}-\vec{p}_{n}^{\prime
+}\right) \cdot \vec{x}} \\ 
+-\left[ E_{p_{n}}E_{p_{n}^{\prime }}+c^{2}\left( \vec{p}_{n}\cdot \vec{p}%
+_{n}^{\prime }\right) -m^{2}c^{4}\right] a_{\vec{p}_{n}}^{\ast }b_{\vec{p}%
+_{n}^{\prime }}^{\ast }e^{\frac{i}{\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime
+}}\right) t}e^{-\frac{i}{\hbar }\left( \vec{p}_{n}+\vec{p}_{n}^{\prime
+}\right) \cdot \vec{x}} \\ 
+-\left[ E_{p_{n}}E_{p_{n}^{\prime }}+c^{2}\left( \vec{p}_{n}\cdot \vec{p}%
+_{n}^{\prime }\right) -m^{2}c^{4}\right] b_{\vec{p}_{n}}a_{\vec{p}%
+_{n}^{\prime }}e^{-\frac{i}{\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime
+}}\right) t}e^{\frac{i}{\hbar }\left( \vec{p}_{n}+\vec{p}_{n}^{\prime
+}\right) \cdot \vec{x}} \\ 
++\left[ E_{p_{n}}E_{p_{n}^{\prime }}+c^{2}\left( \vec{p}_{n}\cdot \vec{p}%
+_{n}^{\prime }\right) +m^{2}c^{4}\right] b_{\vec{p}_{n}}b_{\vec{p}%
+_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\left( E_{p_{n}}-E_{p_{n}^{\prime
+}}\right) t}e^{\frac{i}{\hbar }\left( \vec{p}_{n}-\vec{p}_{n}^{\prime
+}\right) \cdot \vec{x}}%
+\end{array}%
+\right\}  \\
+&=&\frac{1}{2}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\left(
+E_{p_{n}}E_{p_{n}^{\prime }}\right) ^{-\frac{1}{2}}\left\{ 
+\begin{array}{c}
+\left[ E_{p_{n}}E_{p_{n}^{\prime }}+c^{2}\left( \vec{p}_{n}\cdot \vec{p}%
+_{n}^{\prime }\right) +m^{2}c^{4}\right] a_{\vec{p}_{n}}^{\ast }a_{\vec{p}%
+_{n}^{\prime }}e^{\frac{i}{\hbar }\left( E_{p_{n}}-E_{p_{n}^{\prime
+}}\right) t}\delta _{\vec{p}_{n},\vec{p}_{n}^{\prime }} \\ 
+-\left[ E_{p_{n}}E_{p_{n}^{\prime }}+c^{2}\left( \vec{p}_{n}\cdot \vec{p}%
+_{n}^{\prime }\right) -m^{2}c^{4}\right] a_{\vec{p}_{n}}^{\ast }b_{\vec{p}%
+_{n}^{\prime }}^{\ast }e^{\frac{i}{\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime
+}}\right) t}\delta _{\vec{p}_{n},-\vec{p}_{n}^{\prime }} \\ 
+-\left[ E_{p_{n}}E_{p_{n}^{\prime }}+c^{2}\left( \vec{p}_{n}\cdot \vec{p}%
+_{n}^{\prime }\right) -m^{2}c^{4}\right] b_{\vec{p}_{n}}a_{\vec{p}%
+_{n}^{\prime }}e^{-\frac{i}{\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime
+}}\right) t}\delta _{\vec{p}_{n},-\vec{p}_{n}^{\prime }} \\ 
++\left[ E_{p_{n}}E_{p_{n}^{\prime }}+c^{2}\left( \vec{p}_{n}\cdot \vec{p}%
+_{n}^{\prime }\right) +m^{2}c^{4}\right] b_{\vec{p}_{n}}b_{\vec{p}%
+_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\left( E_{p_{n}}-E_{p_{n}^{\prime
+}}\right) t}\delta _{\vec{p}_{n},\vec{p}_{n}^{\prime }}%
+\end{array}%
+\right\}  \\
+&=&\frac{1}{2}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\left\{ 
+\begin{array}{c}
+\left( E_{p_{n}}E_{p_{n}}\right) ^{-\frac{1}{2}}\left[
+E_{p_{n}}E_{p_{n}}+c^{2}\left( \vec{p}_{n}\cdot \vec{p}_{n}\right)
++m^{2}c^{4}\right] a_{\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}}e^{\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}}\right) t} \\ 
+-\left( E_{p_{n}}E_{-p_{n}}\right) ^{-\frac{1}{2}}\left[
+E_{p_{n}}E_{-p_{n}}+c^{2}\left( \vec{p}_{n}\cdot \left( -\vec{p}_{n}\right)
+\right) -m^{2}c^{4}\right] a_{\vec{p}_{n}}^{\ast }b_{-\vec{p}_{n}}^{\ast }e^{%
+\frac{i}{\hbar }\left( E_{p_{n}}+E_{-p_{n}}\right) t} \\ 
+-\left( E_{p_{n}}E_{-p_{n}}\right) ^{-\frac{1}{2}}\left[
+E_{p_{n}}E_{-p_{n}}+c^{2}\left( \vec{p}_{n}\cdot \left( -\vec{p}_{n}\right)
+\right) -m^{2}c^{4}\right] b_{\vec{p}_{n}}a_{-\vec{p}_{n}}e^{-\frac{i}{\hbar 
+}\left( E_{p_{n}}+E_{-p_{n}}\right) t} \\ 
++\left( E_{p_{n}}E_{p_{n}}\right) ^{-\frac{1}{2}}\left[
+E_{p_{n}}E_{p_{n}}+c^{2}\left( \vec{p}_{n}\cdot \vec{p}_{n}\right)
++m^{2}c^{4}\right] b_{\vec{p}_{n}}b_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}}\right) t}%
+\end{array}%
+\right\}  \\
+&=&\sum_{\vec{p}_{n}}\frac{1}{2E_{p_{n}}}\left\{ 
+\begin{array}{c}
+\left( E_{p_{n}}^{2}+c^{2}\vec{p}_{n}^{2}+m^{2}c^{4}\right) \left( a_{\vec{p}%
+_{n}}^{\ast }a_{\vec{p}_{n}}+b_{\vec{p}_{n}}b_{\vec{p}_{n}}^{\ast }\right) 
+\\ 
+-\left( E_{p_{n}}^{2}-c^{2}\vec{p}_{n}^{2}-m^{2}c^{4}\right) \left( a_{\vec{p%
+}_{n}}^{\ast }b_{-\vec{p}_{n}}^{\ast }e^{2\frac{i}{\hbar }E_{p_{n}}t}+b_{%
+\vec{p}_{n}}a_{-\vec{p}_{n}}e^{-2\frac{i}{\hbar }E_{p_{n}}t}\right) 
+\end{array}%
+\right\} 
+\end{eqnarray*}%
+pero, de (\ref{Epn}) vemos que:%
+\begin{equation}
+c^{2}\vec{p}_{n}^{2}+m^{2}c^{4}=E_{p_{n}}^{2},
+\end{equation}%
+por lo tanto, la energ'ia total del campo es\footnote{%
+Notar que si $\left\{ a_{\vec{p}_{n}}^{\ast },a_{\vec{p}_{n}},b_{\vec{p}%
+_{n}},b_{\vec{p}_{n}}^{\ast }\right\} $ fueran operadores que satisfacen las
+reglas de conmutaci'on:%
+\begin{eqnarray*}
+\left[ \hat{a}_{\vec{p}_{n}},\hat{a}_{\vec{p}_{n}}^{\dagger }\right]  &=&1,
+\\
+\left[ \hat{a}_{\vec{p}_{n}},\hat{a}_{\vec{p}_{n}}\right]  &=&\left[ \hat{a}%
+_{\vec{p}_{n}}^{\dagger },\hat{a}_{\vec{p}_{n}}^{\dagger }\right] =0, \\
+\left[ \hat{b}_{\vec{p}_{n}},\hat{b}_{\vec{p}_{n}}^{\dagger }\right]  &=&1,
+\\
+\left[ \hat{b}_{\vec{p}_{n}},\hat{b}_{\vec{p}_{n}}\right]  &=&\left[ \hat{b}%
+_{\vec{p}_{n}}^{\dagger },\hat{b}_{\vec{p}_{n}}^{\dagger }\right] =0, \\
+\left[ \hat{a}_{\vec{p}_{n}},\hat{b}_{\vec{p}_{n}^{\prime }}\right]  &=&%
+\left[ \hat{a}_{\vec{p}_{n}}^{\dagger },\hat{b}_{\vec{p}_{n}^{\prime
+}}^{\dagger }\right] =0,
+\end{eqnarray*}%
+entonces la energ'ia total ser'ia el Operador Hamiltoniano que tiene
+la forma:%
+\begin{eqnarray*}
+\hat{H} &=&\sum_{\vec{p}_{n}}\left( \hat{a}_{\vec{p}_{n}}^{\dagger }\hat{a}_{%
+\vec{p}_{n}}+\hat{b}_{\vec{p}_{n}}\hat{b}_{\vec{p}_{n}}^{\dagger }\right)  \\
+&=&\sum_{\vec{p}_{n}}E_{p_{n}}\left( \hat{a}_{\vec{p}_{n}}^{\dagger }\hat{a}%
+_{\vec{p}_{n}}+\hat{b}_{\vec{p}_{n}}^{\dagger }\hat{b}_{\vec{p}_{n}}\right)
++\sum_{\vec{p}_{n}}E_{p_{n}},
+\end{eqnarray*}%
+donde el 'ultimo t'ermino del lado derecho corresponder'ia a la
+energ'ia del \textit{vac'io.}}:%
+\begin{eqnarray*}
+H &=&\sum_{\vec{p}_{n}}\frac{2E_{p_{n}}^{2}}{2E_{p_{n}}}\left( a_{\vec{p}%
+_{n}}^{\ast }a_{\vec{p}_{n}}+b_{\vec{p}_{n}}b_{\vec{p}_{n}}^{\ast }\right) 
+\\
+&=&\sum_{\vec{p}_{n}}E_{p_{n}}\left( a_{\vec{p}_{n}}^{\ast }a_{\vec{p}%
+_{n}}+b_{\vec{p}_{n}}^{\ast }b_{\vec{p}_{n}}\right) .
+\end{eqnarray*}
+
+An'alogamente, para el momentum total del campo encontramos que\footnote{%
+Nuevamente, considerando los coeficientes de la expansi'on en serie como
+operadores, vamoa a encontrar que el operador momentum del campo es:%
+\begin{eqnarray*}
+\overrightarrow{\hat{p}} &=&\sum_{\vec{p}_{n}}\vec{p}_{n}\left\{ \hat{a}_{%
+\vec{p}_{n}}^{\dagger }\hat{a}_{\vec{p}_{n}}+\hat{b}_{\vec{p}_{n}}^{\dagger }%
+\hat{b}_{\vec{p}_{n}}\right\} +\sum_{\vec{p}_{n}}\vec{p}_{n} \\
+&=&\sum_{\vec{p}_{n}}\vec{p}_{n}\left\{ \hat{a}_{\vec{p}_{n}}^{\dagger }\hat{%
+a}_{\vec{p}_{n}}+\hat{b}_{\vec{p}_{n}}^{\dagger }\hat{b}_{\vec{p}%
+_{n}}\right\} ,
+\end{eqnarray*}%
+ya que el 'ultimo t'ermino del lado derecho se anula debido a que $%
+\vec{p}_{n}$ es impar.}:%
+\begin{eqnarray*}
+\vec{p} &=&-\frac{\hbar ^{2}}{2mc^{2}}\int \left\{ \left( \partial _{i}\psi
+\right) \dot{\psi}^{\ast }+\left( \partial _{i}\psi ^{\ast }\right) \dot{\psi%
+}\right\} d^{3}x \\
+&=&-\frac{\hbar ^{2}}{2mc^{2}}\int d^{3}x\left\{ 
+\begin{array}{c}
+-\frac{mc^{2}}{\hbar ^{2}L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime
+}}\left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}\vec{p}%
+_{n}\left[ 
+\begin{array}{c}
+\left( a_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{-\frac{i%
+}{\hbar }E_{p_{n}}t}-b_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}%
+_{n}\cdot \vec{x}}e^{\frac{i}{\hbar }E_{p_{n}}t}\right)  \\ 
+\times \left( a_{\vec{p}_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\vec{p}%
+_{n}^{\prime }\cdot \vec{x}}e^{\frac{i}{\hbar }E_{p_{n}^{\prime }}t}-b_{\vec{%
+p}_{n}^{\prime }}e^{\frac{i}{\hbar }\vec{p}_{n}^{\prime }\cdot \vec{x}}e^{-%
+\frac{i}{\hbar }E_{p_{n}^{\prime }}t}\right) 
+\end{array}%
+\right]  \\ 
+-\frac{mc^{2}}{\hbar ^{2}L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime
+}}\left( \frac{E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\vec{p}%
+_{n}^{\prime }\left[ 
+\begin{array}{c}
+\left( a_{\vec{p}_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\vec{p}%
+_{n}^{\prime }\cdot \vec{x}}e^{\frac{i}{\hbar }E_{p_{n}^{\prime }}t}-b_{\vec{%
+p}_{n}^{\prime }}e^{\frac{i}{\hbar }\vec{p}_{n}^{\prime }\cdot \vec{x}}e^{-%
+\frac{i}{\hbar }E_{p_{n}^{\prime }}t}\right)  \\ 
+\times \left( a_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}}e^{-%
+\frac{i}{\hbar }E_{p_{n}}t}-b_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p%
+}_{n}\cdot \vec{x}}e^{\frac{i}{\hbar }E_{p_{n}}t}\right) 
+\end{array}%
+\right] 
+\end{array}%
+\right\}  \\
+&=&\frac{1}{2L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\int
+d^{3}x\left\{ 
+\begin{array}{c}
+\left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}\vec{p}%
+_{n}\left( 
+\begin{array}{c}
+a_{\vec{p}_{n}}a_{\vec{p}_{n}^{\prime }}^{\ast }e^{\frac{i}{\hbar }\left( 
+\vec{p}_{n}-\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}-a_{\vec{p}_{n}}b_{\vec{p}%
+_{n}^{\prime }}e^{\frac{i}{\hbar }\left( \vec{p}_{n}+\vec{p}_{n}^{\prime
+}\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime
+}}\right) t} \\ 
+-b_{\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }%
+\left( \vec{p}_{n}+\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{%
+\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}+b_{\vec{p}_{n}}^{\ast
+}b_{\vec{p}_{n}^{\prime }}e^{-\frac{i}{\hbar }\left( \vec{p}_{n}-\vec{p}%
+_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{\hbar }\left(
+E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}%
+\end{array}%
+\right)  \\ 
++\left( \frac{E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\vec{p}%
+_{n}^{\prime }\left( 
+\begin{array}{c}
+a_{\vec{p}_{n}^{\prime }}^{\ast }a_{\vec{p}_{n}}e^{\frac{i}{\hbar }\left( 
+\vec{p}_{n}-\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}-a_{\vec{p}_{n}^{\prime
+}}^{\ast }b_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\left( \vec{p}_{n}+\vec{%
+p}_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t} \\ 
+-b_{\vec{p}_{n}^{\prime }}a_{\vec{p}_{n}}e^{\frac{i}{\hbar }\left( \vec{p}%
+_{n}+\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}+b_{\vec{p}_{n}^{\prime }}b_{\vec{p}%
+_{n}}^{\ast }e^{-\frac{i}{\hbar }\left( \vec{p}_{n}-\vec{p}_{n}^{\prime
+}\right) \cdot \vec{x}}e^{\frac{i}{\hbar }\left( E_{p_{n}}-E_{p_{n}^{\prime
+}}\right) t}%
+\end{array}%
+\right) 
+\end{array}%
+\right\}  \\
+&=&\frac{1}{2L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\int
+d^{3}x\left\{ 
+\begin{array}{c}
+\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}%
+\vec{p}_{n}a_{\vec{p}_{n}}a_{\vec{p}_{n}^{\prime }}^{\ast }+\left( \frac{%
+E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\vec{p}_{n}^{\prime }a_{%
+\vec{p}_{n}^{\prime }}^{\ast }a_{\vec{p}_{n}}\right] e^{-\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}e^{\frac{i}{\hbar }\left( \vec{%
+p}_{n}-\vec{p}_{n}^{\prime }\right) \cdot \vec{x}} \\ 
+-\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}%
+\vec{p}_{n}a_{\vec{p}_{n}}b_{\vec{p}_{n}^{\prime }}+\left( \frac{E_{p_{n}}}{%
+E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\vec{p}_{n}^{\prime }b_{\vec{p}%
+_{n}^{\prime }}a_{\vec{p}_{n}}\right] e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}e^{\frac{i}{\hbar }\left( \vec{p}_{n}+%
+\vec{p}_{n}^{\prime }\right) \cdot \vec{x}} \\ 
+-\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}%
+\vec{p}_{n}b_{\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}^{\prime }}^{\ast }+\left( 
+\frac{E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\vec{p}%
+_{n}^{\prime }a_{\vec{p}_{n}^{\prime }}^{\ast }b_{\vec{p}_{n}}^{\ast }\right]
+e^{\frac{i}{\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}e^{-\frac{i%
+}{\hbar }\left( \vec{p}_{n}+\vec{p}_{n}^{\prime }\right) \cdot \vec{x}} \\ 
++\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}%
+\vec{p}_{n}b_{\vec{p}_{n}}^{\ast }b_{\vec{p}_{n}^{\prime }}+\left( \frac{%
+E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\vec{p}_{n}^{\prime }b_{%
+\vec{p}_{n}^{\prime }}b_{\vec{p}_{n}}^{\ast }\right] e^{\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}e^{-\frac{i}{\hbar }\left( 
+\vec{p}_{n}-\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}%
+\end{array}%
+\right\}  \\
+&=&\frac{1}{2L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\left\{ 
+\begin{array}{c}
+\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}%
+\vec{p}_{n}a_{\vec{p}_{n}}a_{\vec{p}_{n}^{\prime }}^{\ast }+\left( \frac{%
+E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\vec{p}_{n}^{\prime }a_{%
+\vec{p}_{n}^{\prime }}^{\ast }a_{\vec{p}_{n}}\right] e^{-\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}L^{3}\delta _{\vec{p}_{n},\vec{%
+p}_{n}^{\prime }} \\ 
+-\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}%
+\vec{p}_{n}a_{\vec{p}_{n}}b_{\vec{p}_{n}^{\prime }}+\left( \frac{E_{p_{n}}}{%
+E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\vec{p}_{n}^{\prime }b_{\vec{p}%
+_{n}^{\prime }}a_{\vec{p}_{n}}\right] e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}L^{3}\delta _{\vec{p}_{n},-\vec{p}%
+_{n}^{\prime }} \\ 
+-\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}%
+\vec{p}_{n}b_{\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}^{\prime }}^{\ast }+\left( 
+\frac{E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\vec{p}%
+_{n}^{\prime }a_{\vec{p}_{n}^{\prime }}^{\ast }b_{\vec{p}_{n}}^{\ast }\right]
+e^{\frac{i}{\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}L^{3}\delta
+_{\vec{p}_{n},-\vec{p}_{n}^{\prime }} \\ 
++\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}%
+\vec{p}_{n}b_{\vec{p}_{n}}^{\ast }b_{\vec{p}_{n}^{\prime }}+\left( \frac{%
+E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\vec{p}_{n}^{\prime }b_{%
+\vec{p}_{n}^{\prime }}b_{\vec{p}_{n}}^{\ast }\right] e^{\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}L^{3}\delta _{\vec{p}_{n},\vec{%
+p}_{n}^{\prime }}%
+\end{array}%
+\right\}  \\
+&=&\frac{1}{2}\sum_{\vec{p}_{n}}\left\{ 
+\begin{array}{c}
+\left[ \left( \frac{E_{p_{n}}}{E_{p_{n}}}\right) ^{\frac{1}{2}}\vec{p}_{n}a_{%
+\vec{p}_{n}}a_{\vec{p}_{n}}^{\ast }+\left( \frac{E_{p_{n}}}{E_{p_{n}}}%
+\right) ^{\frac{1}{2}}\vec{p}_{n}a_{\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}}%
+\right] e^{-\frac{i}{\hbar }\left( E_{p_{n}}-E_{p_{n}}\right) t} \\ 
+-\left[ \left( \frac{E_{-p_{n}}}{E_{p_{n}}}\right) ^{\frac{1}{2}}\vec{p}%
+_{n}a_{\vec{p}_{n}}b_{-\vec{p}_{n}}+\left( \frac{E_{p_{n}}}{E_{-p_{n}}}%
+\right) ^{\frac{1}{2}}\left( -\vec{p}_{n}\right) b_{-\vec{p}_{n}}a_{\vec{p}%
+_{n}}\right] e^{-\frac{i}{\hbar }\left( E_{p_{n}}+E_{-p_{n}}\right) t} \\ 
+-\left[ \left( \frac{E_{-p_{n}}}{E_{p_{n}}}\right) ^{\frac{1}{2}}\vec{p}%
+_{n}b_{\vec{p}_{n}}^{\ast }a_{-\vec{p}_{n}}^{\ast }+\left( \frac{E_{p_{n}}}{%
+E_{-p_{n}}}\right) ^{\frac{1}{2}}\left( -\vec{p}_{n}\right) a_{-\vec{p}%
+_{n}}^{\ast }b_{\vec{p}_{n}}^{\ast }\right] e^{\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{-p_{n}}\right) t} \\ 
++\left[ \left( \frac{E_{p_{n}}}{E_{p_{n}}}\right) ^{\frac{1}{2}}\vec{p}%
+_{n}b_{\vec{p}_{n}}^{\ast }b_{\vec{p}_{n}}+\left( \frac{E_{p_{n}}}{E_{p_{n}}}%
+\right) ^{\frac{1}{2}}\vec{p}_{n}b_{\vec{p}_{n}}b_{\vec{p}_{n}}^{\ast }%
+\right] e^{\frac{i}{\hbar }\left( E_{p_{n}}-E_{p_{n}}\right) t}%
+\end{array}%
+\right\}  \\
+&=&\frac{1}{2}\sum_{\vec{p}_{n}}\vec{p}_{n}\left\{ a_{\vec{p}_{n}}a_{\vec{p}%
+_{n}}^{\ast }+a_{\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}}-\left[ a_{\vec{p}%
+_{n}}b_{-\vec{p}_{n}}-b_{-\vec{p}_{n}}a_{\vec{p}_{n}}\right] e^{-2\frac{i}{%
+\hbar }E_{p_{n}}t}-\left[ b_{\vec{p}_{n}}^{\ast }a_{-\vec{p}_{n}}^{\ast
+}-a_{-\vec{p}_{n}}^{\ast }b_{\vec{p}_{n}}^{\ast }\right] e^{2\frac{i}{\hbar }%
+E_{p_{n}}t}+b_{\vec{p}_{n}}^{\ast }b_{\vec{p}_{n}}+b_{\vec{p}_{n}}b_{\vec{p}%
+_{n}}^{\ast }\right\}  \\
+&=&\sum_{\vec{p}_{n}}\vec{p}_{n}\left\{ a_{\vec{p}_{n}}^{\ast }a_{\vec{p}%
+_{n}}+b_{\vec{p}_{n}}^{\ast }b_{\vec{p}_{n}}\right\} .
+\end{eqnarray*}
+
+Y para la carga total:%
+\begin{eqnarray*}
+Q &=&i\frac{\hbar e}{2mc^{2}}\int \left\{ \psi ^{\ast }\dot{\psi}-\psi \dot{%
+\psi}^{\ast }\right\} d^{3}x \\
+&=&i\frac{\hbar e}{2mc^{2}}\int d^{3}x\left\{ 
+\begin{array}{c}
+-i\frac{mc^{2}}{\hbar L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\left( 
+\frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}\left[ 
+\begin{array}{c}
+\left( a_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot \vec{x}%
+}e^{\frac{i}{\hbar }E_{p_{n}}t}+b_{\vec{p}_{n}}e^{\frac{i}{\hbar }\vec{p}%
+_{n}\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}}t}\right) \\ 
+\times \left( a_{\vec{p}_{n}^{\prime }}e^{\frac{i}{\hbar }\vec{p}%
+_{n}^{\prime }\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}^{\prime }}t}-b_{%
+\vec{p}_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}^{\prime }\cdot 
+\vec{x}}e^{\frac{i}{\hbar }E_{p_{n}^{\prime }}t}\right)%
+\end{array}%
+\right] \\ 
+-i\frac{mc^{2}}{\hbar L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\left( 
+\frac{E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\left[ 
+\begin{array}{c}
+\left( a_{\vec{p}_{n}^{\prime }}e^{\frac{i}{\hbar }\vec{p}_{n}^{\prime
+}\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}^{\prime }}t}+b_{\vec{p}%
+_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}^{\prime }\cdot \vec{x}%
+}e^{\frac{i}{\hbar }E_{p_{n}^{\prime }}t}\right) \\ 
+\times \left( a_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\vec{p}_{n}\cdot 
+\vec{x}}e^{\frac{i}{\hbar }E_{p_{n}}t}-b_{\vec{p}_{n}}e^{\frac{i}{\hbar }%
+\vec{p}_{n}\cdot \vec{x}}e^{-\frac{i}{\hbar }E_{p_{n}}t}\right)%
+\end{array}%
+\right]%
+\end{array}%
+\right\} \\
+&=&\frac{e}{2L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\int
+d^{3}x\left\{ 
+\begin{array}{c}
+\left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}\left( 
+\begin{array}{c}
+a_{\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}^{\prime }}e^{-\frac{i}{\hbar }\left( 
+\vec{p}_{n}-\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}-a_{\vec{p}_{n}}^{\ast }b_{%
+\vec{p}_{n}^{\prime }}^{\ast }e^{-\frac{i}{\hbar }\left( \vec{p}_{n}+\vec{p}%
+_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t} \\ 
++b_{\vec{p}_{n}}a_{\vec{p}_{n}^{\prime }}e^{\frac{i}{\hbar }\left( \vec{p}%
+_{n}+\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}-b_{\vec{p}_{n}}b_{\vec{p}%
+_{n}^{\prime }}^{\ast }e^{\frac{i}{\hbar }\left( \vec{p}_{n}-\vec{p}%
+_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}%
+\end{array}%
+\right) \\ 
++\left( \frac{E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}\left( 
+\begin{array}{c}
+a_{\vec{p}_{n}^{\prime }}a_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }\left( 
+\vec{p}_{n}-\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}-a_{\vec{p}_{n}^{\prime }}b_{%
+\vec{p}_{n}}e^{\frac{i}{\hbar }\left( \vec{p}_{n}+\vec{p}_{n}^{\prime
+}\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime
+}}\right) t} \\ 
++b_{\vec{p}_{n}^{\prime }}^{\ast }a_{\vec{p}_{n}}^{\ast }e^{-\frac{i}{\hbar }%
+\left( \vec{p}_{n}+\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}e^{\frac{i}{%
+\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}-b_{\vec{p}_{n}^{\prime
+}}^{\ast }b_{\vec{p}_{n}}e^{\frac{i}{\hbar }\left( \vec{p}_{n}-\vec{p}%
+_{n}^{\prime }\right) \cdot \vec{x}}e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}%
+\end{array}%
+\right)%
+\end{array}%
+\right\} \\
+&=&\frac{e}{2L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\int
+d^{3}x\left\{ 
+\begin{array}{c}
+\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}a_{%
+\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}^{\prime }}+\left( \frac{E_{p_{n}}}{%
+E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}a_{\vec{p}_{n}^{\prime }}a_{\vec{p}%
+_{n}}^{\ast }\right] e^{\frac{i}{\hbar }\left( E_{p_{n}}-E_{p_{n}^{\prime
+}}\right) t}e^{-\frac{i}{\hbar }\left( \vec{p}_{n}-\vec{p}_{n}^{\prime
+}\right) \cdot \vec{x}} \\ 
++\left[ \left( \frac{E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}b_{%
+\vec{p}_{n}^{\prime }}^{\ast }a_{\vec{p}_{n}}^{\ast }-\left( \frac{%
+E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}a_{\vec{p}_{n}}^{\ast
+}b_{\vec{p}_{n}^{\prime }}^{\ast }\right] e^{\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}e^{-\frac{i}{\hbar }\left( \vec{p}%
+_{n}+\vec{p}_{n}^{\prime }\right) \cdot \vec{x}} \\ 
++\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}b_{%
+\vec{p}_{n}}a_{\vec{p}_{n}^{\prime }}-\left( \frac{E_{p_{n}}}{%
+E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}a_{\vec{p}_{n}^{\prime }}b_{\vec{p}%
+_{n}}\right] e^{-\frac{i}{\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime }}\right)
+t}e^{\frac{i}{\hbar }\left( \vec{p}_{n}+\vec{p}_{n}^{\prime }\right) \cdot 
+\vec{x}} \\ 
+-\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}b_{%
+\vec{p}_{n}}b_{\vec{p}_{n}^{\prime }}^{\ast }+\left( \frac{E_{p_{n}}}{%
+E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}b_{\vec{p}_{n}^{\prime }}^{\ast
+}b_{\vec{p}_{n}}\right] e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}e^{\frac{i}{\hbar }\left( \vec{p}_{n}-%
+\vec{p}_{n}^{\prime }\right) \cdot \vec{x}}%
+\end{array}%
+\right\} \\
+&=&\frac{e}{2L^{3}}\sum_{\vec{p}_{n},\vec{p}_{n}^{\prime }}\left\{ 
+\begin{array}{c}
+\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}a_{%
+\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}^{\prime }}+\left( \frac{E_{p_{n}}}{%
+E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}a_{\vec{p}_{n}^{\prime }}a_{\vec{p}%
+_{n}}^{\ast }\right] e^{\frac{i}{\hbar }\left( E_{p_{n}}-E_{p_{n}^{\prime
+}}\right) t}L^{3}\delta _{\vec{p}_{n},\vec{p}_{n}^{\prime }} \\ 
++\left[ \left( \frac{E_{p_{n}}}{E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}b_{%
+\vec{p}_{n}^{\prime }}^{\ast }a_{\vec{p}_{n}}^{\ast }-\left( \frac{%
+E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}a_{\vec{p}_{n}}^{\ast
+}b_{\vec{p}_{n}^{\prime }}^{\ast }\right] e^{\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{p_{n}^{\prime }}\right) t}L^{3}\delta _{\vec{p}_{n},-\vec{p}%
+_{n}^{\prime }} \\ 
++\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}b_{%
+\vec{p}_{n}}a_{\vec{p}_{n}^{\prime }}-\left( \frac{E_{p_{n}}}{%
+E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}a_{\vec{p}_{n}^{\prime }}b_{\vec{p}%
+_{n}}\right] e^{-\frac{i}{\hbar }\left( E_{p_{n}}+E_{p_{n}^{\prime }}\right)
+t}L^{3}\delta _{\vec{p}_{n},-\vec{p}_{n}^{\prime }} \\ 
+-\left[ \left( \frac{E_{p_{n}^{\prime }}}{E_{p_{n}}}\right) ^{\frac{1}{2}}b_{%
+\vec{p}_{n}}b_{\vec{p}_{n}^{\prime }}^{\ast }+\left( \frac{E_{p_{n}}}{%
+E_{p_{n}^{\prime }}}\right) ^{\frac{1}{2}}b_{\vec{p}_{n}^{\prime }}^{\ast
+}b_{\vec{p}_{n}}\right] e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}-E_{p_{n}^{\prime }}\right) t}L^{3}\delta _{\vec{p}_{n},\vec{p}%
+_{n}^{\prime }}%
+\end{array}%
+\right\} \\
+&=&\frac{e}{2}\sum_{\vec{p}_{n}}\left\{ 
+\begin{array}{c}
+\left[ \left( \frac{E_{p_{n}}}{E_{p_{n}}}\right) ^{\frac{1}{2}}a_{\vec{p}%
+_{n}}^{\ast }a_{\vec{p}_{n}}+\left( \frac{E_{p_{n}}}{E_{p_{n}}}\right) ^{%
+\frac{1}{2}}a_{\vec{p}_{n}}a_{\vec{p}_{n}}^{\ast }\right] e^{\frac{i}{\hbar }%
+\left( E_{p_{n}}-E_{p_{n}}\right) t} \\ 
++\left[ \left( \frac{E_{p_{n}}}{E_{-p_{n}}}\right) ^{\frac{1}{2}}b_{-\vec{p}%
+_{n}}^{\ast }a_{\vec{p}_{n}}^{\ast }-\left( \frac{E_{-p_{n}}}{E_{p_{n}}}%
+\right) ^{\frac{1}{2}}a_{\vec{p}_{n}}^{\ast }b_{-\vec{p}_{n}}^{\ast }\right]
+e^{\frac{i}{\hbar }\left( E_{p_{n}}+E_{-p_{n}}\right) t} \\ 
++\left[ \left( \frac{E_{-p_{n}}}{E_{p_{n}}}\right) ^{\frac{1}{2}}b_{\vec{p}%
+_{n}}a_{-\vec{p}_{n}}-\left( \frac{E_{p_{n}}}{E_{-p_{n}}}\right) ^{\frac{1}{2%
+}}a_{-\vec{p}_{n}}b_{\vec{p}_{n}}\right] e^{-\frac{i}{\hbar }\left(
+E_{p_{n}}+E_{-p_{n}}\right) t} \\ 
+-\left[ \left( \frac{E_{p_{n}}}{E_{p_{n}}}\right) ^{\frac{1}{2}}b_{\vec{p}%
+_{n}}b_{\vec{p}_{n}}^{\ast }+\left( \frac{E_{p_{n}}}{E_{p_{n}}}\right) ^{%
+\frac{1}{2}}b_{\vec{p}_{n}}^{\ast }b_{\vec{p}_{n}}\right] e^{-\frac{i}{\hbar 
+}\left( E_{p_{n}}-E_{p_{n}}\right) t}%
+\end{array}%
+\right\} \\
+&=&\frac{e}{2}\sum_{\vec{p}_{n}}\left\{ a_{\vec{p}_{n}}^{\ast }a_{\vec{p}%
+_{n}}+a_{\vec{p}_{n}}a_{\vec{p}_{n}}^{\ast }+\left[ b_{-\vec{p}_{n}}^{\ast
+}a_{\vec{p}_{n}}^{\ast }-a_{\vec{p}_{n}}^{\ast }b_{-\vec{p}_{n}}^{\ast }%
+\right] e^{2\frac{i}{\hbar }E_{p_{n}}t}+\left[ b_{\vec{p}_{n}}a_{-\vec{p}%
+_{n}}-a_{-\vec{p}_{n}}b_{\vec{p}_{n}}\right] e^{-2\frac{i}{\hbar }%
+E_{p_{n}}t}-b_{\vec{p}_{n}}b_{\vec{p}_{n}}^{\ast }-b_{\vec{p}_{n}}^{\ast }b_{%
+\vec{p}_{n}}\right\} \\
+&=&e\sum_{\vec{p}_{n}}\left\{ a_{\vec{p}_{n}}^{\ast }a_{\vec{p}_{n}}-b_{\vec{%
+p}_{n}}^{\ast }b_{\vec{p}_{n}}\right\} .
+\end{eqnarray*}
+\subsection{Cuadricorriente:}%
+
+\begin{align*}
+\left(  \hbar^{2}D_{\mu}D^{\mu}+m^{2}c^{2}\right)  \psi & =0\\
+\left(  \hbar^{2}D_{\mu}D^{\mu}+m^{2}c^{2}\right)  \psi^{\ast}  & =0
+\end{align*}
+\begin{align*}
+\psi^{\ast}\left(  \hbar^{2}D_{\mu}D^{\mu}+m^{2}c^{2}\right)  \psi & =0\\
+\psi\left(  \hbar^{2}D_{\mu}D^{\mu}+m^{2}c^{2}\right)  \psi^{\ast}  & =0
+\end{align*}
+\begin{equation}
+\psi^{\ast}\left(  \hbar^{2}D_{\mu}D^{\mu}+m^{2}c^{2}\right)  \psi
+-\psi\left(  \hbar^{2}D_{\mu}D^{\mu}+m^{2}c^{2}\right)  \psi^{\ast}=0
+\end{equation}
+y usando el truco de Oelker,
+\begin{equation}
+\hbar^{2}D_{\mu}\left(  \psi^{\ast}D^{\mu}\psi-\psi D^{\mu}\psi^{\ast}\right)
+=0
+\end{equation}
+Por eso, si definimos una densidad de corriente para la carga,
+\begin{equation}
+j^{\mu}=\frac{i\hbar e}{2m}\left(  \psi^{\ast}D^{\mu}\psi-\psi D^{\mu}%
+\psi^{\ast}\right)
+\end{equation}
+Tendr'iamos
+\begin{equation}
+D_{\mu}j^{\mu}=0
+\end{equation}
+Si expresamos $D^{\mu}$ en forma expl'icita,
+\begin{equation}
+j^{\mu}=\frac{i\hbar e}{2m}\left(  \psi^{\ast}\partial^{\mu}\psi
+-\psi\partial^{\mu}\psi^{\ast}\right)  -\frac{e^{2}}{mc}A^{\mu}\psi^{\ast
+}\psi
+\end{equation}
+y en particular,
+\begin{equation}
+\rho_{\pm}=\frac{1}{c}j^{0^{\prime}}=\frac{1}{c}\frac{i\hbar e}{2m}\left(
+\psi_{\pm}^{\ast}D^{0}\psi_{\pm}-\psi_{\pm}D^{0}\psi_{\pm}^{\ast}\right)
+\end{equation}
+
+
+\begin{itemize}
+\item \textbf{Si consideramos part'iculas libres, }Entonces,
+\begin{align*}
+\psi_{\pm}  & =A_{\pm}e^{\frac{i}{\hbar}\left(  -p_{i}x^{i}\mp E_{p}t\right)
+}\\
+\psi_{\pm}^{\ast}  & =A_{\pm}e^{-\frac{i}{\hbar}\left(  -p_{i}x^{i}\mp
+E_{p}t\right)  }%
+\end{align*}
+y no hay campos de gauge. Entonces,
+\begin{align*}
+\rho_{\pm}  & =\frac{i\hbar e}{2mc}\left(  \psi_{\pm}^{\ast}\partial
+^{0}\psi_{\pm}-\psi_{\pm}\partial^{0}\psi_{\pm}^{\ast}\right) \\
+& =\frac{i\hbar e}{2mc^{2}}\left(  \psi_{\pm}^{\ast}\partial_{t}\psi_{\pm
+}-\psi_{\pm}\partial_{t}\psi_{\pm}^{\ast}\right) \\
+& =\pm\frac{e}{mc^{2}}E_{p}\psi_{\pm}^{\ast}\psi_{\pm}%
+\end{align*}
+Entonces, llegamos a la conclusi'on que $\psi_{+}$ significa cargas $+e$, y
+masa $m$; y que $\psi_{-}$ significa cargas $-e$ y masa $m$. La
+soluci'on siempre ser\'{a} una superposici'on lineal de \emph{ambos}
+tipos de estados.
+\end{itemize}
+
+\section{L'imite No Relativista de la ecuaci'on de Klein-Gordon}
+
+Hacemos el ansatz
+\begin{equation}
+\psi\left(  x^{\mu}\right)  =\varphi\left(  x^{i},t\right)  e^{-\frac{i}%
+{\hbar}mc^{2}t}%
+\end{equation}
+Tenemos que la energ'ia cin\'{e}tica es
+\begin{equation}
+E_{c}=E-mc^{2}%
+\end{equation}
+Si el caso es no relativista, sabemos que $E_{c}$ es peque\~{n}a.
+\begin{equation}
+E_{c}\ll mc^{2}%
+\end{equation}
+y adem\'{a}s, por alguna extra\~{n}a raz'on$\left(
+\text{\textquestiondown ?}\right)  $,
+\begin{equation}
+\left|  i\hbar\frac{\partial\varphi}{\partial t}\right|  \approx E_{c}%
+\varphi\ll mc^{2}\varphi
+\end{equation}
+y si calculamos las derivadas, se tiene que\newline%
+\begin{align*}
+\partial_{t}\psi & =\left[  \partial_{t}\varphi\left(  x^{i},t\right)
+-\frac{i}{\hbar}mc^{2}\varphi\left(  x^{i},t\right)  \right]  e^{-\frac
+{i}{\hbar}mc^{2}t}\\
+\partial_{t}^{2}\psi & =\partial_{t}\left\{  \left[  \partial_{t}%
+\varphi\left(  x^{i},t\right)  -\frac{i}{\hbar}mc^{2}\varphi\left(
+x^{i},t\right)  \right]  e^{-\frac{i}{\hbar}mc^{2}t}\right\} \\
+& =-\left(  -\partial_{t}^{2}\varphi\left(  x^{i},t\right)  +\frac{2i}{\hbar
+}mc^{2}\partial_{t}\varphi+\frac{1}{\hbar^{2}}m^{2}c^{4}%
+\varphi\right)  e^{-\frac{i}{\hbar}mc^{2}t}%
+\end{align*}
+Al parecer, se usa el argumento extra\~{n}o para decir que
+\begin{equation}
+\partial_{t}^{2}\psi\approx-\left(  \frac{2i}{\hbar}mc^{2}\partial
+_{t}\varphi+\frac{1}{\hbar^{2}}m^{2}c^{4}\varphi\right)  e^{-\frac
+{i}{\hbar}mc^{2}t}%
+\end{equation}
+Si insertamos esto dentro de la ecuaci'on de Klein-Gordon, llegamos a la
+ecuaci'on de Schroedinger para una part'icula libre sin spin,
+\begin{equation}
+i\hbar\partial_{t}\varphi=\hbar^{2}\frac{\partial_{i}\partial^{i}\varphi
+}{2m}=-\frac{\hbar^{2}}{2m}\nabla^{2}\varphi
+\end{equation}
+
+
+\subsection{Part'iculas libres de Spin-0}
+
+Vamos a suponer que nuestra part'icula, de carga $\ \pm e$, est\'{a}
+encerrada en un cubo de potencial, de arista $L$, o condiciones
+peri'odicas.
+\begin{equation}
+\psi_{n\left(  \pm\right)  }=A_{n\left(  \pm\right)  }e^{\frac{i}{\hbar
+}\left(  -p_{in}x^{i}\mp E_{pn}t\right)  }%
+\end{equation}
+\begin{equation}
+p_{in}=\frac{2\pi}{L}n_{i}\text{, }n_{i}=\text{entero negativo.}%
+\end{equation}
+\begin{equation}
+E_{pn}=c\sqrt{p_{n}^{2}+m^{2}c^{2}}%
+\end{equation}
+\begin{equation}
+\pm e=\int_{L^{3}}\rho_{\pm}d^{3}x
+\end{equation}
+\begin{equation}
+\rho_{\pm}=\pm\frac{e}{mc^{2}}E_{p}\psi_{\pm}^{\ast}\psi_{\pm}%
+\end{equation}
+\begin{align*}
+\pm e  & =\pm\int_{L^{3}}\frac{e}{mc^{2}}E_{pn}\psi_{\pm n}^{\ast}%
+\psi_{\pm n}d^{3}x\\
+1  & =\frac{1}{mc^{2}}\int_{L^{3}}E_{pn}\left|  A_{n\left(  \pm\right)
+}\right|  ^{2}d^{3}x\\
+mc^{2}  & =E_{pn}\left|  A_{n\left(  \pm\right)  }\right|  ^{2}L^{3}%
+\end{align*}
+\begin{equation}
+\left|  A_{n\left(  \pm\right)  }\right|  =\sqrt{\frac{mc^{2}}{E_{pn}%
+L^{3}}}%
+\end{equation}
+\begin{align*}
+\psi_{n\left(  \pm\right)  }  & =\sqrt{\frac{mc^{2}}{E_{pn}L^{3}}}%
+e^{\frac{i}{\hbar}\left(  -p_{in}x^{i}\mp E_{pn}t\right)  }\\
+\psi_{n\left(  +\right)  }  & =\sqrt{\frac{mc^{2}}{E_{pn}L^{3}}}%
+e^{\frac{i}{\hbar}\left(  -p_{in}x^{i}-E_{pn}t\right)  }\\
+\psi_{n\left(  -\right)  }  & =\sqrt{\frac{mc^{2}}{E_{pn}L^{3}}}%
+e^{\frac{i}{\hbar}\left(  -p_{in}x^{i}+E_{pn}t\right)  }%
+\end{align*}
+Entonces, para part'iculas positivas y negativas, se tiene
+respectivamente,
+\begin{align*}
+\psi_{\left(  +\right)  }  & =\sum_{n}a_{n}\psi_{n\left(  +\right)  }=\sum
+_{n}a_{n}\sqrt{\frac{mc^{2}}{L^{3}}}\frac{1}{\sqrt{E_{pn}}}e^{\frac
+{i}{\hbar}\left(  -p_{in}x^{i}-E_{pn}t\right)  }\\
+\psi_{\left(  -\right)  }  & =\sum_{n}b_{n}\psi_{n\left(  -\right)  }=\sum
+_{n}b_{n}\sqrt{\frac{mc^{2}}{L^{3}}}\frac{1}{\sqrt{E_{pn}}}e^{\frac
+{i}{\hbar}\left(  -p_{in}x^{i}+E_{pn}t\right)  }%
+\end{align*}
+Ahora bien, si una part'icula es neutra, se ve de la definici'on de
+densidad de carga que la funci'on de onda debe ser real;
+\begin{equation}
+\psi=\psi^{\ast}%
+\end{equation}
+Si uno, por una extra\~{n}a raz'on$\left(  \text{\textquestiondown ?}%
+\right)  $, supone que una part'icula neutra puede ser descrita por
+\begin{equation}
+\psi_{n\left(  0\right)  }=\frac{1}{\sqrt{2}}\left(  \psi_{n\left(  +\right)
+}\left(  \mathbf{p}_{n}\right)  +\psi_{n\left(  -\right)  }\left(
+-\mathbf{p}_{n}\right)  \right)
+\end{equation}
+y de ah'i,
+\begin{equation}
+\psi_{n\left(  0\right)  }=2\sqrt{\frac{mc^{2}}{2E_{pn}L^{3}}}\cos\left(
+\frac{-p_{in}x^{i}-E_{pn}t}{\hbar}\right)
+\end{equation}
+y claro,
+\begin{equation}
+\rho=0
+\end{equation}
+
+
+\subsection{La ecuaci'on de Klein-Gordon en la forma de una ecuaci'on de
+Schroedinger.}
+
+En la tarea 1, probamos que, usando las matrices de Pauli, que la ecuaci'on
+de Klein - Gordon puede ser escrita en la forma de una ecuaci'on de
+Schroedinger:
+\begin{equation}
+i\hbar\frac{\partial\mathbf{\Psi}}{\partial t}=H\mathbf{\Psi}%
+\end{equation}
+Con
+\begin{equation}
+\mathbf{\Psi}=\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right)
+\end{equation}
+Con
+\begin{equation}
+\varphi=\frac{1}{\sqrt{2}}\left(  \psi+i\frac{\hbar}{mc^{2}}\frac{\partial
+\psi}{\partial t}\right)  \text{, }\chi=\frac{1}{\sqrt{2}}\left(  \psi
+-i\frac{\hbar}{mc^{2}}\frac{\partial\psi}{\partial t}\right)
+\end{equation}
+y
+\begin{equation}
+H=-\frac{\hbar^{2}}{2m}\left(  \sigma_{3}+i\sigma_{2}\right)  \nabla
+^{2}+mc^{2}\sigma_{3}%
+\end{equation}
+Bueno, a partir de eso, es f\'{a}cil ver que tenemos dos soluciones, para
+energ'ia positiva y negativa.
+
+Ojo:
+\begin{equation}
+\psi=\frac{1}{\sqrt{2}}\left(  \varphi+\chi\right)
+\end{equation}
+
+
+\subsubsection{Energ'ia Positiva:}%
+
+\begin{equation}
+E=+E_{p}%
+\end{equation}
+\begin{equation}
+\mathbf{\Psi}^{+}\left(  \mathbf{p}\right)  =A_{\left(  +\right)  }\left(
+\begin{array}
+[c]{c}%
+\varphi_{0}^{\left(  +\right)  }\\
+\chi_{0}^{\left(  +\right)  }%
+\end{array}
+\right)  e^{\frac{i}{\hbar}\left(  -p_{i}x^{i}-E_{p}t\right)  }=\left(
+\begin{array}
+[c]{c}%
+\varphi^{\left(  +\right)  }\left(  \mathbf{p}\right) \\
+\chi^{\left(  +\right)  }\left(  \mathbf{p}\right)
+\end{array}
+\right)
+\end{equation}
+con
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\varphi_{0}^{\left(  +\right)  }\\
+\chi_{0}^{\left(  +\right)  }%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{c}%
+mc^{2}+E_{p}\\
+mc^{2}-E_{p}%
+\end{array}
+\right)
+\end{equation}
+\begin{equation}
+A_{\left(  +\right)  }=\frac{1}{\sqrt{E_{p}L^{3}}}\frac{1}{\sqrt{4mc^{2}}}%
+\end{equation}
+
+
+\subsubsection{Energ'ia Negativa.}%
+
+\begin{equation}
+E=-E_{p}%
+\end{equation}
+\begin{equation}
+\mathbf{\Psi}^{-}\left(  \mathbf{p}\right)  =A_{\left(  -\right)  }\left(
+\begin{array}
+[c]{c}%
+\varphi_{0}^{\left(  -\right)  }\\
+\chi_{0}^{-}%
+\end{array}
+\right)  e^{\frac{i}{\hbar}\left(  -p_{i}x^{i}+E_{p}t\right)  }=\left(
+\begin{array}
+[c]{c}%
+\varphi^{\left(  -\right)  }\left(  \mathbf{p}\right) \\
+\chi^{\left(  -\right)  }\left(  \mathbf{p}\right)
+\end{array}
+\right)
+\end{equation}
+con
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\varphi_{0}^{\left(  -\right)  }\\
+\chi_{0}^{\left(  -\right)  }%
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{c}%
+mc^{2}-E_{p}\\
+mc^{2}+E_{p}%
+\end{array}
+\right)
+\end{equation}
+\begin{equation}
+A_{\left(  -\right)  }=A_{\left(  +\right)  }=\frac{1}{\sqrt{E_{p}L^{3}}}%
+\frac{1}{\sqrt{4mc^{2}}}%
+\end{equation}
+
+
+\subsubsection{Conjugaci'on de Carga.}%
+
+\begin{align*}
+\Psi^{\left(  -\right)  }\left(  -\mathbf{p}\right)   & =\left(
+\begin{array}
+[c]{c}%
+\varphi^{\left(  -\right)  }\left(  -\mathbf{p}\right) \\
+\chi^{\left(  -\right)  }\left(  -\mathbf{p}\right)
+\end{array}
+\right) \\
+& =\left(
+\begin{array}
+[c]{c}%
+\chi^{\left(  +\right)  \ast}\left(  \mathbf{p}\right) \\
+\varphi^{\left(  +\right)  \ast}\left(  \mathbf{p}\right)
+\end{array}
+\right) \\
+& =\hat{\sigma}_{1}\Psi^{\left(  +\right)  }\left(  \mathbf{p}\right)
+\end{align*}
+Si el estado
+\begin{equation}
+\Psi=\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right)
+\end{equation}
+representa a una part'icula de carga positiva, entonces,
+\begin{equation}
+\hat{C}\Psi\hat{C}^{-1}=\Psi_{c}=\hat{\sigma}_{1}\Psi^{\ast}=\left(
+\begin{array}
+[c]{c}%
+\chi^{\ast}\\
+\varphi^{\ast}%
+\end{array}
+\right)
+\end{equation}
+Llamamos a $\Psi_{c}$ el estado de carga conjugado de $\Psi$.
+
+La conjugaci'on de carga implica las siguientes transformaciones:
+\begin{align*}
+\varphi_{0}^{\left(  +\right)  }  & \rightarrow\chi_{0}^{\left(  -\right)  }\\
+\chi_{0}^{\left(  +\right)  }  & \rightarrow\varphi_{0}^{\left(  -\right)  }\\
+\mathbf{p}  & \rightarrow-\mathbf{p}\\
++E_{p}  & \rightarrow-E_{p}%
+\end{align*}
+Si el estado $\Psi$ describe a una part'icula, el $\Psi_{c}$ a una antipart'icula.
+
+\subsubsection{Paridad.}
+
+Si la part'icula es neutra, es su propia antipart'icula.
+\begin{equation}
+\Psi_{c}=\sigma_{1}\Psi^{\ast}=\alpha\Psi
+\end{equation}
+El factor $\alpha$ debe ser real. Esto se puede deducir a partir de
+\begin{equation}
+\psi=\frac{1}{\sqrt{2}}\left(  \varphi+\chi\right)
+\end{equation}
+si la part'icula es neutra, $\psi$ es real, y por lo tanto,
+\begin{equation}
+\operatorname{Im}\left(  \varphi\right)  =-\operatorname{Im}\left(
+\chi\right)
+\end{equation}
+pero $\psi_{c}$ tambi\'{e}n debe serlo.
+\begin{equation}
+\operatorname{Im}\left(  \alpha\varphi\right)  =-\operatorname{Im}\left(
+\alpha\chi\right)
+\end{equation}
+De esas dos ecuaciones es directo demostrar que $\alpha$ es real.
+
+Adem\'{a}s, como
+\begin{equation}
+\left(  \Psi_{c}\right)  _{c}=\Psi
+\end{equation}
+\begin{equation}
+\Psi_{c}=\alpha\Psi
+\end{equation}
+\begin{align*}
+\left(  \alpha\Psi\right)  _{c}  & =\Psi\\
+\alpha\Psi_{c}  & =\Psi\\
+\alpha^{2}  & =1
+\end{align*}
+\begin{equation}
+\alpha=\pm1
+\end{equation}
+As'i, existen dos tipos de part'iculas:
+
+\begin{enumerate}
+\item Part'iculas neutras de spin-0 con \textbf{paridad de carga
+positiva}, $\alpha=+1$.
+\begin{equation}
+\Psi_{c}=\Psi
+\end{equation}
+\begin{equation}
+\Psi=\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right)
+\end{equation}
+\begin{equation}
+\hat{C}\Psi\hat{C}^{-1}=\Psi_{c}=\hat{\sigma}_{1}\Psi^{\ast}=\left(
+\begin{array}
+[c]{c}%
+\chi^{\ast}\\
+\varphi^{\ast}%
+\end{array}
+\right)
+\end{equation}
+\begin{equation}
+\varphi^{\ast}=\chi
+\end{equation}
+
+
+\item Part'iculas neutras de spin-0 con \textbf{paridad de carga
+negativa}, $\alpha=-1$.
+\begin{equation}
+\Psi_{c}=-\Psi
+\end{equation}
+\begin{equation}
+\Psi=\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right)
+\end{equation}
+\begin{equation}
+\hat{C}\Psi\hat{C}^{-1}=\Psi_{c}=\hat{\sigma}_{1}\Psi^{\ast}=\left(
+\begin{array}
+[c]{c}%
+\chi^{\ast}\\
+\varphi^{\ast}%
+\end{array}
+\right)  =-\left(
+\begin{array}
+[c]{c}%
+\varphi\\
+\chi
+\end{array}
+\right)
+\end{equation}
+\begin{equation}
+\varphi^{\ast}=-\chi
+\end{equation}
+
+\end{enumerate}
+
+\subsection{Interacci'on con el campo.}
+
+Siempre usamos el anzats
+\begin{equation}
+\psi\left(  t,x\right)  =\psi\left(  x\right)  e^{-\frac{i}{\hbar}\varepsilon
+t}%
+\end{equation}
+Analizamos s'olo casos de potencial electrost\'{a}tico... por ahora
+\begin{equation}
+e\phi\left(  r\right)  =U\left(  r\right)
+\end{equation}
+
+
+\begin{itemize}
+\item \textbf{Densidad de Carga}:
+\begin{equation}
+j^{\mu}=\frac{i\hbar e}{2m}\left(  \psi^{\ast}\partial^{\mu}\psi
+-\psi\partial^{\mu}\psi^{\ast}\right)  -\frac{e^{2}}{mc}A^{\mu}\psi^{\ast
+}\psi
+\end{equation}
+\begin{equation}
+j^{0}=\frac{e}{mc}\left(  \varepsilon-eA^{0}\right)  \psi^{\ast}%
+\psi\left(  r\right)
+\end{equation}
+\begin{equation}
+\rho=\frac{e}{mc^{2}}\left(  \varepsilon-eA^{0}\right)  \psi^{\ast}%
+\psi\left(  r\right)
+\end{equation}
+La densidad es positiva o negativa dependiendo del nivel de energ'ia en el
+que se encuentre.
+
+\item \textbf{Soluci'on de la Ecuaci'on, para potenciales }$U\left(
+x\right)  $:
+\begin{equation}
+\left(  \hbar^{2}D_{\mu}D^{\mu}+m^{2}c^{2}\right)  \psi=0
+\end{equation}
+\begin{equation}
+D_{\mu}=\partial_{\mu}+i\frac{e}{c\hbar}A_{\mu}%
+\end{equation}
+y entonces, la ecuaci'on K-G toma la forma:
+\begin{equation}
+\left(  \partial_{\mu}\partial^{\mu}+i\frac{e}{c\hbar}\partial_{\mu}A^{\mu
+}+i\frac{e}{c\hbar}A_{\mu}\partial^{\mu}-\frac{e^{2}}{c^{2}\hbar^{2}}A_{\mu
+}A^{\mu}+\frac{m^{2}c^{2}}{\hbar^{2}}\right)  \psi=0
+\end{equation}
+y si
+\begin{equation}
+A^{0}=\frac{U\left(  x\right)  }{e}%
+\end{equation}
+llegamos, tras algo de macanaca,
+\begin{equation}
+\left(  \frac{1}{c^{2}}\partial_{t}^{2}+\partial_{i}\partial^{i}+i2\frac
+{1}{c^{2}\hbar}U\partial_{t}-\frac{1}{c^{2}\hbar^{2}}U^{2}+\frac{m%
+^{2}c^{2}}{\hbar^{2}}\right)  \psi=0
+\end{equation}
+Si ahora usamos
+\begin{align*}
+\psi=\psi\left(  x\right)  e^{-\frac{i}{\hbar}\varepsilon t}\\
+\partial_{t}\psi=-\frac{i}{\hbar}\varepsilon\psi\\
+\partial_{t}^{2}\psi=-\frac{\varepsilon^{2}}{\hbar^{2}}\psi
+\end{align*}
+llegamos a la ecuaci'on de Helmholtz,
+\begin{equation}
+\left(  \nabla^{2}+k^{2}\left(  x\right)  \right)  \psi\left(  x\right)  =0
+\end{equation}
+con
+\begin{equation}
+k^{2}\left(  x\right)  =\frac{\left(  \varepsilon-U\left(  x\right)  \right)
+^{2}-m^{2}c^{4}}{c^{2}\hbar^{2}}%
+\end{equation}
+
+
+\item \textbf{Separaci'on de la parte angular y radial para simetr'ias
+esf\'{e}ricas}:
+\begin{equation}
+\left(  \nabla^{2}+k^{2}\left(  x\right)  \right)  \psi\left(  x\right)  =0
+\end{equation}
+El Laplaciano, en coordenadas esf\'{e}ricas, es
+\begin{equation}
+\nabla^{2}=\frac{1}{r^{2}}\partial_{r}\left(  r^{2}\partial_{r}\right)
++\frac{1}{r^{2}\operatorname{sen}\theta}\partial_{\theta}\left(
+\operatorname{sen}\theta\partial_{\theta}\right)  +\frac{1}{r^{2}%
+\operatorname{sen}^{2}\theta}\partial_{\phi}^{2}%
+\end{equation}
+y si usamos la tradicional separaci'on de variables,
+\begin{equation}
+\psi\left(  x\right)  =u\left(  r\right)  Y\left(  \theta,\phi\right)
+\end{equation}
+uno puede demostrar f\'{a}cilmente que
+\begin{equation}
+\frac{r^{2}}{\psi\left(  x\right)  }\nabla^{2}\psi\left(  x\right)  =\frac
+{1}{u}\partial_{r}r^{2}\partial_{r}u+\frac{1}{Y}\left[  \frac{1}%
+{\operatorname{sen}\theta}\partial_{\theta}\left(  \operatorname{sen}%
+\theta\partial_{\theta}\right)  Y+\frac{1}{\operatorname{sen}^{2}\theta
+}\partial_{\phi}^{2}Y\right]
+\end{equation}
+y de la ecuaci'on de Helmholtz, uno tiene que
+\begin{align*}
+\left(  \nabla^{2}+k^{2}\right)  \psi\left(  x\right)   & =0\\
+\frac{r^{2}}{\psi\left(  x\right)  }\nabla^{2}\psi\left(  x\right)
++r^{2}k^{2}  & =0
+\end{align*}
+y as'i,
+\begin{equation}
+\frac{1}{u}\partial_{r}r^{2}\partial_{r}u+r^{2}k^{2}\left(  r\right)
+=-\frac{1}{Y}\left[  \frac{1}{\operatorname{sen}\theta}\partial_{\theta
+}\left(  \operatorname{sen}\theta\partial_{\theta}\right)  Y+\frac
+{1}{\operatorname{sen}^{2}\theta}\partial_{\phi}^{2}Y\right]  =\lambda
+\end{equation}
+Para la parte radial,
+\begin{equation}
+\left\{  \partial_{r}r^{2}\partial_{r}+r^{2}k^{2}\left(  r\right)
+-\lambda\right\}  u=0
+\end{equation}
+y para la angular,
+\begin{equation}
+\left[  \frac{1}{\operatorname{sen}\theta}\partial_{\theta}\left(
+\operatorname{sen}\theta\partial_{\theta}\right)  +\frac{1}{\operatorname{sen}%
+^{2}\theta}\partial_{\phi}^{2}+\lambda\right]  Y=0
+\end{equation}
+La soluci'on de esta ecuaci'on son los arm'onicos esf\'{e}ricos
+$Y_{lm}$ con $\lambda=l\left(  l+1\right)  $, $l=0,1,2,...$, $m=\pm0,\pm
+1,\pm2,...$. Entonces,
+\begin{equation}
+\left\{  \partial_{r}r^{2}\partial_{r}+r^{2}k^{2}\left(  r\right)  -l\left(
+l+1\right)  \right\}  u=0
+\end{equation}
+Un ansatz com\'{u}n es:
+\begin{equation}
+u\left(  r\right)  =\frac{R\left(  r\right)  }{r}%
+\end{equation}
+con lo que tenemos
+\begin{equation}
+\left(  \partial_{r}^{2}-\frac{l\left(  l+1\right)  }{r^{2}}+k^{2}\right)
+R_{l}=0
+\end{equation}
+
+\end{itemize}
+
+\subsubsection{\'{A}tomo pi'onico $\left(  \text{mes'on }\pi^{-}\right)
+$ con n\'{u}cleo puntual.}
+
+Si hacemos
+\begin{equation}
+e\phi=U\left(  r\right)  =-\frac{Ze}{r}%
+\end{equation}
+y llamamos a la combinaci'on
+\begin{equation}
+\alpha=\frac{e^{2}}{\hbar c}%
+\end{equation}
+constante de estructura fina, llegamos, expandiendo lo que hay que expandir,
+a
+\begin{equation}
+\left(  \partial_{r}^{2}-\frac{l\left(  l+1\right)  -Z^{2}\alpha^{2}}{r^{2}%
+}+\frac{2Z\alpha\varepsilon}{\hbar c}\frac{1}{r}-\frac{m^{2}%
+c^{4}-\varepsilon^{2}}{c^{2}\hbar^{2}}\right)  R_{l}=0
+\end{equation}
+Calcularemos las energ'ias y las funciones de onda en el rango
+$-mc^{2}<\varepsilon<mc^{2}$. $\left(  \text{\textquestiondown ?}%
+\right)  $
+
+\textbf{Cambios de variable}:%
+
+\begin{align*}
+\beta & =2\sqrt{\frac{m^{2}c^{4}-\varepsilon^{2}}{c^{2}\hbar^{2}}}\\
+\rho & =\beta r\\
+\mu & =\sqrt{\left(  l+\frac{1}{2}\right)  ^{2}-\left(  Z\alpha\right)  ^{2}%
+}\\
+\lambda & =\frac{2Z\alpha\varepsilon}{\hbar c\beta}%
+\end{align*}
+llegamos a
+\begin{equation}
+\left(  \partial_{\rho}^{2}-\frac{\mu^{2}-\frac{1}{4}}{\rho^{2}}+\frac
+{\lambda}{\rho}-\frac{1}{4}\right)  R_{l}\left(  \rho\right)  =0
+\end{equation}
+
+
+\textbf{L'imites para justificar el anzats}:
+
+\begin{itemize}
+\item En el l'imite cuando $\rho\rightarrow\infty$,
+\begin{equation}
+\left(  \partial_{\rho}^{2}-\frac{1}{4}\right)  R_{l}\left(  \rho\right)  =0
+\end{equation}
+\begin{equation}
+R_{l}\left(  \rho\right)  _{\rho\rightarrow\infty}=ae^{-\rho/2}+be^{\rho/2}%
+\end{equation}
+y para que no diverja,
+\begin{equation}
+R_{l}\left(  \rho\right)  _{\rho\rightarrow\infty}=ae^{-\rho/2}%
+\end{equation}
+
+
+\item En el l'imite cuando $\rho\rightarrow0$,
+\begin{equation}
+\left(  \partial_{\rho}^{2}-\frac{\mu^{2}-\frac{1}{4}}{\rho^{2}}\right)
+R_{l}\left(  \rho\right)  =0
+\end{equation}
+Si suponemos
+\begin{equation}
+R_{l}\left(  \rho\right)  =a\rho^{\nu}%
+\end{equation}
+\begin{align*}
+a\nu\left(  \nu-1\right)  \rho^{\nu-2}-a\left(  \mu^{2}-\frac{1}{4}\right)
+\rho^{\nu-2}  & =0\\
+\nu\left(  \nu-1\right)  \rho^{\nu-2}-\left(  \mu^{2}-\frac{1}{4}\right)
+\rho^{\nu-2}  & =0\\
+\nu^{2}-\nu-\left(  \mu^{2}-\frac{1}{4}\right)   & =0
+\end{align*}
+\begin{equation}
+\nu_{\pm}=\frac{1}{2}\pm\sqrt{\frac{1}{4}+\mu^{2}-\frac{1}{4}}=\frac{1}{2}%
+\pm\mu
+\end{equation}
+Ahora bien, consideremos la funci'on $u\left(  r\right)  $:
+\begin{equation}
+u=\frac{R}{r}=a\frac{\rho^{\nu}}{r}=a\beta\rho^{\nu-1}%
+\end{equation}
+Si nos fijamos en la soluci'on particular $l=0$,
+\begin{equation}
+\mu=\sqrt{\frac{1}{4}-\left(  Z\alpha\right)  ^{2}}\Rightarrow\nu_{\pm}%
+=\frac{1}{2}\pm\sqrt{\frac{1}{4}-\left(  Z\alpha\right)  ^{2}}%
+\end{equation}
+\begin{equation}
+u=a\beta\rho^{\nu-1}=a\beta\rho^{\pm\sqrt{\frac{1}{4}-\left(  Z\alpha\right)
+^{2}}-\frac{1}{2}}%
+\end{equation}
+y si consideramos el signo menos en $\nu_{\pm}$, se podr'ia dar el caso
+que la soluci'on diverja en $\rho=0$. Si tomamos $+$, puede normalizarse.
+Para $l=0$, la funci'on de onda es real si $Z\alpha<\frac{1}{2}$.
+\end{itemize}
+
+Haremos el siguiente anzats:
+\begin{equation}
+R_{l}=N\rho^{\frac{1}{2}+\mu}e^{-\rho/2}f\left(  \rho\right)
+\end{equation}
+Reemplazando en
+\begin{equation}
+\left(  d_{\rho}^{2}-\frac{\mu^{2}-\frac{1}{4}}{\rho^{2}}+\frac{\lambda}{\rho
+}-\frac{1}{4}\right)  R_{l}\left(  \rho\right)  =0
+\end{equation}
+se supone que se llega a
+\begin{equation}
+\frac{d^{2}f}{d\rho^{2}}+\left(  \frac{2\mu+1}{\rho}-1\right)  \frac{df}%
+{d\rho}-\frac{\mu+\frac{1}{2}-\lambda}{\rho}f=0
+\end{equation}
+
+
+Cambios de variable:
+\begin{align*}
+2\mu+1  & =c\\
+\mu+\frac{1}{2}-\lambda & =a
+\end{align*}
+\begin{equation}
+\frac{d^{2}f}{d\rho^{2}}+\left(  \frac{c}{\rho}-1\right)  \frac{df}{d\rho
+}-\frac{a}{\rho}f=0
+\end{equation}
+
+
+Podemos, para tratar de solucionar esta ecuaci'on, de expresar a $f$ en
+series:
+\begin{equation}
+f=\sum_{n=0}^{\infty}a_{n}\rho^{n}%
+\end{equation}
+\begin{align*}
+d_{\rho}f  & =\sum_{n=0}^{\infty}a_{n}n\rho^{n-1}=\sum_{n=1}^{\infty}%
+a_{n}n\rho^{n-1}\\
+d_{\rho}^{2}f  & =\sum_{n=0}^{\infty}a_{n}n\left(  n-1\right)  \rho^{n-2}%
+=\sum_{n=2}^{\infty}a_{n}n\left(  n-1\right)  \rho^{n-2}%
+\end{align*}
+\begin{align*}
+\sum_{n=2}^{\infty}a_{n}n\left(  n-1\right)  \rho^{n-2}+\left(  \frac{c}{\rho
+}-1\right)  \sum_{n=1}^{\infty}a_{n}n\rho^{n-1}-\frac{a}{\rho}\sum
+_{n=0}^{\infty}a_{n}\rho^{n}  & =0\\
+\sum_{n=2}^{\infty}a_{n}n\left(  n-1\right)  \rho^{n-2}+\frac{c}{\rho}%
+\sum_{n=1}^{\infty}a_{n}n\rho^{n-1}-\sum_{n=1}^{\infty}a_{n}n\rho^{n-1}%
+-\frac{a}{\rho}\sum_{n=0}^{\infty}a_{n}\rho^{n}  & =0\\
+\sum_{n=2}^{\infty}a_{n}n\left(  n-1\right)  \rho^{n-2}+c\sum_{n=1}^{\infty
+}a_{n}n\rho^{n-2}-\sum_{n=1}^{\infty}a_{n}n\rho^{n-1}-a\sum_{n=0}^{\infty
+}a_{n}\rho^{n-1}  & =0
+\end{align*}
+\begin{align*}
+m  & =n-2\\
+p  & =n-1
+\end{align*}
+\begin{align*}
+\sum_{m=0}^{\infty}a_{m+2}\left(  m+2\right)  \left(  m+1\right)  \rho
+^{m}+c\sum_{m=-1}^{\infty}a_{m+2}\left(  m+2\right)  \rho^{m}-\sum
+_{p=0}^{\infty}a_{p+1}\left(  p+1\right)  \rho^{p}-a\sum_{p=-1}^{\infty
+}a_{p+1}\rho^{p}  & =0\\
+\sum_{m=0}^{\infty}a_{m+2}\left(  m+2\right)  \left(  m+1\right)  \rho
+^{m}+c\sum_{m=-1}^{\infty}a_{m+2}\left(  m+2\right)  \rho^{m}-\sum
+_{m=0}^{\infty}a_{m+1}\left(  m+1\right)  \rho^{m}-a\sum_{m=-1}^{\infty
+}a_{m+1}\rho^{m}  & =0\\
+a_{m+2}\left(  m+2\right)  \left(  m+1\right)  +ca_{m+2}\left(  m+2\right)
+-a_{m+1}\left(  m+1\right)  -aa_{m+1}  & =0
+\end{align*}
+\begin{equation}
+a_{m+2}\left(  m+2\right)  \left(  m+1\right)  +ca_{m+2}\left(  m+2\right)
+=a_{m+1}\left(  m+1\right)  +aa_{m+1}%
+\end{equation}
+\begin{equation}
+n=m+2
+\end{equation}
+\begin{align*}
+a_{n}n\left(  n-1\right)  +ca_{n}n  & =a_{n-1}\left(  n-1\right)  +aa_{n-1}\\
+a_{n}n\left[  n+c-1\right]   & =a_{n-1}\left[  n+a-1\right] \\
+a_{n}  & =a_{n-1}\frac{1}{n}\frac{n+a-1}{n+c-1}%
+\end{align*}
+\begin{align*}
+a_{1}  & =a_{0}\frac{a}{c}\\
+a_{2}  & =a_{1}\frac{\left[  2+a-1\right]  }{2\left[  2+c-1\right]  }\\
+& =\frac{1}{2}a_{1}\frac{a+1}{c+1}\\
+& =\frac{1}{2}a_{0}\frac{a}{c}\frac{a+1}{c+1}\\
+a_{3}  & =\frac{1}{2}\frac{1}{3}a_{0}\frac{a}{c}\frac{a+1}{c+1}\frac{a+2}%
+{c+2}\\
+a_{n}  & =a_{0}\frac{1}{n!}\frac{\left(  a+n-1\right)  !}{\left(
+c+n-1\right)  !}%
+\end{align*}
+\begin{equation}
+f=a_{0}\sum_{n=0}^{\infty}\frac{1}{n!}\frac{\left(  a+n-1\right)  !}{\left(
+c+n-1\right)  !}\rho^{n}%
+\end{equation}
+Y esta es la funci'on hipergeom\'{e}trica confluyente $_{1}F_{1}\left(
+a,c;\rho\right)  $. Pero esta funci'on diverge para $\rho\rightarrow\infty$
+como
+\begin{equation}
+_{1}F_{1}\left(  a,c;\rho\rightarrow\infty\right)  \rightarrow\frac
+{\Gamma\left(  c\right)  }{\Gamma\left(  a\right)  }\rho^{a-c}e^{\rho}%
+\end{equation}
+Entonces, para que la normalizaci'on sea posible, debe existir alg\'{u}n
+valor de $n$ en donde la serie se corte. Para ello, pedimos que $a$ sea un
+n\'{u}mero entero negativo. Entonces, debe existir alg\'{u}n $n^{\prime}$ tal
+que
+\begin{equation}
+a+n^{\prime}=0
+\end{equation}
+y entonces, todos los t\'{e}rminos $a_{p}$ con $p>n^{\prime}$, ser\'{a}n cero,
+pues
+\begin{equation}
+a_{n}=a_{0}\frac{1}{n!}\frac{\left(  a+n-1\right)  !}{\left(  c+n-1\right)  !}%
+\end{equation}
+
+
+Ahora bien, hab'iamos definido
+\begin{equation}
+\mu+\frac{1}{2}-\lambda=a
+\end{equation}
+pero $a=-n^{\prime}$, as'i que
+\begin{equation}
+\mu+\frac{1}{2}-\lambda+n^{\prime}=0
+\end{equation}
+Pero resulta que
+\begin{equation}
+\lambda=\frac{2Z\alpha\varepsilon}{\hbar c\beta}%
+\end{equation}
+y entonces,
+\begin{equation}
+\mu+\frac{1}{2}+n^{\prime}=\frac{2Z\alpha\varepsilon}{\hbar c\beta}%
+\end{equation}
+Reemplazando
+\begin{equation}
+\beta=2\sqrt{\frac{m^{2}c^{4}-\varepsilon^{2}}{c^{2}\hbar^{2}}}%
+\end{equation}
+\begin{equation}
+\mu=\sqrt{\left(  l+\frac{1}{2}\right)  ^{2}-\left(  Z\alpha\right)  ^{2}}%
+\end{equation}
+Se llega, tras un poco de macanaca, a:
+\begin{equation}
+mc^{2}\left(  1+\frac{Z^{2}\alpha^{2}}{\left(  \sqrt{\left(  l+\frac{1}%
+{2}\right)  ^{2}-\left(  Z\alpha\right)  ^{2}}+\frac{1}{2}+n^{\prime}\right)
+^{2}}\right)  ^{-1/2}=\varepsilon_{n^{\prime}l}%
+\end{equation}
+Si llamamos al n\'{u}mero cu\'{a}ntico principal
+\begin{equation}
+n=n^{\prime}+l+1
+\end{equation}
+\begin{equation}
+mc^{2}\left(  1+\frac{Z^{2}\alpha^{2}}{\left(  \sqrt{\left(  l+\frac{1}%
+{2}\right)  ^{2}-\left(  Z\alpha\right)  ^{2}}+\frac{1}{2}+n-l-1\right)  ^{2}%
+}\right)  ^{-1/2}=\varepsilon_{n^{\prime}l}%
+\end{equation}
+Si expandimos en series,
+\begin{equation}
+mc^{2}\left(  1-\frac{Z^{2}\alpha^{2}}{2n^{2}}-\frac{Z\alpha^{4}}{2n^{4}%
+}\left(  \frac{n}{l+\frac{1}{2}}-\frac{3}{4}\right)  +...\right)
+^{-1/2}=\varepsilon_{n^{\prime}l}%
+\end{equation}
+Energ'ia de reposo, eigenvalor de Schroedinger, y correcci'on relativista.
+
+\subsubsection{Soluci'on para un potencial esf\'{e}rico cuadrado:}%
+
+\begin{equation}
+V\left(  x\right)  =\left\{
+\begin{array}
+[c]{l}%
+-V_{0}\text{ para }r\leq R\\
+0\text{ \ \ \ \ \ para }r>R
+\end{array}
+\right.
+\end{equation}
+\begin{equation}
+k\left(  x\right)  =\frac{1}{c\hbar}\sqrt{\left(  \varepsilon-V\left(
+x\right)  \right)  ^{2}-m^{2}c^{4}}%
+\end{equation}
+\begin{align*}
+k_{i}\left(  r\leq R\right)   & =\frac{1}{c\hbar}\sqrt{\left(  \varepsilon
++V_{0}\right)  ^{2}-m^{2}c^{4}}\\
+k_{o}\left(  r>R\right)   & =\frac{1}{c\hbar}\sqrt{\varepsilon^{2}-m%
+^{2}c^{4}}%
+\end{align*}
+Usamos
+\begin{equation}
+\left\{  \partial_{r}r^{2}\partial_{r}+r^{2}k^{2}\left(  r\right)  -l\left(
+l+1\right)  \right\}  u=0
+\end{equation}
+y la substituci'on
+\begin{equation}
+\rho=k\left(  r\right)  r
+\end{equation}
+para llegar a la ecuaci'on diferencial de Bessel:
+\begin{equation}
+\left(  2\rho\frac{d}{d\rho}+\rho^{2}\frac{d^{2}}{d\rho^{2}}-l\left(
+l+1\right)  +\rho^{2}\right)  u\left(  \rho\right)  =0
+\end{equation}
+La soluci'on para $r\leq R$ es
+\begin{equation}
+u\left(  \rho\right)  =Nj_{l}\left(  \rho\right)  =Nj_{l}\left(
+k_{i}r\right)
+\end{equation}
+(ESTO ES MUY RARO. \textquestiondown SON LAS ESPECIALES? \textquestiondown Y
+LA SUMATORIA?) en donde no hemos usado las funciones de Neumann $n_{l}(\rho)$ debido a que divergen en cero.
+
+Las funciones de Bessel pueden ser calculadas en forma muy f\'{a}cil, a partir
+de
+\begin{align*}
+j_{0}\left(  \rho\right)   & =\frac{\operatorname{sen}\rho}{\rho}\\
+j_{1}\left(  \rho\right)   & =\frac{\operatorname{sen}\rho}{\rho^{2}}%
+-\frac{\cos\rho}{\rho}%
+\end{align*}
+y usando la relaci'on de recurrencia
+\begin{align*}
+f_{n-1}+f_{n+1}  & =\left(  2n+1\right)  \rho^{-1}f_{n}\\
+\left(  2n+1\right)  \frac{df_{n}}{d\rho}  & =nf_{n-1}-\left(  n+1\right)
+f_{n+1}%
+\end{align*}
+relaci'on que cumplen las funciones de Bessel, de Neumann y de Hankel:
+\begin{align*}
+h_{n}^{\left(  1\right)  }\left(  \rho\right)   & =j_{n}\left(  \rho\right)
++in_{n}\left(  \rho\right) \\
+h_{n}^{\left(  2\right)  }\left(  \rho\right)   & =j_{n}\left(  \rho\right)
+-in_{n}\left(  \rho\right)
+\end{align*}
+Ahora, si nos preocupamos de la regi'on externa, y hacemos la
+sustituci'on $\rho=ikr$ en vez de $kr$, recordando que $k$ es constante,
+llegamos a
+\begin{equation}
+\frac{d^{2}u}{d\rho^{2}}+2\rho^{-1}\frac{du}{d\rho}-\left(  1+\frac{l\left(
+l+1\right)  }{\rho^{2}}\right)  u=0
+\end{equation}
+A lo que no hay que llegar. Si no hacemos eso, sino que consideramos la
+ecuaci'on diferencial de Bessel,
+\begin{equation}
+\left(  2\rho\frac{d}{d\rho}+\rho^{2}\frac{d^{2}}{d\rho^{2}}-l\left(
+l+1\right)  +\rho^{2}\right)  u\left(  \rho\right)  =0
+\end{equation}
+podemos reescribirla como
+\begin{equation}
+2\rho^{-1}\frac{du}{d\rho}+\frac{d^{2}u}{d\rho^{2}}+\left[  1-\frac{l\left(
+l+1\right)  }{\rho^{2}}\right]  u=0
+\end{equation}
+que si no fuera por el exponente $-1$ ser'ia lo del libro. La soluci'on
+general de esa ecuaci'on es
+\begin{equation}
+h_{l}^{\left(  1\right)  }\left(  \rho\right)  =j_{l}\left(  \rho\right)
++in_{l}\left(  \rho\right)
+\end{equation}
+y no se usa $h_{l}^{\left(  2\right)  }$, pues, \textexclamdown diverge en
+$\rho=\infty$!! Para un argumento imaginario, la funci'on de Hankel de
+primer tipo est\'{a} dada por
+\begin{align*}
+h_{0}^{\left(  1\right)  }\left(  i\beta r\right)   & =-\frac{1}{\beta
+r}e^{-\beta r}\\
+h_{1}^{\left(  1\right)  }\left(  i\beta r\right)   & =i\left(  \frac{1}{\beta
+r}+\frac{1}{\beta^{2}r^{2}}\right)  e^{-\beta r}\\
+h_{2}^{\left(  1\right)  }\left(  i\beta r\right)   & =i\left(  \frac{1}{\beta
+r}+\frac{3}{\beta^{2}r^{2}}+\frac{3}{\beta^{3}r^{3}}\right)  e^{-\beta r}%
+\end{align*}
+y pa' mas, podemos usar la relaci'on de recurrencia.
+
+Para determinar el eigenvalor de energ'ia $\varepsilon$, requerimos que
+sea iguales la funci'on y su derivada en $r=R$, as'i que
+\begin{equation}
+\frac{1}{u_{i}}\frac{du_{i}}{dr}=\frac{1}{u_{o}}\frac{du_{o}}{dr}\text{ en
+}r=R\text{.}%
+\end{equation}
+para que las constantes de normalizaci'on se cancelen. As'i que se debe
+cumplir
+\begin{equation}
+\frac{j_{l}^{\prime}\left(  k_{i}R\right)  }{j_{l}\left(  k_{i}R\right)
+}=\frac{h_{l}^{\left(  1\right)  \prime}\left(  ik_{o}R\right)  }%
+{h_{l}^{\left(  1\right)  }\left(  ik_{o}R\right)  }%
+\end{equation}
+para el nivel base, $l=0$,
+\begin{equation}
+k_{i}\cot\left(  k_{i}R\right)  =-k_{o}%
+\end{equation}
+e iterando uno puede obtener m\'{a}s ecuaciones trascendentes de donde
+despejar $\varepsilon$.
+
+\subsection{Gauge:}
+
+Bajo la transformaci'on
+\begin{equation}
+A_{\mu}\rightarrow A_{\mu^{\prime}}=A_{\mu}+\partial_{\mu}\chi\left(
+x\right)
+\end{equation}
+se puede ver, reemplazando en la ecuaci'on K-G, que
+\begin{equation}
+\psi\left(  x\right)  \rightarrow\psi^{\prime}\left(  x\right)  =e^{\frac
+{ie}{\hbar c}\chi\left(  x\right)  }\psi\left(  x\right)
+\end{equation}
+
+\section{Problemas.}
+
+\begin{enumerate}
+\item El campo real de Klein-Gordon es descrito por la densidad Hamiltoniana
+\begin{equation}
+\mathcal{H}=\frac{1}{2}\left[ c^{2}\pi ^{2}(x) +\left( {\bf %
+\nabla }\phi \right) ^{2}+\mu ^{2}\phi ^{2}\right]
+\end{equation}
+
+ Use las relaciones de conmutaci'on
+\begin{eqnarray*}
+\left[ \phi _{r}\left( \vec{x},t\right) ,\pi _{s}\left( \vec{x}%
+^{\prime },t\right) \right] &=&i\hbar \delta _{rs}\delta \left( \vec{x}%
+-\vec{x}^{\prime }\right) \\
+\left[ \phi _{r}\left( \vec{x},t\right) ,\phi _{s}\left( \vec{x}%
+^{\prime },t\right) \right] &=&0 \\
+\left[ \pi _{r}\left( \vec{x},t\right) ,\pi _{s}\left( \vec{x}^{\prime
+},t\right) \right] &=&0
+\end{eqnarray*}
+para demostrar que
+\begin{eqnarray*}
+\left[ H,\phi (x) \right] &=&-i\hbar c^{2}\pi (x) 
+\\
+\left[ H,\pi (x) \right] &=&i\hbar \left( \mu ^{2}-{\bf %
+\nabla }^{2}\right) \phi (x) 
+\end{eqnarray*}
+donde $H$ es el Hamiltoniano del campo.
+
+\textbf{Soluci'on}:
+
+Sabemos que
+\begin{equation}
+H=\int d^{3}\vec{x}\mathcal{H}
+\end{equation}
+con
+\begin{equation}
+\mathcal{H}=\frac{1}{2}\left[ c^{2}\pi ^{2}-\left( \partial _{s}\phi \right)
+\left( \partial ^{s}\phi \right) +\mu ^{2}\phi ^{2}\right] 
+\end{equation}
+Entonces,
+\begin{eqnarray*}
+\left[ H,\phi \left( \vec{x}\right) \right] &=&\left[ \int d^{3}{\bf x%
+}\frac{1}{2}\left[ c^{2}\pi ^{2}-\left( \partial _{s}\phi \right) \left(
+\partial ^{s}\phi \right) +\mu ^{2}\phi ^{2}\right] ,\phi \left( \vec{x}%
+^{\prime }\right) \right] \\
+&=&\left[ \int d^{3}\vec{x}\frac{1}{2}\left[ c^{2}\pi ^{2}-\left(
+\partial _{s}\phi \right) \left( \partial ^{s}\phi \right) +\mu ^{2}\phi ^{2}%
+\right] ,\phi \left( \vec{x}^{\prime }\right) \right] \\
+&=&\frac{1}{2}c^{2}\left[ \int d^{3}\vec{x}\pi ^{2},\phi \left( \vec{x}%
+^{\prime }\right) \right] -\frac{1}{2}\left[ \int d^{3}\vec{x}\left(
+\partial _{s}\phi \right) \left( \partial ^{s}\phi \right) ,\phi \left( 
+\vec{x}^{\prime }\right) \right] + \\
+&&+\frac{1}{2}\mu ^{2}\left[ \int d^{3}\vec{x}\phi ,\phi ^{2}\left( 
+\vec{x}^{\prime }\right) \right] \\
+&=&\frac{1}{2}c^{2}\left[ \int d^{3}\vec{x}\pi ^{2},\phi \left( \vec{x}%
+^{\prime }\right) \right] -\frac{1}{2}\left[ \int d^{3}\vec{x}\left(
+\partial _{s}\phi \right) \left( \partial ^{s}\phi \right) ,\phi \left( 
+\vec{x}^{\prime }\right) \right] \\
+&=&\frac{1}{2}c^{2}\int d^{3}\vec{x}\left[ \pi ^{2},\phi \left( \vec{x}%
+^{\prime }\right) \right] -\frac{1}{2}\int d^{3}\vec{x}\left[ \left(
+\partial _{s}\phi \right) \left( \partial ^{s}\phi \right) ,\phi \left( 
+\vec{x}^{\prime }\right) \right] 
+\end{eqnarray*}
+Como
+\begin{equation}
+\left[ AB,C\right] =A\left[ B,C\right] +\left[ A,C\right] B
+\end{equation}
+entonces
+\begin{eqnarray*}
+\left[ H,\phi \left( \vec{x}\right) \right] &=&\frac{1}{2}c^{2}\int d^{3}%
+\vec{x}\left[ \pi ,\phi \left( \vec{x}^{\prime }\right) \right] \pi +%
+\frac{1}{2}c^{2}\int d^{3}\vec{x}\pi \left[ \pi ,\phi \left( \vec{x}%
+^{\prime }\right) \right] + \\
+&&-\frac{1}{2}\int d^{3}\vec{x}\left( \partial _{s}\phi \right) \left[
+\left( \partial ^{s}\phi \right) ,\phi \left( \vec{x}^{\prime }\right) %
+\right] -\frac{1}{2}\int d^{3}\vec{x}\left[ \left( \partial _{s}\phi
+\right) ,\phi \left( \vec{x}^{\prime }\right) \right] \left( \partial
+^{s}\phi \right) \\
+&=&c^{2}\int d^{3}\vec{x}\left[ \pi ,\phi \left( \vec{x}^{\prime
+}\right) \right] \pi -\int d^{3}\vec{x}\left[ \partial _{s}\phi ,\phi
+\left( \vec{x}^{\prime }\right) \right] \partial ^{s}\phi 
+\end{eqnarray*}
+Como
+\begin{eqnarray*}
+\left[ \phi _{r}\left( \vec{x},t\right) ,\pi _{s}\left( \vec{x}%
+^{\prime },t\right) \right] &=&i\hbar \delta _{rs}\delta \left( \vec{x}%
+-\vec{x}^{\prime }\right) \\
+\left[ \phi _{r}\left( \vec{x},t\right) ,\phi _{s}\left( \vec{x}%
+^{\prime },t\right) \right] &=&0 \\
+\left[ \pi _{r}\left( \vec{x},t\right) ,\pi _{s}\left( \vec{x}^{\prime
+},t\right) \right] &=&0
+\end{eqnarray*}
+entonces
+\begin{eqnarray*}
+\left[ H,\phi \left( \vec{x}^{\prime }\right) \right] &=&c^{2}\int d^{3}%
+\vec{x}\left[ \pi \left( \vec{x}\right) ,\phi \left( \vec{x}%
+^{\prime }\right) \right] \pi \left( \vec{x}\right) -\int d^{3}\vec{x}%
+\left[ \partial _{s}\phi \left( \vec{x}\right) ,\phi \left( \vec{x}%
+^{\prime }\right) \right] \partial ^{s}\phi \left( \vec{x}\right) \\
+&=&-ic^{2}\hbar \int d^{3}\vec{x}\delta \left( \vec{x}-\vec{x}%
+^{\prime }\right) \pi \left( \vec{x}\right) -\int d^{3}\vec{x}\left[
+\partial _{s}\phi \left( \vec{x}\right) ,\phi \left( \vec{x}^{\prime
+}\right) \right] \partial ^{s}\phi \left( \vec{x}\right) \\
+&=&-ic^{2}\hbar \pi \left( \vec{x}^{\prime }\right) -\int d^{3}{\bf x%
+}\left[ \partial _{s}\phi \left( \vec{x}\right) ,\phi \left( \vec{x}%
+^{\prime }\right) \right] \partial ^{s}\phi \left( \vec{x}\right) 
+\end{eqnarray*}
+Ahora bien, recordemos que
+\begin{equation}
+\left[ A\left( \vec{x},t\right) ,B\left( {\bf y},t\right) \right]
+=i\hbar \left( \frac{\delta A\left( \vec{x},t\right) }{\delta \phi
+^{A}\left( {\bf z},t\right) }\frac{\delta B\left( {\bf y},t\right) }{%
+\delta \pi _{A}\left( {\bf z},t\right) }-\frac{\delta A\left( \vec{x}%
+,t\right) }{\delta \pi _{A}\left( {\bf z},t\right) }\frac{\delta B\left( 
+{\bf y},t\right) }{\delta \phi ^{A}\left( {\bf z},t\right) }\right) 
+\end{equation}
+en donde $\delta $ representa la derivada funcional.
+
+As'i,
+\begin{eqnarray*}
+\left[ \partial _{s}\phi \left( \vec{x}\right) ,\phi \left( \vec{x}%
+^{\prime }\right) \right] &=&i\hbar \left( \frac{\delta \partial _{s}\phi
+\left( \vec{x},t\right) }{\delta \phi \left( {\bf z},t\right) }\frac{%
+\delta \phi \left( \vec{x}^{\prime },t\right) }{\delta \pi \left( {\bf %
+z},t\right) }-\frac{\delta \partial _{s}\phi \left( \vec{x},t\right) }{%
+\delta \pi \left( {\bf z},t\right) }\frac{\delta \phi \left( \vec{x}%
+^{\prime },t\right) }{\delta \phi \left( {\bf z},t\right) }\right) \\
+&=&-i\hbar \frac{\delta \partial _{s}\phi \left( \vec{x},t\right) }{%
+\delta \pi \left( {\bf z},t\right) }\frac{\delta \phi \left( \vec{x}%
+^{\prime },t\right) }{\delta \phi \left( {\bf z},t\right) } \\
+&=&-i\hbar \frac{\partial _{s}\delta \phi \left( \vec{x},t\right) }{%
+\delta \pi \left( {\bf z},t\right) }\frac{\delta \phi \left( \vec{x}%
+^{\prime },t\right) }{\delta \phi \left( {\bf z},t\right) } \\
+&=&0
+\end{eqnarray*}
+y por lo tanto,
+\begin{equation}
+\left[ H,\phi \left( \vec{x}\right) \right] =-i\hbar c^{2}\pi \left( 
+\vec{x}\right) 
+\end{equation}
+
+De la misma forma,
+\begin{eqnarray*}
+\left[ H\left( \vec{x}\right) ,\pi \left( \vec{x}^{\prime }\right) %
+\right] &=&\frac{1}{2}c^{2}\left[ \int d^{3}\vec{x}\pi ^{2}\left( 
+\vec{x}\right) ,\pi \left( \vec{x}^{\prime }\right) \right] -\frac{1}{2%
+}\left[ \int d^{3}\vec{x}\left( \partial _{s}\phi \left( \vec{x}%
+\right) \right) \left( \partial ^{s}\phi \left( \vec{x}\right) \right)
+,\pi \left( \vec{x}^{\prime }\right) \right] +\frac{1}{2}\mu ^{2}\left[
+\int d^{3}\vec{x}\phi ^{2}\left( \vec{x}\right) ,\pi \left( \vec{x}%
+^{\prime }\right) \right] \\
+&=&-\frac{1}{2}\int d^{3}\vec{x}\left[ \left( \partial _{s}\phi \left( 
+\vec{x}\right) \right) \left( \partial ^{s}\phi \left( \vec{x}\right)
+\right) ,\pi \left( \vec{x}^{\prime }\right) \right] +\frac{1}{2}\mu
+^{2}\int d^{3}\vec{x}\left[ \phi ^{2}\left( \vec{x}\right) ,\pi \left( 
+\vec{x}^{\prime }\right) \right] \\
+&=&-\frac{1}{2}\int d^{3}\vec{x}\left( \partial _{s}\phi \left( \vec{x}%
+\right) \right) \left[ \partial ^{s}\phi \left( \vec{x}\right) ,\pi
+\left( \vec{x}^{\prime }\right) \right] -\frac{1}{2}\int d^{3}\vec{x}%
+\left[ \partial _{s}\phi \left( \vec{x}\right) ,\pi \left( \vec{x}%
+^{\prime }\right) \right] \partial ^{s}\phi \left( \vec{x}\right) + \\
+&&+\frac{1}{2}\mu ^{2}\int d^{3}\vec{x}\phi \left( \vec{x}\right) %
+\left[ \phi \left( \vec{x}\right) ,\pi \left( \vec{x}^{\prime }\right) %
+\right] +\frac{1}{2}\mu ^{2}\int d^{3}\vec{x}\left[ \phi \left( \vec{x}%
+\right) ,\pi \left( \vec{x}^{\prime }\right) \right] \phi \left( {\bf x%
+}\right) \\
+&=&-\int d^{3}\vec{x}\left[ \partial _{s}\phi \left( \vec{x}\right)
+,\pi \left( \vec{x}^{\prime }\right) \right] \partial ^{s}\phi \left( 
+\vec{x}\right) +\mu ^{2}\int d^{3}\vec{x}\left[ \phi \left( \vec{x}%
+\right) ,\pi \left( \vec{x}^{\prime }\right) \right] \phi \left( {\bf x%
+}\right) \\
+&=&-\int d^{3}\vec{x}\left[ \partial _{s}\phi \left( \vec{x}\right)
+,\pi \left( \vec{x}^{\prime }\right) \right] \partial ^{s}\phi \left( 
+\vec{x}\right) +i\mu ^{2}\hbar \int d^{3}\vec{x}\delta \left( 
+\vec{x}-\vec{x}^{\prime }\right) \phi \left( \vec{x}\right) \\
+&=&-\int d^{3}\vec{x}\left[ \partial _{s}\phi \left( \vec{x}\right)
+,\pi \left( \vec{x}^{\prime }\right) \right] \partial ^{s}\phi \left( 
+\vec{x}\right) +i\mu ^{2}\hbar \phi \left( \vec{x}^{\prime }\right) 
+\end{eqnarray*}
+y como
+\begin{eqnarray*}
+\left[ \partial _{s}\phi \left( \vec{x}\right) ,\pi \left( \vec{x}%
+^{\prime }\right) \right] &=&i\hbar \left( \frac{\delta \partial _{s}\phi
+\left( \vec{x},t\right) }{\delta \phi \left( {\bf z},t\right) }\frac{%
+\delta \pi \left( \vec{x}^{\prime },t\right) }{\delta \pi \left( {\bf z%
+},t\right) }-\frac{\delta \partial _{s}\phi \left( \vec{x},t\right) }{%
+\delta \pi \left( {\bf z},t\right) }\frac{\delta \pi \left( \vec{x}%
+^{\prime },t\right) }{\delta \phi \left( {\bf z},t\right) }\right) \\
+&=&i\hbar \left( \frac{\partial _{s}\delta \phi \left( \vec{x},t\right) 
+}{\delta \phi \left( {\bf z},t\right) }\frac{\delta \pi \left( \vec{x}%
+^{\prime },t\right) }{\delta \pi \left( {\bf z},t\right) }\right) \\
+&=&i\hbar \left( \partial _{s}\left[ \delta \left( \vec{x}-{\bf z}%
+\right) \right] \delta \left( \vec{x}^{\prime }-{\bf z}\right) \right) 
+\\
+&=&i\hbar \partial _{s}\left[ \delta \left( \vec{x}-\vec{x}^{\prime
+}\right) \right] \\
+&=&-i\hbar \partial _{s^{\prime }}\left[ \delta \left( \vec{x}^{\prime
+}-\vec{x}\right) \right] \\
+&=&-i\hbar \delta \left( \vec{x}^{\prime }-\vec{x}\right) \partial
+_{s^{\prime }}
+\end{eqnarray*}
+entonces
+\begin{eqnarray*}
+\left[ H\left( \vec{x}\right) ,\pi \left( \vec{x}^{\prime }\right) %
+\right] &=&i\hbar \int d^{3}\vec{x}\delta \left( \vec{x}^{\prime }-%
+\vec{x}\right) \partial _{s^{\prime }}\partial ^{s}\phi \left( \vec{x}%
+\right) +i\mu ^{2}\hbar \phi \left( \vec{x}^{\prime }\right) \\
+&=&i\hbar \partial _{s^{\prime }}\partial ^{s^{\prime }}\phi \left( 
+\vec{x}^{\prime }\right) +i\mu ^{2}\hbar \phi \left( \vec{x}^{\prime
+}\right) \\
+&=&i\hbar \left( \mu ^{2}+\partial _{s^{\prime }}\partial ^{s^{\prime
+}}\right) \phi \left( \vec{x}^{\prime }\right) \\
+&=&i\hbar \left( \mu ^{2}-\nabla ^{2}\right) \phi \left( \vec{x}%
+^{\prime }\right) 
+\end{eqnarray*}
+\begin{equation}
+\left[ H,\pi \left( \vec{x}\right) \right] =i\hbar \left( \mu
+^{2}-\nabla ^{2}\right) \phi \left( \vec{x}\right) 
+\end{equation}
+
+\item De este resultado, y de las ecuaciones de movimiento de Heisemberg
+para los operadores $\phi (x) $ y $\pi (x) $,
+muestre que
+\begin{eqnarray*}
+\dot{\phi}(x) &=&c^{2}\pi (x) \\
+\left( \square +\mu ^{2}\right) \phi (x) &=&0
+\end{eqnarray*}
+
+\textbf{Soluci'on}:
+
+En efecto, como
+\begin{eqnarray*}
+i\hbar \frac{d\phi }{dt} &=&-\left[ H,\phi \right] \\
+i\hbar \frac{d\pi }{dt} &=&-\left[ H,\pi \right] 
+\end{eqnarray*}
+entonces
+\begin{eqnarray*}
+i\hbar \frac{d\phi }{dt} &=&-i\hbar c^{2}\pi \left( \vec{x}\right) \\
+i\hbar \frac{d\pi }{dt} &=&i\hbar \left( \mu ^{2}-\nabla ^{2}\right)
+\phi 
+\end{eqnarray*}
+y
+\begin{eqnarray*}
+\dot{\phi} &=&-c^{2}\pi \\
+\dot{\pi} &=&\left( \mu ^{2}-\nabla ^{2}\right) \phi 
+\end{eqnarray*}
+Y como de la primera ecuaci'on
+\begin{equation}
+\dot{\pi}=-\frac{1}{c^{2}}\ddot{\phi}
+\end{equation}
+entonces
+\begin{eqnarray*}
+-\frac{1}{c^{2}}\ddot{\phi} &=&\mu ^{2}\phi -\nabla ^{2}\phi \\
+\left( \square +\mu ^{2}\right) \phi &=&0
+\end{eqnarray*}
+\end{enumerate}
+
+Muestre que la densidad Lagrangiana
+\begin{equation}
+\mathcal{L}=-\frac{1}{2}\left[ \partial _{\alpha }\phi _{\beta }\right] %
+\left[ \partial ^{\alpha }\phi ^{\beta }\right] +\frac{1}{2}\left[ \partial
+_{\alpha }\phi ^{\alpha }\right] ^{2}+\frac{1}{2}\mu ^{2}\phi _{\alpha
+}(x) \phi ^{\alpha }(x) 
+\end{equation}
+
+para el campo vectorial real $\phi ^{\alpha }(x) $ nos dirige a
+
+las ecuaciones de campo
+\begin{equation}
+\left[ \eta _{\alpha \beta }\left( \square +\mu ^{2}\right) -\partial
+_{\alpha }\partial _{\beta }\right] \phi ^{\beta }(x) =0
+\end{equation}
+
+\textbf{Soluci'on}:
+
+Las ecuaciones de campo son
+\begin{equation}
+\frac{\partial \mathcal{L}}{\partial \phi ^{\gamma }}-\partial _{\lambda }%
+\frac{\partial \mathcal{L}}{\partial \partial _{\lambda }\phi ^{\gamma }}=0
+\end{equation}
+Escribiremos la densidad lagrangiana de una forma m'as c'omoda:
+\begin{equation}
+\mathcal{L}=-\frac{1}{2}\eta ^{\mu \alpha }\eta _{\nu \beta }\left[ \partial
+_{\mu }\phi ^{\nu }\right] \left[ \partial _{\alpha }\phi ^{\beta }\right] +%
+\frac{1}{2}\left[ \partial _{\alpha }\phi ^{\alpha }\right] ^{2}+\frac{1}{2}%
+\mu ^{2}\eta _{\mu \nu }\phi ^{\mu }\phi ^{\nu }
+\end{equation}
+y entonces
+\begin{eqnarray*}
+\frac{\partial \mathcal{L}}{\partial \phi ^{\gamma }} &=&\frac{1}{2}\mu
+^{2}\eta _{\mu \nu }\frac{\partial }{\partial \phi ^{\gamma }}\left( \phi
+^{\mu }\phi ^{\nu }\right) \\
+&=&\frac{1}{2}\mu ^{2}\eta _{\mu \nu }\left( \delta _{\gamma }^{\mu }\phi
+^{\nu }+\phi ^{\mu }\delta _{\gamma }^{\nu }\right) \\
+&=&\frac{1}{2}\mu ^{2}\left( \eta _{\mu \nu }\delta _{\gamma }^{\mu }\phi
+^{\nu }+\eta _{\mu \nu }\phi ^{\mu }\delta _{\gamma }^{\nu }\right) \\
+&=&\frac{1}{2}\mu ^{2}\left( \eta _{\gamma \nu }\phi ^{\nu }+\eta _{\mu
+\gamma }\phi ^{\mu }\right) \\
+&=&\mu ^{2}\phi _{\gamma }
+\end{eqnarray*}
+y
+\begin{eqnarray*}
+\frac{\partial \mathcal{L}}{\partial \partial _{\lambda }\phi ^{\gamma }} &=&%
+\frac{\partial }{\partial \partial _{\lambda }\phi ^{\gamma }}\left( -\frac{1%
+}{2}\eta ^{\mu \alpha }\eta _{\nu \beta }\left[ \partial _{\mu }\phi ^{\nu }%
+\right] \left[ \partial _{\alpha }\phi ^{\beta }\right] +\frac{1}{2}\left[
+\partial _{\alpha }\phi ^{\alpha }\right] ^{2}\right) \\
+&=&\left( -\frac{1}{2}\eta ^{\mu \alpha }\eta _{\nu \beta }\frac{\partial }{%
+\partial \partial _{\lambda }\phi ^{\gamma }}\left[ \partial _{\mu }\phi
+^{\nu }\right] \left[ \partial _{\alpha }\phi ^{\beta }\right] -\frac{1}{2}%
+\eta ^{\mu \alpha }\eta _{\nu \beta }\left[ \partial _{\mu }\phi ^{\nu }%
+\right] \frac{\partial }{\partial \partial _{\lambda }\phi ^{\gamma }}\left[
+\partial _{\alpha }\phi ^{\beta }\right] +\frac{1}{2}\frac{\partial }{%
+\partial \partial _{\lambda }\phi ^{\gamma }}\left[ \delta _{\alpha }^{\beta
+}\partial _{\beta }\phi ^{\alpha }\right] ^{2}\right) \\
+&=&\left( -\frac{1}{2}\eta ^{\mu \alpha }\eta _{\nu \beta }\delta _{\mu
+}^{\lambda }\delta _{\gamma }^{\nu }\partial _{\alpha }\phi ^{\beta }-\frac{1%
+}{2}\eta ^{\mu \alpha }\eta _{\nu \beta }\partial _{\mu }\phi ^{\nu }\delta
+_{\alpha }^{\lambda }\delta _{\gamma }^{\beta }+\frac{1}{2}\frac{\partial }{%
+\partial \partial _{\lambda }\phi ^{\gamma }}\left[ \delta _{\alpha }^{\beta
+}\partial _{\beta }\phi ^{\alpha }\right] \left[ \delta _{\chi }^{\rho
+}\partial _{\rho }\phi ^{\chi }\right] \right) \\
+&=&\left( -\frac{1}{2}\eta ^{\lambda \alpha }\eta _{\gamma \beta }\partial
+_{\alpha }\phi ^{\beta }-\frac{1}{2}\eta ^{\mu \lambda }\eta _{\nu \gamma
+}\partial _{\mu }\phi ^{\nu }+\frac{1}{2}\left[ \delta _{\alpha }^{\beta }%
+\frac{\partial }{\partial \partial _{\lambda }\phi ^{\gamma }}\partial
+_{\beta }\phi ^{\alpha }\right] \left[ \delta _{\chi }^{\rho }\partial
+_{\rho }\phi ^{\chi }\right] +\frac{1}{2}\left[ \delta _{\alpha }^{\beta
+}\partial _{\beta }\phi ^{\alpha }\right] \left[ \delta _{\chi }^{\rho }%
+\frac{\partial }{\partial \partial _{\lambda }\phi ^{\gamma }}\partial
+_{\rho }\phi ^{\chi }\right] \right) \\
+&=&-\partial ^{\lambda }\phi _{\gamma }+\frac{1}{2}\delta _{\alpha }^{\beta
+}\delta _{\beta }^{\lambda }\delta _{\gamma }^{\alpha }\delta _{\chi }^{\rho
+}\partial _{\rho }\phi ^{\chi }+\frac{1}{2}\delta _{\chi }^{\rho }\delta
+_{\rho }^{\lambda }\delta _{\gamma }^{\chi }\delta _{\alpha }^{\beta
+}\partial _{\beta }\phi ^{\alpha } \\
+&=&-\partial ^{\lambda }\phi _{\gamma }+\delta _{\gamma }^{\lambda }\partial
+_{\rho }\phi ^{\rho }
+\end{eqnarray*}
+y entonces,
+\begin{eqnarray*}
+-\partial _{\lambda }\frac{\partial \mathcal{L}}{\partial \partial _{\lambda
+}\phi ^{\gamma }} &=&\partial _{\lambda }\partial ^{\lambda }\phi _{\gamma
+}-\delta _{\gamma }^{\lambda }\partial _{\lambda }\partial _{\rho }\phi
+^{\rho } \\
+&=&\partial _{\lambda }\partial ^{\lambda }\phi _{\gamma }-\partial _{\gamma
+}\partial _{\rho }\phi ^{\rho }
+\end{eqnarray*}
+y as'i, las ecuaciones de movimiento, son
+\begin{equation}
+\mu ^{2}\phi _{\gamma }+\partial _{\lambda }\partial ^{\lambda }\phi
+_{\gamma }-\partial _{\gamma }\partial _{\rho }\phi ^{\rho }=0
+\end{equation}
+
+ y a que el campo $\phi ^{\alpha }(x) $ satisface la
+condici'on de Lorentz,
+\begin{equation}
+\partial _{\alpha }\phi ^{\alpha }(x) =0
+\end{equation}
+
+\textbf{Soluci'on}:
+
+Primero que nada, demostraremos el Teorema de Noether.
+
+Bajo un cierto grupo de transformaciones, las coordenadas transforman
+infinitesimalmente de la forma
+\begin{equation}
+x^{\mu }\rightarrow x^{\mu ^{\prime }}=x^{\mu }+\delta x^{\mu }
+\end{equation}
+y los campos transforman como
+\begin{equation}
+\phi ^{A}(x) \rightarrow \phi ^{A^{\prime }}\left( x^{\prime
+}\right) =\phi ^{A}(x) +\delta _{T}\phi ^{A}(x) 
+\end{equation}
+Y as'i,
+\begin{eqnarray*}
+\delta _{T}\phi ^{A}(x) &=&\phi ^{A^{\prime }}\left( x^{\prime
+}\right) -\phi ^{A}(x) \\
+&=&\left[ \phi ^{A^{\prime }}\left( x^{\prime }\right) -\phi ^{A}\left(
+x^{\prime }\right) \right] +\left[ \phi ^{A}\left( x^{\prime }\right) -\phi
+^{A}(x) \right] \\
+&=&\delta \phi ^{A}\left( x^{\prime }\right) +\delta x^{\mu }\partial _{\mu
+}\phi ^{A}(x) \\
+&=&\delta \phi ^{A}(x) +\delta x^{\mu }\partial _{\mu }\delta
+\phi ^{A}(x) +\delta x^{\mu }\partial _{\mu }\phi ^{A}\left(
+x\right) 
+\end{eqnarray*}
+y si tomamos en cuenta s'olo t'erminos de primer orden,
+\begin{equation}
+\delta _{T}\phi ^{A}(x) =\delta \phi ^{A}(x) +\delta
+x^{\mu }\partial _{\mu }\phi ^{A}(x) 
+\end{equation}
+Si consideramos a la densidad Lagrangiana como un campo,
+\begin{equation}
+\delta _{T}\mathcal{L}(x) =\delta \mathcal{L}(x)
++\delta x^{\mu }\partial _{\mu }\mathcal{L}(x) 
+\end{equation}
+Ahora si queremos que bajo el grupo de transformaciones la densidad
+Lagrangiana sea invariante,
+\begin{equation}
+\delta \mathcal{L}(x) +\delta x^{\mu }\partial _{\mu }\mathcal{L}%
+(x) =0
+\end{equation}
+Y como
+\begin{eqnarray*}
+\delta \mathcal{L} &=&\frac{\partial \mathcal{L}}{\partial \phi ^{A}}\delta
+\phi ^{A}+\frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{A}}%
+\delta \partial _{\mu }\phi ^{A} \\
+&=&\frac{\partial \mathcal{L}}{\partial \phi ^{A}}\delta \phi ^{A}+\partial
+_{\mu }\left( \frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{A}}%
+\delta \phi ^{A}\right) -\partial _{\mu }\frac{\partial \mathcal{L}}{%
+\partial \partial _{\mu }\phi ^{A}}\delta \phi ^{A} \\
+&=&\left( \frac{\partial \mathcal{L}}{\partial \phi ^{A}}-\partial _{\mu }%
+\frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{A}}\right)
+\delta \phi ^{A}+\partial _{\mu }\left( \frac{\partial \mathcal{L}}{\partial
+\partial _{\mu }\phi ^{A}}\delta \phi ^{A}\right) 
+\end{eqnarray*}
+Y as'i, sobre las ecuaciones de movimiento se cumple que
+\begin{equation}
+\delta \mathcal{L}=\partial _{\mu }\left( \frac{\partial \mathcal{L}}{%
+\partial \partial _{\mu }\phi ^{A}}\delta \phi ^{A}\right) 
+\end{equation}
+Y como
+\begin{eqnarray*}
+\delta \mathcal{L}+\delta x^{\mu }\partial _{\mu }\mathcal{L} &=&0 \\
+\partial _{\mu }\left( \frac{\partial \mathcal{L}}{\partial \partial _{\mu
+}\phi ^{A}}\delta \phi ^{A}\right) +\delta x^{\mu }\partial _{\mu }\mathcal{L%
+} &=&0 \\
+\partial _{\mu }\left( \frac{\partial \mathcal{L}}{\partial \partial _{\mu
+}\phi ^{A}}\delta \phi ^{A}\right) +\delta x^{\mu }\partial _{\mu }\mathcal{L%
+} &=&0
+\end{eqnarray*}
+Como
+\begin{equation}
+\partial _{\mu }\left( \delta x^{\mu }\mathcal{L}\right) -\partial _{\mu
+}\delta x^{\mu }\mathcal{L}=\delta x^{\mu }\partial _{\mu }\mathcal{L}
+\end{equation}
+entonces
+\begin{equation}
+\partial _{\mu }\left( \frac{\partial \mathcal{L}}{\partial \partial _{\mu
+}\phi ^{A}}\delta \phi ^{A}+\delta x^{\mu }\mathcal{L}\right) -\partial
+_{\mu }\delta x^{\mu }\mathcal{L}=0
+\end{equation}
+Y como
+\begin{equation}
+\delta \phi ^{A}(x) =\delta _{T}\phi ^{A}(x) -\delta
+x^{\mu }\partial _{\mu }\phi ^{A}(x) 
+\end{equation}
+entonces
+\begin{equation}
+\partial _{\mu }\left( \frac{\partial \mathcal{L}}{\partial \partial _{\mu
+}\phi ^{A}}\left[ \delta _{T}\phi ^{A}(x) -\delta x^{\lambda
+}\partial _{\lambda }\phi ^{A}(x) \right] +\delta x^{\mu }%
+\mathcal{L}\right) -\partial _{\mu }\delta x^{\mu }\mathcal{L}=0
+\end{equation}
+Y si consideramos s'olo t'erminos de primer orden,
+\begin{equation}
+\partial _{\mu }\delta x^{\mu }=0
+\end{equation}
+y as'i,
+\begin{equation}
+\partial _{\mu }F^{\mu }=0
+\end{equation}
+con
+\begin{eqnarray*}
+F^{\mu } &=&\frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{A}}%
+\delta _{T}\phi ^{A}-\frac{\partial \mathcal{L}}{\partial \partial _{\mu
+}\phi ^{A}}\delta x^{\lambda }\partial _{\lambda }\phi ^{A}+\delta x^{\mu }%
+\mathcal{L} \\
+&=&\frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{A}}\delta
+_{T}\phi ^{A}-\left( \frac{\partial \mathcal{L}}{\partial \partial _{\mu
+}\phi ^{A}}\partial _{\lambda }\phi ^{A}-\delta _{\lambda }^{\mu }\mathcal{L}%
+\right) \delta x^{\lambda }
+\end{eqnarray*}
+Si definimos
+\begin{equation}
+\mathcal{T}_{\_\lambda }^{\mu }=\frac{\partial \mathcal{L}}{\partial
+\partial _{\mu }\phi ^{A}}\partial _{\lambda }\phi ^{A}-\delta _{\lambda
+}^{\mu }\mathcal{L}
+\end{equation}
+entonces
+\begin{equation}
+F^{\mu }=\frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{A}}%
+\delta _{T}\phi ^{A}-\mathcal{T}_{\_\lambda }^{\mu }\delta x^{\lambda }
+\end{equation}
+
+Ahora, supongamos que la acci'on es invariante de Poincar'e. Entonces,
+bajo una transformaci'on infinitesimal,
+\begin{equation}
+x^{\mu }\rightarrow x^{\mu ^{\prime }}=x^{\mu }+\omega _{\_\nu }^{\mu
+}x^{\nu }+\delta ^{\mu }
+\end{equation}
+con
+\begin{equation}
+\omega ^{\mu \nu }=-\omega ^{\nu \mu }
+\end{equation}
+Entonces,
+\begin{eqnarray*}
+\delta _{T}\phi ^{\alpha }(x) &=&\delta \phi ^{\alpha }\left(
+x\right) +\delta x^{\mu }\partial _{\mu }\phi ^{\alpha }(x) \\
+&=&\omega _{\_\beta }^{\alpha }\phi ^{\beta }+\delta ^{\alpha }+\left(
+\omega _{\_\nu }^{\mu }x^{\nu }+\delta ^{\mu }\right) \partial _{\mu }\phi
+^{\alpha } \\
+&=&\omega _{\_\beta }^{\alpha }\phi ^{\beta }+\omega _{\_\nu }^{\mu }x^{\nu
+}\partial _{\mu }\phi ^{\alpha }+\delta ^{\alpha }+\delta ^{\mu }\partial
+_{\mu }\phi ^{\alpha } \\
+&=&\omega _{\_\nu }^{\mu }\left( \delta _{\mu }^{\alpha }\delta _{\beta
+}^{\nu }\phi ^{\beta }+x^{\nu }\partial _{\mu }\phi ^{\alpha }\right)
++\delta ^{\mu }\left( \delta _{\mu }^{\alpha }+\partial _{\mu }\phi ^{\alpha
+}\right) \\
+&=&\omega _{\_\nu }^{\lambda }\left( \delta _{\lambda }^{\alpha }\delta
+_{\beta }^{\nu }\phi ^{\beta }+x^{\nu }\partial _{\lambda }\phi ^{\alpha
+}\right) +\delta ^{\lambda }\left( \delta _{\lambda }^{\alpha }+\partial
+_{\lambda }\phi ^{\alpha }\right) 
+\end{eqnarray*}
+y entonces,
+\begin{eqnarray*}
+F^{\mu } &=&\frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi
+^{\alpha }}\delta _{T}\phi ^{\alpha }-\mathcal{T}_{\_\lambda }^{\mu }\delta
+x^{\lambda } \\
+&=&\frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{\alpha }}%
+\left[ \omega _{\_\nu }^{\lambda }\left( \delta _{\lambda }^{\alpha }\delta
+_{\beta }^{\nu }\phi ^{\beta }+x^{\nu }\partial _{\lambda }\phi ^{\alpha
+}\right) +\delta ^{\lambda }\left( \delta _{\lambda }^{\alpha }+\partial
+_{\lambda }\phi ^{\alpha }\right) \right] -\mathcal{T}_{\_\lambda }^{\mu
+}\left( \omega _{\_\nu }^{\lambda }x^{\nu }+\delta ^{\lambda }\right) \\
+&=&\frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{\alpha }}%
+\omega _{\_\nu }^{\lambda }\left( \delta _{\lambda }^{\alpha }\delta _{\beta
+}^{\nu }\phi ^{\beta }+x^{\nu }\partial _{\lambda }\phi ^{\alpha }\right) +%
+\frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{\alpha }}\delta
+^{\lambda }\left( \delta _{\lambda }^{\alpha }+\partial _{\lambda }\phi
+^{\alpha }\right) -\mathcal{T}_{\_\lambda }^{\mu }\omega _{\_\nu }^{\lambda
+}x^{\nu }-\mathcal{T}_{\_\lambda }^{\mu }\delta ^{\lambda } \\
+&=&\frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{\alpha }}%
+\omega _{\_\nu }^{\lambda }\left( \delta _{\lambda }^{\alpha }\delta _{\beta
+}^{\nu }\phi ^{\beta }+x^{\nu }\partial _{\lambda }\phi ^{\alpha }\right) -%
+\mathcal{T}_{\_\lambda }^{\mu }\omega _{\_\nu }^{\lambda }x^{\nu }+\frac{%
+\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{\alpha }}\delta
+^{\lambda }\left( \delta _{\lambda }^{\alpha }+\partial _{\lambda }\phi
+^{\alpha }\right) -\mathcal{T}_{\_\lambda }^{\mu }\delta ^{\lambda } \\
+&=&\omega _{\_\nu }^{\lambda }\left[ \frac{\partial \mathcal{L}}{\partial
+\partial _{\mu }\phi ^{\alpha }}\left( \delta _{\lambda }^{\alpha }\delta
+_{\beta }^{\nu }\phi ^{\beta }+x^{\nu }\partial _{\lambda }\phi ^{\alpha
+}\right) -\mathcal{T}_{\_\lambda }^{\mu }x^{\nu }\right] +\delta ^{\lambda }%
+\left[ \frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{\alpha }}%
+\left( \delta _{\lambda }^{\alpha }+\partial _{\lambda }\phi ^{\alpha
+}\right) -\mathcal{T}_{\_\lambda }^{\mu }\right] \\
+&=&\omega ^{\lambda \nu }\left[ \frac{\partial \mathcal{L}}{\partial
+\partial _{\mu }\phi ^{\alpha }}\left( \delta _{\lambda }^{\alpha }\eta
+_{\nu \beta }\phi ^{\beta }+x_{\nu }\partial _{\lambda }\phi ^{\alpha
+}\right) -\mathcal{T}_{\_\lambda }^{\mu }x_{\nu }\right] +\delta ^{\lambda }%
+\left[ \frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi ^{\alpha }}%
+\left( \delta _{\lambda }^{\alpha }+\partial _{\lambda }\phi ^{\alpha
+}\right) -\mathcal{T}_{\_\lambda }^{\mu }\right] \\
+&=&\omega ^{\lambda \nu }\left[ \frac{\partial \mathcal{L}}{\partial
+\partial _{\mu }\phi ^{\alpha }}\left( \delta _{\lambda }^{\alpha }\phi
+_{\nu }+x_{\nu }\partial _{\lambda }\phi ^{\alpha }\right) -\mathcal{T}%
+_{\_\lambda }^{\mu }x_{\nu }\right] +\delta ^{\lambda }\left[ \frac{\partial 
+\mathcal{L}}{\partial \partial _{\mu }\phi ^{\alpha }}\left( \delta
+_{\lambda }^{\alpha }+\partial _{\lambda }\phi ^{\alpha }\right) -\mathcal{T}%
+_{\_\lambda }^{\mu }\right] 
+\end{eqnarray*}
+como
+\begin{eqnarray*}
+\partial _{\mu }\left\{ \delta ^{\lambda }\left[ \frac{\partial \mathcal{L}}{%
+\partial \partial _{\mu }\phi ^{\alpha }}\left( \delta _{\lambda }^{\alpha
+}+\partial _{\lambda }\phi ^{\alpha }\right) -\mathcal{T}_{\_\lambda }^{\mu }%
+\right] \right\} &=&\delta ^{\lambda }\partial _{\mu }\left[ \frac{\partial 
+\mathcal{L}}{\partial \partial _{\mu }\phi ^{\alpha }}\left( \delta
+_{\lambda }^{\alpha }+\partial _{\lambda }\phi ^{\alpha }\right) -\mathcal{T}%
+_{\_\lambda }^{\mu }\right] \\
+&=&\delta ^{\lambda }\left[ \partial _{\mu }\frac{\partial \mathcal{L}}{%
+\partial \partial _{\mu }\phi ^{\alpha }}\left( \delta _{\lambda }^{\alpha
+}+\partial _{\lambda }\phi ^{\alpha }\right) +\frac{\partial \mathcal{L}}{%
+\partial \partial _{\mu }\phi ^{\alpha }}\partial _{\mu }\partial _{\lambda
+}\phi ^{\alpha }-\mathcal{T}_{\_\lambda }^{\mu }\right] \\
+&=&\delta ^{\lambda }\left[ \partial _{\mu }\frac{\partial \mathcal{L}}{%
+\partial \partial _{\mu }\phi ^{\lambda }}+\partial _{\mu }\frac{\partial 
+\mathcal{L}}{\partial \partial _{\mu }\phi ^{\alpha }}\partial _{\lambda
+}\phi ^{\alpha }+\frac{\partial \mathcal{L}}{\partial \partial _{\mu }\phi
+^{\alpha }}\partial _{\mu }\partial _{\lambda }\phi ^{\alpha }-\mathcal{T}%
+_{\_\lambda }^{\mu }\right] 
+\end{eqnarray*}
+\begin{equation}
+\mathcal{T}_{\_\lambda }^{\mu }=\frac{\partial \mathcal{L}}{\partial
+\partial _{\mu }\phi ^{\alpha }}\partial _{\lambda }\phi ^{\alpha }-\delta
+_{\lambda }^{\mu }\mathcal{L}
+\end{equation}
+

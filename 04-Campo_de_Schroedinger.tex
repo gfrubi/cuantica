@@ -1,0 +1,381 @@
+\chapter{El campo de Schr\"{o}dinger}
+
+
+
+AQUI HAY QUE CORREGIR VARIAS COSAS !!
+
+\section{Teor'ia Cl'asica de Campos para el Campo de Schr\"{o}dinger}
+
+El punto de partida es la conocida ecuaci'on de Schr\"{o}dinger:%
+\begin{equation}
+i\hbar \frac{\partial \varphi }{\partial t}=-\frac{\hbar ^{2}}{2m}\partial
+_{i}^{2}\varphi +V(x,t)\varphi \label{EcSchrodinger}
+\end{equation}%
+para la funci'on de onda $\varphi (x,t)$ de una part%
+'icula sujeta a un potencial externo arbitrario $V(x,t).
+$ En el contexto de la teor'ia de campos, podr'iamos considerar a la
+funci'on de onda como un campo complejo cl'asico, mientras que a la ec
+de Schr\"{o}dinger como la ecuaci'on cl'asica de campo\footnote{%
+En analog'ia con la ecuaci'on de ondas cl'asica para el campo EM, que al
+ser cuantizada da origen a los fotones.} que debe satisfacer $\varphi \left(
+x_{j},t\right) .$
+
+Para poder hacer uso de la maquinaria conocida de la teor'ia de campos,
+debemos conocer la densidad Lagrangeana que de origen al campo cl'asico
+de Schr\"{o}dinger dado por la ecuaci'on (\ref{EcSchrodinger}).
+
+La densidad Lagrangeana debe ser:%
+\begin{equation}
+{\cal L}\left( \psi ,\partial _{i}^{2},\dot{\psi}\right) =i\hbar \psi ^{\ast
+}\dot{\psi}-\frac{\hbar ^{2}}{2m}\left( \partial _{i}\psi ^{\ast }\right)
+\left( \partial _{i}\psi \right) -V(x,t)\psi ^{\ast }\psi ,
+\label{DensidadLagrangeanadeSchrodinger}
+\end{equation}%
+donde $\psi (x,t)$ y $\psi ^{\ast }(x,t)$
+son tratados como dos campos independientes.
+
+Para verificar que efectivamente (\ref{DensidadLagrangeanadeSchrodinger}) es
+la densidad Lagrangeana buscada, debemos calcular las conocidas ecuaciones
+de movimiento de Euler-Lagrange\footnote{%
+Recordemos que las ecuaci'on de Euler-Lagrange para un campo arbitrario $\varphi
+\left( \vec{x},t\right) $ est'a dada por:%
+\begin{equation*}
+\frac{\partial {\cal L}}{\partial \varphi }-\partial _{i}\left( \frac{%
+\partial {\cal L}}{\partial \left( \partial _{i}\varphi \right) }\right) -%
+\frac{\partial }{\partial t}\left( \frac{\partial {\cal L}}{\partial \dot{%
+\varphi}}\right) =0.
+\end{equation*}%
+} para los campos $\psi (x,t)$ y $\psi ^{\ast }\left(
+x_{j},t\right) $. En efecto, considerando (\ref%
+{DensidadLagrangeanadeSchrodinger}), obtenemos:%
+\begin{eqnarray}
+\frac{\partial {\cal L}}{\partial \psi }-\partial _{i}\left( \frac{\partial
+{\cal L}}{\partial \left( \partial _{i}\psi \right) }\right) -\frac{\partial 
+}{\partial t}\left( \frac{\partial {\cal L}}{\partial \dot{\psi}}\right)
+&=&0 \notag \\
+\frac{\partial }{\partial \psi }\left( -V(x,t)\psi ^{\ast
+}\psi \right) -\partial _{i}\left( -\frac{\hbar ^{2}}{2m}\partial _{i}\psi
+^{\ast }\right) -\frac{\partial }{\partial t}\left( i\hbar \psi ^{\ast
+}\right) &=&0 \notag \\
+-V(x,t)\psi ^{\ast }+\frac{\hbar ^{2}}{2m}\partial
+_{i}^{2}\psi ^{\ast }-i\hbar \dot{\psi}^{\ast } &=&0 \notag \\
+i\hbar \dot{\psi}^{\ast }+\frac{\hbar ^{2}}{2m}\partial _{i}^{2}\psi ^{\ast
+}-V(x,t)\psi ^{\ast } &=&0, \label{EcSchrodingerdePhi*}
+\end{eqnarray}%
+y:%
+\begin{eqnarray}
+\frac{\partial {\cal L}}{\partial \psi ^{\ast }}-\partial _{i}\left( \frac{%
+\partial {\cal L}}{\partial \left( \partial _{i}\psi ^{\ast }\right) }%
+\right) -\frac{\partial }{\partial t}\left( \frac{\partial {\cal L}}{%
+\partial \dot{\psi}^{\ast }}\right) &=&0 \notag \\
+\frac{\partial }{\partial \psi ^{\ast }}\left( i\hbar \psi ^{\ast }\dot{\psi}%
+-V(x,t)\psi ^{\ast }\psi \right) -\partial _{i}\left( -%
+\frac{\hbar ^{2}}{2m}\partial _{i}\psi \right) &=&0 \notag \\
+i\hbar \dot{\psi}+\frac{\hbar ^{2}}{2m}\partial _{i}^{2}\psi -V\left(
+x_{j},t\right) \psi &=&0 \label{EcSchrodingerdePhi}
+\end{eqnarray}%
+que son las correspondientes ecuaci'on de Schr\"{o}dinger (\ref{EcSchrodinger})
+para los campos $\psi (x,t)$ y $\psi ^{\ast }\left(
+x_{j},t\right) .$
+
+Una vez conocida la densidad Lagrangeana, la densidad de momentum conjugado
+asociada a cada varible de campo, la calculamos de:%
+\begin{equation}
+\Pi (x,t)=\frac{\partial {\cal L}}{\partial \dot{\psi}},
+\label{DensidaddeMomentumConjugadodePhi}
+\end{equation}%
+y:%
+\begin{equation}
+\Pi ^{\ast }(x,t)=\frac{\partial {\cal L}}{\partial \dot{%
+\psi}^{\ast }}. \label{DensidaddeMomentumConjugadodePhi*}
+\end{equation}
+
+As'i, de (\ref{DensidaddeMomentumConjugadodePhi}) y (\ref%
+{DensidaddeMomentumConjugadodePhi*}) obtenemos respectivamente:%
+\begin{equation}
+\Pi (x,t)=i\hbar \psi ^{\ast }(x,t)
+\label{DensidaddeMomentumConjugadodeSchrodinger}
+\end{equation}%
+y:%
+\begin{equation*}
+\Pi ^{\ast }(x,t)=0.
+\end{equation*}
+
+Por lo tanto, tenemos s'olo dos varibles de campo independientes: $\psi
+(x,t)$ y $\Pi (x,t)$ cuyas ecuaciones de
+movimiento son respectivamente (\ref{EcSchrodingerdePhi}) y\footnote{%
+Para 'esta última hemos ocupado la ecuaci'on (\ref{EcSchrodingerdePhi*}).}:%
+\begin{equation*}
+\dot{\Pi}-\frac{i\hbar }{2m}\partial _{i}^{2}\Pi +\frac{i}{\hbar }V\left(
+x_{j},t\right) \Pi =0
+\end{equation*}
+
+Otra cantidad importante en la teor'ia de campos, que se deriva de la
+Densidad Lagrangeana, es la Densidad Hamiltoniana:%
+\begin{eqnarray}
+{\cal H} (x,t) &=&\Pi (x,t)\dot{\psi}\left(
+x_{j},t\right) -{\cal L}(x,t)\notag \\
+&=&i\hbar \psi ^{\ast }\dot{\psi}-\left( i\hbar \psi ^{\ast }\dot{\psi}-%
+\frac{\hbar ^{2}}{2m}\left( \partial _{i}\psi ^{\ast }\right) \left(
+\partial _{i}\psi \right) -V(x,t)\psi ^{\ast }\psi \right)
+\notag \\
+&=&\frac{\hbar ^{2}}{2m}\left( \partial _{i}\psi ^{\ast }\right) \left(
+\partial _{i}\psi \right) +V(x,t)\psi ^{\ast }\psi ,
+\label{DensidadHamiltonianadeSchrodinger}
+\end{eqnarray}%
+la cual nos permite calcular el Hamiltoniano del campo. En efecto:%
+\begin{eqnarray*}
+H &=&\int d^{3}x{\cal H} (x,t) \\
+&=&\int d^{3}x\left\{ \frac{\hbar ^{2}}{2m}\left( \partial _{i}\psi ^{\ast
+}\right) \left( \partial _{i}\psi \right) +V(x,t)\psi
+^{\ast }\psi \right\} .
+\end{eqnarray*}
+
+Ahora, integrando por partes el primer t'ermino del lado derecho,
+obtenemos finalmente que el Hamiltoniano del campo es de la forma:%
+\begin{equation}
+H=\int d^{3}x\psi ^{\ast }\left\{ -\frac{\hbar ^{2}}{2m}\partial
+_{i}^{2}+V(x,t)\right\} \psi .
+\label{HamiltonianodeSchroginger}
+\end{equation}
+
+\section{Cuantizaci'on del Campo de Schr\"{o}dinger.}
+
+Para poder cuantizar el campo de Schr\"{o}dinger, debemos reemplazar las
+variables cl'asicas de campo $\psi (x,t)$ y $\Pi \left(
+x_{j},t\right) ,$ por los operadores $\hat{\psi}(x,t),$ $%
+\hat{\pi}(x,t).$ Y, a su vez, el campo cl'asico
+conjugado $\psi ^{\ast }(x,t),$ debe ser reemplazado por el
+operador herm'itico adjunto $\psi ^{\dagger }(x,t).$ De
+esta manera, es directo que:%
+\begin{equation}
+\hat{{\cal L}}\left( \hat{\psi},\partial _{i}^{2},\overset{\cdot }{\hat{\psi}%
+}\right) =i\hbar \hat{\psi}^{\dagger }\overset{\cdot }{\hat{\psi}}-\frac{%
+\hbar ^{2}}{2m}\left( \partial _{i}\hat{\psi}^{\dagger }\right) \left(
+\partial _{i}\hat{\psi}\right) -V(x,t)\hat{\psi}^{\dagger }%
+\hat{\psi}, \label{OperadorDensidadLagrangeanadeSchrodinger}
+\end{equation}%
+\begin{equation}
+\hat{\pi}(x,t)=i\hbar \psi ^{\dagger }(x,t)
+, \label{OperadorDensidaddeMomentumConjugadodePhi}
+\end{equation}%
+\begin{equation}
+\hat{H}=\int d^{3}x\hat{\psi}^{\dagger }d\hat{\psi}
+\label{OperadorHamiltonianodeSchrodinger}
+\end{equation}%
+son los operadores de densidad Lagrangeana, densidad de momentum conjugado y
+Hamiltoniano del campo, respectivamente. El operador:%
+\begin{equation*}
+d=-\frac{\hbar ^{2}}{2m}\partial _{i}^{2}+V(x,t)
+\end{equation*}%
+es llamado operador diferencial de Schr\"{o}dinger.
+
+Por otro lado, postulamos que los operadores de campo deben satisfacer las
+siguientes relaciones de conmutaci'on:%
+\begin{eqnarray*}
+\left[ \hat{\psi}(x,t),\hat{\Pi}\left( x'_{j},t\right) \right] &=&\delta
+^{\left( 3\right) }\left( x_{j}-x'_{j}\right) , \\
+\left[ \hat{\psi}(x,t),\hat{\Pi}\hat{\psi}\left( x'_{j},t\right) \right] &=&0,
+\\
+\left[ \hat{\pi}(x,t),\hat{\Pi}\left( x'_{j},t\right) \right] &=&0,
+\end{eqnarray*}%
+o, alternativamente ocupando (\ref{OperadorDensidaddeMomentumConjugadodePhi}%
+), 'estas pueden ser escritas en la forma:%
+\begin{eqnarray*}
+\left[ \hat{\psi}(x,t),\psi ^{\dagger }\left( x'_{j},t\right) \right] &=&\delta
+^{\left( 3\right) }\left( x_{j}-x'_{j}\right) , \\
+\left[ \hat{\psi}(x,t),\hat{\psi}\left( x'_{j},t\right) \right] &=&0, \\
+\left[ \psi ^{\dagger }(x,t),\psi ^{\dagger }\left( x'_{j},t\right) \right]
+&=&0.
+\end{eqnarray*}
+
+Podemos justificar el reemplazo de las variables de campo cl'asicas por
+operadores de campo, que satisfacen las relaciones de conmutaci'on
+mostradas; demostrando que las ecuaci'ones de movimiento para los
+operadores de campo, son las mismas que para sus an'alogos cl'asicos.
+En efecto, sabemos que la din'amica de los operadores est'a gobernada
+por la ecuaci'on de movimento de Heisenberg, por lo tanto tendremos:%
+\begin{eqnarray*}
+\overset{\cdot }{\hat{\psi}} &=&-\frac{i}{\hbar }\left[ \hat{\psi},\hat{H}%
+\right] , \\
+\overset{\cdot }{\hat{\Pi}} &=&-\frac{i}{\hbar }\left[ \hat{\Pi},\hat{H}%
+\right] .
+\end{eqnarray*}
+
+Ocupando el Hamiltoniano (\ref{OperadorHamiltonianodeSchrodinger}), tenemos
+de la primera de las ecuaciones anteriores que:%
+\begin{eqnarray*}
+i\hbar \overset{\cdot }{\hat{\psi}} &=&\left[ \hat{\psi}\left( x_{j}\right)
+,\int d^{3}x'\hat{\psi}^{\dagger }\left( x'_{j}\right) d'\hat{\psi}\left(
+x'_{j}\right) \right] \\
+&=&\int d^{3}x'\left[ \hat{\psi}\left( x_{j}\right) ,\hat{\psi}^{\dagger }\left(
+x'_{j}\right) d'\hat{\psi}\left( x'_{j}\right) \right] \\
+&=&\int d^{3}x'\left\{ \left[ \hat{\psi}\left( x_{j}\right) ,\hat{\psi}^{\dagger
+}\left( x'_{j}\right) \right] d'\hat{\psi}\left( x'_{j}\right)
++\hat{\psi}^{\dagger }\left( x'_{j}\right) d'\left[ \hat{\psi}\left(
+x_{j}\right) ,\hat{\psi}\left( x'_{j}\right) \right] \right\} \\
+&=&\int d^{3}x'\delta ^{\left( 3\right) }\left( x_{j}-x'_{j}\right)
+d'\hat{\psi}\left( x'_{j}\right) \\
+&=&d\hat{\psi}\left( x_{j}\right) \\
+&=&-\frac{\hbar ^{2}}{2m}\partial _{i}^{2}\hat{\psi}+V(x,t)
+\hat{\psi}
+\end{eqnarray*}%
+que corresponde a la ecuaci'on de Schr\"{o}dinger para el operador de campo
+$\hat{%
+\psi}(x,t) .$
+
+La soluci'on para esta ecuaci'on de movimiento sabemos puede ser escrita como
+una expansi'on en serie de Fourier de la forma:%
+\begin{equation}
+\hat{\psi}(x,t) =\sum_{n}\hat{a}_{n}(t)
+u_{n}\left( x^{i}\right) , \label{SeriedeFourierparaPhi}
+\end{equation}%
+de donde es directo que:%
+\begin{equation}
+\hat{\psi}^{\dagger }(x,t) =\sum_{n}\hat{a}_{n}^{\dagger
+}(t) u_{n}^{\ast }\left( x^{i}\right) .
+\label{SeriedeFourierparaPhiDaga}
+\end{equation}
+
+Las funciones $u_{n}\left( x^{i}\right) $ forman un conjunto ortogonal
+completo de funciones complejas, es decir:%
+\begin{eqnarray}
+\int d^{3}xu_{n}^{\ast }\left( x^{i}\right) u_{n'}\left( x^{i}\right) &=&\delta
+_{nn'}, \label{Relaciones1} \\
+\sum_{n}u_{n}\left( x^{i}\right) u_{n}^{\ast }\left( x'_{i}\right) &=&\delta
+^{\left( 3\right) }\left( x^{i}-x'_{i}\right) \label{Relaciones2}
+\end{eqnarray}%
+mientras que $\hat{a}_{n}(t) $ son los coeficientes de la expansi%
+'on. Mas tarde, reconoceremos a $\hat{a}_{n}^{\dagger }(t) $
+y $\hat{a}_{n}(t) $ como los operadores de creaci'on y
+destrucci'on respectivamente.
+
+Al realizar la expansi'on en serie de Fourier, estamos haciendo un cambio
+de variables de campo que nos permite describir el campo en t'erminos de
+los operadores $\hat{a}_{n}(t) $ y $\hat{a}_{n}^{\dagger }\left(
+t\right) ,$ reduciendo as'i los grados de libertad del sistema. Como
+ahora tenemos nuevas variables de campo, debemos encontrar las nuevas
+relaciones de conmutaci'on. Para esto, es necesario invertir las
+ecuaciones(\ref%
+{SeriedeFourierparaPhi}) y (\ref{SeriedeFourierparaPhiDaga}), y esto lo
+logramos haciendo uso de las relaciones (\ref{Relaciones1}) y (\ref%
+{Relaciones2}). En efecto, multiplicando ambos lados de (\ref%
+{SeriedeFourierparaPhi}) por $\int d^{3}xu_{n}^{\ast }\left( x^{i}\right) $:%
+\begin{eqnarray*}
+\sum_{n}\hat{a}_{n}(t) \int d^{3}xu_{n}\left( x^{i}\right) u_{n'}^{\ast }\left(
+x^{i}\right) &=&\int d^{3}x\hat{\psi}(x,t)u_{n'}^{\ast }\left( x^{i}\right) \\
+\sum_{n}\hat{a}_{n}(t) \delta _{nn'} &=&\int d^{3}x\hat{\psi}(x,t) u_{n'}^{\ast
+}\left( x^{i}\right) \\
+\hat{a}_{n'}(t) &=&\int d^{3}xu_{n'}^{\ast }\left( x^{i}\right) \hat{\psi}(x,t)
+,
+\end{eqnarray*}%
+y haciendo lo mismo con (\ref{SeriedeFourierparaPhiDaga}):%
+\begin{eqnarray*}
+\sum_{n}\hat{a}_{n}^{\dagger }(t) \int d^{3}xu_{n}^{\ast }\left(
+x^{i}\right) u_{n'}\left( x^{i}\right) &=&\int d^{3}xu_{n'}\left( x^{i}\right)
+\hat{\psi}^{\dagger }(x,t) \\
+\sum_{n}\hat{a}_{n}^{\dagger }(t) \delta _{nn'} &=&\int d^{3}xu_{n'}\left(
+x^{i}\right) \hat{\psi}^{\dagger }(x,t) \\
+\hat{a}_{n'}^{\dagger }(t) &=&\int d^{3}xu_{n'}\left( x^{i}\right)
+\hat{\psi}^{\dagger }(x,t) .
+\end{eqnarray*}
+
+Ahora, podemos calcular:%
+\begin{eqnarray}
+\left[ \hat{a}_{n}(t) ,\hat{a}_{n'}^{\dagger }(t) \right] &=&\hat{a}_{n}(t)
+\hat{a}_{n'}^{\dagger }(t) -\hat{a}_{n'}^{\dagger }(t) \hat{a}_{n}(t) \notag \\
+&=&\int d^{3}xd^{3}x'u_{n'}\left( x'_{i}\right) u_{n}^{\ast }\left( x^{i}\right)
+\hat{\psi}(x,t)
+\hat{\psi}^{\dagger }\left( x'_{i},t\right) -\int d^{3}xd^{3}x'u_{n'}\left(
+x'_{i}\right) u_{n}^{\ast }\left( x^{i}\right) \hat{\psi}^{\dagger }\left(
+x'_{i},t\right) \hat{\psi}(x,t) \notag \\
+&=&\int d^{3}xd^{3}x'u_{n'}\left( x'_{i}\right) u_{n}^{\ast }\left( x^{i}\right)
+\left\{ \hat{\psi}\left(
+x^{i},t\right) \hat{\psi}^{\dagger }\left( x'_{i},t\right) -\hat{\psi}^{\dagger
+}\left( x'_{i},t\right) \hat{\psi}(x,t) \right\} \notag \\
+&=&\int d^{3}xd^{3}x'u_{n'}\left( x'_{i}\right) u_{n}^{\ast }\left( x^{i}\right)
+\left[ \hat{\psi}\left(
+x^{i},t\right) ,\hat{\psi}^{\dagger }\left( x'_{i},t\right) \right] \notag \\
+&=&\int d^{3}xd^{3}x'u_{n'}\left( x'_{i}\right) u_{n}^{\ast }\left( x^{i}\right)
+\delta ^{\left( 3\right)
+}\left( x^{i}-x'_{i}\right) \notag \\
+&=&\int d^{3}xu_{n'}\left( x^{i}\right) u_{n}^{\ast }\left( x^{i}\right) \notag
+\\
+&=&\delta _{nn'}. \label{RelConmutacion1}
+\end{eqnarray}
+
+Analogamente, los otros conmutadores dan:%
+\begin{eqnarray}
+\left[ \hat{a}_{n}(t) ,\hat{a}_{n'}(t) \right] &=&\hat{a}_{n}(t) \hat{a}_{n'}(t)
+-\hat{a}_{n'}(t) \hat{a}_{n}(t) \notag \\
+&=&\int d^{3}xd^{3}x'u_{n}^{\ast }\left( x^{i}\right) u_{n'}^{\ast }\left(
+x'_{i}\right) \hat{\psi}(x,t) \hat{\psi}\left( x'_{i},t\right) -\int
+d^{3}xd^{3}x'u_{n'}^{\ast }\left( x'_{i}\right) u_{n}^{\ast }\left( x^{i}\right)
+\hat{\psi}\left( x'_{i},t\right) \hat{\psi}(x,t) \notag \\
+&=&\int d^{3}xd^{3}x'u_{n}^{\ast }\left( x^{i}\right) u_{n'}^{\ast }\left(
+x'_{i}\right) \left\{ \hat{\psi}(x,t) \hat{\psi}\left( x'_{i},t\right)
+-\hat{\psi}\left( x'_{i},t\right) \hat{\psi}(x,t) \right\} \notag \\
+&=&\int d^{3}xd^{3}x'u_{n}^{\ast }\left( x^{i}\right) u_{n'}^{\ast }\left(
+x'_{i}\right) \left[ \hat{\psi}(x,t) ,\hat{\psi}\left( x'_{i},t\right) \right]
+\notag \\
+&=&0, \label{RelConmutacion2}
+\end{eqnarray}%
+y:%
+\begin{eqnarray}
+\left[ \hat{a}_{n}^{\dagger }(t) ,\hat{a}_{n'}^{\dagger }(t) \right]
+&=&\hat{a}_{n}^{\dagger }(t) \hat{a}_{n'}^{\dagger }(t) -\hat{a}_{n'}^{\dagger
+}(t) \hat{a}_{n}^{\dagger }(t) \notag \\
+&=&\int d^{3}xd^{3}x'u_{n}\left( x^{i}\right) u_{n'}\left( x'_{i}\right)
+\hat{\psi}^{\dagger }(x,t) \hat{\psi}^{\dagger}\left( x'_{i},t\right) -\int
+d^{3}xd^{3}x'u_{n}\left( x^{i}\right) u_{n'}\left( x'_{i}\right)
+\hat{\psi}^{\dagger }\left( x'_{i},t\right) \hat{\psi}^{\dagger }(x,t) \notag \\
+&=&\int d^{3}xd^{3}x'u_{n}\left( x^{i}\right) u_{n'}\left( x'_{i}\right) \left\{
+\hat{\psi}^{\dagger }(x,t) \hat{\psi}^{\dagger }\left( x'_{i},t\right)
+-\hat{\psi}^{\dagger }\left( x'_{i},t\right) \hat{\psi}^{\dagger }(x,t) \right\}
+\notag \\
+&=&\int d^{3}xd^{3}x'u_{n}\left( x^{i}\right) u_{n'}\left( x'_{i}\right) \left[
+\hat{\psi}^{\dagger }(x,t) ,\hat{\psi}^{\dagger }\left( x'_{i},t\right) \right]
+\notag \\
+&=&0. \label{RelConmutacion3}
+\end{eqnarray}
+
+Si el sistema no depende expl'icitamente del tiempo, es decir, el
+potencial es del tipo $V=V\left( x^{i}\right) ,$ es natural hacer que las
+funciones $u_{n}\left( x^{i}\right) $ que ocupamos como base para expadir el
+operador de campo, sean las funciones de onda o eigenfunciones de la ecuaci%
+'on estacionaria de Schr\"{o}dinger:%
+\begin{equation*}
+\left( -\frac{\hbar ^{2}}{2m}\partial _{i}^{2}+V\left( x_{j}\right) \right)
+u_{n}\left( x_{j}\right) =E_{n}u_{n}\left( x_{j}\right) ,
+\end{equation*}%
+por lo tanto el Hamiltoniano (\ref{OperadorHamiltonianodeSchrodinger}) en t%
+'erminos de las nuevas variables de campo se puede escribir como:
+
+\begin{eqnarray}
+\hat{H} &=&\int d^{3}x\hat{\psi}^{\dagger }\left( -\frac{\hbar ^{2}}{2m}%
+\partial _{i}^{2}+V\left( x_{j}\right) \right) \hat{\psi} \notag \\
+&=&\int d^{3}x\left( \sum_{n}\hat{a}_{n}^{\dagger }(t)
+u_{n}^{\ast }\left( x_{j}\right) \right) \left( -\frac{\hbar ^{2}}{2m}%
+\partial _{i}^{2}+V\left( x_{j}\right) \right) \left( \sum_{n'}\hat{a}_{n'}(t)
+u_{n''}\left( x_{j}\right) \right) \notag \\
+&=&\sum_{n}\sum_{n'}\hat{a}_{n}^{\dagger }(t) \hat{a}_{n'}(t) \int
+d^{3}xu_{n}^{\ast }\left( x_{j}\right) \left( -\frac{%
+\hbar ^{2}}{2m}\partial _{i}^{2}+V\left( x_{j}\right) \right) u_{n'}\left(
+x_{j}\right) \notag \\
+&=&\sum_{n}\sum_{n'}\hat{a}_{n}^{\dagger }(t) \hat{a}_{n'}(t) E_{n'}\int
+d^{3}xu_{n}^{\ast }\left( x_{j}\right) u_{n'}\left( x_{j}\right) \notag \\
+&=&\sum_{n}\sum_{n'}E_{n'}\hat{a}_{n}^{\dagger }(t) \hat{a}_{n'}(t) \delta
+_{nn'} \notag \\
+&=&\sum_{n}E_{n}\hat{a}_{n}^{\dagger }(t) \hat{a}_{n}\left(
+t\right) \notag \\
+&=&\hbar \sum_{n}\omega _{n}\hat{N}_{n},
+\label{OperadorHamiltonianodeSchrodinger2}
+\end{eqnarray}%
+con $\hat{N}_{n}=\hat{a}_{n}^{\dagger }(t) \hat{a}_{n}\left(
+t\right) $ como el operador de Número.
+
+El Hamiltoniano anterior representa un sistema de infinitos osciladores arm%
+'onicos desacoplados con energ'ias $E_{n}=\hbar \omega _{n}.$ Es por
+eso y por las relaciones de conmutaci'on (\ref{RelConmutacion1}), (\ref{RelConmutacion2}) y (\ref{RelConmutacion3}), que, como ya hab'iamos
+mencionado, podemos reconocer a $\hat{a}_{n}^{\dagger }(t) $ y $%
+\hat{a}_{n}(t) $ como los operadores de creaci'on y destrucci'on.
