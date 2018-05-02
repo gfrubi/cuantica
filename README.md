@@ -1,7 +1,7 @@
 # cuantica
 Apuntes de Mecánica Cuántica Relativista y cuantización del campo electromagnético.
 
-Este apunte usa el paquete [https://ctan.org/pkg/feynmf](FeynMF/FeynMP) para crear diagramas de Feynman en LaTeX, desarrollado por Thorsten Ohl disponible en .
+Este apunte usa el paquete [FeynMF/FeynMP](https://ctan.org/pkg/feynmf) para crear diagramas de Feynman en LaTeX, desarrollado por Thorsten Ohl disponible en .
 
 Note que la primera vez que se compila el archivo principal (con 'pdflatex cuantica.tex'), el paquete FeynMF crea los archivos 'd*.mp', que luego deben ser procesados con
 
