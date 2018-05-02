@@ -3,6 +3,7 @@ Apuntes de Cuantización del Campo Electromagnético y Mecánica Cuántica Relat
 
 Este apunte usa el paquete [FeynMF/FeynMP](https://ctan.org/pkg/feynmf) para crear diagramas de Feynman en LaTeX, desarrollado por Thorsten Ohl.
 
+## Compilación
 Note que la primera vez que se compila el archivo principal (con `pdflatex cuantica.tex`), el paquete FeynMF crea los archivos 'd*.mp', que luego deben ser procesados con
 
 > mpost d1
