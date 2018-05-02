@@ -1,4 +1,4 @@
-# cuantica
+# Mecánica Cuántica
 Apuntes de Mecánica Cuántica Relativista y cuantización del campo electromagnético.
 
 Este apunte usa el paquete [FeynMF/FeynMP](https://ctan.org/pkg/feynmf) para crear diagramas de Feynman en LaTeX, desarrollado por Thorsten Ohl.
